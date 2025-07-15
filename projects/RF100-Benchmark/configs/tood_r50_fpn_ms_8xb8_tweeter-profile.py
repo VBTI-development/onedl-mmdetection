@@ -86,7 +86,7 @@ param_scheduler = [
         gamma=0.1)
 ]
 
-load_from = 'https://download.openmmlab.com/mmdetection/v2.0/tood/tood_r50_fpn_1x_coco/tood_r50_fpn_1x_coco_20211210_103425-20e20746.pth'  # noqa
+load_from = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/tood/tood_r50_fpn_1x_coco/tood_r50_fpn_1x_coco_20211210_103425-20e20746.pth'  # noqa
 
 # We only save the best checkpoint by validation mAP.
 default_hooks = dict(

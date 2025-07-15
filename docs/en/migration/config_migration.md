@@ -503,7 +503,7 @@ evaluation = dict(interval=2)  # Interval for evaluation, check the performance 
 
 ```python
 train_cfg = dict(
-    type='EpochBasedTrainLoop',  # Type of training loop, please refer to https://github.com/open-mmlab/mmengine/blob/main/mmengine/runner/loops.py
+    type='EpochBasedTrainLoop',  # Type of training loop, please refer to https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/runner/loops.py
     max_epochs=12,  # Maximum number of training epochs
     val_interval=2)  # Interval for validation, check the performance every 2 epochs
 val_cfg = dict(type='ValLoop')  # Type of validation loop
@@ -546,7 +546,7 @@ optim_wrapper = dict(  # Configuration for the optimizer wrapper
         lr=0.02,  # Base learning rate
         momentum=0.9,  # SGD with momentum
         weight_decay=0.0001),  # Weight decay
-    clip_grad=None,  # Configuration for gradient clipping, set to None to disable. For usage, please see https://mmengine.readthedocs.io/en/latest/tutorials/optimizer.html
+    clip_grad=None,  # Configuration for gradient clipping, set to None to disable. For usage, please see https://onedl-mmengine.readthedocs.io/en/latest/tutorials/optimizer.html
     )
 ```
 
@@ -600,7 +600,7 @@ param_scheduler = [
 </tr>
 </table>
 
-For information on how to migrate other learning rate adjustment policies, please refer to the [learning rate migration document of MMEngine](https://mmengine.readthedocs.io/zh_CN/latest/migration/param_scheduler.html).
+For information on how to migrate other learning rate adjustment policies, please refer to the [learning rate migration document of MMEngine](https://onedl-mmengine.readthedocs.io/zh_CN/latest/migration/param_scheduler.html).
 
 ## Migration of Other Configurations
 

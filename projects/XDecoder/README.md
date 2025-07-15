@@ -9,7 +9,7 @@
 We present X-Decoder, a generalized decoding model that can predict pixel-level segmentation and language tokens seamlessly. X-Decodert takes as input two types of queries: (i) generic non-semantic queries and (ii) semantic queries induced from text inputs, to decode different pixel-level and token-level outputs in the same semantic space. With such a novel design, X-Decoder is the first work that provides a unified way to support all types of image segmentation and a variety of vision-language (VL) tasks. Further, our design enables seamless interactions across tasks at different granularities and brings mutual benefits by learning a common and rich pixel-level visual-semantic understanding space, without any pseudo-labeling. After pretraining on a mixed set of a limited amount of segmentation data and millions of image-text pairs, X-Decoder exhibits strong transferability to a wide range of downstream tasks in both zero-shot and finetuning settings. Notably, it achieves (1) state-of-the-art results on open-vocabulary segmentation and referring segmentation on eight datasets; (2) better or competitive finetuned performance to other generalist and specialist models on segmentation and VL tasks; and (3) flexibility for efficient finetuning and novel task composition (e.g., referring captioning and image editing).
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/cb126615-9402-4c19-8ea9-133722d7519c" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/cb126615-9402-4c19-8ea9-133722d7519c" width="70%"/>
 </div>
 
 ## Installation
@@ -27,8 +27,8 @@ mim install mmdet[multimodal]
 For convenience, you can download the weights to the `mmdetection` root dir
 
 ```shell
-wget https://download.openmmlab.com/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt
-wget https://download.openmmlab.com/mmdetection/v3.0/xdecoder/xdecoder_focalt_best_openseg.pt
+wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt
+wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/xdecoder/xdecoder_focalt_best_openseg.pt
 ```
 
 The above two weights are directly copied from the official website without any modification. The specific source is https://github.com/microsoft/X-Decoder
@@ -43,7 +43,7 @@ python demo.py ../../images/animals.png configs/xdecoder-tiny_zeroshot_open-voca
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/c397c0ed-859a-4004-8725-78a591742bc8" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/c397c0ed-859a-4004-8725-78a591742bc8" width="70%"/>
 </div>
 
 **(2) Open Vocabulary Instance Segmentation**
@@ -54,7 +54,7 @@ python demo.py ../../images/owls.jpeg configs/xdecoder-tiny_zeroshot_open-vocab-
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/494b0b1c-4a42-4019-97ae-d33ee68af3d2" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/494b0b1c-4a42-4019-97ae-d33ee68af3d2" width="70%"/>
 </div>
 
 **(3) Open Vocabulary Panoptic Segmentation**
@@ -65,7 +65,7 @@ python demo.py ../../images/street.jpg configs/xdecoder-tiny_zeroshot_open-vocab
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/9ad1e0f4-75ce-4e37-a5cc-83e0e8a722ed" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/9ad1e0f4-75ce-4e37-a5cc-83e0e8a722ed" width="70%"/>
 </div>
 
 **(4) Referring Expression Segmentation**
@@ -76,7 +76,7 @@ python demo.py ../../images/fruit.jpg configs/xdecoder-tiny_zeroshot_open-vocab-
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/f3ecdb50-20f0-4dc4-aa9c-90995ae04893" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/f3ecdb50-20f0-4dc4-aa9c-90995ae04893" width="70%"/>
 </div>
 
 **(5) Image Caption**
@@ -87,7 +87,7 @@ python demo.py ../../images/penguin.jpeg configs/xdecoder-tiny_zeroshot_caption_
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/7690ab79-791e-4011-ab0c-01f46c4a3d80" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/7690ab79-791e-4011-ab0c-01f46c4a3d80" width="70%"/>
 </div>
 
 **(6) Referring Expression Image Caption**
@@ -98,7 +98,7 @@ python demo.py ../../images/fruit.jpg configs/xdecoder-tiny_zeroshot_ref-caption
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/bae2fdba-0172-4fc8-8ad1-73b54c64ec30" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/bae2fdba-0172-4fc8-8ad1-73b54c64ec30" width="70%"/>
 </div>
 
 **(7) Text Image Region Retrieval**
@@ -113,7 +113,7 @@ The image that best matches the given text is ../../images/coco/000.jpg and prob
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/479de6b2-88e7-41f0-8228-4b9a48f52954" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/479de6b2-88e7-41f0-8228-4b9a48f52954" width="70%"/>
 </div>
 
 We have also prepared a gradio program in the `projects/gradio_demo` directory, which you can run interactively all the inference supported by mmdetection in your browser.

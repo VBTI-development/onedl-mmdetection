@@ -33,7 +33,7 @@ RUN pip install openmim && \
 
 # Install MMDetection
 RUN conda clean --all \
-    && git clone https://github.com/open-mmlab/mmdetection.git /mmdetection \
+    && git clone https://github.com/vbti-development/onedl-mmdetection.git /mmdetection \
     && cd /mmdetection \
     && pip install --no-cache-dir -e .
 

@@ -1,6 +1,6 @@
 # Inference
 
-We provide demo scripts to inference a given video or a folder that contains continuous images. The source codes are available [here](https://github.com/open-mmlab/mmdetection/tree/tracking/demo).
+We provide demo scripts to inference a given video or a folder that contains continuous images. The source codes are available [here](https://github.com/vbti-development/onedl-mmdetection/tree/tracking/demo).
 
 Note that if you use a folder as the input, the image names there must be  **sortable** , which means we can re-order the images according to the numbers contained in the filenames. We now only support reading the images whose filenames end with `.jpg`, `.jpeg` and `.png`.
 
@@ -43,13 +43,13 @@ python demo/mot_demo.py \
     demo/demo_mot.mp4 \
     configs/sort/sort_faster-rcnn_r50_fpn_8xb2-4e_mot17halftrain_test-mot17halfval.py \
     --detector \
-    https://download.openmmlab.com/mmtracking/mot/faster_rcnn/faster-rcnn_r50_fpn_4e_mot17-half-64ee2ed4.pth \
+    https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmtracking/mot/faster_rcnn/faster-rcnn_r50_fpn_4e_mot17-half-64ee2ed4.pth \
     --out mot.mp4
 
 # Example 2: use --checkpoint
 python demo/mot_demo.py \
     demo/demo_mot.mp4 \
     configs/qdtrack/qdtrack_faster-rcnn_r50_fpn_8xb2-4e_mot17halftrain_test-mot17halfval.py \
-    --checkpoint https://download.openmmlab.com/mmtracking/mot/qdtrack/mot_dataset/qdtrack_faster-rcnn_r50_fpn_4e_mot17_20220315_145635-76f295ef.pth \
+    --checkpoint https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmtracking/mot/qdtrack/mot_dataset/qdtrack_faster-rcnn_r50_fpn_4e_mot17_20220315_145635-76f295ef.pth \
     --out mot.mp4
 ```

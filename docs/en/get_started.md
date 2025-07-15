@@ -39,7 +39,7 @@ We recommend that users follow our best practices to install MMDetection. Howeve
 
 ### Best Practices
 
-**Step 0.** Install [MMEngine](https://github.com/open-mmlab/mmengine) and [MMCV](https://github.com/open-mmlab/mmcv) using [MIM](https://github.com/open-mmlab/mim).
+**Step 0.** Install [MMEngine](https://github.com/vbti-development/onedl-mmengine) and [MMCV](https://github.com/vbti-development/onedl-mmcv) using [MIM](https://github.com/vbti-development/onedl-mim).
 
 ```shell
 pip install -U openmim
@@ -54,7 +54,7 @@ mim install "mmcv>=2.0.0"
 Case a: If you develop and run mmdet directly, install it from source:
 
 ```shell
-git clone https://github.com/open-mmlab/mmdetection.git
+git clone https://github.com/vbti-development/onedl-mmdetection.git
 cd mmdetection
 pip install -v -e .
 # "-v" means verbose, or more output
@@ -109,7 +109,7 @@ We recommend that users follow our best practices to install MMDetection for tra
 
 ### Best Practices
 
-**Step 0.** Install [MMEngine](https://github.com/open-mmlab/mmengine) and [MMCV](https://github.com/open-mmlab/mmcv) using [MIM](https://github.com/open-mmlab/mim).
+**Step 0.** Install [MMEngine](https://github.com/vbti-development/onedl-mmengine) and [MMCV](https://github.com/vbti-development/onedl-mmcv) using [MIM](https://github.com/vbti-development/onedl-mim).
 
 ```shell
 pip install -U openmim
@@ -122,7 +122,7 @@ mim install "mmcv>=2.0.0"
 Case a: If you develop and run mmdet directly, install it from source:
 
 ```shell
-git clone https://github.com/open-mmlab/mmdetection.git
+git clone https://github.com/vbti-development/onedl-mmdetection.git
 cd mmdetection
 pip install -v -e . -r requirements/tracking.txt
 # "-v" means verbose, or more output
@@ -183,7 +183,7 @@ Installing CUDA runtime libraries is enough if you follow our best practices, be
 
 #### Install MMEngine without MIM
 
-To install MMEngine with pip instead of MIM, please follow [MMEngine installation guides](https://mmengine.readthedocs.io/en/latest/get_started/installation.html).
+To install MMEngine with pip instead of MIM, please follow [MMEngine installation guides](https://onedl-mmengine.readthedocs.io/en/latest/get_started/installation.html).
 
 For example, you can install MMEngine by the following command.
 
@@ -195,12 +195,12 @@ pip install mmengine
 
 MMCV contains C++ and CUDA extensions, thus depending on PyTorch in a complex way. MIM solves such dependencies automatically and makes the installation easier. However, it is not a must.
 
-To install MMCV with pip instead of MIM, please follow [MMCV installation guides](https://mmcv.readthedocs.io/en/2.x/get_started/installation.html). This requires manually specifying a find-url based on the PyTorch version and its CUDA version.
+To install MMCV with pip instead of MIM, please follow [MMCV installation guides](https://onedl-mmcv.readthedocs.io/en/latest/get_started/installation.html). This requires manually specifying a find-url based on the PyTorch version and its CUDA version.
 
 For example, the following command installs MMCV built for PyTorch 1.12.x and CUDA 11.6.
 
 ```shell
-pip install "mmcv>=2.0.0" -f https://download.openmmlab.com/mmcv/dist/cu116/torch1.12.0/index.html
+pip install "mmcv>=2.0.0" -f https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmcv/dist/cu116/torch1.12.0/index.html
 ```
 
 #### Install on CPU-only platforms
@@ -237,7 +237,7 @@ The following table lists affected algorithms.
 [Google Colab](https://colab.research.google.com/) usually has PyTorch installed,
 thus we only need to install MMEngine, MMCV, and MMDetection with the following commands.
 
-**Step 1.** Install [MMEngine](https://github.com/open-mmlab/mmengine) and [MMCV](https://github.com/open-mmlab/mmcv) using [MIM](https://github.com/open-mmlab/mim).
+**Step 1.** Install [MMEngine](https://github.com/vbti-development/onedl-mmengine) and [MMCV](https://github.com/vbti-development/onedl-mmcv) using [MIM](https://github.com/vbti-development/onedl-mim).
 
 ```shell
 !pip3 install openmim
@@ -248,7 +248,7 @@ thus we only need to install MMEngine, MMCV, and MMDetection with the following 
 **Step 2.** Install MMDetection from the source.
 
 ```shell
-!git clone https://github.com/open-mmlab/mmdetection.git
+!git clone https://github.com/vbti-development/onedl-mmdetection.git
 %cd mmdetection
 !pip install -e .
 ```
@@ -284,7 +284,7 @@ docker run --gpus all --shm-size=8g -it -v {DATA_DIR}:/mmdetection/data mmdetect
 ### Troubleshooting
 
 If you have some issues during the installation, please first view the [FAQ](notes/faq.md) page.
-You may [open an issue](https://github.com/open-mmlab/mmdetection/issues/new/choose) on GitHub if no solution is found.
+You may [open an issue](https://github.com/vbti-development/onedl-mmdetection/issues/new/choose) on GitHub if no solution is found.
 
 ### Use Multiple Versions of MMDetection in Development
 

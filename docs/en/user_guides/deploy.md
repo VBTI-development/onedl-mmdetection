@@ -1,7 +1,7 @@
 # Model Deployment
 
-The deployment of OpenMMLab codebases, including MMDetection, MMPretrain and so on are supported by [MMDeploy](https://github.com/open-mmlab/mmdeploy).
-The latest deployment guide for MMDetection can be found from [here](https://mmdeploy.readthedocs.io/en/dev-1.x/04-supported-codebases/mmdet.html).
+The deployment of OpenMMLab codebases, including MMDetection, MMPretrain and so on are supported by [MMDeploy](https://github.com/vbti-development/onedl-mmdeploy).
+The latest deployment guide for MMDetection can be found from [here](https://onedl-mmdeploy.readthedocs.io/en/latest/04-supported-codebases/mmdet.html).
 
 This tutorial is organized as follows:
 
@@ -15,17 +15,17 @@ This tutorial is organized as follows:
 
 ## Installation
 
-Please follow the [guide](https://mmdetection.readthedocs.io/en/latest/get_started.html) to install mmdet. And then install mmdeploy from source by following [this](https://mmdeploy.readthedocs.io/en/1.x/get_started.html#installation) guide.
+Please follow the [guide](https://onedl-mmdetection.readthedocs.io/en/latest/get_started.html) to install mmdet. And then install mmdeploy from source by following [this](https://onedl-mmdeploy.readthedocs.io/en/latest/get_started.html#installation) guide.
 
 ```{note}
-If you install mmdeploy prebuilt package, please also clone its repository by 'git clone https://github.com/open-mmlab/mmdeploy.git --depth=1' to get the deployment config files.
+If you install mmdeploy prebuilt package, please also clone its repository by 'git clone https://github.com/vbti-development/onedl-mmdeploy.git --depth=1' to get the deployment config files.
 ```
 
 ## Convert model
 
 Suppose mmdetection and mmdeploy repositories are in the same directory, and the working directory is the root path of mmdetection.
 
-Take [Faster R-CNN](https://github.com/open-mmlab/mmdetection/blob/main/configs/faster_rcnn/faster-rcnn_r50_fpn_1x_coco.py) model as an example. You can download its checkpoint from [here](https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_1x_coco/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth), and then convert it to onnx model as follows:
+Take [Faster R-CNN](https://github.com/vbti-development/onedl-mmdetection/blob/main/configs/faster_rcnn/faster-rcnn_r50_fpn_1x_coco.py) model as an example. You can download its checkpoint from [here](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_1x_coco/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth), and then convert it to onnx model as follows:
 
 ```python
 from mmdeploy.apis import torch2onnx
@@ -48,7 +48,7 @@ export2SDK(deploy_cfg, model_cfg, work_dir, pth=model_checkpoint,
            device=device)
 ```
 
-It is crucial to specify the correct deployment config during model conversion. MMDeploy has already provided builtin deployment config [files](https://github.com/open-mmlab/mmdeploy/tree/1.x/configs/mmdet) of all supported backends for mmdetection, under which the config file path follows the pattern:
+It is crucial to specify the correct deployment config during model conversion. MMDeploy has already provided builtin deployment config [files](https://github.com/vbti-development/onedl-mmdeploy/tree/1.x/configs/mmdet) of all supported backends for mmdetection, under which the config file path follows the pattern:
 
 ```
 {task}/{task}_{backend}-{precision}_{static | dynamic}_{shape}.py
@@ -166,8 +166,8 @@ for index, bbox, label_id in zip(indices, bboxes, labels):
 cv2.imwrite('output_detection.png', img)
 ```
 
-Besides python API, mmdeploy SDK also provides other FFI (Foreign Function Interface), such as C, C++, C#, Java and so on. You can learn their usage from [demos](https://github.com/open-mmlab/mmdeploy/tree/1.x/demo).
+Besides python API, mmdeploy SDK also provides other FFI (Foreign Function Interface), such as C, C++, C#, Java and so on. You can learn their usage from [demos](https://github.com/vbti-development/onedl-mmdeploy/tree/1.x/demo).
 
 ## Supported models
 
-Please refer to [here](https://mmdeploy.readthedocs.io/en/1.x/04-supported-codebases/mmdet.html#supported-models) for the supported model list.
+Please refer to [here](https://onedl-mmdeploy.readthedocs.io/en/1.x/04-supported-codebases/mmdet.html#supported-models) for the supported model list.

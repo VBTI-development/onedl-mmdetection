@@ -528,14 +528,14 @@ We are excited to announce the release of MMDetection 3.0.0rc0. MMDet 3.0.0rc0 i
    - [SoftTeacher](https://arxiv.org/abs/2106.09018)
    - [the updated CenterNet](https://arxiv.org/abs/2103.07461)
 
-7. **More documentation and tutorials**. We add a bunch of documentation and tutorials to help users get started more smoothly. Read it [here](https://mmdetection.readthedocs.io/en/3.x/).
+7. **More documentation and tutorials**. We add a bunch of documentation and tutorials to help users get started more smoothly. Read it [here](https://onedl-mmdetection.readthedocs.io/en/3.x/).
 
 ### Breaking Changes
 
 MMDet 3.x has undergone significant changes for better design, higher efficiency, more flexibility, and more unified interfaces.
 Besides the changes in API, we briefly list the major breaking changes in this section.
 We will update the [migration guide](../migration.md) to provide complete details and migration instructions.
-Users can also refer to the [API doc](https://mmdetection.readthedocs.io/en/3.x/) for more details.
+Users can also refer to the [API doc](https://onedl-mmdetection.readthedocs.io/en/3.x/) for more details.
 
 #### Dependencies
 

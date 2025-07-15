@@ -73,7 +73,7 @@ class BaseSegDataset(BaseDataset):
             None img. The maximum extra number of cycles to get a valid
             image. Defaults to 1000.
         backend_args (dict, Optional): Arguments to instantiate a file backend.
-            See https://mmengine.readthedocs.io/en/latest/api/fileio.htm
+            See https://onedl-mmengine.readthedocs.io/en/latest/api/fileio.htm
             for details. Defaults to None.
             Notes: mmcv>=2.0.0rc4 required.
     """

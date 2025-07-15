@@ -266,7 +266,7 @@ param_scheduler = [
 train_cfg = dict(max_epochs=10, val_interval=1)
 
 # We can use the COCO pre-trained Cascade Mask R-CNN R50 model for a more stable performance initialization
-load_from = 'https://download.openmmlab.com/mmdetection/v2.0/cascade_rcnn/cascade_mask_rcnn_r50_fpn_1x_coco/cascade_mask_rcnn_r50_fpn_1x_coco_20200203-9d4dcb24.pth'
+load_from = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/cascade_rcnn/cascade_mask_rcnn_r50_fpn_1x_coco/cascade_mask_rcnn_r50_fpn_1x_coco_20200203-9d4dcb24.pth'
 ```
 
 ## Train a new model

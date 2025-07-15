@@ -6,7 +6,7 @@
 
 ## Abstract
 
-This is an implementation of [EfficientDet](https://github.com/google/automl) based on [MMDetection](https://github.com/open-mmlab/mmdetection/tree/main), [MMCV](https://github.com/open-mmlab/mmcv), and [MMEngine](https://github.com/open-mmlab/mmengine).
+This is an implementation of [EfficientDet](https://github.com/google/automl) based on [MMDetection](https://github.com/vbti-development/onedl-mmdetection/tree/main), [MMCV](https://github.com/vbti-development/onedl-mmcv), and [MMEngine](https://github.com/vbti-development/onedl-mmengine).
 <br>
 EfficientDet a new family of object detectors, which consistently achieve much better efficiency than prior art across a wide
 spectrum of resource constraints.
@@ -81,7 +81,7 @@ Based on mmdetection, this project aligns the accuracy of the [official model](h
 |                                                        Method                                                        |    Backbone     | Pretrained Model |  Training set  |   Test set   | Epoch | Val Box AP | Official AP |                                                                                                                                                                                                Download                                                                                                                                                                                                |
 | :------------------------------------------------------------------------------------------------------------------: | :-------------: | :--------------: | :------------: | :----------: | :---: | :--------: | :---------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | [efficientdet-d0\*](projects/EfficientDet/configs/tensorflow/efficientdet_effb0_bifpn_8xb16-crop512-300e_coco_tf.py) | efficientnet-b0 |     ImageNet     | COCO2017 Train | COCO2017 Val |  300  |    34.4    |    34.3     |                                                                                                                                                                                                                                                                                                                                                                                                        |
-|         [efficientdet-d3](projects/EfficientDet/configs/efficientdet_effb3_bifpn_8xb16-crop896-300e_coco.py)         | efficientnet-b3 |     ImageNet     | COCO2017 Train | COCO2017 Val |  300  |    47.2    |    46.8     | [model](https://download.openmmlab.com/mmdetection/v3.0/efficientdet/efficientdet_effb3_bifpn_8xb16-crop896-300e_coco/efficientdet_effb3_bifpn_8xb16-crop896-300e_coco_20230223_122457-e6f7a833.pth) \| [log](https://download.openmmlab.com/mmdetection/v3.0/efficientdet/efficientdet_effb3_bifpn_8xb16-crop896-300e_coco/efficientdet_effb3_bifpn_8xb16-crop896-300e_coco_20230223_122457.log.json) |
+|         [efficientdet-d3](projects/EfficientDet/configs/efficientdet_effb3_bifpn_8xb16-crop896-300e_coco.py)         | efficientnet-b3 |     ImageNet     | COCO2017 Train | COCO2017 Val |  300  |    47.2    |    46.8     | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/efficientdet/efficientdet_effb3_bifpn_8xb16-crop896-300e_coco/efficientdet_effb3_bifpn_8xb16-crop896-300e_coco_20230223_122457-e6f7a833.pth) \| [log](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/efficientdet/efficientdet_effb3_bifpn_8xb16-crop896-300e_coco/efficientdet_effb3_bifpn_8xb16-crop896-300e_coco_20230223_122457.log.json) |
 
 **Note**:
 \*means use [official tensorflow model](https://github.com/google/automl) weights to test.
@@ -133,11 +133,11 @@ A project does not necessarily have to be finished in a single PR, but it's esse
 
   - [ ] Type hints and docstrings
 
-    <!-- Ideally *all* the methods should have [type hints](https://www.pythontutorial.net/python-basics/python-type-hints/) and [docstrings](https://google.github.io/styleguide/pyguide.html#381-docstrings). [Example](https://github.com/open-mmlab/mmdetection/blob/5b0d5b40d5c6cfda906db7464ca22cbd4396728a/mmdet/datasets/transforms/transforms.py#L41-L169) -->
+    <!-- Ideally *all* the methods should have [type hints](https://www.pythontutorial.net/python-basics/python-type-hints/) and [docstrings](https://google.github.io/styleguide/pyguide.html#381-docstrings). [Example](https://github.com/vbti-development/onedl-mmdetection/blob/5b0d5b40d5c6cfda906db7464ca22cbd4396728a/mmdet/datasets/transforms/transforms.py#L41-L169) -->
 
   - [ ] Unit tests
 
-    <!-- Unit tests for each module are required. [Example](https://github.com/open-mmlab/mmdetection/blob/5b0d5b40d5c6cfda906db7464ca22cbd4396728a/tests/test_datasets/test_transforms/test_transforms.py#L35-L88) -->
+    <!-- Unit tests for each module are required. [Example](https://github.com/vbti-development/onedl-mmdetection/blob/5b0d5b40d5c6cfda906db7464ca22cbd4396728a/tests/test_datasets/test_transforms/test_transforms.py#L35-L88) -->
 
   - [ ] Code polishing
 
@@ -145,10 +145,10 @@ A project does not necessarily have to be finished in a single PR, but it's esse
 
   - [ ] Metafile.yml
 
-    <!-- It will be parsed by MIM and Inferencer. [Example](https://github.com/open-mmlab/mmdetection/blob/main/configs/faster_rcnn/metafile.yml) -->
+    <!-- It will be parsed by MIM and Inferencer. [Example](https://github.com/vbti-development/onedl-mmdetection/blob/main/configs/faster_rcnn/metafile.yml) -->
 
 - [ ] Move your modules into the core package following the codebase's file hierarchy structure.
 
-  <!-- In particular, you may have to refactor this README into a standard one. [Example](https://github.com/open-mmlab/mmdetection/blob/main/configs/faster_rcnn/README.md) -->
+  <!-- In particular, you may have to refactor this README into a standard one. [Example](https://github.com/vbti-development/onedl-mmdetection/blob/main/configs/faster_rcnn/README.md) -->
 
 - [ ] Refactor your modules into the core package following the codebase's file hierarchy structure.

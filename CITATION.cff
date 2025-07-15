@@ -4,5 +4,5 @@ authors:
   - name: "MMDetection Contributors"
 title: "OpenMMLab Detection Toolbox and Benchmark"
 date-released: 2018-08-22
-url: "https://github.com/open-mmlab/mmdetection"
+url: "https://github.com/vbti-development/onedl-mmdetection"
 license: Apache-2.0

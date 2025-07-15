@@ -9,7 +9,7 @@
 目标检测模型的评估通常通过在一组固定的数据集上优化单一指标（例如 mAP），例如 Microsoft COCO 和 Pascal VOC。由于图像检索和注释成本高昂，这些数据集主要由在网络上找到的图像组成，并不能代表实际建模的许多现实领域，例如卫星、显微和游戏等，这使得很难确定模型学到的泛化程度。我们介绍了 Roboflow-100（RF100），它包括 100 个数据集、7 个图像领域、224,714 张图像和 805 个类别标签，超过 11,170 个标注小时。我们从超过 90,000 个公共数据集、6000 万个公共图像中提取了 RF100，这些数据集正在由计算机视觉从业者在网络应用程序 Roboflow Universe 上积极组装和标注。通过发布 RF100，我们旨在提供一个语义多样、多领域的数据集基准，帮助研究人员用真实数据测试模型的泛化能力。
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/71b0eb6f-d710-4100-9fb1-9d5485e07fdb"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/71b0eb6f-d710-4100-9fb1-9d5485e07fdb"/>
 </div>
 
 ## 代码结构说明
@@ -42,7 +42,7 @@ Roboflow 100 数据集是由 Roboflow 平台托管，并且在 [roboflow-100-ben
 在下载数据前，你首先需要在 Roboflow 平台注册账号，获取 API key。
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/6126e69e-85ce-4dec-8e7b-936c4fae29a6"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/6126e69e-85ce-4dec-8e7b-936c4fae29a6"/>
 </div>
 
 ```shell
@@ -92,7 +92,7 @@ bash scripts/download_datasets.sh
 Roboflow 100 数据集的特点如下图所示
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/e2693662-3d16-49a4-af0b-2a03be7e16b6"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/e2693662-3d16-49a4-af0b-2a03be7e16b6"/>
 </div>
 
 如果想对数据集有个清晰的认识，可以查看 [roboflow-100-benchmark](https://github.com/roboflow/roboflow-100-benchmark) 仓库，其提供了诸多数据集分析脚本。
@@ -174,7 +174,7 @@ failed_dataset_list.txt # 失败数据集列表
 ## 结果分析
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/86420903-36a8-410d-9251-4304b9704f7d"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/86420903-36a8-410d-9251-4304b9704f7d"/>
 </div>
 
 💎 详情表，请直接访问 [结果](https://aicarrier.feishu.cn/drive/folder/QJ4rfqLzylIVTjdjYo3cunbinMh) 💎

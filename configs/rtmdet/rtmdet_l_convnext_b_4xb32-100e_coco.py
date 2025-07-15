@@ -4,7 +4,7 @@ custom_imports = dict(
     imports=['mmpretrain.models'], allow_failed_imports=False)
 
 norm_cfg = dict(type='GN', num_groups=32)
-checkpoint_file = 'https://download.openmmlab.com/mmclassification/v0/convnext/convnext-base_in21k-pre-3rdparty_in1k-384px_20221219-4570f792.pth'  # noqa
+checkpoint_file = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmclassification/v0/convnext/convnext-base_in21k-pre-3rdparty_in1k-384px_20221219-4570f792.pth'  # noqa
 model = dict(
     type='RTMDet',
     data_preprocessor=dict(

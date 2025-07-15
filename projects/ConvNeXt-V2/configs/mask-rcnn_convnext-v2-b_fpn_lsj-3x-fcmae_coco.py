@@ -9,7 +9,7 @@ _base_ = [
 # import mmpretrain.models to trigger register_module in mmpretrain
 custom_imports = dict(
     imports=['mmpretrain.models'], allow_failed_imports=False)
-checkpoint_file = 'https://download.openmmlab.com/mmclassification/v0/convnext-v2/convnext-v2-base_3rdparty-fcmae_in1k_20230104-8a798eaf.pth'  # noqa
+checkpoint_file = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmclassification/v0/convnext-v2/convnext-v2-base_3rdparty-fcmae_in1k_20230104-8a798eaf.pth'  # noqa
 image_size = (1024, 1024)
 
 model = dict(

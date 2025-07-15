@@ -19,18 +19,18 @@
   <div>&nbsp;</div>
 
 [![PyPI](https://img.shields.io/pypi/v/mmdet)](https://pypi.org/project/mmdet)
-[![docs](https://img.shields.io/badge/docs-latest-blue)](https://mmdetection.readthedocs.io/en/latest/)
-[![badge](https://github.com/open-mmlab/mmdetection/workflows/build/badge.svg)](https://github.com/open-mmlab/mmdetection/actions)
-[![codecov](https://codecov.io/gh/open-mmlab/mmdetection/branch/main/graph/badge.svg)](https://codecov.io/gh/open-mmlab/mmdetection)
+[![docs](https://img.shields.io/badge/docs-latest-blue)](https://onedl-mmdetection.readthedocs.io/en/latest/)
+[![badge](https://github.com/vbti-development/onedl-mmdetection/workflows/build/badge.svg)](https://github.com/vbti-development/onedl-mmdetection/actions)
+[![codecov](https://codecov.io/gh/vbti-development/onedl-mmdetection/branch/main/graph/badge.svg)](https://codecov.io/gh/vbti-development/onedl-mmdetection)
 [![license](https://img.shields.io/github/license/open-mmlab/mmdetection.svg)](https://github.com/open-mmlab/mmdetection/blob/main/LICENSE)
 [![open issues](https://isitmaintained.com/badge/open/open-mmlab/mmdetection.svg)](https://github.com/open-mmlab/mmdetection/issues)
 [![issue resolution](https://isitmaintained.com/badge/resolution/open-mmlab/mmdetection.svg)](https://github.com/open-mmlab/mmdetection/issues)
 [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_demo.svg)](https://openxlab.org.cn/apps?search=mmdet)
 
-[📘Documentation](https://mmdetection.readthedocs.io/en/latest/) |
-[🛠️Installation](https://mmdetection.readthedocs.io/en/latest/get_started.html) |
-[👀Model Zoo](https://mmdetection.readthedocs.io/en/latest/model_zoo.html) |
-[🆕Update News](https://mmdetection.readthedocs.io/en/latest/notes/changelog.html) |
+[📘Documentation](https://onedl-mmdetection.readthedocs.io/en/latest/) |
+[🛠️Installation](https://onedl-mmdetection.readthedocs.io/en/latest/get_started.html) |
+[👀Model Zoo](https://onedl-mmdetection.readthedocs.io/en/latest/model_zoo.html) |
+[🆕Update News](https://onedl-mmdetection.readthedocs.io/en/latest/notes/changelog.html) |
 [🚀Ongoing Projects](https://github.com/open-mmlab/mmdetection/projects) |
 [🤔Reporting Issues](https://github.com/open-mmlab/mmdetection/issues/new/choose)
 
@@ -135,32 +135,32 @@ We are excited to announce our latest work on real-time object recognition tasks
 
 ## Installation
 
-Please refer to [Installation](https://mmdetection.readthedocs.io/en/latest/get_started.html) for installation instructions.
+Please refer to [Installation](https://onedl-mmdetection.readthedocs.io/en/latest/get_started.html) for installation instructions.
 
 ## Getting Started
 
-Please see [Overview](https://mmdetection.readthedocs.io/en/latest/get_started.html) for the general introduction of MMDetection.
+Please see [Overview](https://onedl-mmdetection.readthedocs.io/en/latest/get_started.html) for the general introduction of MMDetection.
 
-For detailed user guides and advanced guides, please refer to our [documentation](https://mmdetection.readthedocs.io/en/latest/):
+For detailed user guides and advanced guides, please refer to our [documentation](https://onedl-mmdetection.readthedocs.io/en/latest/):
 
 - User Guides
 
   <details>
 
-  - [Train & Test](https://mmdetection.readthedocs.io/en/latest/user_guides/index.html#train-test)
-    - [Learn about Configs](https://mmdetection.readthedocs.io/en/latest/user_guides/config.html)
-    - [Inference with existing models](https://mmdetection.readthedocs.io/en/latest/user_guides/inference.html)
-    - [Dataset Prepare](https://mmdetection.readthedocs.io/en/latest/user_guides/dataset_prepare.html)
-    - [Test existing models on standard datasets](https://mmdetection.readthedocs.io/en/latest/user_guides/test.html)
-    - [Train predefined models on standard datasets](https://mmdetection.readthedocs.io/en/latest/user_guides/train.html)
-    - [Train with customized datasets](https://mmdetection.readthedocs.io/en/latest/user_guides/train.html#train-with-customized-datasets)
-    - [Train with customized models and standard datasets](https://mmdetection.readthedocs.io/en/latest/user_guides/new_model.html)
-    - [Finetuning Models](https://mmdetection.readthedocs.io/en/latest/user_guides/finetune.html)
-    - [Test Results Submission](https://mmdetection.readthedocs.io/en/latest/user_guides/test_results_submission.html)
-    - [Weight initialization](https://mmdetection.readthedocs.io/en/latest/user_guides/init_cfg.html)
-    - [Use a single stage detector as RPN](https://mmdetection.readthedocs.io/en/latest/user_guides/single_stage_as_rpn.html)
-    - [Semi-supervised Object Detection](https://mmdetection.readthedocs.io/en/latest/user_guides/semi_det.html)
-  - [Useful Tools](https://mmdetection.readthedocs.io/en/latest/user_guides/index.html#useful-tools)
+  - [Train & Test](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/index.html#train-test)
+    - [Learn about Configs](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/config.html)
+    - [Inference with existing models](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/inference.html)
+    - [Dataset Prepare](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/dataset_prepare.html)
+    - [Test existing models on standard datasets](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/test.html)
+    - [Train predefined models on standard datasets](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/train.html)
+    - [Train with customized datasets](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/train.html#train-with-customized-datasets)
+    - [Train with customized models and standard datasets](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/new_model.html)
+    - [Finetuning Models](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/finetune.html)
+    - [Test Results Submission](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/test_results_submission.html)
+    - [Weight initialization](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/init_cfg.html)
+    - [Use a single stage detector as RPN](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/single_stage_as_rpn.html)
+    - [Semi-supervised Object Detection](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/semi_det.html)
+  - [Useful Tools](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/index.html#useful-tools)
 
   </details>
 
@@ -168,15 +168,15 @@ For detailed user guides and advanced guides, please refer to our [documentation
 
   <details>
 
-  - [Basic Concepts](https://mmdetection.readthedocs.io/en/latest/advanced_guides/index.html#basic-concepts)
-  - [Component Customization](https://mmdetection.readthedocs.io/en/latest/advanced_guides/index.html#component-customization)
-  - [How to](https://mmdetection.readthedocs.io/en/latest/advanced_guides/index.html#how-to)
+  - [Basic Concepts](https://onedl-mmdetection.readthedocs.io/en/latest/advanced_guides/index.html#basic-concepts)
+  - [Component Customization](https://onedl-mmdetection.readthedocs.io/en/latest/advanced_guides/index.html#component-customization)
+  - [How to](https://onedl-mmdetection.readthedocs.io/en/latest/advanced_guides/index.html#how-to)
 
   </details>
 
 We also provide object detection colab tutorial [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](demo/MMDet_Tutorial.ipynb) and instance segmentation colab tutorial [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](demo/MMDet_InstanceSeg_Tutorial.ipynb).
 
-To migrate from MMDetection 2.x, please refer to [migration](https://mmdetection.readthedocs.io/en/latest/migration.html).
+To migrate from MMDetection 2.x, please refer to [migration](https://onedl-mmdetection.readthedocs.io/en/latest/migration.html).
 
 ## Overview of Benchmark and Model Zoo
 

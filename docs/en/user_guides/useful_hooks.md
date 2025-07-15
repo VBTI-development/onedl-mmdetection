@@ -1,6 +1,6 @@
 # Useful Hooks
 
-MMDetection and MMEngine provide users with various useful hooks including log hooks, `NumClassCheckHook`, etc. This tutorial introduces the functionalities and usages of hooks implemented in MMDetection. For using hooks in MMEngine, please read the [API documentation in MMEngine](https://github.com/open-mmlab/mmengine/tree/main/docs/en/tutorials/hook.md).
+MMDetection and MMEngine provide users with various useful hooks including log hooks, `NumClassCheckHook`, etc. This tutorial introduces the functionalities and usages of hooks implemented in MMDetection. For using hooks in MMEngine, please read the [API documentation in MMEngine](https://github.com/vbti-development/onedl-mmengine/tree/main/docs/en/tutorials/hook.md).
 
 ## CheckInvalidLossHook
 
@@ -8,7 +8,7 @@ MMDetection and MMEngine provide users with various useful hooks including log h
 
 ## MemoryProfilerHook
 
-[Memory profiler hook](https://github.com/open-mmlab/mmdetection/blob/main/mmdet/engine/hooks/memory_profiler_hook.py) records memory information including virtual memory, swap memory, and the memory of the current process. This hook helps grasp the memory usage of the system and discover potential memory leak bugs. To use this hook, users should install `memory_profiler` and `psutil` by `pip install memory_profiler psutil` first.
+[Memory profiler hook](https://github.com/vbti-development/onedl-mmdetection/blob/main/mmdet/engine/hooks/memory_profiler_hook.py) records memory information including virtual memory, swap memory, and the memory of the current process. This hook helps grasp the memory usage of the system and discover potential memory leak bugs. To use this hook, users should install `memory_profiler` and `psutil` by `pip install memory_profiler psutil` first.
 
 ### Usage
 

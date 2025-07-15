@@ -196,7 +196,7 @@ if __name__ == '__main__':
         author='MMDetection Contributors',
         author_email='openmmlab@gmail.com',
         keywords='computer vision, object detection',
-        url='https://github.com/open-mmlab/mmdetection',
+        url='https://github.com/vbti-development/onedl-mmdetection',
         packages=find_packages(exclude=('configs', 'tools', 'demo')),
         include_package_data=True,
         classifiers=[

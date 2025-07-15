@@ -1,6 +1,6 @@
 # Visualization
 
-Before reading this tutorial, it is recommended to read MMEngine's [Visualization](https://github.com/open-mmlab/mmengine/blob/main/docs/en/advanced_tutorials/visualization.md) documentation to get a first glimpse of the `Visualizer` definition and usage.
+Before reading this tutorial, it is recommended to read MMEngine's [Visualization](https://github.com/vbti-development/onedl-mmengine/blob/main/docs/en/advanced_tutorials/visualization.md) documentation to get a first glimpse of the `Visualizer` definition and usage.
 
 In brief, the [`Visualizer`](mmengine.visualization.Visualizer) is implemented in MMEngine to meet the daily visualization needs, and contains three main functions:
 
@@ -36,7 +36,7 @@ Based on the above example, we can see that the configuration of `Visualizer` co
 MMDet uses the local visualization backend [`LocalVisBackend`](mmengine.visualization.LocalVisBackend) by default, and the model loss, learning rate, model evaluation accuracy and visualization The information stored in `VisualizerHook` and `LoggerHook`, including loss, learning rate, evaluation accuracy will be saved to the `{work_dir}/{config_name}/{time}/{vis_data}` folder by default. In addition, MMDet also supports other common visualization backends, such as `TensorboardVisBackend` and `WandbVisBackend`, and you only need to change the `vis_backends` type in the configuration file to the corresponding visualization backend. For example, you can store data to `TensorBoard` and `Wandb` by simply inserting the following code block into the configuration file.
 
 ```Python
-# https://mmengine.readthedocs.io/en/latest/api/visualization.html
+# https://onedl-mmengine.readthedocs.io/en/latest/api/visualization.html
 _base_.visualizer.vis_backends = [
     dict(type='LocalVisBackend'), #
     dict(type='TensorboardVisBackend'),
@@ -80,10 +80,10 @@ The `test.py` procedure is further simplified by providing the  `--show` and `--
 
 ```Shell
 # Show test results
-python tools/test.py configs/rtmdet/rtmdet_tiny_8xb32-300e_coco.py https://download.openmmlab.com/mmdetection/v3.0/rtmdet/rtmdet_tiny_8xb32-300e_coco/rtmdet_tiny_8xb32-300e_coco_20220902_112414-78e30dcc.pth --show
+python tools/test.py configs/rtmdet/rtmdet_tiny_8xb32-300e_coco.py https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/rtmdet_tiny_8xb32-300e_coco/rtmdet_tiny_8xb32-300e_coco_20220902_112414-78e30dcc.pth --show
 
 # Specify where to store the prediction results
-python tools/test.py configs/rtmdet/rtmdet_tiny_8xb32-300e_coco.py https://download.openmmlab.com/mmdetection/v3.0/rtmdet/rtmdet_tiny_8xb32-300e_coco/rtmdet_tiny_8xb32-300e_coco_20220902_112414-78e30dcc.pth --show-dir imgs/
+python tools/test.py configs/rtmdet/rtmdet_tiny_8xb32-300e_coco.py https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/rtmdet_tiny_8xb32-300e_coco/rtmdet_tiny_8xb32-300e_coco_20220902_112414-78e30dcc.pth --show-dir imgs/
 ```
 
 <div align=center>

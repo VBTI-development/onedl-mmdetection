@@ -220,7 +220,7 @@ python tools/analysis_tools/coco_error_analysis.py ${RESULT} ${OUT_DIR} [-h] [--
 
 Example:
 
-Assume that you have got [Mask R-CNN checkpoint file](https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_fpn_1x_coco/mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth) in the path 'checkpoint'. For other checkpoints, please refer to our [model zoo](./model_zoo.md).
+Assume that you have got [Mask R-CNN checkpoint file](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_fpn_1x_coco/mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth) in the path 'checkpoint'. For other checkpoints, please refer to our [model zoo](./model_zoo.md).
 
 You can modify the test_evaluator to save the results bbox by:
 
@@ -382,14 +382,14 @@ comparisons, but double check it before you adopt it in technical reports or pap
 
 1. FLOPs are related to the input shape while parameters are not. The default
    input shape is (1, 3, 1280, 800).
-2. Some operators are not counted into FLOPs like GN and custom operators. Refer to [`mmcv.cnn.get_model_complexity_info()`](https://github.com/open-mmlab/mmcv/blob/2.x/mmcv/cnn/utils/flops_counter.py) for details.
+2. Some operators are not counted into FLOPs like GN and custom operators. Refer to [`mmcv.cnn.get_model_complexity_info()`](https://github.com/vbti-development/onedl-mmcv/blob/main/mmcv/cnn/utils/flops_counter.py) for details.
 3. The FLOPs of two-stage detectors is dependent on the number of proposals.
 
 ## Model conversion
 
 ### MMDetection model to ONNX
 
-We provide a script to convert model to [ONNX](https://github.com/onnx/onnx) format. We also support comparing the output results between Pytorch and ONNX model for verification. More details can refer to [mmdeploy](https://github.com/open-mmlab/mmdeploy)
+We provide a script to convert model to [ONNX](https://github.com/onnx/onnx) format. We also support comparing the output results between Pytorch and ONNX model for verification. More details can refer to [mmdeploy](https://github.com/vbti-development/onedl-mmdeploy)
 
 ### MMDetection 1.x model to MMDetection 2.x
 

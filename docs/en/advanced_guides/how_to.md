@@ -17,7 +17,7 @@ _base_ = [
 # please install mmpretrain
 # import mmpretrain.models to trigger register_module in mmpretrain
 custom_imports = dict(imports=['mmpretrain.models'], allow_failed_imports=False)
-pretrained = 'https://download.openmmlab.com/mmclassification/v0/mobilenet_v3/convert/mobilenet_v3_small-8427ecf0.pth'
+pretrained = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmclassification/v0/mobilenet_v3/convert/mobilenet_v3_small-8427ecf0.pth'
 model = dict(
     backbone=dict(
         _delete_=True, # Delete the backbone field in _base_
@@ -37,7 +37,7 @@ model = dict(
 MMPretrain also provides a wrapper for the PyTorch Image Models (timm) backbone network, users can directly use the backbone network in timm through MMPretrain. Suppose you want to use [EfficientNet-B1](../../../configs/timm_example/retinanet_timm-efficientnet-b1_fpn_1x_coco.py) as the backbone network of RetinaNet, the example config is as the following.
 
 ```python
-# https://github.com/open-mmlab/mmdetection/blob/main/configs/timm_example/retinanet_timm-efficientnet-b1_fpn_1x_coco.py
+# https://github.com/vbti-development/onedl-mmdetection/blob/main/configs/timm_example/retinanet_timm-efficientnet-b1_fpn_1x_coco.py
 
 _base_ = [
     '../_base_/models/retinanet_r50_fpn.py',
@@ -63,7 +63,7 @@ optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0001)
 
 `type='mmpretrain.TIMMBackbone'` means use the `TIMMBackbone` class from MMPretrain in MMDetection, and the model used is `EfficientNet-B1`, where `mmpretrain` means the MMPretrain repo and `TIMMBackbone` means the TIMMBackbone wrapper implemented in MMPretrain.
 
-For the principle of the Hierarchy Registry, please refer to the [MMEngine document](https://github.com/open-mmlab/mmengine/blob/main/docs/en/tutorials/config.md). For how to use other backbones in MMPretrain, you can refer to the [MMPretrain document](https://mmpretrain.readthedocs.io/en/latest/user_guides/config.html).
+For the principle of the Hierarchy Registry, please refer to the [MMEngine document](https://github.com/vbti-development/onedl-mmengine/blob/main/docs/en/tutorials/config.md). For how to use other backbones in MMPretrain, you can refer to the [MMPretrain document](https://onedl-mmpretrain.readthedocs.io/en/latest/user_guides/config.html).
 
 # Use Mosaic augmentation
 

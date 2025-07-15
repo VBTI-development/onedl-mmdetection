@@ -42,7 +42,7 @@ RUN pip install torchserve torch-model-archiver nvgpu -i https://pypi.mirrors.us
 ARG PYTORCH
 ARG CUDA
 RUN pip install mmengine -i https://pypi.mirrors.ustc.edu.cn/simple/
-RUN ["/bin/bash", "-c", "pip install mmcv==${MMCV} -f https://download.openmmlab.com/mmcv/dist/cu${CUDA//./}/torch${PYTORCH}/index.html"]
+RUN ["/bin/bash", "-c", "pip install mmcv==${MMCV} -f https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmcv/dist/cu${CUDA//./}/torch${PYTORCH}/index.html"]
 RUN pip install mmdet==${MMDET} -i https://pypi.mirrors.ustc.edu.cn/simple/
 
 RUN useradd -m model-server \

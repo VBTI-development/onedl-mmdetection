@@ -27,7 +27,7 @@ MMDetection consists of 7 main parts, apis, structures, datasets, models, engine
   - **task_modules** provides modules for detection tasks. E.g. assigners, samplers, box coders, and prior generators.
   - **layers** provides some basic neural network layers.
 - **engine** is a part for runtime components.
-  - **runner** provides extensions for [MMEngine's runner](https://mmengine.readthedocs.io/en/latest/tutorials/runner.html).
+  - **runner** provides extensions for [MMEngine's runner](https://onedl-mmengine.readthedocs.io/en/latest/tutorials/runner.html).
   - **schedulers** provides schedulers for adjusting optimization hyperparameters.
   - **optimizers** provides optimizers and optimizer wrappers.
   - **hooks** provides various hooks of the runner.
@@ -42,13 +42,13 @@ Here is a detailed step-by-step guide to learn more about MMDetection:
 
 2. Refer to the below tutorials for the basic usage of MMDetection.
 
-   - [Train and Test](https://mmdetection.readthedocs.io/en/latest/user_guides/index.html#train-test)
+   - [Train and Test](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/index.html#train-test)
 
-   - [Useful Tools](https://mmdetection.readthedocs.io/en/latest/user_guides/index.html#useful-tools)
+   - [Useful Tools](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/index.html#useful-tools)
 
 3. Refer to the below tutorials to dive deeper:
 
-   - [Basic Concepts](https://mmdetection.readthedocs.io/en/latest/advanced_guides/index.html#basic-concepts)
-   - [Component Customization](https://mmdetection.readthedocs.io/en/latest/advanced_guides/index.html#component-customization)
+   - [Basic Concepts](https://onedl-mmdetection.readthedocs.io/en/latest/advanced_guides/index.html#basic-concepts)
+   - [Component Customization](https://onedl-mmdetection.readthedocs.io/en/latest/advanced_guides/index.html#component-customization)
 
 4. For users of MMDetection 2.x version, we provide a guide to help you adapt to the new version. You can find it in the [migration guide](./migration/migration.md).

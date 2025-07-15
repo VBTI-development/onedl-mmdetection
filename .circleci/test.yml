@@ -68,7 +68,7 @@ jobs:
           # numpy may be downgraded after building pycocotools, which causes `ImportError: numpy.core.multiarray failed to import`
           # force reinstall pycocotools to ensure pycocotools being built under the currenct numpy
           command: |
-            python -m pip install git+ssh://git@github.com/open-mmlab/mmengine.git@main
+            python -m pip install git+ssh://git@github.com/vbti-development/onedl-mmengine.git@main
             pip install -U openmim
             mim install 'mmcv >= 2.0.0rc4'
             pip install -r requirements/tests.txt -r requirements/optional.txt
@@ -108,7 +108,7 @@ jobs:
           # CLoning repos in VM since Docker doesn't have access to the private key
           name: Clone Repos
           command: |
-            git clone -b main --depth 1 ssh://git@github.com/open-mmlab/mmengine.git /home/circleci/mmengine
+            git clone -b main --depth 1 ssh://git@github.com/vbti-development/onedl-mmengine.git /home/circleci/mmengine
       - run:
           name: Install nvidia-container-toolkit and Restart Docker
           command: |

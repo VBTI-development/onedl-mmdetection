@@ -2,7 +2,7 @@
 
 ## Customize optimization settings
 
-Optimization related configuration is now all managed by `optim_wrapper` which usually has three fields: `optimizer`, `paramwise_cfg`, `clip_grad`, refer to [OptimWrapper](https://mmengine.readthedocs.io/en/latest/tutorials/optim_wrapper.md) for more detail. See the example below, where `Adamw` is used as an `optimizer`, the learning rate of the backbone is reduced by a factor of 10, and gradient clipping is added.
+Optimization related configuration is now all managed by `optim_wrapper` which usually has three fields: `optimizer`, `paramwise_cfg`, `clip_grad`, refer to [OptimWrapper](https://onedl-mmengine.readthedocs.io/en/latest/tutorials/optim_wrapper.md) for more detail. See the example below, where `Adamw` is used as an `optimizer`, the learning rate of the backbone is reduced by a factor of 10, and gradient clipping is added.
 
 ```python
 optim_wrapper = dict(
@@ -126,7 +126,7 @@ class MyOptimizerWrapperConstructor(DefaultOptimWrapperConstructor):
 
 ```
 
-The default optimizer wrapper constructor is implemented [here](https://github.com/open-mmlab/mmengine/blob/main/mmengine/optim/optimizer/default_constructor.py#L18), which could also serve as a template for the new optimizer wrapper constructor.
+The default optimizer wrapper constructor is implemented [here](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/optim/optimizer/default_constructor.py#L18), which could also serve as a template for the new optimizer wrapper constructor.
 
 ### Additional settings
 
@@ -144,8 +144,8 @@ Tricks not implemented by the optimizer should be implemented through optimizer 
 
 - __Use momentum schedule to accelerate model convergence__:
   We support momentum scheduler to modify model's momentum according to learning rate, which could make the model converge in a faster way.
-  Momentum scheduler is usually used with LR scheduler, for example, the following config is used in [3D detection](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/configs/_base_/schedules/cyclic-20e.py) to accelerate convergence.
-  For more details, please refer to the implementation of [CosineAnnealingLR](https://github.com/open-mmlab/mmengine/blob/main/mmengine/optim/scheduler/lr_scheduler.py#L43) and [CosineAnnealingMomentum](https://github.com/open-mmlab/mmengine/blob/main/mmengine/optim/scheduler/momentum_scheduler.py#L71).
+  Momentum scheduler is usually used with LR scheduler, for example, the following config is used in [3D detection](https://github.com/vbti-development/onedl-mmdetection3d/blob/dev-1.x/configs/_base_/schedules/cyclic-20e.py) to accelerate convergence.
+  For more details, please refer to the implementation of [CosineAnnealingLR](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/optim/scheduler/lr_scheduler.py#L43) and [CosineAnnealingMomentum](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/optim/scheduler/momentum_scheduler.py#L71).
 
   ```python
   param_scheduler = [
@@ -192,8 +192,8 @@ Tricks not implemented by the optimizer should be implemented through optimizer 
 
 ## Customize training schedules
 
-By default we use step learning rate with 1x schedule, this calls [MultiStepLR](https://github.com/open-mmlab/mmengine/blob/main/mmengine/optim/scheduler/lr_scheduler.py#L139) in MMEngine.
-We support many other learning rate schedule [here](https://github.com/open-mmlab/mmengine/blob/main/mmengine/optim/scheduler/lr_scheduler.py), such as `CosineAnnealingLR` and `PolyLR` schedule. Here are some examples
+By default we use step learning rate with 1x schedule, this calls [MultiStepLR](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/optim/scheduler/lr_scheduler.py#L139) in MMEngine.
+We support many other learning rate schedule [here](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/optim/scheduler/lr_scheduler.py), such as `CosineAnnealingLR` and `PolyLR` schedule. Here are some examples
 
 - Poly schedule:
 
@@ -230,7 +230,7 @@ By default, `EpochBasedTrainLoop` is used in `train_cfg` and validation is done 
 train_cfg = dict(type='EpochBasedTrainLoop', max_epochs=12, val_begin=1, val_interval=1)
 ```
 
-Actually, both [`IterBasedTrainLoop`](https://github.com/open-mmlab/mmengine/blob/main/mmengine/runner/loops.py#L183%5D) and [`EpochBasedTrainLoop`](https://github.com/open-mmlab/mmengine/blob/main/mmengine/runner/loops.py#L18) support dynamical interval, see the following example.
+Actually, both [`IterBasedTrainLoop`](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/runner/loops.py#L183%5D) and [`EpochBasedTrainLoop`](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/runner/loops.py#L18) support dynamical interval, see the following example.
 
 ```python
 # Before 365001th iteration, we do evaluation every 5000 iterations.
@@ -253,7 +253,7 @@ train_cfg = dict(
 
 #### 1. Implement a new hook
 
-MMEngine provides many useful [hooks](https://mmengine.readthedocs.io/en/latest/tutorials/hooks.html), but there are some occasions when the users might need to implement a new hook. MMDetection supports customized hooks in training in v3.0 . Thus the users could implement a hook directly in mmdet or their mmdet-based codebases and use the hook by only modifying the config in training.
+MMEngine provides many useful [hooks](https://onedl-mmengine.readthedocs.io/en/latest/tutorials/hooks.html), but there are some occasions when the users might need to implement a new hook. MMDetection supports customized hooks in training in v3.0 . Thus the users could implement a hook directly in mmdet or their mmdet-based codebases and use the hook by only modifying the config in training.
 Here we give an example of creating a new hook in mmdet and using it in training.
 
 ```python
@@ -290,7 +290,7 @@ class MyHook(Hook):
                          outputs: Optional[dict] = None) -> None:
 ```
 
-Depending on the functionality of the hook, the users need to specify what the hook will do at each stage of the training in `before_run`, `after_run`, `before_train`, `after_train` , `before_train_epoch`, `after_train_epoch`, `before_train_iter`, and `after_train_iter`.  There are more points where hooks can be inserted, refer to [base hook class](https://github.com/open-mmlab/mmengine/blob/main/mmengine/hooks/hook.py#L9) for more detail.
+Depending on the functionality of the hook, the users need to specify what the hook will do at each stage of the training in `before_run`, `after_run`, `before_train`, `after_train` , `before_train_epoch`, `after_train_epoch`, `before_train_iter`, and `after_train_iter`.  There are more points where hooks can be inserted, refer to [base hook class](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/hooks/hook.py#L9) for more detail.
 
 #### 2. Register the new hook
 
@@ -357,7 +357,7 @@ There are some common hooks that are registered through `default_hooks`, they ar
 
 #### CheckpointHook
 
-Except saving checkpoints periodically, [`CheckpointHook`](https://github.com/open-mmlab/mmengine/blob/main/mmengine/hooks/checkpoint_hook.py#L19) provides other options such as `max_keep_ckpts`, `save_optimizer` and etc. The users could set `max_keep_ckpts` to only save small number of checkpoints or decide whether to store state dict of optimizer by `save_optimizer`. More details of the arguments are [here](https://github.com/open-mmlab/mmengine/blob/main/mmengine/hooks/checkpoint_hook.py#L19)
+Except saving checkpoints periodically, [`CheckpointHook`](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/hooks/checkpoint_hook.py#L19) provides other options such as `max_keep_ckpts`, `save_optimizer` and etc. The users could set `max_keep_ckpts` to only save small number of checkpoints or decide whether to store state dict of optimizer by `save_optimizer`. More details of the arguments are [here](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/hooks/checkpoint_hook.py#L19)
 
 ```python
 default_hooks = dict(
@@ -370,7 +370,7 @@ default_hooks = dict(
 
 #### LoggerHook
 
-The `LoggerHook` enables to set intervals. And the detail usages can be found in the [docstring](https://github.com/open-mmlab/mmengine/blob/main/mmengine/hooks/logger_hook.py#L18).
+The `LoggerHook` enables to set intervals. And the detail usages can be found in the [docstring](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/hooks/logger_hook.py#L18).
 
 ```python
 default_hooks = dict(logger=dict(type='LoggerHook', interval=50))
@@ -378,7 +378,7 @@ default_hooks = dict(logger=dict(type='LoggerHook', interval=50))
 
 #### DetVisualizationHook
 
-`DetVisualizationHook` use `DetLocalVisualizer` to visualize prediction results, and `DetLocalVisualizer` current supports different backends, e.g., `TensorboardVisBackend` and `WandbVisBackend` (see [docstring](https://github.com/open-mmlab/mmengine/blob/main/mmengine/visualization/vis_backend.py) for more detail). The users could add multi backbends to do visualization, as follows.
+`DetVisualizationHook` use `DetLocalVisualizer` to visualize prediction results, and `DetLocalVisualizer` current supports different backends, e.g., `TensorboardVisBackend` and `WandbVisBackend` (see [docstring](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/visualization/vis_backend.py) for more detail). The users could add multi backbends to do visualization, as follows.
 
 ```python
 default_hooks = dict(

@@ -31,7 +31,7 @@ This paper explores a pragmatic approach to multiple object tracking where the m
 
 | Method |      Detector      | ReID | Train Set  | Test Set | Public | Inf time (fps) | HOTA | MOTA | IDF1 |  FP   |  FN   | IDSw. |                                     Config                                     |                                                       Download                                                       |
 | :----: | :----------------: | :--: | :--------: | :------: | :----: | :------------: | :--: | :--: | :--: | :---: | :---: | :---: | :----------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: |
-|  SORT  | R50-FasterRCNN-FPN |  -   | half-train | half-val |   N    |      18.6      | 52.0 | 62.0 | 57.8 | 15150 | 40410 | 5847  | [config](sort_faster-rcnn_r50_fpn_8xb2-4e_mot17halftrain_test-mot17halfval.py) | [detector](https://download.openmmlab.com/mmtracking/mot/faster_rcnn/faster-rcnn_r50_fpn_4e_mot17-half-64ee2ed4.pth) |
+|  SORT  | R50-FasterRCNN-FPN |  -   | half-train | half-val |   N    |      18.6      | 52.0 | 62.0 | 57.8 | 15150 | 40410 | 5847  | [config](sort_faster-rcnn_r50_fpn_8xb2-4e_mot17halftrain_test-mot17halfval.py) | [detector](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmtracking/mot/faster_rcnn/faster-rcnn_r50_fpn_4e_mot17-half-64ee2ed4.pth) |
 
 ## Get started
 

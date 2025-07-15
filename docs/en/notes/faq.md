@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-We list some common troubles faced by many users and their corresponding solutions here. Feel free to enrich the list if you find any frequent issues and have ways to help others to solve them. If the contents here do not cover your issue, please create an issue using the [provided templates](https://github.com/open-mmlab/mmdetection/blob/main/.github/ISSUE_TEMPLATE/error-report.md/) and make sure you fill in all required information in the template.
+We list some common troubles faced by many users and their corresponding solutions here. Feel free to enrich the list if you find any frequent issues and have ways to help others to solve them. If the contents here do not cover your issue, please create an issue using the [provided templates](https://github.com/vbti-development/onedl-mmdetection/blob/main/.github/ISSUE_TEMPLATE/error-report.md/) and make sure you fill in all required information in the template.
 
 ## PyTorch 2.0 Support
 
@@ -61,13 +61,13 @@ Compatible MMDetection, MMEngine, and MMCV versions are shown as below. Please c
 
 **Note:**
 
-1. If you want to install mmdet-v2.x, the compatible MMDetection and MMCV versions table can be found at [here](https://mmdetection.readthedocs.io/en/stable/faq.html#installation). Please choose the correct version of MMCV to avoid installation issues.
+1. If you want to install mmdet-v2.x, the compatible MMDetection and MMCV versions table can be found at [here](https://onedl-mmdetection.readthedocs.io/en/stable/faq.html#installation). Please choose the correct version of MMCV to avoid installation issues.
 2. In MMCV-v2.x, `mmcv-full` is rename to `mmcv`, if you want to install `mmcv` without CUDA ops, you can install `mmcv-lite`.
 
 - "No module named 'mmcv.ops'"; "No module named 'mmcv.\_ext'".
 
   1. Uninstall existing `mmcv-lite` in the environment using `pip uninstall mmcv-lite`.
-  2. Install `mmcv` following the [installation instruction](https://mmcv.readthedocs.io/en/2.x/get_started/installation.html).
+  2. Install `mmcv` following the [installation instruction](https://onedl-mmcv.readthedocs.io/en/2.x/get_started/installation.html).
 
 - "Microsoft Visual C++ 14.0 or graeter is required" during installation on Windows.
 
@@ -205,7 +205,7 @@ Compatible MMDetection, MMEngine, and MMCV versions are shown as below. Please c
 
   1. This error indicates that your module has parameters that were not used in producing loss. This phenomenon may be caused by running different branches in your code in DDP mode.
   2. You can set `find_unused_parameters = True` in the config to solve the above problems, but this will slow down the training speed.
-  3. You can set `detect_anomalous_params = True` in the config or `model_wrapper_cfg = dict(type='MMDistributedDataParallel', detect_anomalous_params=True)` (More details please refer to [MMEngine](https://github.com/open-mmlab/mmengine/blob/main/mmengine/model/wrappers/distributed.py#L91)) to get the name of those unused parameters. Note `detect_anomalous_params = True` will slow down the training speed, so it is recommended for debugging only.
+  3. You can set `detect_anomalous_params = True` in the config or `model_wrapper_cfg = dict(type='MMDistributedDataParallel', detect_anomalous_params=True)` (More details please refer to [MMEngine](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/model/wrappers/distributed.py#L91)) to get the name of those unused parameters. Note `detect_anomalous_params = True` will slow down the training speed, so it is recommended for debugging only.
 
 - Save the best model
 

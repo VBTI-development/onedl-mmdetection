@@ -55,7 +55,7 @@ Optional arguments:
 Assuming that you have already downloaded the checkpoints to the directory `checkpoints/`.
 
 1. Test RTMDet and visualize the results. Press any key for the next image.
-   Config and checkpoint files are available [here](https://github.com/open-mmlab/mmdetection/tree/main/configs/rtmdet).
+   Config and checkpoint files are available [here](https://github.com/vbti-development/onedl-mmdetection/tree/main/configs/rtmdet).
 
    ```shell
    python tools/test.py \
@@ -65,7 +65,7 @@ Assuming that you have already downloaded the checkpoints to the directory `chec
    ```
 
 2. Test RTMDet and save the painted images for future visualization.
-   Config and checkpoint files are available [here](https://github.com/open-mmlab/mmdetection/tree/main/configs/rtmdet).
+   Config and checkpoint files are available [here](https://github.com/vbti-development/onedl-mmdetection/tree/main/configs/rtmdet).
 
    ```shell
    python tools/test.py \
@@ -178,7 +178,7 @@ bash tools/dist_test.sh \
     [--show]
 ```
 
-Assuming that the checkpoints in the [model zoo](https://mmdetection.readthedocs.io/en/latest/modelzoo_statistics.html) have been downloaded to the directory `checkpoints/`, we can test Mask R-CNN on COCO test-dev with 8 GPUs, and generate JSON files using the following command.
+Assuming that the checkpoints in the [model zoo](https://onedl-mmdetection.readthedocs.io/en/latest/modelzoo_statistics.html) have been downloaded to the directory `checkpoints/`, we can test Mask R-CNN on COCO test-dev with 8 GPUs, and generate JSON files using the following command.
 
 ```sh
 ./tools/dist_test.sh \
@@ -201,7 +201,7 @@ Or you can set it through `--cfg-options` as `--cfg-options test_dataloader.batc
 
 ## Test Time Augmentation (TTA)
 
-Test time augmentation (TTA) is a data augmentation strategy used during the test phase. It applies different augmentations, such as flipping and scaling, to the same image for model inference, and then merges the predictions of each augmented image to obtain more accurate predictions. To make it easier for users to use TTA, MMEngine provides [BaseTTAModel](https://mmengine.readthedocs.io/en/latest/api/generated/mmengine.model.BaseTTAModel.html#mmengine.model.BaseTTAModel) class, which allows users to implement different TTA strategies by simply extending the BaseTTAModel class according to their needs.
+Test time augmentation (TTA) is a data augmentation strategy used during the test phase. It applies different augmentations, such as flipping and scaling, to the same image for model inference, and then merges the predictions of each augmented image to obtain more accurate predictions. To make it easier for users to use TTA, MMEngine provides [BaseTTAModel](https://onedl-mmengine.readthedocs.io/en/latest/api/generated/mmengine.model.BaseTTAModel.html#mmengine.model.BaseTTAModel) class, which allows users to implement different TTA strategies by simply extending the BaseTTAModel class according to their needs.
 
 In MMDetection, we provides [DetTTAModel](../../../mmdet/models/test_time_augs/det_tta.py) class, which inherits from BaseTTAModel.
 
@@ -300,4 +300,4 @@ Here are more TTA use cases for your reference:
 - [YOLOX](../../../configs/rtmdet/rtmdet_tta.py)
 - [RTMDet](../../../configs/yolox/yolox_tta.py)
 
-For more advanced usage and data flow of TTA, please refer to [MMEngine](https://mmengine.readthedocs.io/en/latest/advanced_tutorials/test_time_augmentation.html#data-flow). We will support instance segmentation TTA latter.
+For more advanced usage and data flow of TTA, please refer to [MMEngine](https://onedl-mmengine.readthedocs.io/en/latest/advanced_tutorials/test_time_augmentation.html#data-flow). We will support instance segmentation TTA latter.

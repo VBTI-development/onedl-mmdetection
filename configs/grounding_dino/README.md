@@ -9,7 +9,7 @@
 In this paper, we present an open-set object detector, called Grounding DINO, by marrying Transformer-based detector DINO with grounded pre-training, which can detect arbitrary objects with human inputs such as category names or referring expressions. The key solution of open-set object detection is introducing language to a closed-set detector for open-set concept generalization. To effectively fuse language and vision modalities, we conceptually divide a closed-set detector into three phases and propose a tight fusion solution, which includes a feature enhancer, a language-guided query selection, and a cross-modality decoder for cross-modality fusion. While previous works mainly evaluate open-set object detection on novel categories, we propose to also perform evaluations on referring expression comprehension for objects specified with attributes. Grounding DINO performs remarkably well on all three settings, including benchmarks on COCO, LVIS, ODinW, and RefCOCO/+/g. Grounding DINO achieves a 52.5 AP on the COCO detection zero-shot transfer benchmark, i.e., without any training data from COCO. It sets a new record on the ODinW zero-shot benchmark with a mean 26.1 AP.
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/42299757/0ed51aeb-3d53-42d8-8563-f6d21364ac95"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/42299757/0ed51aeb-3d53-42d8-8563-f6d21364ac95"/>
 </div>
 
 ## Installation
@@ -46,7 +46,7 @@ tokenizer.save_pretrained("your path/bert-base-uncased")
 ```
 cd $MMDETROOT
 
-wget https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth
+wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth
 
 python demo/image_demo.py \
 	demo/demo.jpg \
@@ -56,18 +56,18 @@ python demo/image_demo.py \
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/42299757/3a3bd6f1-e2ed-43d4-aa22-0bb07ee6f20b"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/42299757/3a3bd6f1-e2ed-43d4-aa22-0bb07ee6f20b"/>
 </div>
 
 ## COCO Results and Models
 
 |       Model        | Backbone |   Style   |  COCO mAP  | Official COCO mAP |                  Pre-Train Data                  |                             Config                             |                                                                                                                                                                                                                                         Download                                                                                                                                                                                                                                          |
 | :----------------: | :------: | :-------: | :--------: | :---------------: | :----------------------------------------------: | :------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|  Grounding DINO-T  |  Swin-T  | Zero-shot |    48.5    |       48.4        |                 O365,GoldG,Cap4M                 | [config](grounding_dino_swin-t_pretrain_obj365_goldg_cap4m.py) |                                                                                                                                                                                    [model](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth)                                                                                                                                                                                     |
-|  Grounding DINO-T  |  Swin-T  | Finetune  | 58.1(+0.9) |       57.2        |                 O365,GoldG,Cap4M                 |   [config](grounding_dino_swin-t_finetune_16xb2_1x_coco.py)    | [model](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/grounding_dino_swin-t_finetune_16xb2_1x_coco/grounding_dino_swin-t_finetune_16xb2_1x_coco_20230921_152544-5f234b20.pth)                                                                                                \| [log](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/grounding_dino_swin-t_finetune_16xb2_1x_coco/grounding_dino_swin-t_finetune_16xb2_1x_coco_20230921_152544.log.json) |
-|  Grounding DINO-B  |  Swin-B  | Zero-shot |    56.9    |       56.7        | COCO,O365,GoldG,Cap4M,OpenImage,ODinW-35,RefCOCO |     [config](grounding_dino_swin-b_pretrain_mixeddata.py)      |                                                                                                                                                                                  [model](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swinb_cogcoor_mmdet-55949c9c.pth)                                                                                                                                                                                   |
-|  Grounding DINO-B  |  Swin-B  | Finetune  |    59.7    |                   | COCO,O365,GoldG,Cap4M,OpenImage,ODinW-35,RefCOCO |   [config](grounding_dino_swin-b_finetune_16xb2_1x_coco.py)    |                                               [model](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/grounding_dino_swin-b_finetune_16xb2_1x_coco/grounding_dino_swin-b_finetune_16xb2_1x_coco_20230921_153201-f219e0c0.pth)   \| [log](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/grounding_dino_swin-b_finetune_16xb2_1x_coco/grounding_dino_swin-b_finetune_16xb2_1x_coco_20230921_153201.log.json)                                                |
-| Grounding DINO-R50 |   R50    |  Scratch  | 48.9(+0.8) |       48.1        |                                                  |      [config](grounding_dino_r50_scratch_8xb2_1x_coco.py)      |                                                                                          [model](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/grounding_dino_r50_scratch_8xb2_1x_coco/grounding_dino_r50_scratch_1x_coco-fe0002f2.pth)  \| [log](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/grounding_dino_r50_scratch_8xb2_1x_coco/20230922_114218.json)                                                                                           |
+|  Grounding DINO-T  |  Swin-T  | Zero-shot |    48.5    |       48.4        |                 O365,GoldG,Cap4M                 | [config](grounding_dino_swin-t_pretrain_obj365_goldg_cap4m.py) |                                                                                                                                                                                    [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth)                                                                                                                                                                                     |
+|  Grounding DINO-T  |  Swin-T  | Finetune  | 58.1(+0.9) |       57.2        |                 O365,GoldG,Cap4M                 |   [config](grounding_dino_swin-t_finetune_16xb2_1x_coco.py)    | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/grounding_dino_swin-t_finetune_16xb2_1x_coco/grounding_dino_swin-t_finetune_16xb2_1x_coco_20230921_152544-5f234b20.pth)                                                                                                \| [log](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/grounding_dino_swin-t_finetune_16xb2_1x_coco/grounding_dino_swin-t_finetune_16xb2_1x_coco_20230921_152544.log.json) |
+|  Grounding DINO-B  |  Swin-B  | Zero-shot |    56.9    |       56.7        | COCO,O365,GoldG,Cap4M,OpenImage,ODinW-35,RefCOCO |     [config](grounding_dino_swin-b_pretrain_mixeddata.py)      |                                                                                                                                                                                  [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/groundingdino_swinb_cogcoor_mmdet-55949c9c.pth)                                                                                                                                                                                   |
+|  Grounding DINO-B  |  Swin-B  | Finetune  |    59.7    |                   | COCO,O365,GoldG,Cap4M,OpenImage,ODinW-35,RefCOCO |   [config](grounding_dino_swin-b_finetune_16xb2_1x_coco.py)    |                                               [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/grounding_dino_swin-b_finetune_16xb2_1x_coco/grounding_dino_swin-b_finetune_16xb2_1x_coco_20230921_153201-f219e0c0.pth)   \| [log](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/grounding_dino_swin-b_finetune_16xb2_1x_coco/grounding_dino_swin-b_finetune_16xb2_1x_coco_20230921_153201.log.json)                                                |
+| Grounding DINO-R50 |   R50    |  Scratch  | 48.9(+0.8) |       48.1        |                                                  |      [config](grounding_dino_r50_scratch_8xb2_1x_coco.py)      |                                                                                          [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/grounding_dino_r50_scratch_8xb2_1x_coco/grounding_dino_r50_scratch_1x_coco-fe0002f2.pth)  \| [log](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/grounding_dino_r50_scratch_8xb2_1x_coco/20230922_114218.json)                                                                                           |
 
 Note:
 
@@ -79,8 +79,8 @@ Note:
 
 |      Model       | MiniVal APr | MiniVal APc | MiniVal APf | MiniVal AP | Val1.0 APr | Val1.0 APc | Val1.0 APf | Val1.0 AP |                  Pre-Train Data                  |                               Config                                |                                                        Download                                                        |
 | :--------------: | :---------: | :---------: | :---------: | :--------: | :--------: | :--------: | :--------: | :-------: | :----------------------------------------------: | :-----------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
-| Grounding DINO-T |    18.8     |    24.2     |    34.7     |    28.8    |    10.1    |    15.3    |    29.9    |   20.1    |                 O365,GoldG,Cap4M                 | [config](lvis/grounding_dino_swin-t_pretrain_zeroshot_mini-lvis.py) |   [model](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth)   |
-| Grounding DINO-B |    27.9     |    33.4     |    37.2     |    34.7    |    19.0    |    24.1    |    32.9    |   26.7    | COCO,O365,GoldG,Cap4M,OpenImage,ODinW-35,RefCOCO | [config](lvis/grounding_dino_swin-b_pretrain_zeroshot_mini-lvis.py) | [model](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swinb_cogcoor_mmdet-55949c9c.pth) |
+| Grounding DINO-T |    18.8     |    24.2     |    34.7     |    28.8    |    10.1    |    15.3    |    29.9    |   20.1    |                 O365,GoldG,Cap4M                 | [config](lvis/grounding_dino_swin-t_pretrain_zeroshot_mini-lvis.py) |   [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth)   |
+| Grounding DINO-B |    27.9     |    33.4     |    37.2     |    34.7    |    19.0    |    24.1    |    32.9    |   26.7    | COCO,O365,GoldG,Cap4M,OpenImage,ODinW-35,RefCOCO | [config](lvis/grounding_dino_swin-b_pretrain_zeroshot_mini-lvis.py) | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/groundingdino_swinb_cogcoor_mmdet-55949c9c.pth) |
 
 Note:
 
@@ -155,7 +155,7 @@ Learning visual representations from natural language supervision has recently s
 
 |      Model       |  Pre-Train Data  | Val R@1 | Val R@5 | Val R@10 | Tesst R@1 | Test R@5 | Test R@10 |                          Config                           |                                                                                                                                                                                                                                         Download                                                                                                                                                                                                                                          |
 | :--------------: | :--------------: | ------- | ------- | -------- | --------- | -------- | --------- | :-------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Grounding DINO-T | O365,GoldG,Cap4M | 87.8    | 96.6    | 98.0     | 88.1      | 96.9     | 98.2      | [config](grounding_dino_swin-t_finetune_16xb2_1x_coco.py) | [model](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/grounding_dino_swin-t_finetune_16xb2_1x_coco/grounding_dino_swin-t_finetune_16xb2_1x_coco_20230921_152544-5f234b20.pth)                                                                                                \| [log](https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/grounding_dino_swin-t_finetune_16xb2_1x_coco/grounding_dino_swin-t_finetune_16xb2_1x_coco_20230921_152544.log.json) |
+| Grounding DINO-T | O365,GoldG,Cap4M | 87.8    | 96.6    | 98.0     | 88.1      | 96.9     | 98.2      | [config](grounding_dino_swin-t_finetune_16xb2_1x_coco.py) | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/grounding_dino_swin-t_finetune_16xb2_1x_coco/grounding_dino_swin-t_finetune_16xb2_1x_coco_20230921_152544-5f234b20.pth)                                                                                                \| [log](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/grounding_dino_swin-t_finetune_16xb2_1x_coco/grounding_dino_swin-t_finetune_16xb2_1x_coco_20230921_152544.log.json) |
 
 Note:
 
@@ -196,8 +196,8 @@ Test Command
 
 ```shell
 cd mmdetection
-./tools/dist_test.sh configs/grounding_dino/refcoco/grounding_dino_swin-t_pretrain_zeroshot_refexp.py https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth 8
-./tools/dist_test.sh configs/grounding_dino/refcoco/grounding_dino_swin-b_pretrain_zeroshot_refexp.py https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swinb_cogcoor_mmdet-55949c9c.pth 8
+./tools/dist_test.sh configs/grounding_dino/refcoco/grounding_dino_swin-t_pretrain_zeroshot_refexp.py https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth 8
+./tools/dist_test.sh configs/grounding_dino/refcoco/grounding_dino_swin-b_pretrain_zeroshot_refexp.py https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/groundingdino_swinb_cogcoor_mmdet-55949c9c.pth 8
 ```
 
 ## Description Detection Dataset
@@ -228,7 +228,7 @@ To facilitate fine-tuning on custom datasets, we use a simple cat dataset as an 
 
 ```shell
 cd mmdetection
-wget https://download.openmmlab.com/mmyolo/data/cat_dataset.zip
+wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmyolo/data/cat_dataset.zip
 unzip cat_dataset.zip -d data/cat/
 ```
 
@@ -252,17 +252,17 @@ The single image visualization is as follows:
 
 ```shell
 cd mmdetection
-python demo/image_demo.py data/cat/images/IMG_20211205_120756.jpg configs/grounding_dino/grounding_dino_swin-t_finetune_8xb2_20e_cat.py --weights https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth --texts cat.
+python demo/image_demo.py data/cat/images/IMG_20211205_120756.jpg configs/grounding_dino/grounding_dino_swin-t_finetune_8xb2_20e_cat.py --weights https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth --texts cat.
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/89173261-16f1-4fd9-ac63-8dc2dcda6616" alt="cat dataset"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/89173261-16f1-4fd9-ac63-8dc2dcda6616" alt="cat dataset"/>
 </div>
 
 The test dataset evaluation on single card is as follows:
 
 ```shell
-python tools/test.py configs/grounding_dino/grounding_dino_swin-t_finetune_8xb2_20e_cat.py https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth
+python tools/test.py configs/grounding_dino/grounding_dino_swin-t_finetune_8xb2_20e_cat.py https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth
 ```
 
 ```text
@@ -313,5 +313,5 @@ python demo/image_demo.py data/cat/images/IMG_20211205_120756.jpg configs/ground
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/5a027b00-8adb-4283-a47b-2f7a0a2c96d4" alt="cat dataset"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/5a027b00-8adb-4283-a47b-2f7a0a2c96d4" alt="cat dataset"/>
 </div>

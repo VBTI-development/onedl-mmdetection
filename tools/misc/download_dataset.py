@@ -167,7 +167,7 @@ def main():
         ],
         balloon=[
             # src link: https://github.com/matterport/Mask_RCNN/releases/download/v2.1/balloon_dataset.zip # noqa
-            'https://download.openmmlab.com/mmyolo/data/balloon_dataset.zip'
+            'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmyolo/data/balloon_dataset.zip'
         ],
         # Note: There is no download link for Objects365-V1 right now. If you
         # would like to download Objects365-V1, please visit

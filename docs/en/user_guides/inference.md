@@ -1,16 +1,16 @@
 # Inference with existing models
 
-MMDetection provides hundreds of pre-trained detection models in [Model Zoo](https://mmdetection.readthedocs.io/en/latest/model_zoo.html).
+MMDetection provides hundreds of pre-trained detection models in [Model Zoo](https://onedl-mmdetection.readthedocs.io/en/latest/model_zoo.html).
 This note will show how to inference, which means using trained models to detect objects on images.
 
-In MMDetection, a model is defined by a [configuration file](https://mmdetection.readthedocs.io/en/latest/user_guides/config.html) and existing model parameters are saved in a checkpoint file.
+In MMDetection, a model is defined by a [configuration file](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/config.html) and existing model parameters are saved in a checkpoint file.
 
-To start with, we recommend [RTMDet](https://github.com/open-mmlab/mmdetection/tree/main/configs/rtmdet) with this [configuration file](https://github.com/open-mmlab/mmdetection/blob/main/configs/rtmdet/rtmdet_l_8xb32-300e_coco.py) and this [checkpoint file](https://download.openmmlab.com/mmdetection/v3.0/rtmdet/rtmdet_l_8xb32-300e_coco/rtmdet_l_8xb32-300e_coco_20220719_112030-5a0be7c4.pth). It is recommended to download the checkpoint file to `checkpoints` directory.
+To start with, we recommend [RTMDet](https://github.com/vbti-development/onedl-mmdetection/tree/main/configs/rtmdet) with this [configuration file](https://github.com/vbti-development/onedl-mmdetection/blob/main/configs/rtmdet/rtmdet_l_8xb32-300e_coco.py) and this [checkpoint file](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/rtmdet_l_8xb32-300e_coco/rtmdet_l_8xb32-300e_coco_20220719_112030-5a0be7c4.pth). It is recommended to download the checkpoint file to `checkpoints` directory.
 
 ## High-level APIs for inference - `Inferencer`
 
 In OpenMMLab, all the inference operations are unified into a new interface - Inferencer. Inferencer is designed to expose a neat and simple API to users, and shares very similar interface across different OpenMMLab libraries.
-A notebook demo can be found in [demo/inference_demo.ipynb](https://github.com/open-mmlab/mmdetection/blob/main/demo/inference_demo.ipynb).
+A notebook demo can be found in [demo/inference_demo.ipynb](https://github.com/vbti-development/onedl-mmdetection/blob/main/demo/inference_demo.ipynb).
 
 ### Basic Usage
 
@@ -29,7 +29,7 @@ inferencer('demo/demo.jpg', show=True)
 The resulting output will be displayed in a new window:.
 
 <div align="center">
-    <img src='https://github.com/open-mmlab/mmdetection/assets/27466624/311df42d-640a-4a5b-9ad9-9ba7f3ec3a2f' />
+    <img src='https://github.com/vbti-development/onedl-mmdetection/assets/27466624/311df42d-640a-4a5b-9ad9-9ba7f3ec3a2f' />
 </div>
 
 ```{note}
@@ -67,11 +67,11 @@ Each Inferencer must be initialized with a model. You can also choose the infere
   inferencer = DetInferencer(model='path/to/rtmdet_config.py', weights='path/to/rtmdet.pth')
   ```
 
-- By default, [MMEngine](https://github.com/open-mmlab/mmengine/) dumps config to the weight. If you have a weight trained on MMEngine, you can also pass the path to the weight file to `weights` without specifying `model`:
+- By default, [MMEngine](https://github.com/vbti-development/onedl-mmengine/) dumps config to the weight. If you have a weight trained on MMEngine, you can also pass the path to the weight file to `weights` without specifying `model`:
 
   ```python
   # It will raise an error if the config file cannot be found in the weight. Currently, within the MMDetection model repository, only the weights of ddq-detr-4scale_r50 can be loaded in this manner.
-  inferencer = DetInferencer(weights='https://download.openmmlab.com/mmdetection/v3.0/ddq/ddq-detr-4scale_r50_8xb2-12e_coco/ddq-detr-4scale_r50_8xb2-12e_coco_20230809_170711-42528127.pth')
+  inferencer = DetInferencer(weights='https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/ddq/ddq-detr-4scale_r50_8xb2-12e_coco/ddq-detr-4scale_r50_8xb2-12e_coco_20230809_170711-42528127.pth')
   ```
 
 - Passing config file to `model` without specifying `weight` will result in a randomly initialized model.
@@ -79,7 +79,7 @@ Each Inferencer must be initialized with a model. You can also choose the infere
 ### Device
 
 Each Inferencer instance is bound to a device.
-By default, the best device is automatically decided by [MMEngine](https://github.com/open-mmlab/mmengine/). You can also alter the device by specifying the `device` argument. For example, you can use the following code to create an Inferencer on GPU 1.
+By default, the best device is automatically decided by [MMEngine](https://github.com/vbti-development/onedl-mmengine/). You can also alter the device by specifying the `device` argument. For example, you can use the following code to create an Inferencer on GPU 1.
 
 ```python
 inferencer = DetInferencer(model='rtmdet_tiny_8xb32-300e_coco', device='cuda:1')
@@ -219,7 +219,7 @@ Here are extensive lists of parameters that you can use.
 ## Demos
 
 We also provide four demo scripts, implemented with high-level APIs and supporting functionality codes.
-Source codes are available [here](https://github.com/open-mmlab/mmdetection/blob/main/demo).
+Source codes are available [here](https://github.com/vbti-development/onedl-mmdetection/blob/main/demo).
 
 ### Image demo
 
@@ -341,7 +341,7 @@ Examples:
 
 ```shell
 # inferecnce without tta
-wget -P checkpoint https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r101_fpn_2x_coco/faster_rcnn_r101_fpn_2x_coco_bbox_mAP-0.398_20200504_210455-1d2dac9c.pth
+wget -P checkpoint https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/faster_rcnn/faster_rcnn_r101_fpn_2x_coco/faster_rcnn_r101_fpn_2x_coco_bbox_mAP-0.398_20200504_210455-1d2dac9c.pth
 
 python demo/large_image_demo.py \
     demo/large_image.jpg \
@@ -349,7 +349,7 @@ python demo/large_image_demo.py \
     checkpoint/faster_rcnn_r101_fpn_2x_coco_bbox_mAP-0.398_20200504_210455-1d2dac9c.pth
 
 # inference with tta
-wget -P checkpoint https://download.openmmlab.com/mmdetection/v2.0/retinanet/retinanet_r50_fpn_1x_coco/retinanet_r50_fpn_1x_coco_20200130-c2398f9e.pth
+wget -P checkpoint https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/retinanet/retinanet_r50_fpn_1x_coco/retinanet_r50_fpn_1x_coco_20200130-c2398f9e.pth
 
 python demo/large_image_demo.py \
     demo/large_image.jpg \
@@ -378,7 +378,7 @@ MMDetection has already implemented GLIP algorithms and provided the weights, yo
 
 ```shell
 cd mmdetection
-wget https://download.openmmlab.com/mmdetection/v3.0/glip/glip_tiny_a_mmdet-b3654169.pth
+wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/glip/glip_tiny_a_mmdet-b3654169.pth
 ```
 
 ### Inference

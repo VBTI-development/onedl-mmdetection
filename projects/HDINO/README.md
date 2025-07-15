@@ -9,7 +9,7 @@
 One-to-one set matching is a key design for DETR to establish its end-to-end capability, so that object detection does not require a hand-crafted NMS (non-maximum suppression) to remove duplicate detections. This end-to-end signature is important for the versatility of DETR, and it has been generalized to broader vision tasks. However, we note that there are few queries assigned as positive samples and the one-to-one set matching significantly reduces the training efficacy of positive samples. We propose a simple yet effective method based on a hybrid matching scheme that combines the original one-to-one matching branch with an auxiliary one-to-many matching branch during training. Our hybrid strategy has been shown to significantly improve accuracy. In inference, only the original one-to-one match branch is used, thus maintaining the end-to-end merit and the same inference efficiency of DETR. The method is named H-DETR, and it shows that a wide range of representative DETR methods can be consistently improved across a wide range of visual tasks, including DeformableDETR, PETRv2, PETR, and TransTrack, among others.
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/254f3037-1ca8-4d0c-8f3e-45d8ec3f9abc"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/254f3037-1ca8-4d0c-8f3e-45d8ec3f9abc"/>
 </div>
 
 ## Results and Models

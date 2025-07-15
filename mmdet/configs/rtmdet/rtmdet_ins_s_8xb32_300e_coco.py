@@ -1,6 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 
-# Please refer to https://mmengine.readthedocs.io/en/latest/advanced_tutorials/config.html#a-pure-python-style-configuration-file-beta for more details. # noqa
+# Please refer to https://onedl-mmengine.readthedocs.io/en/latest/advanced_tutorials/config.html#a-pure-python-style-configuration-file-beta for more details. # noqa
 # mmcv >= 2.0.1
 # mmengine >= 0.8.0
 
@@ -22,7 +22,7 @@ from mmdet.datasets.transforms.transforms import (CachedMixUp, CachedMosaic,
 from mmdet.engine.hooks.pipeline_switch_hook import PipelineSwitchHook
 from mmdet.models.layers.ema import ExpMomentumEMA
 
-checkpoint = 'https://download.openmmlab.com/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-s_imagenet_600e.pth'  # noqa
+checkpoint = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-s_imagenet_600e.pth'  # noqa
 model.update(
     dict(
         backbone=dict(

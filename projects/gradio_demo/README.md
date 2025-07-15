@@ -19,7 +19,7 @@ Currently supported tasks:
 
 ## Preview
 
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/421adfab-98cb-4b65-ab99-15d154cba95f" width="90%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/421adfab-98cb-4b65-ab99-15d154cba95f" width="90%"/>
 
 ## Requirements
 

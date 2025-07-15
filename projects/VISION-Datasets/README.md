@@ -7,7 +7,7 @@
 Despite progress in vision-based inspection algorithms, real-world industrial challenges – specifically in data availability, quality, and complex production requirements – often remain under-addressed. We introduce the VISION Datasets, a diverse collection of 14 industrial inspection datasets, uniquely poised to meet these challenges. Unlike previous datasets, VISION brings versatility to defect detection, offering annotation masks across all splits and catering to various detection methodologies. Our datasets also feature instance-segmentation annotation, enabling precise defect identification. With a total of 18k images encompassing 44 defect types, VISION strives to mirror a wide range of real-world production scenarios. By supporting two ongoing challenge competitions on the VISION Datasets, we hope to foster further advancements in vision-based industrial inspection. The datasets are available at https://huggingface.co/datasets/VISION-Workshop/VISION-Datasets.
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/1d8e81d1-0023-49ce-a855-a09149509fe7" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/1d8e81d1-0023-49ce-a855-a09149509fe7" width="70%"/>
 </div>
 
 ## Dataset Preparation

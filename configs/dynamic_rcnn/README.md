@@ -16,7 +16,7 @@ Although two-stage object detectors have continuously advanced the state-of-the-
 
 | Backbone |  Style  | Lr schd | Mem (GB) | Inf time (fps) | box AP |                   Config                    |                                                                                                                                      Download                                                                                                                                      |
 | :------: | :-----: | :-----: | :------: | :------------: | :----: | :-----------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|   R-50   | pytorch |   1x    |   3.8    |                |  38.9  | [config](./dynamic-rcnn_r50_fpn_1x_coco.py) | [model](https://download.openmmlab.com/mmdetection/v2.0/dynamic_rcnn/dynamic_rcnn_r50_fpn_1x/dynamic_rcnn_r50_fpn_1x-62a3f276.pth) \| [log](https://download.openmmlab.com/mmdetection/v2.0/dynamic_rcnn/dynamic_rcnn_r50_fpn_1x/dynamic_rcnn_r50_fpn_1x_20200618_095048.log.json) |
+|   R-50   | pytorch |   1x    |   3.8    |                |  38.9  | [config](./dynamic-rcnn_r50_fpn_1x_coco.py) | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/dynamic_rcnn/dynamic_rcnn_r50_fpn_1x/dynamic_rcnn_r50_fpn_1x-62a3f276.pth) \| [log](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/dynamic_rcnn/dynamic_rcnn_r50_fpn_1x/dynamic_rcnn_r50_fpn_1x_20200618_095048.log.json) |
 
 ## Citation
 

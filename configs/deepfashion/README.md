@@ -14,7 +14,7 @@ Recent advances in clothes recognition have been driven by the construction of c
 
 ## Introduction
 
-[MMFashion](https://github.com/open-mmlab/mmfashion) develops "fashion parsing and segmentation" module
+[MMFashion](https://github.com/vbti-development/onedl-mmfashion) develops "fashion parsing and segmentation" module
 based on the dataset
 [DeepFashion-Inshop](https://drive.google.com/drive/folders/0B7EVK8r0v71pVDZFQXRsMDZCX1E?usp=sharing).
 Its annotation follows COCO style.
@@ -55,7 +55,7 @@ or creating your own config file.
 
 | Backbone | Model type |       Dataset       | bbox detection Average Precision | segmentation Average Precision |                      Config                      |                                                                                                                                       Download (Google)                                                                                                                                       |
 | :------: | :--------: | :-----------------: | :------------------------------: | :----------------------------: | :----------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| ResNet50 | Mask RCNN  | DeepFashion-In-shop |              0.599               |             0.584              | [config](./mask-rcnn_r50_fpn_15e_deepfashion.py) | [model](https://download.openmmlab.com/mmdetection/v2.0/deepfashion/mask_rcnn_r50_fpn_15e_deepfashion/mask_rcnn_r50_fpn_15e_deepfashion_20200329_192752.pth) \| [log](https://download.openmmlab.com/mmdetection/v2.0/deepfashion/mask_rcnn_r50_fpn_15e_deepfashion/20200329_192752.log.json) |
+| ResNet50 | Mask RCNN  | DeepFashion-In-shop |              0.599               |             0.584              | [config](./mask-rcnn_r50_fpn_15e_deepfashion.py) | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/deepfashion/mask_rcnn_r50_fpn_15e_deepfashion/mask_rcnn_r50_fpn_15e_deepfashion_20200329_192752.pth) \| [log](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/deepfashion/mask_rcnn_r50_fpn_15e_deepfashion/20200329_192752.log.json) |
 
 ## Citation
 

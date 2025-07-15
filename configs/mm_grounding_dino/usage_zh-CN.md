@@ -48,7 +48,7 @@ nltk.download('averaged_perceptron_tagger', download_dir='~/nltk_data')
 为了方便演示，您可以提前下载 MM Grounding DINO-T 模型权重到当前路径下
 
 ```shell
-wget load_from = 'https://download.openmmlab.com/mmdetection/v3.0/mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det_20231204_095047-b448804b.pth' # noqa
+wget load_from = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det_20231204_095047-b448804b.pth' # noqa
 ```
 
 ## 推理
@@ -71,7 +71,7 @@ python demo/image_demo.py images/animals.png \
 会在当前路径下生成 `outputs/vis/animals.png` 的预测结果，如下图所示
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/1659211c-c117-4097-a659-84ab26efa2d3" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/1659211c-c117-4097-a659-84ab26efa2d3" width="70%"/>
 </div>
 
 由于鸵鸟并不在 COCO 80 类中, 因此不会检测出来。
@@ -87,7 +87,7 @@ python demo/image_demo.py images/animals.png \
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/93554cf5-a1c5-4318-8e16-615cd2270fb6" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/93554cf5-a1c5-4318-8e16-615cd2270fb6" width="70%"/>
 </div>
 
 不同的 `--chunked-size` 会导致不同的预测效果，您可以自行尝试。
@@ -104,7 +104,7 @@ python demo/image_demo.py images/animals.png \
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/75e4a81f-4644-4306-8f66-60e684ac32db" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/75e4a81f-4644-4306-8f66-60e684ac32db" width="70%"/>
 </div>
 
 **(3) Phrase Grounding**
@@ -121,7 +121,7 @@ python demo/image_demo.py images/apples.jpg \
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/7c5839d2-3266-49e1-8be6-012f258d710b" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/7c5839d2-3266-49e1-8be6-012f258d710b" width="70%"/>
 </div>
 
 程序内部会自动切分出 `many apples` 作为名词短语，然后检测出对应物体。不同的输入描述对预测结果影响很大。
@@ -139,7 +139,7 @@ python demo/image_demo.py images/fruit.jpg \
 21,31 对应的名词短语为 `watermelon`，45,59 对应的名词短语为 `a white bottle`。
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/15080faf-048d-4201-a126-a9c773580f5e" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/15080faf-048d-4201-a126-a9c773580f5e" width="70%"/>
 </div>
 
 **(4) 指代性表达式理解**
@@ -155,7 +155,7 @@ python demo/image_demo.py images/apples.jpg \
 ```
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/40b970c3-60cd-4c78-a2cb-2c41b0442932" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/40b970c3-60cd-4c78-a2cb-2c41b0442932" width="70%"/>
 </div>
 
 ## 评测
@@ -202,37 +202,37 @@ python tools/test.py configs/mm_grounding_dino/refcoco/grounding_dino_swin-t_pre
 1. COCO2017 val 结果：
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/3a0fa894-c0a5-4c1f-bdf0-1c6fd17abafa" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/3a0fa894-c0a5-4c1f-bdf0-1c6fd17abafa" width="70%"/>
 </div>
 
 2. Flickr30k Entities 结果：
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/e9f2667f-9dca-464b-b995-599aa2731b34" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/e9f2667f-9dca-464b-b995-599aa2731b34" width="70%"/>
 </div>
 
 3. DOD 结果：
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/c71a306b-1055-4344-ba1d-ae4c57f2cb2f" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/c71a306b-1055-4344-ba1d-ae4c57f2cb2f" width="70%"/>
 </div>
 
 4. RefCOCO val 结果：
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/b175959d-d788-4b5e-8b11-e8e34753457f" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/b175959d-d788-4b5e-8b11-e8e34753457f" width="70%"/>
 </div>
 
 5. RefCOCO testA 结果：
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/c087f889-f96c-4355-8a15-7dc2738b4223" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/c087f889-f96c-4355-8a15-7dc2738b4223" width="70%"/>
 </div>
 
 6. gRefCOCO val 结果：
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/96c2e783-17da-462e-a7cf-937555e26c90" width="70%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/96c2e783-17da-462e-a7cf-937555e26c90" width="70%"/>
 </div>
 
 ## 模型训练
@@ -295,7 +295,7 @@ tokens_positive 表示当前 phrase 在 caption 中的字符位置。
 
 ```shell
 cd mmdetection
-wget https://download.openmmlab.com/mmyolo/data/cat_dataset.zip
+wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmyolo/data/cat_dataset.zip
 unzip cat_dataset.zip -d data/cat/
 ```
 
@@ -483,7 +483,7 @@ python tools/analysis_tools/browse_grounding_raw.py data/flickr30k_entities/ fli
 会在 `your_output_dir` 目录下生成可视化结果，如下图所示：
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/a1c72d52-fa52-4ebe-b793-716d34e7b83f" width="50%"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/a1c72d52-fa52-4ebe-b793-716d34e7b83f" width="50%"/>
 </div>
 
 3. 继续训练提高性能

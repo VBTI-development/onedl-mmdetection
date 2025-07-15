@@ -37,12 +37,12 @@ pip install timm
 pip install mmpretrain
 ```
 
-See [this document](https://mmpretrain.readthedocs.io/en/latest/get_started.html#installation) for the details of MMPretrain installation.
+See [this document](https://onedl-mmpretrain.readthedocs.io/en/latest/get_started.html#installation) for the details of MMPretrain installation.
 
 ### Edit config
 
 - See example configs for basic usage.
-- See the documents of [timm feature extraction](https://rwightman.github.io/pytorch-image-models/feature_extraction/#multi-scale-feature-maps-feature-pyramid) and [TIMMBackbone](https://mmpretrain.readthedocs.io/en/latest/api/generated/mmpretrain.models.backbones.TIMMBackbone.html#mmpretrain.models.backbones.TIMMBackbone) for details.
+- See the documents of [timm feature extraction](https://rwightman.github.io/pytorch-image-models/feature_extraction/#multi-scale-feature-maps-feature-pyramid) and [TIMMBackbone](https://onedl-mmpretrain.readthedocs.io/en/latest/api/generated/mmpretrain.models.backbones.TIMMBackbone.html#mmpretrain.models.backbones.TIMMBackbone) for details.
 - Which feature map is output depends on the backbone.
   Please check `backbone out_channels` and `backbone out_strides` in your log, and modify `model.neck.in_channels` and `model.backbone.out_indices` if necessary.
 - If you use Vision Transformer models that do not support `features_only=True`, add `custom_hooks = []` to your config to disable `NumClassCheckHook`.

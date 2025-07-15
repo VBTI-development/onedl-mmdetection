@@ -1149,7 +1149,7 @@ In the original implementation, `get_subset_by_classes` is not related to the fl
 - Fix deprecated `Conv2d` from mmcv.ops (#3791)
 - Fix device bug in RepPoints (#3836)
 - Fix SABL validating bug (#3849)
-- Use `https://download.openmmlab.com/mmcv/dist/index.html` for installing MMCV (#3840)
+- Use `https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmcv/dist/index.html` for installing MMCV (#3840)
 - Fix nonzero in NMS for PyTorch 1.6.0 (#3867)
 - Fix the API change bug of PAA (#3883)
 - Fix typo in bbox_flip (#3886)
@@ -1172,7 +1172,7 @@ __Highlights__
 - Support new methods [SABL](https://arxiv.org/abs/1912.04260), [YOLOv3](https://arxiv.org/abs/1804.02767), and [PAA Assign](https://arxiv.org/abs/2007.08103)
 - Support Batch Inference
 - Start to publish `mmdet` package to PyPI since v2.3.0
-- Switch model zoo to download.openmmlab.com
+- Switch model zoo to pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev
 
 __Backwards Incompatible Changes__
 
@@ -1223,7 +1223,7 @@ __Improvements__
 - Add include_bkg in ClassBalancedDataset (#3577)
 - Using config's loading in inference_detector (#3611)
 - Add ATSS ResNet-101 models in model zoo (#3639)
-- Update urls to download.openmmlab.com (#3665)
+- Update urls to pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev (#3665)
 - Support non-mask training for CocoDataset (#3711)
 
 ### v2.3.0 (5/8/2020)
@@ -1391,7 +1391,7 @@ In this release, we made lots of major refactoring and modifications.
 
 2. __Higher performance__. We change some default hyperparameters with no additional cost, which leads to a gain of performance for most models. Please refer to [compatibility](compatibility.md#training-hyperparameters) for details.
 
-3. __More documentation and tutorials__. We add a bunch of documentation and tutorials to help users get started more smoothly. Read it [here](https://mmdetection.readthedocs.io/en/latest/).
+3. __More documentation and tutorials__. We add a bunch of documentation and tutorials to help users get started more smoothly. Read it [here](https://onedl-mmdetection.readthedocs.io/en/latest/).
 
 4. __Support PyTorch 1.5__. The support for 1.1 and 1.2 is dropped, and we switch to some new APIs.
 
@@ -1497,7 +1497,7 @@ This release mainly improves the code quality and add more docstrings.
 
 __Highlights__
 
-- Documentation is online now: <https://mmdetection.readthedocs.io>.
+- Documentation is online now: <https://onedl-mmdetection.readthedocs.io>.
 - Support new models: [ATSS](https://arxiv.org/abs/1912.02424).
 - DCN is now available with the api `build_conv_layer` and `ConvModule` like the normal conv layer.
 - A tool to collect environment information is available for trouble shooting.

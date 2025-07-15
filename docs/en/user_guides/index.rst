@@ -1,7 +1,7 @@
 Train & Test
 **************
 
-MMDetection provides hundreds of pretrained detection models in `Model Zoo <https://mmdetection.readthedocs.io/en/latest/model_zoo.html>`_,
+MMDetection provides hundreds of pretrained detection models in `Model Zoo <https://onedl-mmdetection.readthedocs.io/en/latest/model_zoo.html>`_,
 and supports multiple standard datasets, including Pascal VOC, COCO, CityScapes, LVIS, etc. This note will show how to perform common tasks on these existing models and standard datasets:
 
 

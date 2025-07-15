@@ -3,7 +3,7 @@
 projects. Each node is a child of the root registry in MMEngine.
 
 More details can be found at
-https://mmengine.readthedocs.io/en/latest/tutorials/registry.html.
+https://onedl-mmengine.readthedocs.io/en/latest/tutorials/registry.html.
 """
 
 from mmengine.registry import DATA_SAMPLERS as MMENGINE_DATA_SAMPLERS

@@ -1,6 +1,6 @@
 # Weight initialization
 
-During training, a proper initialization strategy is beneficial to speeding up the training or obtaining a higher performance. [MMCV](https://github.com/open-mmlab/mmcv/blob/master/mmcv/cnn/utils/weight_init.py) provide some commonly used methods for initializing modules like `nn.Conv2d`. Model initialization in MMdetection mainly uses `init_cfg`. Users can initialize models with following two steps:
+During training, a proper initialization strategy is beneficial to speeding up the training or obtaining a higher performance. [MMCV](https://github.com/vbti-development/onedl-mmcv/blob/master/mmcv/cnn/utils/weight_init.py) provide some commonly used methods for initializing modules like `nn.Conv2d`. Model initialization in MMdetection mainly uses `init_cfg`. Users can initialize models with following two steps:
 
 1. Define `init_cfg` for a model or its components in `model_cfg`,  but `init_cfg` of children components have higher priority and will override `init_cfg` of parents modules.
 2. Build model as usual, but call `model.init_weights()` method explicitly, and model parameters will be initialized as configuration.
@@ -158,4 +158,4 @@ init_cfg = [dict(type='Constant', layer='Conv1d', val=1),
                checkpoint='torchvision://resnet50')
    ```
 
-More details can refer to the documentation in [MMEngine](https://mmengine.readthedocs.io/en/latest/advanced_tutorials/initialize.html)
+More details can refer to the documentation in [MMEngine](https://onedl-mmengine.readthedocs.io/en/latest/advanced_tutorials/initialize.html)

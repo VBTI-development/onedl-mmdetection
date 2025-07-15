@@ -25,7 +25,7 @@ detector.roi_head.bbox_head.bbox_coder.update(dict(clip_border=False))
 detector['init_cfg'] = dict(
     type='Pretrained',
     checkpoint=  # noqa: E251
-    'https://download.openmmlab.com/mmtracking/mot/faster_rcnn/'
+    'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmtracking/mot/faster_rcnn/'
     'faster-rcnn_r50_fpn_4e_mot17-half-64ee2ed4.pth')
 del _base_.model
 
@@ -62,7 +62,7 @@ model = dict(
         init_cfg=dict(
             type='Pretrained',
             checkpoint=  # noqa: E251
-            'https://download.openmmlab.com/mmtracking/mot/reid/tracktor_reid_r50_iter25245-a452f51f.pth'  # noqa: E501
+            'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmtracking/mot/reid/tracktor_reid_r50_iter25245-a452f51f.pth'  # noqa: E501
         )),
     tracker=dict(
         type='SORTTracker',

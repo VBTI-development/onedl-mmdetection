@@ -9,7 +9,7 @@
 The evaluation of object detection models is usually performed by optimizing a single metric, e.g. mAP, on a fixed set of datasets, e.g. Microsoft COCO and Pascal VOC. Due to image retrieval and annotation costs, these datasets consist largely of images found on the web and do not represent many real-life domains that are being modelled in practice, e.g. satellite, microscopic and gaming, making it difficult to assert the degree of generalization learned by the model. We introduce the Roboflow-100 (RF100) consisting of 100 datasets, 7 imagery domains, 224,714 images, and 805 class labels with over 11,170 labelling hours. We derived RF100 from over 90,000 public datasets, 60 million public images that are actively being assembled and labelled by computer vision practitioners in the open on the web application Roboflow Universe. By releasing RF100, we aim to provide a semantically diverse, multi-domain benchmark of datasets to help researchers test their model's generalizability with real-life data. RF100 download and benchmark replication are available on GitHub.
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/71b0eb6f-d710-4100-9fb1-9d5485e07fdb"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/71b0eb6f-d710-4100-9fb1-9d5485e07fdb"/>
 </div>
 
 ## Code Structure
@@ -42,7 +42,7 @@ Roboflow 100 dataset is hosted by Roboflow platform, and detailed download scrip
 Before downloading the data, you need to register an account on the Roboflow platform to get the API key.
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/6126e69e-85ce-4dec-8e7b-936c4fae29a6"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/6126e69e-85ce-4dec-8e7b-936c4fae29a6"/>
 </div>
 
 ```shell
@@ -92,7 +92,7 @@ The dataset takes up a total of 12.3G of storage space. If you don't want to tra
 Roboflow 100 dataset features are shown in the following figure
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/e2693662-3d16-49a4-af0b-2a03be7e16b6"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/e2693662-3d16-49a4-af0b-2a03be7e16b6"/>
 </div>
 
 If you want to have a clear understanding of the dataset, you can check the [roboflow-100-benchmark](https://github.com/roboflow/roboflow-100-benchmark) repository, which provides many dataset analysis scripts.
@@ -174,7 +174,7 @@ Currently, we provide the evaluation results of the Faster RCNN, TOOD and DINO a
 ## Result Analysis
 
 <div align=center>
-<img src="https://github.com/open-mmlab/mmdetection/assets/17425982/86420903-36a8-410d-9251-4304b9704f7d"/>
+<img src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/86420903-36a8-410d-9251-4304b9704f7d"/>
 </div>
 
 💎 The detailed table can be accessed directly [here](https://aicarrier.feishu.cn/drive/folder/QJ4rfqLzylIVTjdjYo3cunbinMh) 💎

@@ -14,12 +14,12 @@ Driven by improved architectures and better representation learning frameworks, 
 
 |   Method   |   Backbone    | Pretrain | Lr schd | Augmentation | Mem (GB) | box AP | mask AP |                            Config                            |                                                                                                                                                                                        Download                                                                                                                                                                                         |
 | :--------: | :-----------: | :------: | :-----: | :----------: | :------: | :----: | :-----: | :----------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Mask R-CNN | ConvNeXt-V2-B |  FCMAE   |   3x    |     LSJ      |   22.5   |  52.9  |  46.4   | [config](./mask-rcnn_convnext-v2-b_fpn_lsj-3x-fcmae_coco.py) | [model](https://download.openmmlab.com/mmdetection/v3.0/convnextv2/mask-rcnn_convnext-v2-b_fpn_lsj-3x-fcmae_coco/mask-rcnn_convnext-v2-b_fpn_lsj-3x-fcmae_coco_20230113_110947-757ee2dd.pth)  \| [log](https://download.openmmlab.com/mmdetection/v3.0/convnextv2/mask-rcnn_convnext-v2-b_fpn_lsj-3x-fcmae_coco/mask-rcnn_convnext-v2-b_fpn_lsj-3x-fcmae_coco_20230113_110947.log.json) |
+| Mask R-CNN | ConvNeXt-V2-B |  FCMAE   |   3x    |     LSJ      |   22.5   |  52.9  |  46.4   | [config](./mask-rcnn_convnext-v2-b_fpn_lsj-3x-fcmae_coco.py) | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/convnextv2/mask-rcnn_convnext-v2-b_fpn_lsj-3x-fcmae_coco/mask-rcnn_convnext-v2-b_fpn_lsj-3x-fcmae_coco_20230113_110947-757ee2dd.pth)  \| [log](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/convnextv2/mask-rcnn_convnext-v2-b_fpn_lsj-3x-fcmae_coco/mask-rcnn_convnext-v2-b_fpn_lsj-3x-fcmae_coco_20230113_110947.log.json) |
 
 **Note**:
 
 - This is a pre-release version of ConvNeXt-V2 object detection. The official finetuning setting of ConvNeXt-V2 has not been released yet.
-- ConvNeXt backbone needs to install [MMPretrain](https://github.com/open-mmlab/mmpretrain/) first, which has abundant backbones for downstream tasks.
+- ConvNeXt backbone needs to install [MMPretrain](https://github.com/vbti-development/onedl-mmpretrain/) first, which has abundant backbones for downstream tasks.
 
 ```shell
 pip install mmpretrain

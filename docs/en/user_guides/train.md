@@ -392,7 +392,7 @@ Using the function above, users can successfully convert the annotation file int
 
 ## Prepare a config
 
-The second step is to prepare a config thus the dataset could be successfully loaded. Assume that we want to use Mask R-CNN with FPN, the config to train the detector on balloon dataset is as below. Assume the config is under directory `configs/balloon/` and named as `mask-rcnn_r50-caffe_fpn_ms-poly-1x_balloon.py`, the config is as below. Please refer [Learn about Configs - MMDetection 3.0.0 documentation](https://mmdetection.readthedocs.io/en/latest/user_guides/config.html) to get detailed information about config files.
+The second step is to prepare a config thus the dataset could be successfully loaded. Assume that we want to use Mask R-CNN with FPN, the config to train the detector on balloon dataset is as below. Assume the config is under directory `configs/balloon/` and named as `mask-rcnn_r50-caffe_fpn_ms-poly-1x_balloon.py`, the config is as below. Please refer [Learn about Configs - MMDetection 3.0.0 documentation](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/config.html) to get detailed information about config files.
 
 ```python
 # The new config inherits a base config to highlight the necessary modification
@@ -431,7 +431,7 @@ val_evaluator = dict(ann_file=data_root + 'val/annotation_coco.json')
 test_evaluator = val_evaluator
 
 # We can use the pre-trained Mask RCNN model to obtain higher performance
-load_from = 'https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'
+load_from = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'
 
 ```
 
@@ -443,7 +443,7 @@ To train a model with the new config, you can simply run
 python tools/train.py configs/balloon/mask-rcnn_r50-caffe_fpn_ms-poly-1x_balloon.py
 ```
 
-For more detailed usages, please refer to the [training guide](https://mmdetection.readthedocs.io/en/latest/user_guides/train.html#train-predefined-models-on-standard-datasets).
+For more detailed usages, please refer to the [training guide](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/train.html#train-predefined-models-on-standard-datasets).
 
 ## Test and inference
 
@@ -453,4 +453,4 @@ To test the trained model, you can simply run
 python tools/test.py configs/balloon/mask-rcnn_r50-caffe_fpn_ms-poly-1x_balloon.py work_dirs/mask-rcnn_r50-caffe_fpn_ms-poly-1x_balloon/epoch_12.pth
 ```
 
-For more detailed usages, please refer to the [testing guide](https://mmdetection.readthedocs.io/en/latest/user_guides/test.html).
+For more detailed usages, please refer to the [testing guide](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/test.html).

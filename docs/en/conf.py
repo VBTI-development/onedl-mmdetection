@@ -88,7 +88,7 @@ html_theme_options = {
     'menu': [
         {
             'name': 'GitHub',
-            'url': 'https://github.com/open-mmlab/mmdetection'
+            'url': 'https://github.com/vbti-development/onedl-mmdetection'
         },
     ],
     # Specify the language of shared menu

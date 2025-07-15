@@ -28,7 +28,7 @@
 </p>
 
 <div align=center>
-    <img width=960 src="https://github.com/open-mmlab/mmdetection/assets/17425982/9c216387-02be-46e6-b0f2-b856f80f6d84"/>
+    <img width=960 src="https://github.com/vbti-development/onedl-mmdetection/assets/17425982/9c216387-02be-46e6-b0f2-b856f80f6d84"/>
 </div>
 
 <!-- [ALGORITHM] -->
