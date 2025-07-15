@@ -49,13 +49,6 @@ Welcome to MMDetection's documentation!
    notes/faq.md
    notes/compatibility.md
 
-.. toctree::
-   :caption: Switch Language
-
-   switch_language.md
-
-
-
 Indices and tables
 ==================
 
