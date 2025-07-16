@@ -23,6 +23,8 @@ __author__ = 'ychfan'
 # Code written by Piotr Dollar and Tsung-Yi Lin, 2014.
 # Licensed under the Simplified BSD License [see bsd.txt]
 
+# flake8: noqa E721
+
 import copy
 import itertools
 import json
@@ -47,7 +49,7 @@ class YTVIS:
         visualizing annotations.
 
         :param annotation_file (str | dict): location of annotation file or
-            dict results.
+        dict results.
         :param image_folder (str): location to the folder that hosts images.
         :return:
         """
@@ -105,10 +107,9 @@ class YTVIS:
         """Get ann ids that satisfy given filter conditions. default skips that
         filter.
 
-        :param vidIds  (int array)     : get anns for given vids
-               catIds  (int array)     : get anns for given cats
-               areaRng (float array)   : get anns for given area range
-               iscrowd (boolean)       : get anns for given crowd label
+        :param vidIds (int array) : get anns for given vids catIds (int array)
+            : get anns for given cats areaRng (float array) : get anns for
+            given area range iscrowd (boolean) : get anns for given crowd label
         :return: ids (int array)       : integer array of ann ids
         """
         vidIds = vidIds if _isArrayLike(vidIds) else [vidIds]
@@ -139,7 +140,7 @@ class YTVIS:
         return ids
 
     def getCatIds(self, catNms=[], supNms=[], catIds=[]):
-        """filtering parameters. default skips that filter.
+        """Filtering parameters. default skips that filter.
 
         :param catNms (str array)  : get cats for given cat names
         :param supNms (str array)  : get cats for given supercategory names

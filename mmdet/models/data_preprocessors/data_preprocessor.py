@@ -236,7 +236,7 @@ class BatchSyncRandomResize(nn.Module):
     def forward(
         self, inputs: Tensor, data_samples: List[DetDataSample]
     ) -> Tuple[Tensor, List[DetDataSample]]:
-        """resize a batch of images and bboxes to shape ``self._input_size``"""
+        """Resize a batch of images and bboxes to shape ``self._input_size``"""
         h, w = inputs.shape[-2:]
         if self._input_size is None:
             self._input_size = (h, w)
@@ -599,7 +599,7 @@ class BatchResize(nn.Module):
     def forward(
         self, inputs: Tensor, data_samples: List[DetDataSample]
     ) -> Tuple[Tensor, List[DetDataSample]]:
-        """resize a batch of images and bboxes."""
+        """Resize a batch of images and bboxes."""
 
         batch_height, batch_width = inputs.shape[-2:]
         target_height, target_width, scale = self.get_target_size(

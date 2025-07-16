@@ -14,10 +14,10 @@ from tqdm import tqdm
 class COCOevalMP(COCOeval):
 
     def _prepare(self):
-        '''
-        Prepare ._gts and ._dts for evaluation based on params
-        :return: None
-        '''
+        """Prepare ._gts and ._dts for evaluation based on params :return:
+
+        None.
+        """
 
         def _toMask(anns, coco):
             # modify ann['segmentation'] by reference

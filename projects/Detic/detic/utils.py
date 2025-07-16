@@ -58,7 +58,7 @@ def get_class_names(dataset):
 
 
 def reset_cls_layer_weight(model, weight):
-    if type(weight) == str:
+    if type(weight) == str:  # noqa: E721
         print_log(f'Resetting cls_layer_weight from file: {weight}')
         zs_weight = torch.tensor(
             np.load(weight),

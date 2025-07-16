@@ -651,6 +651,7 @@ class ConditionalAttention(BaseModule):
                 key_padding_mask: Tensor = None,
                 is_first: bool = False) -> Tensor:
         """Forward function for `ConditionalAttention`.
+
         Args:
             query (Tensor): The input query with shape [bs, num_queries,
                 embed_dims].

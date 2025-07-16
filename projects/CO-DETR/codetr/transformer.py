@@ -539,8 +539,8 @@ class DeformableDetrTransformer(Transformer):
 
         inter_references_out = inter_references
         if self.as_two_stage:
-            return inter_states, init_reference_out,\
-                inter_references_out, enc_outputs_class,\
+            return inter_states, init_reference_out, \
+                inter_references_out, enc_outputs_class, \
                 enc_outputs_coord_unact
         return inter_states, init_reference_out, \
             inter_references_out, None, None
@@ -867,11 +867,11 @@ class CoDeformableDetrTransformer(DeformableDetrTransformer):
         inter_references_out = inter_references
         if self.as_two_stage:
             if return_encoder_output:
-                return inter_states, init_reference_out,\
-                    inter_references_out, enc_outputs_class,\
+                return inter_states, init_reference_out, \
+                    inter_references_out, enc_outputs_class, \
                     enc_outputs_coord_unact, memory
-            return inter_states, init_reference_out,\
-                inter_references_out, enc_outputs_class,\
+            return inter_states, init_reference_out, \
+                inter_references_out, enc_outputs_class, \
                 enc_outputs_coord_unact
         if return_encoder_output:
             return inter_states, init_reference_out, \

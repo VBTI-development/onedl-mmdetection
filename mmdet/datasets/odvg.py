@@ -11,7 +11,7 @@ from .base_det_dataset import BaseDetDataset
 
 @DATASETS.register_module()
 class ODVGDataset(BaseDetDataset):
-    """object detection and visual grounding dataset."""
+    """Object detection and visual grounding dataset."""
 
     def __init__(self,
                  *args,

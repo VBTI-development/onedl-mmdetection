@@ -37,7 +37,7 @@ class TridentFasterRCNN(FasterRCNN):
 
     def _forward(self, batch_inputs: Tensor,
                  batch_data_samples: SampleList) -> tuple:
-        """copy the ``batch_data_samples`` to fit multi-branch."""
+        """Copy the ``batch_data_samples`` to fit multi-branch."""
         num_branch = self.num_branch \
             if self.training or self.test_branch_idx == -1 else 1
         trident_data_samples = batch_data_samples * num_branch
@@ -46,7 +46,7 @@ class TridentFasterRCNN(FasterRCNN):
 
     def loss(self, batch_inputs: Tensor,
              batch_data_samples: SampleList) -> dict:
-        """copy the ``batch_data_samples`` to fit multi-branch."""
+        """Copy the ``batch_data_samples`` to fit multi-branch."""
         num_branch = self.num_branch \
             if self.training or self.test_branch_idx == -1 else 1
         trident_data_samples = batch_data_samples * num_branch
@@ -57,7 +57,7 @@ class TridentFasterRCNN(FasterRCNN):
                 batch_inputs: Tensor,
                 batch_data_samples: SampleList,
                 rescale: bool = True) -> SampleList:
-        """copy the ``batch_data_samples`` to fit multi-branch."""
+        """Copy the ``batch_data_samples`` to fit multi-branch."""
         num_branch = self.num_branch \
             if self.training or self.test_branch_idx == -1 else 1
         trident_data_samples = batch_data_samples * num_branch

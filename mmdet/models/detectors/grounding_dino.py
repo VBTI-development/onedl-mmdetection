@@ -48,8 +48,8 @@ class GroundingDINO(DINO):
 
     <https://arxiv.org/abs/2303.05499>`_
 
-    Code is modified from the `official github repo
-    <https://github.com/IDEA-Research/GroundingDINO>`_.
+    Code is modified from the
+    `official github repo <https://github.com/IDEA-Research/GroundingDINO>`_.
     """
 
     def __init__(self,

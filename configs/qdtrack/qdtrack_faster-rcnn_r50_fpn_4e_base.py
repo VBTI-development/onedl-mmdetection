@@ -20,7 +20,8 @@ detector.roi_head.bbox_head.bbox_coder.update(dict(clip_border=False))
 detector['init_cfg'] = dict(
     type='Pretrained',
     checkpoint=  # noqa: E251
-    'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/faster_rcnn/'
+    'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/'
+    'mmdetection/v2.0/faster_rcnn/'
     'faster_rcnn_r50_fpn_1x_coco-person/'
     'faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth'
     # noqa: E501

@@ -434,7 +434,7 @@ class CenterNetHead(BaseDenseHead):
 
     def _bboxes_nms(self, bboxes: Tensor, labels: Tensor,
                     cfg: ConfigDict) -> Tuple[Tensor, Tensor]:
-        """bboxes nms."""
+        """Bboxes nms."""
         if labels.numel() > 0:
             max_num = cfg.max_per_img
             bboxes, keep = batched_nms(bboxes[:, :4], bboxes[:,

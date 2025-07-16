@@ -113,8 +113,8 @@ class MlvlPointGenerator:
 
     @property
     def num_base_priors(self) -> List[int]:
-        """list[int]: The number of priors (points) at a point
-        on the feature grid"""
+        """List[int]: The number of priors (points) at a point on the feature
+        grid."""
         return [1 for _ in range(len(self.strides))]
 
     def _meshgrid(self,

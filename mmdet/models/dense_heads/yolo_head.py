@@ -136,7 +136,7 @@ class YOLOV3Head(BaseDenseHead):
         return 5 + self.num_classes
 
     def _init_layers(self) -> None:
-        """initialize conv layers in YOLOv3 head."""
+        """Initialize conv layers in YOLOv3 head."""
         self.convs_bridge = nn.ModuleList()
         self.convs_pred = nn.ModuleList()
         for i in range(self.num_levels):
@@ -155,7 +155,7 @@ class YOLOV3Head(BaseDenseHead):
             self.convs_pred.append(conv_pred)
 
     def init_weights(self) -> None:
-        """initialize weights."""
+        """Initialize weights."""
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
                 normal_init(m, mean=0, std=0.01)

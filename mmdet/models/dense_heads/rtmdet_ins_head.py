@@ -430,7 +430,7 @@ class RTMDetInsHead(RTMDetHead):
             rescale: bool = False,
             with_nms: bool = True,
             img_meta: Optional[dict] = None) -> InstanceData:
-        """bbox and mask post-processing method.
+        """Bbox and mask post-processing method.
 
         The boxes would be rescaled to the original image scale and do
         the nms operation. Usually `with_nms` is False is used for aug test.
@@ -519,7 +519,7 @@ class RTMDetInsHead(RTMDetHead):
         return results
 
     def parse_dynamic_params(self, flatten_kernels: Tensor) -> tuple:
-        """split kernel head prediction to conv weight and bias."""
+        """Split kernel head prediction to conv weight and bias."""
         n_inst = flatten_kernels.size(0)
         n_layers = len(self.weight_nums)
         params_splits = list(
@@ -727,7 +727,7 @@ class RTMDetInsHead(RTMDetHead):
         (anchor_list, labels_list, label_weights_list, bbox_targets_list,
          assign_metrics_list, sampling_results_list) = cls_reg_targets
 
-        losses_cls, losses_bbox,\
+        losses_cls, losses_bbox, \
             cls_avg_factors, bbox_avg_factors = multi_apply(
                 self.loss_by_feat_single,
                 cls_scores,

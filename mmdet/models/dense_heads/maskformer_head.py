@@ -103,7 +103,7 @@ class MaskFormerHead(AnchorFreeHead):
         self.transformer_decoder = DetrTransformerDecoder(
             **transformer_decoder)
         self.decoder_embed_dims = self.transformer_decoder.embed_dims
-        if type(self.pixel_decoder) == PixelDecoder and (
+        if type(self.pixel_decoder) == PixelDecoder and (  # noqa: E721
                 self.decoder_embed_dims != in_channels[-1]
                 or enforce_decoder_input_project):
             self.decoder_input_proj = Conv2d(

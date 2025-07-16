@@ -109,7 +109,7 @@ class KnowledgeDistillationSingleStageDetector(SingleStageDetector):
         super().train(mode)
 
     def __setattr__(self, name: str, value: Any) -> None:
-        """Set attribute, i.e. self.name = value
+        """Set attribute, i.e. self.name = value.
 
         This reloading prevent the teacher model from being registered as a
         nn.Module. The teacher module is registered as a plain object, so that

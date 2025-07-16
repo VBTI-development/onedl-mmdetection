@@ -354,7 +354,7 @@ class YOLOXHead(BaseDenseHead):
                            rescale: bool = False,
                            with_nms: bool = True,
                            img_meta: Optional[dict] = None) -> InstanceData:
-        """bbox post-processing method.
+        """Bbox post-processing method.
 
         The boxes would be rescaled to the original image scale and do
         the nms operation. Usually `with_nms` is False is used for aug test.

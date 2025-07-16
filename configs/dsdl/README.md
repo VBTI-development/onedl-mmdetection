@@ -47,8 +47,8 @@ To overcome such difficulties, we develop **Data Set Description Language (DSDL)
 
 - detection task:
 
-  |  Datasets  |                                                                                         Model                                                                                          | box AP |           Config            |
-  | :--------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----: | :-------------------------: |
+  |  Datasets  |                                                                                                    Model                                                                                                    | box AP |           Config            |
+  | :--------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----: | :-------------------------: |
   |  VOC07+12  |             [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/pascal_voc/faster_rcnn_r50_fpn_1x_voc0712/faster_rcnn_r50_fpn_1x_voc0712_20220320_192712-54bef0f3.pth)             | 80.3\* |   [config](./voc0712.py)    |
   |    COCO    |                   [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_1x_coco/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth)                   |  37.4  |     [config](./coco.py)     |
   | Objects365 |       [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/objects365/faster_rcnn_r50_fpn_16x4_1x_obj365v2/faster_rcnn_r50_fpn_16x4_1x_obj365v2_20221220_175040-5910b015.pth)       |  19.8  | [config](./objects365v2.py) |
@@ -58,6 +58,6 @@ To overcome such difficulties, we develop **Data Set Description Language (DSDL)
 
 - instance segmentation task:
 
-  | Datasets |                                                                    Model                                                                     | box AP | mask AP |            Config            |
-  | :------: | :------------------------------------------------------------------------------------------------------------------------------------------: | :----: | :-----: | :--------------------------: |
+  | Datasets |                                                                               Model                                                                               | box AP | mask AP |            Config            |
+  | :------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----: | :-----: | :--------------------------: |
   |   COCO   | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_fpn_1x_coco/mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth) |  38.1  |  34.7   | [config](./coco_instance.py) |

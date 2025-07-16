@@ -217,7 +217,7 @@ class SABLHead(BBoxHead):
     def _add_fc_branch(self, num_branch_fcs: int, in_channels: int,
                        roi_feat_size: int,
                        fc_out_channels: int) -> nn.ModuleList:
-        """build fc layers."""
+        """Build fc layers."""
         in_channels = in_channels * roi_feat_size * roi_feat_size
         branch_fcs = nn.ModuleList()
         for i in range(num_branch_fcs):
@@ -226,7 +226,7 @@ class SABLHead(BBoxHead):
         return branch_fcs
 
     def cls_forward(self, cls_x: Tensor) -> Tensor:
-        """forward of classification fc layers."""
+        """Forward of classification fc layers."""
         cls_x = cls_x.view(cls_x.size(0), -1)
         for fc in self.cls_fcs:
             cls_x = self.relu(fc(cls_x))
@@ -309,7 +309,7 @@ class SABLHead(BBoxHead):
         return bbox_pred
 
     def reg_forward(self, reg_x: Tensor) -> tuple:
-        """forward of regression branch."""
+        """Forward of regression branch."""
         outs = self.side_aware_feature_extractor(reg_x)
         edge_offset_preds = []
         edge_cls_preds = []

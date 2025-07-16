@@ -100,8 +100,8 @@ def run_ner(caption: str) -> Tuple[list, list]:
 def create_positive_map(tokenized,
                         tokens_positive: list,
                         max_num_entities: int = 256) -> Tensor:
-    """construct a map such that positive_map[i,j] = True
-    if box i is associated to token j
+    """Construct a map such that positive_map[i,j] = True if box i is
+    associated to token j.
 
     Args:
         tokenized: The tokenized input.

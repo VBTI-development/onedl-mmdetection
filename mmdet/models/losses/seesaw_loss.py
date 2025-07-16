@@ -139,7 +139,7 @@ class SeesawLoss(nn.Module):
         self.custom_accuracy = True
 
     def _split_cls_score(self, cls_score: Tensor) -> Tuple[Tensor, Tensor]:
-        """split cls_score.
+        """Split cls_score.
 
         Args:
             cls_score (Tensor): The prediction with shape (N, C + 2).

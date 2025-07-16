@@ -20,7 +20,7 @@ from .base_video_metric import BaseVideoMetric, collect_tracking_results
 
 @METRICS.register_module()
 class YouTubeVISMetric(BaseVideoMetric):
-    """mAP evaluation metrics for the VIS task.
+    """MAP evaluation metrics for the VIS task.
 
     Args:
         metric (str | list[str]): Metrics to be evaluated.

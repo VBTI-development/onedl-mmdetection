@@ -829,7 +829,7 @@ class CornerHead(BaseDenseHead):
 
     def _bboxes_nms(self, bboxes: Tensor, labels: Tensor,
                     cfg: ConfigDict) -> Tuple[Tensor, Tensor]:
-        """bboxes nms."""
+        """Bboxes nms."""
         if 'nms_cfg' in cfg:
             warning.warn('nms_cfg in test_cfg will be deprecated. '
                          'Please rename it as nms')

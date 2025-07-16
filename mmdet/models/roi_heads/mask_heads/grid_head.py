@@ -183,7 +183,7 @@ class GridHead(BaseModule):
         self.loss_grid = MODELS.build(loss_grid)
 
     def forward(self, x: Tensor) -> Dict[str, Tensor]:
-        """forward function of ``GridHead``.
+        """Forward function of ``GridHead``.
 
         Args:
             x (Tensor): RoI features, has shape

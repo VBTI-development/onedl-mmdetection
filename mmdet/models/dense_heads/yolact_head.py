@@ -531,7 +531,7 @@ class YOLACTHead(AnchorHead):
                            rescale: bool = False,
                            img_meta: Optional[dict] = None,
                            **kwargs) -> InstanceData:
-        """bbox post-processing method.
+        """Bbox post-processing method.
 
         The boxes would be rescaled to the original image scale and do
         the nms operation. Usually `with_nms` is False is used for aug test.

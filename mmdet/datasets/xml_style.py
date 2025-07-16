@@ -114,7 +114,7 @@ class XMLDataset(BaseDetDataset):
     def _parse_instance_info(self,
                              raw_ann_info: ET,
                              minus_one: bool = True) -> List[dict]:
-        """parse instance information.
+        """Parse instance information.
 
         Args:
             raw_ann_info (ElementTree): ElementTree object.

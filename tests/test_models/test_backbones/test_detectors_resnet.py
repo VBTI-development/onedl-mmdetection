@@ -17,7 +17,7 @@ def test_detectorrs_resnet_backbone():
         sac=dict(type='SAC', use_deform=True),
         stage_with_sac=(False, True, True, True),
         output_img=True)
-    """Test init_weights config"""
+    """Test init_weights config."""
     with pytest.raises(AssertionError):
         # pretrained and init_cfg cannot be specified at the same time
         DetectoRS_ResNet(

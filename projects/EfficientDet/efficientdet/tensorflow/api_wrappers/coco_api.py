@@ -141,5 +141,5 @@ class COCOPanoptic(COCO):
             for id in ids:
                 anns += self.anns[id]
             return anns
-        elif type(ids) == int:
+        elif type(ids) == int:  # noqa: E721
             return self.anns[ids]

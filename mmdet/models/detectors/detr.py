@@ -18,8 +18,8 @@ class DETR(DetectionTransformer):
 
     <https://arxiv.org/pdf/2005.12872>`_.
 
-    Code is modified from the `official github repo
-    <https://github.com/facebookresearch/detr>`_.
+    Code is modified from the
+    `official github repo <https://github.com/facebookresearch/detr>`_.
     """
 
     def _init_layers(self) -> None:

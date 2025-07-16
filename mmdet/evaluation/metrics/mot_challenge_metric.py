@@ -23,7 +23,7 @@ from .base_video_metric import BaseVideoMetric
 
 
 def get_tmpdir() -> str:
-    """return the same tmpdir for all processes."""
+    """Return the same tmpdir for all processes."""
     rank, world_size = get_dist_info()
     MAX_LEN = 512
     # 32 is whitespace

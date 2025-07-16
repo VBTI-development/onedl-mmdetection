@@ -485,7 +485,7 @@ class PackReIDInputs(BaseTransform):
             img = results['img']
             label = np.stack(label, axis=0)  # (N,)
             assert all([type(v) == _type for v in results.values()]), \
-                'All items in the results must have the same type.'
+                'All items in the results must have the same type.'  # noqa: E721, E501
         else:
             img = [results['img']]
 

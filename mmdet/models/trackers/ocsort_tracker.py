@@ -141,7 +141,7 @@ class OCSORTTracker(SORTTracker):
         return speed
 
     def k_step_observation(self, track: Dict):
-        """return the observation k step away before."""
+        """Return the observation k step away before."""
         obs_seqs = track.obs
         num_obs = len(obs_seqs)
         if num_obs == 0:
@@ -243,7 +243,7 @@ class OCSORTTracker(SORTTracker):
         return row, col
 
     def last_obs(self, track: Dict):
-        """extract the last associated observation."""
+        """Extract the last associated observation."""
         for bbox in track.obs[::-1]:
             if bbox is not None:
                 return bbox
@@ -256,7 +256,7 @@ class OCSORTTracker(SORTTracker):
                        det_scores: torch.Tensor,
                        weight_iou_with_det_scores: Optional[bool] = False,
                        match_iou_thr: Optional[float] = 0.5):
-        """association for Observation-Centric Recovery.
+        """Association for Observation-Centric Recovery.
 
         As try to recover tracks from being lost whose estimated velocity is
         out- to-date, we use IoU-only matching strategy.

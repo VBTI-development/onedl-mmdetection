@@ -16,8 +16,8 @@ class ConditionalDETR(DETR):
 
     <https://arxiv.org/abs/2108.06152>`_.
 
-    Code is modified from the `official github repo
-    <https://github.com/Atten4Vis/ConditionalDETR>`_.
+    Code is modified from the
+    `official github repo <https://github.com/Atten4Vis/ConditionalDETR>`_.
     """
 
     def _init_layers(self) -> None:

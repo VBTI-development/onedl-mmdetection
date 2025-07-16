@@ -21,7 +21,7 @@ from .dino_head import DINOHead
 
 
 class ContrastiveEmbed(nn.Module):
-    """text visual ContrastiveEmbed layer.
+    """Text visual ContrastiveEmbed layer.
 
     Args:
         max_text_len (int, optional): Maximum length of text.

@@ -21,7 +21,7 @@ class PipelineSwitchHook(Hook):
         self._has_switched = False
 
     def before_train_epoch(self, runner):
-        """switch pipeline."""
+        """Switch pipeline."""
         epoch = runner.epoch
         train_loader = runner.train_dataloader
         if epoch >= self.switch_epoch and not self._has_switched:

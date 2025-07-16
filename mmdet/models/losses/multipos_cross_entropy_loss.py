@@ -11,7 +11,7 @@ from .utils import weight_reduce_loss
 
 @MODELS.register_module()
 class MultiPosCrossEntropyLoss(BaseModule):
-    """multi-positive targets cross entropy loss.
+    """Multi-positive targets cross entropy loss.
 
     Args:
         reduction (str, optional): The method to reduce the loss.

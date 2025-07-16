@@ -163,7 +163,7 @@ def register_box_converter(src_type: Union[str, type],
 
 
 def get_box_type(box_type: Union[str, type]) -> Tuple[str, type]:
-    """get both box type name and class.
+    """Get both box type name and class.
 
     Args:
         box_type (str or type): Single box type name or class.

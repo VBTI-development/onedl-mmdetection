@@ -173,7 +173,8 @@ def convert_model_info_to_pwc(model_infos):
                     Metrics={'PQ': metric}))
         pwc_model_info['Results'] = results
 
-        link_string = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/'
+        link_string = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/' \
+                      'mmdetection/v3.0/'
         link_string += '{}/{}'.format(model['config'].rstrip('.py'),
                                       osp.split(model['model_path'])[-1])
         pwc_model_info['Weights'] = link_string

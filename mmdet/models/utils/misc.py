@@ -21,10 +21,10 @@ class SigmoidGeometricMean(Function):
     """Forward and backward function of geometric mean of two sigmoid
     functions.
 
-    This implementation with analytical gradient function substitutes
-    the autograd function of (x.sigmoid() * y.sigmoid()).sqrt(). The
-    original implementation incurs none during gradient backprapagation
-    if both x and y are very small values.
+    This implementation with analytical gradient function substitutes the
+    autograd function of (x.sigmoid() * y.sigmoid()).sqrt(). The original
+    implementation incurs none during gradient backprapagation if both x and y
+    are very small values.
     """
 
     @staticmethod
@@ -252,7 +252,7 @@ def mask2ndarray(mask):
 
 
 def flip_tensor(src_tensor, flip_direction):
-    """flip tensor base on flip_direction.
+    """Flip tensor base on flip_direction.
 
     Args:
         src_tensor (Tensor): input feature map, shape (B, C, H, W).
@@ -602,7 +602,7 @@ def relative_coordinate_maps(
 
 
 def aligned_bilinear(tensor: Tensor, factor: int) -> Tensor:
-    """aligned bilinear, used in original implement in CondInst:
+    """Aligned bilinear, used in original implement in CondInst:
 
     https://github.com/aim-uofa/AdelaiDet/blob/\
     c0b2092ce72442b0f40972f7c6dda8bb52c46d16/adet/utils/comm.py#L23

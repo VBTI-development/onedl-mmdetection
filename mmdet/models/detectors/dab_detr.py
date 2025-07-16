@@ -13,8 +13,8 @@ from .detr import DETR
 
 @MODELS.register_module()
 class DABDETR(DETR):
-    r"""Implementation of `DAB-DETR:
-    Dynamic Anchor Boxes are Better Queries for DETR.
+    """Implementation of `DAB-DETR: Dynamic Anchor Boxes are Better Queries for
+    DETR.
 
     <https://arxiv.org/abs/2201.12329>`_.
 

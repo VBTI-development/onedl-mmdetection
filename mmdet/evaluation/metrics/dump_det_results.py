@@ -25,7 +25,7 @@ class DumpDetResults(DumpResults):
     """
 
     def process(self, data_batch: dict, data_samples: Sequence[dict]) -> None:
-        """transfer tensors in predictions to CPU."""
+        """Transfer tensors in predictions to CPU."""
         data_samples = _to_cpu(data_samples)
         for data_sample in data_samples:
             # remove gt

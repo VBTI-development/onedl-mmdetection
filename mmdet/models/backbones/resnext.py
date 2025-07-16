@@ -96,7 +96,7 @@ class Bottleneck(_Bottleneck):
                 self.planes * self.expansion, self.after_conv3_plugins)
 
     def _del_block_plugins(self, plugin_names):
-        """delete plugins for block if exist.
+        """Delete plugins for block if exist.
 
         Args:
             plugin_names (list[str]): List of plugins name to delete.

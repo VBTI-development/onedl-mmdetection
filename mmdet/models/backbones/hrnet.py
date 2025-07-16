@@ -401,12 +401,12 @@ class HRNet(BaseModule):
 
     @property
     def norm1(self):
-        """nn.Module: the normalization layer named "norm1" """
+        """nn.Module: the normalization layer named "norm1"."""
         return getattr(self, self.norm1_name)
 
     @property
     def norm2(self):
-        """nn.Module: the normalization layer named "norm2" """
+        """nn.Module: the normalization layer named "norm2"."""
         return getattr(self, self.norm2_name)
 
     def _make_transition_layer(self, num_channels_pre_layer,

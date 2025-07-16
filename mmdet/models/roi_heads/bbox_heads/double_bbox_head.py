@@ -82,7 +82,7 @@ class BasicResBlock(BaseModule):
 
 @MODELS.register_module()
 class DoubleConvFCBBoxHead(BBoxHead):
-    r"""Bbox head used in Double-Head R-CNN
+    r"""Bbox head used in Double-Head R-CNN.
 
     .. code-block:: none
 

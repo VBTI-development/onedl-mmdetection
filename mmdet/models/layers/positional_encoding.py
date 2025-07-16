@@ -225,7 +225,7 @@ class SinePositionalEncoding3D(SinePositionalEncoding):
             pos (Tensor): Returned position embedding with shape
                 [bs, num_feats*2, h, w].
         """
-        assert mask.dim() == 4,\
+        assert mask.dim() == 4, \
             f'{mask.shape} should be a 4-dimensional Tensor,' \
             f' got {mask.dim()}-dimensional Tensor instead '
         # For convenience of exporting to ONNX, it's required to convert

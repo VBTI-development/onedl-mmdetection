@@ -46,7 +46,7 @@ def print_log(msg: str, logger: Optional[MMLogger] = None) -> None:
 
 def print_process_memory(p: psutil.Process,
                          logger: Optional[MMLogger] = None) -> None:
-    """print process memory info."""
+    """Print process memory info."""
     mem_used = gb_round(psutil.virtual_memory().used)
     memory_full_info = p.memory_full_info()
     uss_mem = gb_round(memory_full_info.uss)
@@ -94,7 +94,7 @@ class BaseBenchmark:
         self.logger = logger
 
     def run(self, repeat_num: int = 1) -> dict:
-        """benchmark entry method.
+        """Benchmark entry method.
 
         Args:
             repeat_num (int): Number of repeat benchmark.

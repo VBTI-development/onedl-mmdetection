@@ -43,7 +43,7 @@ class CTResNetNeck(BaseModule):
     def _make_deconv_layer(
             self, num_deconv_filters: Tuple[int, ...],
             num_deconv_kernels: Tuple[int, ...]) -> nn.Sequential:
-        """use deconv layers to upsample backbone's output."""
+        """Use deconv layers to upsample backbone's output."""
         layers = []
         for i in range(len(num_deconv_filters)):
             feat_channels = num_deconv_filters[i]
@@ -96,7 +96,7 @@ class CTResNetNeck(BaseModule):
                 m.reset_parameters()
 
     def forward(self, x: Sequence[torch.Tensor]) -> Tuple[torch.Tensor]:
-        """model forward."""
+        """Model forward."""
         assert isinstance(x, (list, tuple))
         outs = self.deconv_layers(x[-1])
         return outs,

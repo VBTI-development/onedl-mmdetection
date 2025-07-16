@@ -374,7 +374,7 @@ class GFLHead(AnchorHead):
         avg_factor = reduce_mean(
             torch.tensor(avg_factor, dtype=torch.float, device=device)).item()
 
-        losses_cls, losses_bbox, losses_dfl,\
+        losses_cls, losses_bbox, losses_dfl, \
             avg_factor = multi_apply(
                 self.loss_by_feat_single,
                 anchor_list,

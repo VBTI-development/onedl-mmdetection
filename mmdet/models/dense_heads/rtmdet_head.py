@@ -268,7 +268,7 @@ class RTMDetHead(ATSSHead):
         (anchor_list, labels_list, label_weights_list, bbox_targets_list,
          assign_metrics_list, sampling_results_list) = cls_reg_targets
 
-        losses_cls, losses_bbox,\
+        losses_cls, losses_bbox, \
             cls_avg_factors, bbox_avg_factors = multi_apply(
                 self.loss_by_feat_single,
                 cls_scores,

@@ -100,7 +100,7 @@ def write_csv(datas, args):
                     '', '', ''
                 ]
             else:
-                """match result."""
+                """Match result."""
                 match_all = re.findall(
                     r'The best checkpoint with ([\d.]+) '
                     r'coco/bbox_mAP at ([\d.]+) epoch', log)
@@ -265,7 +265,7 @@ def main():
 
     # save fail
     print(f'sum_file = {result_xlsx_sum}')
-    ''' generate .txt file '''
+    """Generate .txt file."""
     print(f'{none_exist_num} datasets were not trained:\n{none_exist}\n')
     print(f'{fail_num} training failed:\n{fail}\n')
 

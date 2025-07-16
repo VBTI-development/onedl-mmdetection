@@ -165,12 +165,13 @@ class SimplifiedBasicBlock(BaseModule):
 
     @property
     def norm1(self) -> Optional[BaseModule]:
-        """nn.Module: normalization layer after the first convolution layer"""
+        """nn.Module: normalization layer after the first convolution layer."""
         return getattr(self, self.norm1_name) if self.with_norm else None
 
     @property
     def norm2(self) -> Optional[BaseModule]:
-        """nn.Module: normalization layer after the second convolution layer"""
+        """nn.Module: normalization layer after the second convolution
+        layer."""
         return getattr(self, self.norm2_name) if self.with_norm else None
 
     def forward(self, x: Tensor) -> Tensor:

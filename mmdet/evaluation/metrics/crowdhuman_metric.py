@@ -628,7 +628,7 @@ class Image(object):
 
     @staticmethod
     def load_gt_boxes(dict_input, key_name, class_names):
-        """load ground_truth and transform [x, y, w, h] to [x1, y1, x2, y2]"""
+        """Load ground_truth and transform [x, y, w, h] to [x1, y1, x2, y2]"""
         assert key_name in dict_input
         if len(dict_input[key_name]) < 1:
             return np.empty([0, 5])
@@ -660,7 +660,7 @@ class Image(object):
 
     @staticmethod
     def load_det_boxes(dict_input, key_name, key_box, key_score, key_tag=None):
-        """load detection boxes."""
+        """Load detection boxes."""
         assert key_name in dict_input
         if len(dict_input[key_name]) < 1:
             return np.empty([0, 5])

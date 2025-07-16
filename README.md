@@ -65,6 +65,7 @@ The main branch works with **PyTorch 1.8+**.
 Apart from MMDetection, we also released [MMEngine](https://github.com/vbti-development/onedl-mmengine) for model training and [MMCV](https://github.com/vbti-development/onedl-mmcv) for computer vision research, which are heavily depended on by this toolbox.
 
 ## What's New
+
 The VBTI development team is reviving MMLabs code, making it work with
 newer pytorch versions and fixing bugs. We are only a small team, so your help
 is appreciated.

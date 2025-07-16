@@ -82,8 +82,8 @@ Here we only provide the Detic Swin-B model for the open vocabulary demo. Multi-
 
 To find more variants, please visit the [official model zoo](https://github.com/facebookresearch/Detic/blob/main/docs/MODEL_ZOO.md).
 
-| Backbone |       Training data        |                                Config                                 |                                                                                      Download                                                                                      |
-| :------: | :------------------------: | :-------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Backbone |       Training data        |                                Config                                 |                                                                                                Download                                                                                                 |
+| :------: | :------------------------: | :-------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 |  Swin-B  | ImageNet-21K & LVIS & COCO | [config](./configs/detic_centernet2_swin-b_fpn_4x_lvis-coco-in21k.py) | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/detic/detic_centernet2_swin-b_fpn_4x_lvis-coco-in21k/detic_centernet2_swin-b_fpn_4x_lvis-coco-in21k_20230120-0d301978.pth) |
 
 ## Citation

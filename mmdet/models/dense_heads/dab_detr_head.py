@@ -18,8 +18,9 @@ class DABDETRHead(ConditionalDETRHead):
     """Head of DAB-DETR. DAB-DETR: Dynamic Anchor Boxes are Better Queries for
     DETR.
 
-    More details can be found in the `paper
-    <https://arxiv.org/abs/2201.12329>`_ .
+    More details can be found in the
+    `paper <https://arxiv.org/abs/2201.12329>`_
+    .
     """
 
     def _init_layers(self) -> None:
@@ -30,7 +31,7 @@ class DABDETRHead(ConditionalDETRHead):
         self.fc_reg = MLP(self.embed_dims, self.embed_dims, 4, 3)
 
     def init_weights(self) -> None:
-        """initialize weights."""
+        """Initialize weights."""
         if self.loss_cls.use_sigmoid:
             bias_init = bias_init_with_prob(0.01)
             nn.init.constant_(self.fc_cls.bias, bias_init)

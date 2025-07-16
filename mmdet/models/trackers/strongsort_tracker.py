@@ -21,7 +21,7 @@ from .sort_tracker import SORTTracker
 
 
 def cosine_distance(x: Tensor, y: Tensor) -> np.ndarray:
-    """compute the cosine distance.
+    """Compute the cosine distance.
 
     Args:
         x (Tensor): embeddings with shape (N,C).

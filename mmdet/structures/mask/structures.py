@@ -107,7 +107,7 @@ class BaseInstanceMasks(metaclass=ABCMeta):
 
     @abstractmethod
     def expand(self, expanded_h, expanded_w, top, left):
-        """see :class:`Expand`."""
+        """See :class:`Expand`."""
 
     @property
     @abstractmethod
@@ -687,7 +687,7 @@ class PolygonMasks(BaseInstanceMasks):
         return len(self.masks)
 
     def rescale(self, scale, interpolation=None):
-        """see :func:`BaseInstanceMasks.rescale`"""
+        """See :func:`BaseInstanceMasks.rescale`"""
         new_w, new_h = mmcv.rescale_size((self.width, self.height), scale)
         if len(self.masks) == 0:
             rescaled_masks = PolygonMasks([], new_h, new_w)
@@ -696,7 +696,7 @@ class PolygonMasks(BaseInstanceMasks):
         return rescaled_masks
 
     def resize(self, out_shape, interpolation=None):
-        """see :func:`BaseInstanceMasks.resize`"""
+        """See :func:`BaseInstanceMasks.resize`"""
         if len(self.masks) == 0:
             resized_masks = PolygonMasks([], *out_shape)
         else:
@@ -715,7 +715,7 @@ class PolygonMasks(BaseInstanceMasks):
         return resized_masks
 
     def flip(self, flip_direction='horizontal'):
-        """see :func:`BaseInstanceMasks.flip`"""
+        """See :func:`BaseInstanceMasks.flip`"""
         assert flip_direction in ('horizontal', 'vertical', 'diagonal')
         if len(self.masks) == 0:
             flipped_masks = PolygonMasks([], self.height, self.width)
@@ -739,7 +739,7 @@ class PolygonMasks(BaseInstanceMasks):
         return flipped_masks
 
     def crop(self, bbox):
-        """see :func:`BaseInstanceMasks.crop`"""
+        """See :func:`BaseInstanceMasks.crop`"""
         assert isinstance(bbox, np.ndarray)
         assert bbox.ndim == 1
 
@@ -798,7 +798,7 @@ class PolygonMasks(BaseInstanceMasks):
         return cropped_masks
 
     def pad(self, out_shape, pad_val=0):
-        """padding has no effect on polygons`"""
+        """Padding has no effect on polygons`"""
         return PolygonMasks(self.masks, *out_shape)
 
     def expand(self, *args, **kwargs):
@@ -812,7 +812,7 @@ class PolygonMasks(BaseInstanceMasks):
                         device='cpu',
                         interpolation='bilinear',
                         binarize=True):
-        """see :func:`BaseInstanceMasks.crop_and_resize`"""
+        """See :func:`BaseInstanceMasks.crop_and_resize`"""
         out_h, out_w = out_shape
         if len(self.masks) == 0:
             return PolygonMasks([], out_h, out_w)
@@ -949,7 +949,7 @@ class PolygonMasks(BaseInstanceMasks):
         return rotated_masks
 
     def to_bitmap(self):
-        """convert polygon masks to bitmap masks."""
+        """Convert polygon masks to bitmap masks."""
         bitmap_masks = self.to_ndarray()
         return BitmapMasks(bitmap_masks, self.height, self.width)
 

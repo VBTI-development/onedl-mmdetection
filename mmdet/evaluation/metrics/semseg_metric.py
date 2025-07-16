@@ -22,7 +22,7 @@ from mmdet.registry import METRICS
 
 @METRICS.register_module()
 class SemSegMetric(BaseMetric):
-    """mIoU evaluation metric.
+    """MIoU evaluation metric.
 
     Args:
         iou_metrics (list[str] | str): Metrics to be calculated, the options
@@ -188,7 +188,7 @@ class SemSegMetric(BaseMetric):
         """
 
         def f_score(precision, recall, beta=1):
-            """calculate the f-score value.
+            """Calculate the f-score value.
 
             Args:
                 precision (float | torch.Tensor): The precision value.

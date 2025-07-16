@@ -68,7 +68,7 @@ class MultiSourceSampler(Sampler):
                  shuffle: bool = True,
                  seed: Optional[int] = None) -> None:
 
-        assert hasattr(dataset, 'cumulative_sizes'),\
+        assert hasattr(dataset, 'cumulative_sizes'), \
             f'The dataset must be ConcatDataset, but get {dataset}'
         assert isinstance(batch_size, int) and batch_size > 0, \
             'batch_size must be a positive integer value, ' \

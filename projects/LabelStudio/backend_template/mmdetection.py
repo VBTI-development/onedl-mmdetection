@@ -18,7 +18,8 @@ logger = logging.getLogger(__name__)
 
 
 class MMDetection(LabelStudioMLBase):
-    """Object detector based on https://github.com/vbti-development/onedl-mmdetection."""
+    """Object detector based on \
+        https://github.com/vbti-development/onedl-mmdetection."""
 
     def __init__(self,
                  config_file=None,

@@ -94,9 +94,8 @@ async def concurrent(streamqueue: asyncio.Queue,
                      name='stream'):
     """Run code concurrently in different streams.
 
-    :param streamqueue: asyncio.Queue instance.
-
-    Queue tasks define the pool of streams used for concurrent execution.
+    :param streamqueue: asyncio.Queue instance. Queue tasks define the pool of
+        streams used for concurrent execution.
     """
     if not torch.cuda.is_available():
         yield

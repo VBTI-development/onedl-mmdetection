@@ -410,7 +410,7 @@ class CondInstBboxHead(FCOSHead):
         param_pred_list = []
         point_list = []
         stride_list = []
-        for cls_score_per_lvl, centerness_per_lvl, param_pred_per_lvl,\
+        for cls_score_per_lvl, centerness_per_lvl, param_pred_per_lvl, \
             point_per_lvl, stride_per_lvl in \
             zip(self._raw_positive_infos['cls_scores'],
                 self._raw_positive_infos['centernesses'],
@@ -904,7 +904,7 @@ class CondInstMaskHead(BaseMaskHead):
 
     def parse_dynamic_params(
             self, params: Tensor) -> Tuple[List[Tensor], List[Tensor]]:
-        """parse the dynamic params for dynamic conv."""
+        """Parse the dynamic params for dynamic conv."""
         num_insts = params.size(0)
         params_splits = list(
             torch.split_with_sizes(
@@ -927,7 +927,7 @@ class CondInstMaskHead(BaseMaskHead):
 
     def dynamic_conv_forward(self, features: Tensor, weights: List[Tensor],
                              biases: List[Tensor], num_insts: int) -> Tensor:
-        """dynamic forward, each layer follow a relu."""
+        """Dynamic forward, each layer follow a relu."""
         n_layers = len(weights)
         x = features
         for i, (w, b) in enumerate(zip(weights, biases)):

@@ -15,7 +15,8 @@ class CocoVideoMetric(CocoMetric):
 
     Evaluate AR, AP, and mAP for detection tasks including proposal/box
     detection and instance segmentation. Please refer to
-    https://cocodataset.org/#detection-eval for more details.
+    https://cocodataset.org/#detection-eval
+    for more details.
     """
 
     def process(self, data_batch: dict, data_samples: Sequence[dict]) -> None:

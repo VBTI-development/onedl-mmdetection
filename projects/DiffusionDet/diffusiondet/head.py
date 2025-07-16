@@ -45,7 +45,7 @@ def cosine_beta_schedule(timesteps, s=0.008):
 
 
 def extract(a, t, x_shape):
-    """extract the appropriate t index for a batch of indices."""
+    """Extract the appropriate t index for a batch of indices."""
     batch_size = t.shape[0]
     out = a.gather(-1, t)
     return out.reshape(batch_size, *((1, ) * (len(x_shape) - 1)))

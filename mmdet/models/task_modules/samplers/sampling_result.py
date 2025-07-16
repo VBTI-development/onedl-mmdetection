@@ -117,12 +117,12 @@ class SamplingResult(util_mixins.NiceRepr):
 
     @property
     def priors(self):
-        """torch.Tensor: concatenated positive and negative priors"""
+        """torch.Tensor: concatenated positive and negative priors."""
         return cat_boxes([self.pos_priors, self.neg_priors])
 
     @property
     def bboxes(self):
-        """torch.Tensor: concatenated positive and negative boxes"""
+        """torch.Tensor: concatenated positive and negative boxes."""
         warnings.warn('DeprecationWarning: bboxes is deprecated, '
                       'please use "priors" instead')
         return self.priors

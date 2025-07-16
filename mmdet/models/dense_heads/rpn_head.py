@@ -239,7 +239,7 @@ class RPNHead(AnchorHead):
                            rescale: bool = False,
                            with_nms: bool = True,
                            img_meta: Optional[dict] = None) -> InstanceData:
-        """bbox post-processing method.
+        """Bbox post-processing method.
 
         The boxes would be rescaled to the original image scale and do
         the nms operation.

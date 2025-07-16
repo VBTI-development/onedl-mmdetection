@@ -114,12 +114,12 @@ class SplitAttentionConv2d(BaseModule):
 
     @property
     def norm0(self):
-        """nn.Module: the normalization layer named "norm0" """
+        """nn.Module: the normalization layer named "norm0"."""
         return getattr(self, self.norm0_name)
 
     @property
     def norm1(self):
-        """nn.Module: the normalization layer named "norm1" """
+        """nn.Module: the normalization layer named "norm1"."""
         return getattr(self, self.norm1_name)
 
     def forward(self, x):
