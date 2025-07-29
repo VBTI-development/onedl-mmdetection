@@ -417,8 +417,8 @@ class VFNetHead(ATSSHead, FCOSHead):
 
         # FG cat_id: [0, num_classes - 1], BG cat_id: num_classes
         bg_class_ind = self.num_classes
-        pos_inds = torch.where(
-            ((flatten_labels >= 0) & (flatten_labels < bg_class_ind)) > 0)[0]
+        pos_inds = torch.where(((flatten_labels >= 0)
+                                & (flatten_labels < bg_class_ind)) > 0)[0]
         num_pos = len(pos_inds)
 
         pos_bbox_preds = flatten_bbox_preds[pos_inds]

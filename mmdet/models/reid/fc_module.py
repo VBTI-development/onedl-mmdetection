@@ -13,7 +13,7 @@ class FcModule(BaseModule):
     Args:
         in_channels (int): Input channels.
         out_channels (int): Ourput channels.
-        norm_cfg (dict, optional): Configuration of normlization method
+        norm_cfg (dict, optional): Configuration of normalization method
             after fc. Defaults to None.
         act_cfg (dict, optional): Configuration of activation method after fc.
             Defaults to dict(type='ReLU').

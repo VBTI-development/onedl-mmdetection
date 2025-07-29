@@ -43,12 +43,14 @@ custom_keys = {
     'level_embed': embed_multi
 }
 custom_keys.update({
-    f'backbone.stages.{stage_id}.blocks.{block_id}.norm': backbone_norm_multi
+    f'backbone.stages.{stage_id}.blocks.{block_id}.norm':
+    backbone_norm_multi
     for stage_id, num_blocks in enumerate(depths)
     for block_id in range(num_blocks)
 })
 custom_keys.update({
-    f'backbone.stages.{stage_id}.downsample.norm': backbone_norm_multi
+    f'backbone.stages.{stage_id}.downsample.norm':
+    backbone_norm_multi
     for stage_id in range(len(depths) - 1)
 })
 # optimizer

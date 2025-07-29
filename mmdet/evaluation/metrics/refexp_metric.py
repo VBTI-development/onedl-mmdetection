@@ -42,12 +42,18 @@ class RefExpMetric(BaseMetric):
         logger: MMLogger = MMLogger.get_current_instance()
 
         dataset2score = {
-            'refcoco': {k: 0.0
-                        for k in self.topk},
-            'refcoco+': {k: 0.0
-                         for k in self.topk},
-            'refcocog': {k: 0.0
-                         for k in self.topk},
+            'refcoco': {
+                k: 0.0
+                for k in self.topk
+            },
+            'refcoco+': {
+                k: 0.0
+                for k in self.topk
+            },
+            'refcocog': {
+                k: 0.0
+                for k in self.topk
+            },
         }
         dataset2count = {'refcoco': 0.0, 'refcoco+': 0.0, 'refcocog': 0.0}
 

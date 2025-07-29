@@ -191,8 +191,8 @@ class BaseVideoDataset(BaseDataset):
                                            True) and img_id not in ids_in_cat:
                         video_data_info['video_length'] -= 1
                         continue
-                    if min(width, height) >= self.filter_cfg.get(
-                            'min_size', 32):
+                    if min(width,
+                           height) >= self.filter_cfg.get('min_size', 32):
                         valid_imgs_data_info.append(data_info)
                         num_imgs_after_filter += 1
                     else:

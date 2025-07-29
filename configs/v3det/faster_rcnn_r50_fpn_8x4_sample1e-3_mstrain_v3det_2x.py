@@ -9,7 +9,7 @@ model = dict(
             num_classes=13204,
             reg_class_agnostic=True,
             cls_predictor_cfg=dict(
-                type='NormedLinear', tempearture=50, bias=True),
+                type='NormedLinear', temperature=50, bias=True),
             loss_cls=dict(
                 type='CrossEntropyCustomLoss',
                 num_classes=13204,

@@ -135,7 +135,7 @@ class SeesawLoss(nn.Module):
         self.custom_cls_channels = True
         # custom activation of cls_score
         self.custom_activation = True
-        # custom accuracy of the classsifier
+        # custom accuracy of the classifier
         self.custom_accuracy = True
 
     def _split_cls_score(self, cls_score: Tensor) -> Tuple[Tensor, Tensor]:

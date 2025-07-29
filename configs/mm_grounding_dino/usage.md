@@ -368,7 +368,7 @@ The model will save the best-performing checkpoint. It achieved its best perform
 
 We can observe that after fine-tuning, the training performance on the cat dataset improved from 88.1 to 90.1. However, due to the small dataset size, the evaluation metrics show some fluctuations.
 
-## Iterative Generation and Optimization Pipeline of Model Self-training Pseduo Label
+## Iterative Generation and Optimization Pipeline of Model Self-training Pseudo Label
 
 To facilitate users in creating their own datasets from scratch or those who want to leverage the model's inference capabilities for iterative pseudo-label generation and optimization, continuously modifying pseudo-labels to improve model performance, we have provided relevant pipelines.
 

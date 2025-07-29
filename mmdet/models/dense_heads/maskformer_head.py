@@ -400,7 +400,7 @@ class MaskFormerHead(AnchorFreeHead):
         # shape (batch_size, num_queries)
         mask_weights = torch.stack(mask_weights_list, dim=0)
 
-        # classfication loss
+        # classification loss
         # shape (batch_size * num_queries, )
         cls_scores = cls_scores.flatten(0, 1)
         labels = labels.flatten(0, 1)
@@ -488,7 +488,7 @@ class MaskFormerHead(AnchorFreeHead):
             padding_mask.unsqueeze(1), size=x[-1].shape[-2:],
             mode='nearest').to(torch.bool).squeeze(1)
         # when backbone is swin, memory is output of last stage of swin.
-        # when backbone is r50, memory is output of tranformer encoder.
+        # when backbone is r50, memory is output of transformer encoder.
         mask_features, memory = self.pixel_decoder(x, batch_img_metas)
         pos_embed = self.decoder_pe(padding_mask)
         memory = self.decoder_input_proj(memory)

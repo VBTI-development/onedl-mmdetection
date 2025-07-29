@@ -53,8 +53,8 @@ class MOTChallengeDataset(BaseVideoDataset):
         for i, ann in enumerate(ann_info):
             instance = {}
 
-            if (not self.test_mode) and (ann['visibility'] <
-                                         self.visibility_thr):
+            if (not self.test_mode) and (ann['visibility']
+                                         < self.visibility_thr):
                 continue
             if ann.get('ignore', False):
                 continue

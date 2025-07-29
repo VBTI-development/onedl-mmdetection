@@ -163,8 +163,11 @@ class YTVISeval:
             computeIoU = self.computeIoU
         elif p.iouType == 'keypoints':
             computeIoU = self.computeOks
-        self.ious = {(vidId, catId): computeIoU(vidId, catId)
-                     for vidId in p.vidIds for catId in catIds}
+        self.ious = {
+            (vidId, catId): computeIoU(vidId, catId)
+            for vidId in p.vidIds
+            for catId in catIds
+        }
 
         evaluateVid = self.evaluateVid
         maxDet = p.maxDets[-1]

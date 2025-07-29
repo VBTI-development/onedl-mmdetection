@@ -40,8 +40,8 @@ class YOLOXModeSwitchHook(Hook):
         # TODO: refactor after mmengine using model wrapper
         if is_model_wrapper(model):
             model = model.module
-        epoch_to_be_switched = ((epoch + 1) >=
-                                runner.max_epochs - self.num_last_epochs)
+        epoch_to_be_switched = ((epoch + 1)
+                                >= runner.max_epochs - self.num_last_epochs)
         if epoch_to_be_switched and not self._has_switched:
             runner.logger.info('No mosaic and mixup aug now!')
             # The dataset pipeline cannot be updated when persistent_workers

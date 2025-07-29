@@ -138,9 +138,8 @@ class SparseInst(BaseDetector):
 
             img_meta = datasample.metainfo
             # rescoring mask using maskness
-            scores = rescoring_mask(scores,
-                                    mask_pred_per_image > self.mask_threshold,
-                                    mask_pred_per_image)
+            scores = rescoring_mask(scores, mask_pred_per_image
+                                    > self.mask_threshold, mask_pred_per_image)
             h, w = img_meta['img_shape'][:2]
             mask_pred_per_image = F.interpolate(
                 mask_pred_per_image.unsqueeze(1),

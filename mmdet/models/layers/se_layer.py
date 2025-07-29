@@ -19,10 +19,10 @@ class SELayer(BaseModule):
         conv_cfg (None or dict): Config dict for convolution layer.
             Defaults to None, which means using conv2d.
         act_cfg (dict or Sequence[dict]): Config dict for activation layer.
-            If act_cfg is a dict, two activation layers will be configurated
+            If act_cfg is a dict, two activation layers will be configured
             by this dict. If act_cfg is a sequence of dicts, the first
-            activation layer will be configurated by the first dict and the
-            second activation layer will be configurated by the second dict.
+            activation layer will be configured by the first dict and the
+            second activation layer will be configured by the second dict.
             Defaults to (dict(type='ReLU'), dict(type='Sigmoid'))
         init_cfg (dict or list[dict], optional): Initialization config dict.
             Defaults to None
@@ -80,10 +80,10 @@ class DyReLU(BaseModule):
         conv_cfg (None or dict): Config dict for convolution layer.
             Defaults to None, which means using conv2d.
         act_cfg (dict or Sequence[dict]): Config dict for activation layer.
-            If act_cfg is a dict, two activation layers will be configurated
+            If act_cfg is a dict, two activation layers will be configured
             by this dict. If act_cfg is a sequence of dicts, the first
-            activation layer will be configurated by the first dict and the
-            second activation layer will be configurated by the second dict.
+            activation layer will be configured by the first dict and the
+            second activation layer will be configured by the second dict.
             Defaults to (dict(type='ReLU'), dict(type='HSigmoid', bias=3.0,
             divisor=6.0))
         init_cfg (dict or list[dict], optional): Initialization config dict.

@@ -21,7 +21,7 @@ def format_label(value: Union[torch.Tensor, np.ndarray, Sequence, int],
             it to the metainfo. Defaults to None.
 
     Returns:
-        :obj:`mmengine.LabelData`: The foramtted label data.
+        :obj:`mmengine.LabelData`: The formatted label data.
     """
 
     # Handle single number

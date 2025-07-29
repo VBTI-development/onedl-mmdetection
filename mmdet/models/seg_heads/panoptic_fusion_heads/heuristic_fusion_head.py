@@ -127,8 +127,8 @@ class HeuristicFusionHead(BasePanopticFusionHead):
             pan_results % INSTANCE_OFFSET, return_counts=True)
         stuff_ids = ids[ids >= self.num_things_classes]
         stuff_counts = counts[ids >= self.num_things_classes]
-        ignore_stuff_ids = stuff_ids[
-            stuff_counts < self.test_cfg.stuff_area_limit]
+        ignore_stuff_ids = stuff_ids[stuff_counts <
+                                     self.test_cfg.stuff_area_limit]
 
         assert pan_results.ndim == 2
         pan_results[(pan_results.unsqueeze(2) == ignore_stuff_ids.reshape(

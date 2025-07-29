@@ -364,7 +364,7 @@ class CrossEntropyCustomLoss(CrossEntropyLoss):
         self.custom_cls_channels = True
         # custom activation of cls_score
         self.custom_activation = True
-        # custom accuracy of the classsifier
+        # custom accuracy of the classifier
         self.custom_accuracy = True
 
     def get_cls_channels(self, num_classes):

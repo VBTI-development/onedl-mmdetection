@@ -12,7 +12,7 @@ Modern object detectors rely heavily on rectangular bounding boxes, such as anch
 <img src="https://user-images.githubusercontent.com/40661020/143972514-93247220-4dad-4eb3-a51b-a1115dc7d449.png"/>
 </div>
 
-## Introdution
+## Introduction
 
 By [Ze Yang](https://yangze.tech/), [Shaohui Liu](http://b1ueber2y.me/), and [Han Hu](https://ancientmooner.github.io/).
 

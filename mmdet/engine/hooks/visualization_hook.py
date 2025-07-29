@@ -392,8 +392,8 @@ class GroundingVisualizationHook(DetVisualizationHook):
                     gt_instances.bboxes = gt_bboxes.tensor
                 print(gt_labels, tokens_positive, gt_bboxes, img_path)
                 pred_instances = data_sample.pred_instances
-                pred_instances = pred_instances[
-                    pred_instances.scores > self.score_thr]
+                pred_instances = pred_instances[pred_instances.scores >
+                                                self.score_thr]
                 pred_labels = pred_instances.labels
                 pred_bboxes = pred_instances.bboxes
                 pred_scores = pred_instances.scores

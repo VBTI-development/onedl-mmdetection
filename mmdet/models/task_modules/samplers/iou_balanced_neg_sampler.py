@@ -66,8 +66,8 @@ class IoUBalancedNegSampler(RandomSampler):
             end_iou = self.floor_thr + (i + 1) * iou_interval
             tmp_set = set(
                 np.where(
-                    np.logical_and(max_overlaps >= start_iou,
-                                   max_overlaps < end_iou))[0])
+                    np.logical_and(max_overlaps >= start_iou, max_overlaps
+                                   < end_iou))[0])
             tmp_inds = list(tmp_set & full_set)
             if len(tmp_inds) > per_num_expected:
                 tmp_sampled_set = self.random_choice(tmp_inds,
@@ -109,8 +109,8 @@ class IoUBalancedNegSampler(RandomSampler):
             if self.floor_thr > 0:
                 floor_set = set(
                     np.where(
-                        np.logical_and(max_overlaps >= 0,
-                                       max_overlaps < self.floor_thr))[0])
+                        np.logical_and(max_overlaps >= 0, max_overlaps
+                                       < self.floor_thr))[0])
                 iou_sampling_set = set(
                     np.where(max_overlaps >= self.floor_thr)[0])
             elif self.floor_thr == 0:

@@ -39,7 +39,7 @@ class GridRoIHead(StandardRoIHead):
                        sampling_results: List[SamplingResult],
                        batch_img_metas: List[dict],
                        amplitude: float = 0.15) -> List[SamplingResult]:
-        """Ramdom jitter positive proposals for training.
+        """Random jitter positive proposals for training.
 
         Args:
             sampling_results (List[obj:SamplingResult]): Assign results of

@@ -27,7 +27,7 @@ class LinearReIDHead(BaseModule):
         in_channels (int): Number of channels in the input.
         fc_channels (int): Number of channels in the fcs.
         out_channels (int): Number of channels in the output.
-        norm_cfg (dict, optional): Configuration of normlization method
+        norm_cfg (dict, optional): Configuration of normalization method
             after fc. Defaults to None.
         act_cfg (dict, optional): Configuration of activation method after fc.
             Defaults to None.
@@ -152,9 +152,10 @@ class LinearReIDHead(BaseModule):
             cls_score = self.classifier(feats_bn)
             losses['ce_loss'] = self.loss_cls(cls_score, gt_label)
             acc = Accuracy.calculate(cls_score, gt_label, topk=self.topk)
-            losses.update(
-                {f'accuracy_top-{k}': a
-                 for k, a in zip(self.topk, acc)})
+            losses.update({
+                f'accuracy_top-{k}': a
+                for k, a in zip(self.topk, acc)
+            })
 
         return losses
 

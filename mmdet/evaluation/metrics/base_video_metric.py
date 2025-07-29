@@ -90,7 +90,7 @@ def collect_tracking_results(results: list,
                              tmpdir: Optional[str] = None) -> Optional[list]:
     """Collected results in distributed environments. different from the
     function mmengine.dist.collect_results, tracking compute metrics don't use
-    paramenter size, which means length of the entire validation dataset.
+    parameter size, which means length of the entire validation dataset.
     because it's equal to video num, but compute metrics need image num.
 
     Args:

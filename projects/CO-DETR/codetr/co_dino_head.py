@@ -503,8 +503,14 @@ class CoDINOHead(DINOHead):
                                                     ]) * self.num_classes
                     padding_target = target.new_zeros([padding_shape, 4])
                     padding_feat = feat.new_zeros([padding_shape, c])
-                    attn_mask[coord.shape[0]:, 0:coord.shape[0], ] = True
-                    attn_mask[:, coord.shape[0]:, ] = True
+                    attn_mask[
+                        coord.shape[0]:,
+                        0:coord.shape[0],
+                    ] = True
+                    attn_mask[
+                        :,
+                        coord.shape[0]:,
+                    ] = True
                 else:
                     indices = torch.randperm(
                         neg_inds.shape[0])[:padding_shape].cuda()

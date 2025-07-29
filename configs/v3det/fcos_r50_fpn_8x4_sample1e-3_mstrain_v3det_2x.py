@@ -36,7 +36,7 @@ model = dict(
         stacked_convs=4,
         feat_channels=256,
         strides=[8, 16, 32, 64, 128],
-        cls_predictor_cfg=dict(type='NormedLinear', tempearture=50, bias=True),
+        cls_predictor_cfg=dict(type='NormedLinear', temperature=50, bias=True),
         loss_cls=dict(
             type='FocalCustomLoss',
             use_sigmoid=True,

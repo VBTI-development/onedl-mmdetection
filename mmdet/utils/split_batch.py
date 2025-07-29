@@ -19,7 +19,7 @@ def split_batch(img, img_metas, kwargs):
         kwargs (dict): Specific to concrete implementation.
 
     Returns:
-        data_groups (dict): a dict that data_batch splited by tags,
+        data_groups (dict): a dict that data_batch split by tags,
             such as 'sup', 'unsup_teacher', and 'unsup_student'.
     """
 

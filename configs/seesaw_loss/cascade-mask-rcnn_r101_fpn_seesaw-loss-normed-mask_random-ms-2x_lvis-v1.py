@@ -2,4 +2,4 @@ _base_ = './cascade-mask-rcnn_r101_fpn_seesaw-loss_random-ms-2x_lvis-v1.py'  # n
 model = dict(
     roi_head=dict(
         mask_head=dict(
-            predictor_cfg=dict(type='NormedConv2d', tempearture=20))))
+            predictor_cfg=dict(type='NormedConv2d', temperature=20))))

@@ -231,17 +231,17 @@ def bbox2bucket(proposals: Tensor,
     for k in range(offset_topk):
         if k >= 1:
             offset_l_weights[inds, l_label[:,
-                                           k]] = (l_topk[:, k] <
-                                                  offset_upperbound).float()
+                                           k]] = (l_topk[:, k]
+                                                  < offset_upperbound).float()
             offset_r_weights[inds, r_label[:,
-                                           k]] = (r_topk[:, k] <
-                                                  offset_upperbound).float()
+                                           k]] = (r_topk[:, k]
+                                                  < offset_upperbound).float()
             offset_t_weights[inds, t_label[:,
-                                           k]] = (t_topk[:, k] <
-                                                  offset_upperbound).float()
+                                           k]] = (t_topk[:, k]
+                                                  < offset_upperbound).float()
             offset_d_weights[inds, d_label[:,
-                                           k]] = (d_topk[:, k] <
-                                                  offset_upperbound).float()
+                                           k]] = (d_topk[:, k]
+                                                  < offset_upperbound).float()
         else:
             offset_l_weights[inds, l_label[:, k]] = 1.0
             offset_r_weights[inds, r_label[:, k]] = 1.0

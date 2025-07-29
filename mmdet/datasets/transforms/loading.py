@@ -358,7 +358,7 @@ class LoadAnnotations(MMCV_LoadAnnotations):
                     instance['ignore_flag'] = 1
                     gt_mask = [np.zeros(6)]
             elif not self.poly2mask:
-                # `PolygonMasks` requires a ploygon of format List[np.array],
+                # `PolygonMasks` requires a polygon of format List[np.array],
                 # other formats are invalid.
                 instance['ignore_flag'] = 1
                 gt_mask = [np.zeros(6)]

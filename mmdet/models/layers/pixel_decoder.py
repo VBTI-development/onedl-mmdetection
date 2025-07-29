@@ -123,7 +123,7 @@ class PixelDecoder(BaseModule):
 
 @MODELS.register_module()
 class TransformerEncoderPixelDecoder(PixelDecoder):
-    """Pixel decoder with transormer encoder inside.
+    """Pixel decoder with transformer encoder inside.
 
     Args:
         in_channels (list[int] | tuple[int]): Number of channels in the

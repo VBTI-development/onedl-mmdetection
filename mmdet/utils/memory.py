@@ -41,7 +41,8 @@ def cast_tensor_type(inputs, src_type=None, dst_type=None):
         # as the argument `src_type`.
     elif isinstance(inputs, abc.Mapping):
         return type(inputs)({
-            k: cast_tensor_type(v, src_type=src_type, dst_type=dst_type)
+            k:
+            cast_tensor_type(v, src_type=src_type, dst_type=dst_type)
             for k, v in inputs.items()
         })
     elif isinstance(inputs, abc.Iterable):

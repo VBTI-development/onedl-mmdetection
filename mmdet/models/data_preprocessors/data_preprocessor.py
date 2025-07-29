@@ -765,8 +765,8 @@ class BoxInstDataPreprocessor(DetDataPreprocessor):
                 images_lab = images_lab.permute(2, 0, 1)[None]
                 images_color_similarity = self.get_images_color_similarity(
                     images_lab, img_masks[im_i])
-                pairwise_mask = (images_color_similarity >=
-                                 self.pairwise_color_thresh).float()
+                pairwise_mask = (images_color_similarity
+                                 >= self.pairwise_color_thresh).float()
 
                 per_im_bboxes = data_sample.gt_instances.bboxes
                 if per_im_bboxes.shape[0] > 0:

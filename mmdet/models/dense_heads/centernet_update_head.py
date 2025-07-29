@@ -246,8 +246,8 @@ class CenterNetUpdateHead(AnchorFreeHead):
             avg_factor=num_pos_cls)
 
         # 5 calc reg loss
-        pos_bbox_inds = torch.nonzero(
-            bbox_targets.max(dim=1)[0] >= 0).squeeze(1)
+        pos_bbox_inds = torch.nonzero(bbox_targets.max(
+            dim=1)[0] >= 0).squeeze(1)
         pos_bbox_preds = flatten_bbox_preds[pos_bbox_inds]
         pos_bbox_targets = bbox_targets[pos_bbox_inds]
 

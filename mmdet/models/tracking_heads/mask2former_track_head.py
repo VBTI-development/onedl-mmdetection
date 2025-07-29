@@ -380,7 +380,7 @@ class Mask2FormerTrackHead(MaskFormerHead):
         # shape (batch_size, num_queries)
         mask_weights = torch.stack(mask_weights_list, dim=0)
 
-        # classfication loss
+        # classification loss
         # shape (batch_size * num_queries, )
         cls_scores = cls_scores.flatten(0, 1)
         labels = labels.flatten(0, 1)

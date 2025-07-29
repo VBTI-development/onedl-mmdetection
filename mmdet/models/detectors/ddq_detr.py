@@ -43,7 +43,7 @@ class DDQDETR(DINO):
         self.dqs_cfg = dqs_cfg
         super().__init__(*args, **kwargs)
 
-        # a share dict in all moduls
+        # a share dict in all modules
         # pass some intermediate results and config parameters
         cache_dict = dict()
         for m in self.modules():

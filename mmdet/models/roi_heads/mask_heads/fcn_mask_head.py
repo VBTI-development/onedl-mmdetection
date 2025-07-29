@@ -364,8 +364,9 @@ class FCNMaskHead(BaseModule):
             num_chunks = int(
                 np.ceil(N * int(img_h) * int(img_w) * BYTES_PER_FLOAT /
                         GPU_MEM_LIMIT))
-            assert (num_chunks <=
-                    N), 'Default GPU_MEM_LIMIT is too small; try increasing it'
+            assert (
+                num_chunks
+                <= N), 'Default GPU_MEM_LIMIT is too small; try increasing it'
         chunks = torch.chunk(torch.arange(N, device=device), num_chunks)
 
         threshold = rcnn_test_cfg.mask_thr_binary

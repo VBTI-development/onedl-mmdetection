@@ -18,8 +18,8 @@ def download(url, out_file, min_bytes=math.pow(1024, 2), progress=True):
     try:
         print(f'Downloading {url} to {out_file}...')
         torch.hub.download_url_to_file(url, str(out_file), progress=progress)
-        assert osp.exists(
-            out_file) and osp.getsize(out_file) > min_bytes, assert_msg
+        assert osp.exists(out_file) and osp.getsize(
+            out_file) > min_bytes, assert_msg
     except Exception as e:
         if osp.exists(out_file):
             os.remove(out_file)

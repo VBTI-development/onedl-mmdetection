@@ -252,8 +252,8 @@ class DDODHead(AnchorHead):
 
         iou_targets = label_weights.new_zeros(labels.shape)
         iou_weights = label_weights.new_zeros(labels.shape)
-        iou_weights[(bbox_weights.sum(axis=1) > 0).nonzero(
-            as_tuple=False)] = 1.
+        iou_weights[(bbox_weights.sum(axis=1)
+                     > 0).nonzero(as_tuple=False)] = 1.
 
         # FG cat_id: [0, num_classes -1], BG cat_id: num_classes
         bg_class_ind = self.num_classes

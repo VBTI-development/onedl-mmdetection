@@ -23,12 +23,12 @@ class NormedLinear(nn.Linear):
 
     def __init__(self,
                  *args,
-                 tempearture: float = 20,
+                 temperature: float = 20,
                  power: int = 1.0,
                  eps: float = 1e-6,
                  **kwargs) -> None:
         super().__init__(*args, **kwargs)
-        self.tempearture = tempearture
+        self.temperature = temperature
         self.power = power
         self.eps = eps
         self.init_weights()
@@ -44,7 +44,7 @@ class NormedLinear(nn.Linear):
         weight_ = self.weight / (
             self.weight.norm(dim=1, keepdim=True).pow(self.power) + self.eps)
         x_ = x / (x.norm(dim=1, keepdim=True).pow(self.power) + self.eps)
-        x_ = x_ * self.tempearture
+        x_ = x_ * self.temperature
 
         return F.linear(x_, weight_, self.bias)
 
@@ -64,13 +64,13 @@ class NormedConv2d(nn.Conv2d):
 
     def __init__(self,
                  *args,
-                 tempearture: float = 20,
+                 temperature: float = 20,
                  power: int = 1.0,
                  eps: float = 1e-6,
                  norm_over_kernel: bool = False,
                  **kwargs) -> None:
         super().__init__(*args, **kwargs)
-        self.tempearture = tempearture
+        self.temperature = temperature
         self.power = power
         self.norm_over_kernel = norm_over_kernel
         self.eps = eps
@@ -87,7 +87,7 @@ class NormedConv2d(nn.Conv2d):
                     dim=1, keepdim=True).pow(self.power)[..., None, None] +
                 self.eps)
         x_ = x / (x.norm(dim=1, keepdim=True).pow(self.power) + self.eps)
-        x_ = x_ * self.tempearture
+        x_ = x_ * self.temperature
 
         if hasattr(self, 'conv2d_forward'):
             x_ = self.conv2d_forward(x_, weight_)

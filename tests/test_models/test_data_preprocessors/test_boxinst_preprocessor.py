@@ -26,7 +26,7 @@ class TestBoxInstDataPreprocessor(TestCase):
         self.assertEqual(batch_inputs.shape, (1, 3, 256, 256))
         self.assertEqual(len(batch_data_samples), 1)
 
-        # Test traning mode without gt bboxes
+        # Test training mode without gt bboxes
         packed_inputs = demo_mm_inputs(
             2, [[3, 256, 256], [3, 128, 128]], num_items=[0, 0])
         out_data = processor(packed_inputs, training=True)
@@ -42,7 +42,7 @@ class TestBoxInstDataPreprocessor(TestCase):
         self.assertEqual(
             len(batch_data_samples[1].gt_instances.pairwise_masks), 0)
 
-        # Test traning mode with gt bboxes
+        # Test training mode with gt bboxes
         packed_inputs = demo_mm_inputs(
             2, [[3, 256, 256], [3, 128, 128]], num_items=[2, 1])
         out_data = processor(packed_inputs, training=True)

@@ -331,7 +331,10 @@ class DiffusionDetMatcher(nn.Module):
             if (matching_matrix.sum(1) > 1).sum() > 0:
                 _, cost_argmin = torch.min(cost[prior_match_gt_mask], dim=1)
                 matching_matrix[prior_match_gt_mask] *= 0
-                matching_matrix[prior_match_gt_mask, cost_argmin, ] = 1
+                matching_matrix[
+                    prior_match_gt_mask,
+                    cost_argmin,
+                ] = 1
 
         assert not (matching_matrix.sum(0) == 0).any()
         # get foreground mask inside box and center prior

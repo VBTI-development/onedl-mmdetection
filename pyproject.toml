@@ -143,8 +143,9 @@ blank_line_before_nested_class_or_def = true
 split_before_expression_after_opening_paren = true
 
 [tool.codespell]
-skip = "*.ipynb,configs/v3det/category_name_13204_v3det_2023_v1.txt"
+skip = "*.ipynb,configs/v3det/category_name_13204_v3det_2023_v1.txt,**/labels_names.json,tools/dataset_converters/zhiyuan_objv2_train_names_fix.csv"
 quiet-level = 3
+ignore-words-list = "patten,nd,ty,mot,hist,formating,winn,gool,datas,wan,confids,TOOD,tood,ba,warmup,nam,DOTA,dota,conveyer,PRES"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -3087,8 +3087,8 @@ class CopyPaste(BaseTransform):
 
         # filter totally occluded objects
         l1_distance = (updated_dst_bboxes.tensor - dst_bboxes.tensor).abs()
-        bboxes_inds = (l1_distance <= self.bbox_occluded_thr).all(
-            dim=-1).numpy()
+        bboxes_inds = (l1_distance
+                       <= self.bbox_occluded_thr).all(dim=-1).numpy()
         masks_inds = updated_dst_masks.masks.sum(
             axis=(1, 2)) > self.mask_occluded_thr
         valid_inds = bboxes_inds | masks_inds

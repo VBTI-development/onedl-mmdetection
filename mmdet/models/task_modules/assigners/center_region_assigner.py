@@ -219,8 +219,8 @@ class CenterRegionAssigner(BaseAssigner):
             prior_and_gt_core_overlaps > self.min_pos_iof)  # shape (n, k)
 
         is_prior_in_gt_shadow = (
-            self.iou_calculator(priors, gt_shadow, mode='iof') >
-            self.min_pos_iof)
+            self.iou_calculator(priors, gt_shadow, mode='iof')
+            > self.min_pos_iof)
         # Rule out center effective positive pixels
         is_prior_in_gt_shadow &= (~is_prior_in_gt_core)
 

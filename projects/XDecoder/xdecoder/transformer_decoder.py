@@ -163,11 +163,11 @@ class XDecoderTransformerDecoder(nn.Module):
                     output.shape[1] * self.num_heads, 1, 1)
             pad_tgt_mask[:, :self.num_queries, :self.
                          num_queries] = self_tgt_mask
-            # grounding tokens could attend with eatch other
+            # grounding tokens could attend with each other
             pad_tgt_mask[:, self.num_queries:, self.num_queries:] = False
             self_tgt_mask = pad_tgt_mask
             output = torch.cat((output, output[:-1]), dim=0)
-            # also pad language embdding to fix embedding
+            # also pad language embedding to fix embedding
             query_embed = torch.cat((query_embed, query_embed[:-1]), dim=0)
         else:
             self_tgt_mask = self.self_attn_mask[:, :self.num_queries, :self.

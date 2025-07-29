@@ -43,7 +43,7 @@ class MaskFormerFusionHead(BasePanopticFusionHead):
         """Panoptic segmengation inference.
 
         Args:
-            mask_cls (Tensor): Classfication outputs of shape
+            mask_cls (Tensor): Classification outputs of shape
                 (num_queries, cls_out_channels) for a image.
                 Note `cls_out_channels` should includes
                 background.
@@ -110,7 +110,7 @@ class MaskFormerFusionHead(BasePanopticFusionHead):
         """Semantic segmengation postprocess.
 
         Args:
-            mask_cls (Tensor): Classfication outputs of shape
+            mask_cls (Tensor): Classification outputs of shape
                 (num_queries, cls_out_channels) for a image.
                 Note `cls_out_channels` should includes
                 background.
@@ -128,7 +128,7 @@ class MaskFormerFusionHead(BasePanopticFusionHead):
         """Instance segmengation postprocess.
 
         Args:
-            mask_cls (Tensor): Classfication outputs of shape
+            mask_cls (Tensor): Classification outputs of shape
                 (num_queries, cls_out_channels) for a image.
                 Note `cls_out_channels` should includes
                 background.

@@ -19,7 +19,7 @@ model = dict(
                 target_stds=[0.1, 0.1, 0.2, 0.2]),
             reg_class_agnostic=True,
             cls_predictor_cfg=dict(
-                type='NormedLinear', tempearture=50, bias=True),
+                type='NormedLinear', temperature=50, bias=True),
             loss_cls=dict(
                 type='CrossEntropyCustomLoss',
                 num_classes=13204,
@@ -38,7 +38,7 @@ model = dict(
                 target_stds=[0.05, 0.05, 0.1, 0.1]),
             reg_class_agnostic=True,
             cls_predictor_cfg=dict(
-                type='NormedLinear', tempearture=50, bias=True),
+                type='NormedLinear', temperature=50, bias=True),
             loss_cls=dict(
                 type='CrossEntropyCustomLoss',
                 num_classes=13204,
@@ -57,7 +57,7 @@ model = dict(
                 target_stds=[0.033, 0.033, 0.067, 0.067]),
             reg_class_agnostic=True,
             cls_predictor_cfg=dict(
-                type='NormedLinear', tempearture=50, bias=True),
+                type='NormedLinear', temperature=50, bias=True),
             loss_cls=dict(
                 type='CrossEntropyCustomLoss',
                 num_classes=13204,

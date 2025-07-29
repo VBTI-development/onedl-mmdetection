@@ -45,7 +45,7 @@ class NASFCOSHead(FCOSHead):
             config norm layer.  Defaults to
             ``norm_cfg=dict(type='GN', num_groups=32, requires_grad=True)``.
         init_cfg (:obj:`ConfigDict` or dict or list[:obj:`ConfigDict` or \
-            dict], opitonal): Initialization config dict.
+            dict], optional): Initialization config dict.
     """  # noqa: E501
 
     def __init__(self,

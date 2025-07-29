@@ -281,15 +281,25 @@ class DDQDETRHead(DINOHead):
 
         num_dense_queries = dn_meta['num_dense_queries']
         num_layer = all_layers_matching_bbox_preds.size(0)
-        dense_all_layers_matching_cls_scores = all_layers_matching_cls_scores[:, :,  # noqa: E501
-                                                                              -num_dense_queries:]  # noqa: E501
-        dense_all_layers_matching_bbox_preds = all_layers_matching_bbox_preds[:, :,  # noqa: E501
-                                                                              -num_dense_queries:]  # noqa: E501
+        dense_all_layers_matching_cls_scores = all_layers_matching_cls_scores[
+            :,
+            :,  # noqa: E501
+            -num_dense_queries:]  # noqa: E501
+        dense_all_layers_matching_bbox_preds = all_layers_matching_bbox_preds[
+            :,
+            :,  # noqa: E501
+            -num_dense_queries:]  # noqa: E501
 
-        all_layers_matching_cls_scores = all_layers_matching_cls_scores[:, :, :  # noqa: E501
-                                                                        -num_dense_queries]  # noqa: E501
-        all_layers_matching_bbox_preds = all_layers_matching_bbox_preds[:, :, :  # noqa: E501
-                                                                        -num_dense_queries]  # noqa: E501
+        all_layers_matching_cls_scores = all_layers_matching_cls_scores[
+            :,
+            :,
+            :  # noqa: E501
+            -num_dense_queries]  # noqa: E501
+        all_layers_matching_bbox_preds = all_layers_matching_bbox_preds[
+            :,
+            :,
+            :  # noqa: E501
+            -num_dense_queries]  # noqa: E501
 
         loss_dict = self.loss_for_distinct_queries(
             all_layers_matching_cls_scores, all_layers_matching_bbox_preds,

@@ -141,8 +141,8 @@ class TaskAlignedAssigner(BaseAssigner):
         overlaps_inf = overlaps_inf.view(num_gt, -1).t()
 
         max_overlaps, argmax_overlaps = overlaps_inf.max(dim=1)
-        assigned_gt_inds[
-            max_overlaps != -INF] = argmax_overlaps[max_overlaps != -INF] + 1
+        assigned_gt_inds[max_overlaps !=
+                         -INF] = argmax_overlaps[max_overlaps != -INF] + 1
         assign_metrics[max_overlaps != -INF] = alignment_metrics[
             max_overlaps != -INF, argmax_overlaps[max_overlaps != -INF]]
 

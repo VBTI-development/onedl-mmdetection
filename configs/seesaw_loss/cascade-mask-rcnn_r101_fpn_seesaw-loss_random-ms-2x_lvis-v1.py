@@ -22,7 +22,7 @@ model = dict(
                     target_means=[0., 0., 0., 0.],
                     target_stds=[0.1, 0.1, 0.2, 0.2]),
                 reg_class_agnostic=True,
-                cls_predictor_cfg=dict(type='NormedLinear', tempearture=20),
+                cls_predictor_cfg=dict(type='NormedLinear', temperature=20),
                 loss_cls=dict(
                     type='SeesawLoss',
                     p=0.8,
@@ -42,7 +42,7 @@ model = dict(
                     target_means=[0., 0., 0., 0.],
                     target_stds=[0.05, 0.05, 0.1, 0.1]),
                 reg_class_agnostic=True,
-                cls_predictor_cfg=dict(type='NormedLinear', tempearture=20),
+                cls_predictor_cfg=dict(type='NormedLinear', temperature=20),
                 loss_cls=dict(
                     type='SeesawLoss',
                     p=0.8,
@@ -62,7 +62,7 @@ model = dict(
                     target_means=[0., 0., 0., 0.],
                     target_stds=[0.033, 0.033, 0.067, 0.067]),
                 reg_class_agnostic=True,
-                cls_predictor_cfg=dict(type='NormedLinear', tempearture=20),
+                cls_predictor_cfg=dict(type='NormedLinear', temperature=20),
                 loss_cls=dict(
                     type='SeesawLoss',
                     p=0.8,

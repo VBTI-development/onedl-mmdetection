@@ -456,9 +456,9 @@ def samplelist_boxtype2tensor(batch_data_samples: SampleList) -> SampleList:
                 data_samples.ignored_instances.bboxes = bboxes.tensor
 
 
-_torch_version_div_indexing = (
-    'parrots' not in torch.__version__
-    and digit_version(torch.__version__) >= digit_version('1.8'))
+_torch_version_div_indexing = ('parrots' not in torch.__version__
+                               and digit_version(
+                                   torch.__version__) >= digit_version('1.8'))
 
 
 def floordiv(dividend, divisor, rounding_mode='trunc'):
