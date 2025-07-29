@@ -599,8 +599,8 @@ class BBoxHead(BaseModule):
         Example:
             >>> # xdoctest: +REQUIRES(module:kwarray)
             >>> import numpy as np
-            >>> from mmdet.models.task_modules.samplers.
-            ... sampling_result import random_boxes
+            >>> from mmdet.models.task_modules.samplers.sampling_result \
+            >>>     import random_boxes
             >>> from mmdet.models.task_modules.samplers import SamplingResult
             >>> self = BBoxHead(reg_class_agnostic=True)
             >>> n_roi = 2

@@ -47,8 +47,8 @@ class AnchorGenerator:
             structure. Defaults to False.
 
     Examples:
-        >>> from mmdet.models.task_modules.
-        ... prior_generators import AnchorGenerator
+        >>> from mmdet.models.task_modules.prior_generators \
+            import AnchorGenerator
         >>> self = AnchorGenerator([16], [1.], [1.], [9])
         >>> all_anchors = self.grid_priors([(2, 2)], device='cpu')
         >>> print(all_anchors)
@@ -677,8 +677,8 @@ class LegacyAnchorGenerator(AnchorGenerator):
             structure. Defaults to False.
 
     Examples:
-        >>> from mmdet.models.task_modules.
-        ... prior_generators import LegacyAnchorGenerator
+        >>> from mmdet.models.task_modules.prior_generators import \
+            LegacyAnchorGenerator
         >>> self = LegacyAnchorGenerator(
         >>>     [16], [1.], [1.], [9], center_offset=0.5)
         >>> all_anchors = self.grid_anchors(((2, 2),), device='cpu')

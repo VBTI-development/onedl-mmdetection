@@ -73,8 +73,8 @@ class BaseSampler(metaclass=ABCMeta):
             >>> from mmengine.structures import InstanceData
             >>> from mmdet.models.task_modules.samplers import RandomSampler,
             >>> from mmdet.models.task_modules.assigners import AssignResult
-            >>> from mmdet.models.task_modules.samplers.
-            ... sampling_result import ensure_rng, random_boxes
+            >>> from mmdet.models.task_modules.samplers.sampling_result \
+                import ensure_rng, random_boxes
             >>> rng = ensure_rng(None)
             >>> assign_result = AssignResult.random(rng=rng)
             >>> pred_instances = InstanceData()

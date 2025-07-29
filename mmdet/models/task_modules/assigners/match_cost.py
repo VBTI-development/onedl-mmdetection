@@ -128,8 +128,8 @@ class IoUCost(BaseMatchCost):
         weight (Union[float, int]): Cost weight. Defaults to 1.
 
     Examples:
-        >>> from mmdet.models.task_modules.assigners.
-        ... match_costs.match_cost import IoUCost
+        >>> from mmdet.models.task_modules.assigners.match_costs.match_cost \
+            import IoUCost
         >>> import torch
         >>> self = IoUCost()
         >>> bboxes = torch.FloatTensor([[1,1, 2, 2], [2, 2, 3, 4]])
@@ -190,8 +190,8 @@ class ClassificationCost(BaseMatchCost):
         weight (Union[float, int]): Cost weight. Defaults to 1.
 
     Examples:
-        >>> from mmdet.models.task_modules.assigners.
-        ...  match_costs.match_cost import ClassificationCost
+        >>> from mmdet.models.task_modules.assigners.match_costs.match_cost \
+             import ClassificationCost
         >>> import torch
         >>> self = ClassificationCost()
         >>> cls_pred = torch.rand(4, 3)

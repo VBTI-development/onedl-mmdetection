@@ -31,8 +31,7 @@ def get_loading_pipeline(pipeline):
         ...    dict(type='LoadImageFromFile'),
         ...    dict(type='LoadAnnotations', with_bbox=True)
         ...    ]
-        >>> assert expected_pipelines ==\
-        ...        get_loading_pipeline(pipelines)
+        >>> assert expected_pipelines == get_loading_pipeline(pipelines)
     """
     loading_pipeline_cfg = []
     for cfg in pipeline:

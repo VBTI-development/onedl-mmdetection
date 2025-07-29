@@ -3,6 +3,7 @@ import time
 import unittest
 from unittest import TestCase
 
+import pytest
 import torch
 from mmengine.logging import MessageHub
 from mmengine.registry import init_default_scope
@@ -12,6 +13,7 @@ from mmdet.registry import MODELS
 from mmdet.testing import demo_track_inputs, get_detector_cfg
 
 
+@pytest.skip('requires tracking', allow_module_level=True)
 class TestQDTrack(TestCase):
 
     @classmethod
