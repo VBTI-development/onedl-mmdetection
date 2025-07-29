@@ -1491,57 +1491,6 @@ class MinIoURandomCrop(BaseTransform):
 
 
 @TRANSFORMS.register_module()
-class Corrupt(BaseTransform):
-    """Corruption augmentation.
-
-    Corruption transforms implemented based on
-    `imagecorruptions <https://github.com/bethgelab/imagecorruptions>`_.
-
-    Required Keys:
-
-    - img (np.uint8)
-
-
-    Modified Keys:
-
-    - img (np.uint8)
-
-
-    Args:
-        corruption (str): Corruption name.
-        severity (int): The severity of corruption. Defaults to 1.
-    """
-
-    def __init__(self, corruption: str, severity: int = 1) -> None:
-        self.corruption = corruption
-        self.severity = severity
-
-    def transform(self, results: dict) -> dict:
-        """Call function to corrupt image.
-
-        Args:
-            results (dict): Result dict from loading pipeline.
-
-        Returns:
-            dict: Result dict with images corrupted.
-        """
-
-        if corrupt is None:
-            raise RuntimeError('imagecorruptions is not installed')
-        results['img'] = corrupt(
-            results['img'].astype(np.uint8),
-            corruption_name=self.corruption,
-            severity=self.severity)
-        return results
-
-    def __repr__(self) -> str:
-        repr_str = self.__class__.__name__
-        repr_str += f'(corruption={self.corruption}, '
-        repr_str += f'severity={self.severity})'
-        return repr_str
-
-
-@TRANSFORMS.register_module()
 @avoid_cache_randomness
 class Albu(BaseTransform):
     """Albumentation augmentation.

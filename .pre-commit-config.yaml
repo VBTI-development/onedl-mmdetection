@@ -34,6 +34,7 @@ repos:
     rev: v2.2.1
     hooks:
       - id: codespell
+        additional_dependencies: [toml]
   - repo: https://github.com/executablebooks/mdformat
     rev: 0.7.9
     hooks:

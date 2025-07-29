@@ -1604,34 +1604,6 @@ class TestAlbu(unittest.TestCase):
             '\'p\': 1}])')
 
 
-class TestCorrupt(unittest.TestCase):
-
-    def test_transform(self):
-        results = dict(
-            img_path=osp.join(osp.dirname(__file__), '../../data/color.jpg'))
-
-        # Define simple pipeline
-        load = dict(type='LoadImageFromFile')
-        load = TRANSFORMS.build(load)
-
-        corrupt_transform = dict(type='Corrupt', corruption='gaussian_blur')
-        corrupt_transform = TRANSFORMS.build(corrupt_transform)
-
-        # Execute transforms
-        results = load(results)
-        results = corrupt_transform(results)
-
-        self.assertEqual(results['img'].dtype, np.uint8)
-
-    def test_repr(self):
-        corrupt_transform = dict(type='Corrupt', corruption='gaussian_blur')
-        corrupt_transform = TRANSFORMS.build(corrupt_transform)
-
-        self.assertEqual(
-            repr(corrupt_transform), 'Corrupt(corruption=gaussian_blur, '
-            'severity=1)')
-
-
 class TestRandomShift(unittest.TestCase):
 
     def test_init(self):
