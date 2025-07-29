@@ -1,0 +1,29 @@
+name: deploy
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-n-publish:
+    runs-on: ubuntu-22.04
+    permissions:
+      id-token: write
+    if: startsWith(github.event.ref, 'refs/tags')
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.10'
+      - name: Build MMDet
+        run: |
+          uv build --sdist
+      - name: Publish distribution to PyPI
+        run: |
+          uv publish

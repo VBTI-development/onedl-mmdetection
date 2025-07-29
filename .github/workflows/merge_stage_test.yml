@@ -1,0 +1,83 @@
+name: merge_stage_test
+
+on:
+  push:
+    paths-ignore:
+      - ".github/**.md"
+      - "docker/**"
+      - "docs/**"
+      - "README.md"
+      - "README_zh-CN.md"
+      - "CONTRIBUTING.md"
+      - "CONTRIBUTING_zh-CN.md"
+      - ".pre-commit-config.yaml"
+      - ".pre-commit-config-zh-cn.yaml"
+      - 'configs/**'
+      - 'demo/**'
+      - 'projects/**'
+      - 'resources/**'
+      - 'tools/**'
+      - '.dev_scripts/**'
+      - '.circleci/**'
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_gpu:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        include:
+          - python-version: '3.10' # minimum version
+            torch: '2.0.0'
+            container: 'nvidia/cuda:11.1.1-cudnn8-devel-ubuntu20.04'
+          - python-version: '3.10'  # maximum version
+            torch: '2.5.1'
+            container: 'nvidia/cuda:12.8.0-cudnn-devel-ubuntu22.04'
+    container:
+      image: ${{ matrix.container }}
+    env:
+        UV_CACHE_DIR: /__w/_uv_cache # set cache to be on same disk to avoid hardlink copies.
+        DEBIAN_FRONTEND: noninteractive
+        TZ: Etc/UTC
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v6
+        with:
+          activate-environment: true
+          python-version: ${{ matrix.python-version }}
+          cache-local-path: /__w/_uv_cache
+      - name: Fetch GPG keys
+        run: |
+          apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+          apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
+      - name: Install system dependencies
+        run: |
+          apt-get update
+          apt-get install -y tzdata ffmpeg libsm6 libxext6 git ninja-build libglib2.0-0 libxrender-dev libc6 libc6-dev
+          apt-get clean -y
+
+      - name: Install torch
+        run: |
+          uv pip install -v --torch-backend=auto torch==${{ matrix.torch }} torchvision
+          uv cache clean
+      - name: Install mmdet dependencies
+        run: |
+          uv pip install onedl-mmengine
+          uv pip install ninja psutil setuptools
+          uv pip install git+https://github.com/VBTI-development/onedl-mmcv.git@main --no-build-isolation
+          uv pip install -r pyproject.toml
+      - name: Build and install
+        run: uv pip install -e .
+      - name: Install test dependencies
+        run: uv pip install -r pyproject.toml --group tests --extra optional
+      - name: Run unit tests with coverage
+        run: |
+          set -e
+          uv run coverage run --branch --source mmdet -m pytest tests/  --ignore tests/test_dist
+          uv run coverage xml
