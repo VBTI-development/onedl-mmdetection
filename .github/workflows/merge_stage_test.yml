@@ -69,7 +69,6 @@ jobs:
       - name: Install mmdet dependencies
         run: |
           uv pip install git+https://github.com/VBTI-development/onedl-mim.git@lauriebax/upgrade-mim
-          source .venv/bin/activate
           mim install onedl-mmengine onedl-mmcv
           uv pip install -r pyproject.toml
       - name: Build and install

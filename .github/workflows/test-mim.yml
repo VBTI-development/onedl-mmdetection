@@ -35,17 +35,16 @@ jobs:
       - name: Install uv and set the python version
         uses: astral-sh/setup-uv@v5
         with:
+          activate-environment: true
           python-version: '3.10'
       - name: Install PyTorch
         run: |
           uv pip install torch==${{ matrix.torch }} torchvision
       - name: Install openmim
-        run: uv pip install openmim
+        run: uv pip install git+https://github.com/VBTI-development/onedl-mim.git@lauriebax/upgrade-mim
       - name: Build and install
         run: |
-          source .venv/bin/activate
           mim install .
       - name: test commands of mim
         run: |
-          source .venv/bin/activate
           mim search onedl-mmdetection

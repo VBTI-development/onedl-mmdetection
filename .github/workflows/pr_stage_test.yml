@@ -48,7 +48,7 @@ jobs:
       - name: Install mmdet dependencies
         run: |
           uv pip install git+https://github.com/VBTI-development/onedl-mim.git@lauriebax/upgrade-mim
-          uv mim install onedl-mmengine onedl-mmcv
+          uv run mim install onedl-mmengine onedl-mmcv
           uv pip install -r pyproject.toml
       - name: Build and install
         run: uv pip install .
@@ -111,7 +111,6 @@ jobs:
           apt-get update
           apt-get install -y tzdata ffmpeg libsm6 libxext6 git ninja-build libglib2.0-0 libxrender-dev libc6 libc6-dev
           apt-get clean -y
-
       - name: Install torch
         run: |
           uv pip install -v --torch-backend=${{ matrix.cubackend }} torch==${{ matrix.torch }} torchvision
@@ -119,7 +118,6 @@ jobs:
       - name: Install mmdet dependencies
         run: |
           uv pip install git+https://github.com/VBTI-development/onedl-mim.git@lauriebax/upgrade-mim
-          source .venv/bin/activate
           mim install onedl-mmengine onedl-mmcv
           uv pip install -r pyproject.toml
       - name: Build and install
@@ -150,7 +148,6 @@ jobs:
       - name: Install mmdet dependencies
         run: |
           uv pip install git+https://github.com/VBTI-development/onedl-mim.git@lauriebax/upgrade-mim
-          source .venv/bin/activate
           mim install onedl-mmengine onedl-mmcv
           uv pip install -r pyproject.toml
       - name: Build and install
