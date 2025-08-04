@@ -20,9 +20,9 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'MMDetection'
-copyright = '2018-2021, OpenMMLab'
-author = 'MMDetection Authors'
+project = 'OneDL MMDetection'
+copyright = '2025, VBTI'
+author = 'OneDL MMDetection Authors'
 version_file = '../../mmdet/version.py'
 
 

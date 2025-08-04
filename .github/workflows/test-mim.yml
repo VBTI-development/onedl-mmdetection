@@ -1,0 +1,51 @@
+name: test-mim
+
+on:
+  push:
+    paths:
+      - '.github/workflows/test_mim.yml'
+      - 'pyproject.toml'
+      - 'setup.py'
+      - 'model-index.yml'
+      - 'configs/**'
+    branches:
+      - main
+
+  pull_request:
+    paths:
+      - '.github/workflows/test_mim.yml'
+      - 'pyproject.toml'
+      - 'setup.py'
+      - 'model-index.yml'
+      - 'configs/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_cpu:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        python-version: [3.10]
+        torch: [2.5.1]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.10'
+      - name: Install PyTorch
+        run: |
+          uv pip install torch==${{ matrix.torch }} torchvision
+      - name: Install openmim
+        run: uv pip install openmim
+      - name: Build and install
+        run: |
+          source .venv/bin/activate
+          mim install .
+      - name: test commands of mim
+        run: |
+          source .venv/bin/activate
+          mim search onedl-mmdetection

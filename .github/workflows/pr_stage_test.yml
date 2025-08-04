@@ -80,18 +80,19 @@ jobs:
         include:
           - python-version: '3.10' # minimum version
             torch: '2.0.0'
-            container: 'nvidia/cuda:11.1.1-cudnn8-devel-ubuntu20.04'
-            cubackend: cu111
+            container: 'nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04'
+            cubackend: cu118
           - python-version: '3.10'  # maximum version
             torch: '2.5.1'
-            container: 'nvidia/cuda:12.8.0-cudnn-devel-ubuntu22.04'
-            cubackend: cu128
+            container: 'nvidia/cuda:12.4.0-cudnn-devel-ubuntu22.04'
+            cubackend: cu124
     container:
       image: ${{ matrix.container }}
     env:
         UV_CACHE_DIR: /__w/_uv_cache # set cache to be on same disk to avoid hardlink copies.
         DEBIAN_FRONTEND: noninteractive
         TZ: Etc/UTC
+        PIP_PRE: 1 # TODO: until real release
     steps:
       - uses: actions/checkout@v4
       - name: Install uv and set the python version
@@ -116,9 +117,9 @@ jobs:
           uv cache clean
       - name: Install mmdet dependencies
         run: |
-          uv pip install onedl-mmengine
-          uv pip install ninja psutil setuptools
-          uv pip install git+https://github.com/VBTI-development/onedl-mmcv.git@main --no-build-isolation
+          uv pip install git+https://github.com/VBTI-development/onedl-mim.git@lauriebax/upgrade-mim
+          source .venv/bin/activate
+          mim install onedl-mmengine onedl-mmcv
           uv pip install -r pyproject.toml
       - name: Build and install
         run: uv pip install -e .
@@ -147,9 +148,9 @@ jobs:
         run: uv pip install -v torch==2.3.1 torchvision
       - name: Install mmdet dependencies
         run: |
-          uv pip install onedl-mmengine
-          uv pip install ninja psutil setuptools
-          uv pip install git+https://github.com/VBTI-development/onedl-mmcv.git@main --no-build-isolation
+          uv pip install git+https://github.com/VBTI-development/onedl-mim.git@lauriebax/upgrade-mim
+          source .venv/bin/activate
+          mim install onedl-mmengine onedl-mmcv
           uv pip install -r pyproject.toml
       - name: Build and install
         run: uv pip install .
