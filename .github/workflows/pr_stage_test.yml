@@ -28,6 +28,8 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       pull-requests: write
+    env:
+      PIP_PRE: 1 # TODO: until real release
     strategy:
       matrix:
         include:
@@ -136,6 +138,8 @@ jobs:
       matrix:
         python-version: ['3.10']
         platform: [cpu]
+    env:
+      PIP_PRE: 1 # TODO: until real release
     steps:
       - uses: actions/checkout@v4
       - name: Install uv and set the python version

@@ -44,6 +44,7 @@ jobs:
         UV_CACHE_DIR: /__w/_uv_cache # set cache to be on same disk to avoid hardlink copies.
         DEBIAN_FRONTEND: noninteractive
         TZ: Etc/UTC
+        PIP_PRE: 1 # TODO: until real release
     steps:
       - uses: actions/checkout@v4
       - name: Install uv and set the python version
