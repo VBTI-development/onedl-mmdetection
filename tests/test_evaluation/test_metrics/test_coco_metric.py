@@ -81,7 +81,8 @@ class TestCocoMetric(TestCase):
             'images': [image],
             'annotations':
             [annotation_1, annotation_2, annotation_3, annotation_4],
-            'categories': categories
+            'categories': categories,
+            'info': None,
         }
 
         dump(fake_json, json_name)

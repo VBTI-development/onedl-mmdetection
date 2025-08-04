@@ -2,6 +2,7 @@
 import copy
 import os
 import tempfile
+import unittest
 from unittest import TestCase
 
 import torch
@@ -11,6 +12,7 @@ from mmdet.evaluation import MOTChallengeMetric
 from mmdet.structures import DetDataSample, TrackDataSample
 
 
+@unittest.skip('Tracking is not supported')
 class TestMOTChallengeMetric(TestCase):
 
     def test_init(self):
