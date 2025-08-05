@@ -24,7 +24,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build_cpu:
+  mim_cpu:
     runs-on: ubuntu-22.04
     strategy:
       matrix:

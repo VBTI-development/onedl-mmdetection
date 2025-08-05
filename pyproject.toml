@@ -110,7 +110,7 @@ tracking = [
 ]
 
 [project.urls]
-Homepage = "https://onedl.ai"
+Homepage = "https://github.com/VBTI-development/onedl-mmdetection"
 Repository = "https://github.com/VBTI-development/onedl-mmdetection"
 Documentation = "https://onedl-mmdetection.readthedocs.io/en/latest/"
 
@@ -118,7 +118,7 @@ Documentation = "https://onedl-mmdetection.readthedocs.io/en/latest/"
 include-package-data = true
 
 [tool.setuptools.packages.find]
-include = ["mmdetection", "mmdetection.*"]
+include = ["mmdet", "mmdet.*"]
 exclude = ['configs', 'tools', 'demo', 'tests']
 namespaces = false
 
