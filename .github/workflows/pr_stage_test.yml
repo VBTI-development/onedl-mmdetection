@@ -87,7 +87,7 @@ jobs:
         include:
           - python-version: '3.10' # minimum version
             torch: '2.4.1'
-            container: 'nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04'
+            container: 'nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04'
             cubackend: cu118
           - python-version: '3.10'  # maximum version
             torch: '2.5.1'
