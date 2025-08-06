@@ -75,7 +75,7 @@ jobs:
       - name: Build and install
         run: uv pip install -e .
       - name: Install test dependencies
-        run: uv pip install -r pyproject.toml --group tests --extra optional
+        run: uv pip install -r pyproject.toml --group tests --all-extras
       - name: Run unit tests with coverage
         run: |
           set -e

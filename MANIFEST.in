@@ -1,5 +1,3 @@
-include requirements/*.txt
-include mmdet/VERSION
 include mmdet/.mim/model-index.yml
 include mmdet/.mim/dataset-index.yml
 include mmdet/.mim/demo/*/*

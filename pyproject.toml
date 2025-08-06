@@ -106,7 +106,8 @@ tracking = [
     "motmetrics",
     "numpy<1.24.0",
     "scikit-learn",
-    "seaborn"
+    "seaborn",
+    "lap",
 ]
 
 [project.urls]
