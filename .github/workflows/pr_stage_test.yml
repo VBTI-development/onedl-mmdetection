@@ -44,22 +44,26 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           activate-environment: true
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgl1
+          sudo apt-get clean -y
       - name: Install PyTorch
         run: |
-          uv pip install torch==${{ matrix.torch }} torchvision
+          uv pip install --torch-backend=cpu torch==${{ matrix.torch }} torchvision
       - name: Install mmdet dependencies
         run: |
           uv pip install git+https://github.com/VBTI-development/onedl-mim.git@lauriebax/upgrade-mim
-          uv run mim install onedl-mmengine onedl-mmcv
-          uv pip install -r pyproject.toml
+          mim install onedl-mmengine onedl-mmcv
       - name: Build and install
-        run: uv pip install .
+        run: mim install .
       - name: Install test dependencies
         run: uv pip install -r pyproject.toml --group tests --extra optional
       - name: Run unittests and generate coverage report
         run: |
           set -e
-          uv run coverage run --branch --source mmdet -m pytest tests/
+          uv run coverage run --branch --source mmdet -m pytest tests/ -x
           uv run coverage xml
           uv run coverage report -m
       - name: Code Coverage Summary Report
