@@ -59,7 +59,9 @@ jobs:
       - name: Build and install
         run: mim install .
       - name: Install test dependencies
-        run: uv pip install -r pyproject.toml --group tests --all-extras
+        run: |
+          uv pip install -r pyproject.toml --group tests --all-extras
+          uv pip install "panopticapi @ git+https://github.com/cocodataset/panopticapi.git"
       - name: Run unittests and generate coverage report
         run: |
           set -e
@@ -129,7 +131,9 @@ jobs:
       - name: Build and install
         run: uv pip install -e .
       - name: Install test dependencies
-        run: uv pip install -r pyproject.toml --group tests --all-extras
+        run: |
+          uv pip install -r pyproject.toml --group tests --all-extras
+          uv pip install "panopticapi @ git+https://github.com/cocodataset/panopticapi.git"
       - name: Run unit tests with coverage
         run: |
           set -e

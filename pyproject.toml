@@ -47,6 +47,7 @@ tests = [
     "nltk",
     "onnx==1.18.0",
     "onnxruntime>=1.8.0",
+    "panopticapi @ git+https://github.com/cocodataset/panopticapi.git",
     "parameterized",
     "prettytable",
     "protobuf",
@@ -96,9 +97,6 @@ optional = [
     "fairscale",
     "imagecorruptions",
     "scikit-learn",
-]
-panoptic = [
-    "panopticapi @ git+https://github.com/cocodataset/panopticapi.git"
 ]
 torch = [ "torch<2.6", "torchvision" ]
 tracking = [

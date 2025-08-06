@@ -1375,9 +1375,6 @@ optional = [
     { name = "imagecorruptions" },
     { name = "scikit-learn" },
 ]
-panoptic = [
-    { name = "panopticapi" },
-]
 torch = [
     { name = "torch" },
     { name = "torchvision" },
@@ -1427,6 +1424,7 @@ tests = [
     { name = "nltk" },
     { name = "onnx" },
     { name = "onnxruntime" },
+    { name = "panopticapi" },
     { name = "parameterized" },
     { name = "prettytable" },
     { name = "protobuf" },
@@ -1455,7 +1453,6 @@ requires-dist = [
     { name = "onedl-mmcv", marker = "extra == 'mminstall'", specifier = ">=2.0.0" },
     { name = "onedl-mmengine", marker = "extra == 'mminstall'", specifier = ">=0.8.3,<1.0.0" },
     { name = "onedl-mmpretrain", marker = "extra == 'tracking'" },
-    { name = "panopticapi", marker = "extra == 'panoptic'", git = "https://github.com/cocodataset/panopticapi.git" },
     { name = "pycocoevalcap", marker = "extra == 'multimodal'" },
     { name = "pycocotools" },
     { name = "scikit-learn", marker = "extra == 'optional'" },
@@ -1470,7 +1467,7 @@ requires-dist = [
     { name = "tqdm" },
     { name = "transformers", marker = "extra == 'multimodal'" },
 ]
-provides-extras = ["albu", "multimodal", "mminstall", "optional", "panoptic", "torch", "tracking"]
+provides-extras = ["albu", "multimodal", "mminstall", "optional", "torch", "tracking"]
 
 [package.metadata.requires-dev]
 build = [
@@ -1507,6 +1504,7 @@ tests = [
     { name = "nltk" },
     { name = "onnx", specifier = "==1.18.0" },
     { name = "onnxruntime", specifier = ">=1.8.0" },
+    { name = "panopticapi", git = "https://github.com/cocodataset/panopticapi.git" },
     { name = "parameterized" },
     { name = "prettytable" },
     { name = "protobuf" },
