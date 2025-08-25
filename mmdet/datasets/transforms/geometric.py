@@ -82,10 +82,10 @@ class GeomTransform(BaseTransform):
             f'The level should be None or type int, got {type(level)}.'
         assert level is None or 0 <= level <= _MAX_LEVEL, \
             f'The level should be in range [0,{_MAX_LEVEL}], got {level}.'
-        assert isinstance(min_mag, float), \
-            f'min_mag should be type float, got {type(min_mag)}.'
-        assert isinstance(max_mag, float), \
-            f'max_mag should be type float, got {type(max_mag)}.'
+        assert isinstance(min_mag, (float, int)), \
+            f'min_mag should be type float or int, got {type(min_mag)}.'
+        assert isinstance(max_mag, (float, int)), \
+            f'max_mag should be type float or int, got {type(max_mag)}.'
         assert min_mag <= max_mag, \
             f'min_mag should smaller than max_mag, ' \
             f'got min_mag={min_mag} and max_mag={max_mag}'

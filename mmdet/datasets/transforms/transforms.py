@@ -3067,6 +3067,7 @@ class CopyPaste(BaseTransform):
         dst_img = dst_results['img']
         dst_bboxes = dst_results['gt_bboxes']
         dst_labels = dst_results['gt_bboxes_labels']
+        has_orig_masks = 'gt_masks' in dst_results
         dst_masks = self.get_gt_masks(dst_results)
         dst_ignore_flags = dst_results['gt_ignore_flags']
 
@@ -3106,8 +3107,11 @@ class CopyPaste(BaseTransform):
         dst_results['img'] = img
         dst_results['gt_bboxes'] = bboxes
         dst_results['gt_bboxes_labels'] = labels
-        dst_results['gt_masks'] = BitmapMasks(masks, masks.shape[1],
-                                              masks.shape[2])
+
+        if has_orig_masks:
+            # do not output made up masks
+            dst_results['gt_masks'] = BitmapMasks(masks, masks.shape[1],
+                                                  masks.shape[2])
         dst_results['gt_ignore_flags'] = ignore_flags
 
         return dst_results
@@ -3475,18 +3479,16 @@ class CachedMosaic(Mosaic):
             mosaic_bboxes_labels.append(gt_bboxes_labels_i)
             mosaic_ignore_flags.append(gt_ignore_flags_i)
             if with_mask and results_patch.get('gt_masks', None) is not None:
-                gt_masks_i = results_patch['gt_masks']
+
+                inside_mask_idxs = gt_bboxes_i.is_inside(
+                    [2 * self.img_scale[1], 2 * self.img_scale[0]]).numpy()
+                gt_masks_i = results_patch['gt_masks'][inside_mask_idxs]
                 gt_masks_i = gt_masks_i.rescale(float(scale_ratio_i))
                 gt_masks_i = gt_masks_i.translate(
                     out_shape=(int(self.img_scale[0] * 2),
                                int(self.img_scale[1] * 2)),
-                    offset=padw,
-                    direction='horizontal')
-                gt_masks_i = gt_masks_i.translate(
-                    out_shape=(int(self.img_scale[0] * 2),
-                               int(self.img_scale[1] * 2)),
-                    offset=padh,
-                    direction='vertical')
+                    offset=(padw, padh),
+                    direction='both')
                 mosaic_masks.append(gt_masks_i)
 
         mosaic_bboxes = mosaic_bboxes[0].cat(mosaic_bboxes, 0)
@@ -3509,8 +3511,7 @@ class CachedMosaic(Mosaic):
         results['gt_ignore_flags'] = mosaic_ignore_flags
 
         if with_mask:
-            mosaic_masks = mosaic_masks[0].cat(mosaic_masks)
-            results['gt_masks'] = mosaic_masks[inside_inds]
+            results['gt_masks'] = mosaic_masks[0].cat(mosaic_masks)
         return results
 
     def __repr__(self):

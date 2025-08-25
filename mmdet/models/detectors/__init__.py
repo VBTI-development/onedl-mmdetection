@@ -6,6 +6,7 @@ from .base_detr import DetectionTransformer
 from .boxinst import BoxInst
 from .cascade_rcnn import CascadeRCNN
 from .centernet import CenterNet
+from .clrnet_detector import CLRNet
 from .condinst import CondInst
 from .conditional_detr import ConditionalDETR
 from .cornernet import CornerNet
@@ -71,5 +72,5 @@ __all__ = [
     'MaskFormer', 'DDOD', 'Mask2Former', 'SemiBaseDetector', 'SoftTeacher',
     'RTMDet', 'Detectron2Wrapper', 'CrowdDet', 'CondInst', 'BoxInst',
     'DetectionTransformer', 'ConditionalDETR', 'DINO', 'DABDETR', 'GLIP',
-    'DDQDETR', 'GroundingDINO'
+    'DDQDETR', 'GroundingDINO', 'CLRNet'
 ]

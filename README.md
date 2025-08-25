@@ -275,6 +275,12 @@ Results and models are available in the [model zoo](docs/en/model_zoo.md).
           <li><a href="configs/soft_teacher">Soft Teacher (ICCV'2021)</a></li>
         </ul>
         </ul>
+          <li><b>Lane detection</b></li>
+        <ul>
+        <ul>
+          <li><a href="configs/clrnet">CLRNet (CVPR'2022)</a></li>
+        </ul>
+        </ul>
       </ul>
       </td>
     </tr>
@@ -332,6 +338,7 @@ Results and models are available in the [model zoo](docs/en/model_zoo.md).
         <li><a href="configs/fpg">FPG (ArXiv'2020)</a></li>
         <li><a href="configs/groie">GRoIE (ICPR'2020)</a></li>
         <li><a href="configs/dyhead">DyHead (CVPR'2021)</a></li>
+        <li><a href="configs/clrnet">CLRHead (CVPR'2022)</a></li>
       </ul>
       </td>
       <td>

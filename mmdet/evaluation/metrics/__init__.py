@@ -7,10 +7,12 @@ from .coco_occluded_metric import CocoOccludedSeparatedMetric
 from .coco_panoptic_metric import CocoPanopticMetric
 from .coco_video_metric import CocoVideoMetric
 from .crowdhuman_metric import CrowdHumanMetric
+from .culane_metric import CULaneMetric
 from .dod_metric import DODCocoMetric
 from .dump_det_results import DumpDetResults
 from .dump_odvg_results import DumpODVGResults
 from .dump_proposals_metric import DumpProposals
+from .faster_coco_metric import FasterCocoMetric
 from .flickr30k_metric import Flickr30kMetric
 from .grefcoco_metric import gRefCOCOMetric
 from .lvis_metric import LVISMetric
@@ -31,5 +33,5 @@ __all__ = [
     'MOTChallengeMetric', 'CocoVideoMetric', 'ReIDMetrics', 'YouTubeVISMetric',
     'COCOCaptionMetric', 'SemSegMetric', 'RefSegMetric', 'RefExpMetric',
     'gRefCOCOMetric', 'DODCocoMetric', 'DumpODVGResults', 'Flickr30kMetric',
-    'OVCocoMetric'
+    'OVCocoMetric', 'CULaneMetric', 'FasterCocoMetric'
 ]

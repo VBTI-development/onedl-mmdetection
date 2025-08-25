@@ -9,6 +9,7 @@ from .cascade_rpn_head import CascadeRPNHead, StageCascadeRPNHead
 from .centernet_head import CenterNetHead
 from .centernet_update_head import CenterNetUpdateHead
 from .centripetal_head import CentripetalHead
+from .clr_head import CLRHead
 from .condinst_head import CondInstBboxHead, CondInstMaskHead
 from .conditional_detr_head import ConditionalDETRHead
 from .corner_head import CornerHead
@@ -68,5 +69,6 @@ __all__ = [
     'CenterNetUpdateHead', 'RTMDetHead', 'RTMDetSepBNHead', 'CondInstBboxHead',
     'CondInstMaskHead', 'RTMDetInsHead', 'RTMDetInsSepBNHead',
     'BoxInstBboxHead', 'BoxInstMaskHead', 'ConditionalDETRHead', 'DINOHead',
-    'ATSSVLFusionHead', 'DABDETRHead', 'DDQDETRHead', 'GroundingDINOHead'
+    'ATSSVLFusionHead', 'DABDETRHead', 'DDQDETRHead', 'GroundingDINOHead',
+    'CLRHead'
 ]

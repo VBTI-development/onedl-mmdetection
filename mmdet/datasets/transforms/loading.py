@@ -1,5 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Tuple, Union
+from typing import Dict, List, Optional, Tuple, Union
 
 import mmcv
 import numpy as np
@@ -1072,3 +1072,31 @@ class LoadTrackAnnotations(LoadAnnotations):
         repr_str += f"imdecode_backend='{self.imdecode_backend}', "
         repr_str += f'file_client_args={self.file_client_args})'
         return repr_str
+
+
+class CutHeight(BaseTransform):
+
+    def __init__(self, cut_height: int = 0):
+        self.cut_height = cut_height
+
+    def transform(self,
+                  results: Dict) -> Optional[Union[Dict, Tuple[List, List]]]:
+        if 'img' in results:
+            img = results['img']
+            img = img[self.cut_height:, :, :]
+            results['img'] = img
+
+        if 'gt_seg_map' in results:
+            seg_map_array = results['gt_seg_map']
+            seg_map_array = seg_map_array[self.cut_height:, :]
+            results['gt_seg_map'] = seg_map_array
+
+        if 'line' in results:
+            new_lanes = []
+            for i in results['lines']:
+                lanes = []
+                for p in i:
+                    lanes.append((p[0], p[1] - self.cut_height))
+                new_lanes.append(lanes)
+            results['lines'] = new_lanes
+        return results

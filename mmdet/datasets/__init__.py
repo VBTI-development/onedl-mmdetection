@@ -1,4 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+# noqa: F401
+
 from .ade20k import (ADE20KInstanceDataset, ADE20KPanopticDataset,
                      ADE20KSegDataset)
 from .base_det_dataset import BaseDetDataset
@@ -21,6 +23,16 @@ from .mdetr_style_refcoco import MDETRStyleRefCocoDataset
 from .mot_challenge_dataset import MOTChallengeDataset
 from .objects365 import Objects365V1Dataset, Objects365V2Dataset
 from .odvg import ODVGDataset
+
+try:
+    from .onedl import OneDLDataset, OneDLLineInstancesDatasetAdapter
+    onedl_dataset_types = ['OneDLDataset', 'OneDLLineInstancesDatasetAdapter']
+except ImportError:
+    import logging
+
+    from mmengine.logging import print_log
+    print_log('Could not import OneDL', level=logging.DEBUG)
+    onedl_dataset_types = []
 from .openimages import OpenImagesChallengeDataset, OpenImagesDataset
 from .refcoco import RefCocoDataset
 from .reid_dataset import ReIDDataset
@@ -50,4 +62,4 @@ __all__ = [
     'ADE20KInstanceDataset', 'iSAIDDataset', 'V3DetDataset', 'ConcatDataset',
     'ODVGDataset', 'MDETRStyleRefCocoDataset', 'DODDataset',
     'CustomSampleSizeSampler', 'Flickr30kDataset'
-]
+] + onedl_dataset_types
