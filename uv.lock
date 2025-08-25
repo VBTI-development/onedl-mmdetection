@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = ">=3.10"
 resolution-markers = [
     "python_full_version >= '4' and sys_platform == 'darwin'",
@@ -623,6 +623,26 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/a7/84/62473fb57d61e31fef6e36d64a179c8781605429fd927b5dd608c997be31/imagesize-1.4.1.tar.gz", hash = "sha256:69150444affb9cb0d5cc5a92b3676f0b2fb7cd9ae39e947a5e11a36b4497cd4a", size = 1280026, upload-time = "2022-07-01T12:21:05.687Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ff/62/85c4c919272577931d407be5ba5d71c20f0b616d31a0befe0ae45bb79abd/imagesize-1.4.1-py2.py3-none-any.whl", hash = "sha256:0d8d18d08f840c19d0ee7ca1fd82490fdc3729b7ac93f49870406ddde8ef8d8b", size = 8769, upload-time = "2022-07-01T12:21:02.467Z" },
+]
+
+[[package]]
+name = "imgaug"
+version = "0.4.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "imageio" },
+    { name = "matplotlib" },
+    { name = "numpy" },
+    { name = "opencv-python" },
+    { name = "pillow" },
+    { name = "scikit-image" },
+    { name = "scipy" },
+    { name = "shapely" },
+    { name = "six" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/25/7d/820295b8fdaf06dce9688ef2fdeb5a317896d3276db7723e5a94e85e1253/imgaug-0.4.0.tar.gz", hash = "sha256:46bab63ed38f8980630ff721a09ca2281b7dbd4d8c11258818b6ebcc69ea46c7", size = 937254, upload-time = "2020-02-05T20:54:24.835Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/66/b1/af3142c4a85cba6da9f4ebb5ff4e21e2616309552caca5e8acefe9840622/imgaug-0.4.0-py2.py3-none-any.whl", hash = "sha256:ce61e65b4eb7405fc62c1b0a79d2fa92fd47f763aaecb65152d29243592111f9", size = 948018, upload-time = "2020-02-05T20:54:22.293Z" },
 ]
 
 [[package]]
@@ -1373,6 +1393,7 @@ optional = [
     { name = "emoji" },
     { name = "fairscale" },
     { name = "imagecorruptions" },
+    { name = "imgaug" },
     { name = "scikit-learn" },
 ]
 torch = [
@@ -1416,6 +1437,7 @@ tests = [
     { name = "cityscapesscripts" },
     { name = "codecov" },
     { name = "imagecorruptions" },
+    { name = "imgaug" },
     { name = "instaboostfast" },
     { name = "interrogate" },
     { name = "kwarray", version = "0.6.16", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '4'" },
@@ -1443,6 +1465,7 @@ requires-dist = [
     { name = "fairscale", marker = "extra == 'multimodal'" },
     { name = "fairscale", marker = "extra == 'optional'" },
     { name = "imagecorruptions", marker = "extra == 'optional'" },
+    { name = "imgaug", marker = "extra == 'optional'" },
     { name = "jsonlines", marker = "extra == 'multimodal'" },
     { name = "lap", marker = "extra == 'tracking'" },
     { name = "matplotlib" },
@@ -1497,6 +1520,7 @@ tests = [
     { name = "cityscapesscripts" },
     { name = "codecov" },
     { name = "imagecorruptions" },
+    { name = "imgaug" },
     { name = "instaboostfast" },
     { name = "interrogate" },
     { name = "kwarray" },

@@ -39,6 +39,7 @@ tests = [
     "cityscapesscripts",
     "codecov",
     "imagecorruptions",
+    "imgaug",
     "instaboostfast",
     "interrogate",
     "kwarray",
@@ -97,6 +98,7 @@ optional = [
     "fairscale",
     "imagecorruptions",
     "scikit-learn",
+    "imgaug",
 ]
 torch = [ "torch<2.6", "torchvision" ]
 tracking = [
