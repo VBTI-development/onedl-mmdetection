@@ -181,7 +181,7 @@ class DetInferencer(BaseInferencer):
         If the transform is not found, returns -1.
         """
         for i, transform in enumerate(pipeline_cfg):
-            if transform['type'] in name:
+            if transform['type'].split('.')[-1] in name:  # ignore scope
                 return i
         return -1
 
