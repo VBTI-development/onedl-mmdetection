@@ -1,7 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import itertools
 from abc import ABCMeta, abstractmethod
-from typing import Sequence, Type, TypeVar
+from typing import Sequence, Tuple, Type, TypeVar, Union
 
 import cv2
 import mmcv
@@ -12,6 +12,73 @@ import torch
 from mmcv.ops.roi_align import roi_align
 
 T = TypeVar('T')
+
+
+def get_offsets_hv(offset, direction):
+    if direction == 'horizontal':
+        off_h, off_v = offset, 0
+    elif direction == 'vertical':
+        off_h, off_v = 0, offset
+    else:
+        if isinstance(offset, tuple):
+            off_h, off_v = offset
+        else:
+            off_h, off_v = (offset, offset)
+    return off_h, off_v
+
+
+def both_imtranslate(img: np.ndarray,
+                     offset: Union[int, float, Tuple[Union[int, float]]],
+                     direction: str = 'horizontal',
+                     border_value: Union[int, tuple] = 0,
+                     interpolation: str = 'bilinear') -> np.ndarray:
+    """Translate an image.
+
+    Args:
+        img (ndarray): Image to be translated with format
+            (h, w) or (h, w, c).
+        offset (int | float | tuple): The offset used for translate.
+        direction (str): The translate direction, either "horizontal"
+            or "vertical" or "both"
+        border_value (int | tuple[int]): Value used in case of a
+            constant border.
+        interpolation (str): Same as :func:`resize`.
+
+    Returns:
+        ndarray: The translated image.
+    """
+    assert direction in ['horizontal', 'vertical',
+                         'both'], f'Invalid direction: {direction}'
+    height, width = img.shape[:2]
+    if img.ndim == 2:
+        channels = 1
+    elif img.ndim == 3:
+        channels = img.shape[-1]
+    if isinstance(border_value, int):
+        border_value = tuple([border_value] * channels)
+    elif isinstance(border_value, tuple):
+        assert len(border_value) == channels, \
+            'Expected the num of elements in tuple equals the channels' \
+            'of input image. Found {} vs {}'.format(
+                len(border_value), channels)
+    else:
+        raise ValueError(
+            f'Invalid type {type(border_value)} for `border_value`.')
+
+    off_h, off_v = get_offsets_hv(offset, direction)
+
+    translate_matrix = np.float32([[1, 0, off_h], [0, 1, off_v]])
+    translated = cv2.warpAffine(
+        img,
+        translate_matrix,
+        (width, height),
+        # Note case when the number elements in `border_value`
+        # greater than 3 (e.g. translating masks whose channels
+        # large than 3) will raise TypeError in `cv2.warpAffine`.
+        # Here simply slice the first 3 values in `border_value`.
+        borderValue=border_value[:3],
+        flags=mmcv.image.geometric.cv2_interp_codes[interpolation])
+    return translated
 
 
 class BaseInstanceMasks(metaclass=ABCMeta):
@@ -262,10 +329,10 @@ class BitmapMasks(BaseInstanceMasks):
             if isinstance(masks, list):
                 assert isinstance(masks[0], np.ndarray)
                 assert masks[0].ndim == 2  # (H, W)
+                self.masks = np.stack(masks).reshape(-1, height, width)
             else:
                 assert masks.ndim == 3  # (N, H, W)
-
-            self.masks = np.stack(masks).reshape(-1, height, width)
+                self.masks = masks  # no need to copy
             assert self.masks.shape[1] == self.height
             assert self.masks.shape[2] == self.width
 
@@ -421,9 +488,10 @@ class BitmapMasks(BaseInstanceMasks):
 
         Args:
             out_shape (tuple[int]): Shape for output mask, format (h, w).
-            offset (int | float): The offset for translate.
+            offset (int | float, tuple): The offset for translate.
             direction (str): The translate direction, either "horizontal"
-                or "vertical".
+                or "vertical" or "both" in which case offset is
+                tuple for (horizontal, vertical)
             border_value (int | float): Border value. Default 0 for masks.
             interpolation (str): Same as :func:`mmcv.imtranslate`.
 
@@ -456,7 +524,7 @@ class BitmapMasks(BaseInstanceMasks):
                 min_w = min(out_shape[1], masks.shape[2])
                 empty_masks[:, :min_h, :min_w] = masks[:, :min_h, :min_w]
                 masks = empty_masks
-            translated_masks = mmcv.imtranslate(
+            translated_masks = both_imtranslate(
                 masks.transpose((1, 2, 0)),
                 offset,
                 direction,
@@ -868,14 +936,13 @@ class PolygonMasks(BaseInstanceMasks):
             translated_masks = PolygonMasks([], *out_shape)
         else:
             translated_masks = []
+            off_h, off_v = get_offsets_hv(offset, direction)
             for poly_per_obj in self.masks:
                 translated_poly_per_obj = []
                 for p in poly_per_obj:
                     p = p.copy()
-                    if direction == 'horizontal':
-                        p[0::2] = np.clip(p[0::2] + offset, 0, out_shape[1])
-                    elif direction == 'vertical':
-                        p[1::2] = np.clip(p[1::2] + offset, 0, out_shape[0])
+                    p[0::2] = np.clip(p[0::2] + off_h, 0, out_shape[1])
+                    p[1::2] = np.clip(p[1::2] + off_v, 0, out_shape[0])
                     translated_poly_per_obj.append(p)
                 translated_masks.append(translated_poly_per_obj)
             translated_masks = PolygonMasks(translated_masks, *out_shape)
@@ -898,6 +965,10 @@ class PolygonMasks(BaseInstanceMasks):
             elif direction == 'vertical':
                 shear_matrix = np.stack([[1, 0], [magnitude,
                                                   1]]).astype(np.float32)
+            else:
+                msg = f'Shear direction {direction} unknown'
+                raise ValueError(msg)
+
             for poly_per_obj in self.masks:
                 sheared_poly = []
                 for p in poly_per_obj:
@@ -925,6 +996,9 @@ class PolygonMasks(BaseInstanceMasks):
             rotated_masks = PolygonMasks([], *out_shape)
         else:
             rotated_masks = []
+            h, w = out_shape
+            if center is None:
+                center = ((w - 1) * 0.5, (h - 1) * 0.5)
             rotate_matrix = cv2.getRotationMatrix2D(center, -angle, scale)
             for poly_per_obj in self.masks:
                 rotated_poly = []
