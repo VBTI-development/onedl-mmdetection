@@ -465,6 +465,44 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/c1/08/b3334d7b543ac10dcb129cef4f84723ab696725512f18d69ab3a784b0bf5/fairscale-0.4.13.tar.gz", hash = "sha256:1b797825c427f5dba92253fd0d8daa574e8bd651a2423497775fab1b30cfb768", size = 266261, upload-time = "2022-12-11T18:09:16.892Z" }
 
 [[package]]
+name = "faster-coco-eval"
+version = "1.6.7"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "pillow" },
+    { name = "plotly" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/de/fb/3a044460657e1d7a8aacede084407e5b5507b428fde9c0ca9f6f94a1392b/faster_coco_eval-1.6.7.tar.gz", hash = "sha256:155a324431dff5ade373905740f7d58a73203d7c85c2cf970bbfe684013ce555", size = 86489, upload-time = "2025-06-11T00:01:05.362Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/11/18/05a1dfbe2b143f7c4b996223ca5096d1087acc56b3f8e3a945a5158b0336/faster_coco_eval-1.6.7-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:c0aa9a5dcf3c287ad78727fc8edfd8ac37ceb4d256efd4e4d6a4a414c2efa375", size = 376256, upload-time = "2025-06-11T00:00:05.813Z" },
+    { url = "https://files.pythonhosted.org/packages/58/2b/0765665d565347661f4656ce49dd380c127a0fc7031dee944440cc54dd9c/faster_coco_eval-1.6.7-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:8ecf930fe1a356c7a9c1248a32b3c3e342ebc3569d120cea5a7ee18378ccbab4", size = 355764, upload-time = "2025-06-11T00:00:07.814Z" },
+    { url = "https://files.pythonhosted.org/packages/6b/a6/6bf1f7e4891c8697e1c80e2f27542c0fb7d8adea4455476559630e776ee9/faster_coco_eval-1.6.7-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:771370d2ee6c2cd095fb9c5069761fc528ac54074cdb8c617ff1a74b9a61adee", size = 465914, upload-time = "2025-06-11T00:00:08.978Z" },
+    { url = "https://files.pythonhosted.org/packages/9a/93/85979136ecf76fdfa73724d94acf4977810c44306103e95b9b5753a35dda/faster_coco_eval-1.6.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6c2a64462173a9163a23e5b13891f0cfb6b617e3ee041c3a1b9698d541364377", size = 486732, upload-time = "2025-06-11T00:00:10.206Z" },
+    { url = "https://files.pythonhosted.org/packages/46/ec/b1265d8ddcaa8f4e7f52e49c6837e6c425c7c18f8732bb6de88aef111933/faster_coco_eval-1.6.7-cp310-cp310-win_amd64.whl", hash = "sha256:0ae9b6941ed064de1818bd9de8c29d29321440c33a8ae77a2d7c3c7e79218ee1", size = 334369, upload-time = "2025-06-11T00:00:11.519Z" },
+    { url = "https://files.pythonhosted.org/packages/8c/7b/8f2961995b787d540bef5bfa6852c8af84382abe951b732974a1480a109e/faster_coco_eval-1.6.7-cp310-cp310-win_arm64.whl", hash = "sha256:9ec264dc4eacbf589a5b1425ba05fe3c9725224df194d3f89824a39ff29379f9", size = 315783, upload-time = "2025-06-11T00:00:13.229Z" },
+    { url = "https://files.pythonhosted.org/packages/75/76/3a42e92aa675d86a7d0bdc31c8c869da9f56525c2e55ee92d4a2a7c7e2b6/faster_coco_eval-1.6.7-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:35075202d713033959f86365acd2807c16d199c2e9323e02ec7ceacb882708a2", size = 379713, upload-time = "2025-06-11T00:00:14.336Z" },
+    { url = "https://files.pythonhosted.org/packages/42/54/a3c8d3847ed968e19d1a976e55753a880ab7302f78565b2d50ea39869585/faster_coco_eval-1.6.7-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:ad82b39867ed13f3d70f50f3b80b523fe4ab211ae826b80933df2e5820a2d7ce", size = 358497, upload-time = "2025-06-11T00:00:15.975Z" },
+    { url = "https://files.pythonhosted.org/packages/f3/50/bac3b8d0d6870a891ded6106b18b4b8a819e2e4090689b055c052c256d7d/faster_coco_eval-1.6.7-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7904d4b041b362dd0cc9e0abbc93c5f035111ea8f476b05a417223dc4159e13e", size = 469358, upload-time = "2025-06-11T00:00:17.714Z" },
+    { url = "https://files.pythonhosted.org/packages/97/29/6e56607fd4fc612c15a3777ad59c38cb09ed97f01d0150e7f6b3257000c8/faster_coco_eval-1.6.7-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:0e6095ca25064e34c778e226e3808e3add0eeb4d3c28da53e6d9ba77250251aa", size = 489466, upload-time = "2025-06-11T00:00:18.938Z" },
+    { url = "https://files.pythonhosted.org/packages/14/57/7feea0a11c51905b573f56b2c6318d2a832dfef7617d7dc3e88ad4d2e01f/faster_coco_eval-1.6.7-cp311-cp311-win_amd64.whl", hash = "sha256:7e333e829f114727e793c32142b39ade0840530c385e5022514102f4f22609b3", size = 336532, upload-time = "2025-06-11T00:00:20.852Z" },
+    { url = "https://files.pythonhosted.org/packages/8b/22/530dcc259e1880aa35337d73b16568fd736cd3e92386019adacfd2e00f67/faster_coco_eval-1.6.7-cp311-cp311-win_arm64.whl", hash = "sha256:09f8bfdffcdfe0e3e6fb2288b92d9340eae25a67fe6ddb90424b622be8c5770d", size = 317221, upload-time = "2025-06-11T00:00:22.04Z" },
+    { url = "https://files.pythonhosted.org/packages/38/0c/76f444051fc57b30bdf38f3ab25a44f0cf9f927b17bd777510deebcd815b/faster_coco_eval-1.6.7-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:00330273e57886e9660c9a4d3d4030df3bd15147d40bae956d5dfb9a32aba9f0", size = 380668, upload-time = "2025-06-11T00:00:23.635Z" },
+    { url = "https://files.pythonhosted.org/packages/1c/59/363aa3a1bfd9fc0d68fb954155dff28504780ca57d298b0becb86a7850bb/faster_coco_eval-1.6.7-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:d5af73b268635145475f07f1189cc514aa9226b6c4113c3514b69040088f6f80", size = 357953, upload-time = "2025-06-11T00:00:24.764Z" },
+    { url = "https://files.pythonhosted.org/packages/4f/ef/58fbfa44407039940b2fe803e567c0e501e013bf440ce2307cc7c33d8da1/faster_coco_eval-1.6.7-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:ed2770c2a5122cdba607b3f49aa76dd151898f2092847dc4a460331ad3fc979b", size = 467096, upload-time = "2025-06-11T00:00:25.859Z" },
+    { url = "https://files.pythonhosted.org/packages/78/94/f920d4086b634612c71023c4bf88ced4cb548470742e6015a4c5ae04d27c/faster_coco_eval-1.6.7-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:27240849127f4a8e18bad5be0ae841fccf6ccc88125f416de069e68e5642f486", size = 488259, upload-time = "2025-06-11T00:00:27.352Z" },
+    { url = "https://files.pythonhosted.org/packages/1e/93/59ff4807fb7d31800d0c18f9c9c333bbed56da604393fde34dcae58764d1/faster_coco_eval-1.6.7-cp312-cp312-win_amd64.whl", hash = "sha256:2e52e4fc7e19f31bb6b2f67b525c194e341a73eebef0b9a17dbb050e73195ce0", size = 337764, upload-time = "2025-06-11T00:00:28.732Z" },
+    { url = "https://files.pythonhosted.org/packages/69/4b/e2ade3334e3330303d3efc66cd6d34934361d954ce5f3deb8d6d3a8a5d4b/faster_coco_eval-1.6.7-cp312-cp312-win_arm64.whl", hash = "sha256:a483561a0a1cb05f958f4362501238837a670f75c48c8c3ba1afdb0bcb637d23", size = 314965, upload-time = "2025-06-11T00:00:30.515Z" },
+    { url = "https://files.pythonhosted.org/packages/c8/ef/8c6e0cf748a7656ad2304926d3cedf8c621218ffc3bf577eaa76b6d51263/faster_coco_eval-1.6.7-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:f50063a3a3c77b9ca58cda42429a07e91374b40d25351f1462b25e9f3ddf23f4", size = 380817, upload-time = "2025-06-11T00:00:32.173Z" },
+    { url = "https://files.pythonhosted.org/packages/aa/c0/0c853e3f553e9b5462fcd3c1b64ee5da25c2c30287e05e122fa01d692884/faster_coco_eval-1.6.7-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:f2224b1bf2fde5bc1854dbda94e99c0cb87d4e4ff257f7dedfa824627d5944fa", size = 358165, upload-time = "2025-06-11T00:00:33.252Z" },
+    { url = "https://files.pythonhosted.org/packages/b8/bb/41f6fc96279404cab255d7cf973013b5f3b0ad853093506fe67aa0f89bd5/faster_coco_eval-1.6.7-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:fea6b57fc0763da9a0346aa830e0893828c30811eb4695ea3886e35d7fdde374", size = 466977, upload-time = "2025-06-11T00:00:34.393Z" },
+    { url = "https://files.pythonhosted.org/packages/20/3f/8d2af40a1a87e4cdb75ab4bd9e7a31496e5b7e3394adee057a507c661b7f/faster_coco_eval-1.6.7-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:234ac141c3d150966801050d4a3b4c82726cead11c3e840e34f64ca318964567", size = 488417, upload-time = "2025-06-11T00:00:36.134Z" },
+    { url = "https://files.pythonhosted.org/packages/e3/5d/3019d27096a43ac64abb4cdd2f7852effdf08c2f9e1a84ec875bd60316a6/faster_coco_eval-1.6.7-cp313-cp313-win_amd64.whl", hash = "sha256:a75e3eb6104e15e41d1d564939f533e25007bfeb59d704eb7f7199ebf9b71854", size = 337787, upload-time = "2025-06-11T00:00:39.355Z" },
+    { url = "https://files.pythonhosted.org/packages/34/96/ffcbc6dffca859497786047ca83c083640e0432f6ce1ef03387ea3b598a5/faster_coco_eval-1.6.7-cp313-cp313-win_arm64.whl", hash = "sha256:a9c7a3b849b1b9d375ed0b551895daf7de0d0670b3c6ce3067b8a2fb4205c1f7", size = 314856, upload-time = "2025-06-11T00:00:41.155Z" },
+]
+
+[[package]]
 name = "filelock"
 version = "3.18.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1161,6 +1199,15 @@ wheels = [
 ]
 
 [[package]]
+name = "narwhals"
+version = "2.2.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/01/8f/6b3d8c19540eaaa50778a8bbbe54e025d3f93aca6cdd5a4de3044c36f83c/narwhals-2.2.0.tar.gz", hash = "sha256:f6a34f2699acabe2c17339c104f0bec28b9f7a55fbc7f8d485d49bea72d12b8a", size = 547070, upload-time = "2025-08-25T07:51:58.904Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/dd/54/1ecca75e51d7da8ca53d1ffa8636ef9077a6eaa31f43ade71360b3e6449a/narwhals-2.2.0-py3-none-any.whl", hash = "sha256:2b5e3d61a486fa4328c286b0c8018b3e781a964947ff725d66ba12f6d5ca3d2a", size = 401021, upload-time = "2025-08-25T07:51:56.97Z" },
+]
+
+[[package]]
 name = "networkx"
 version = "3.4.2"
 source = { registry = "https://pypi.org/simple" }
@@ -1392,6 +1439,7 @@ optional = [
     { name = "cityscapesscripts" },
     { name = "emoji" },
     { name = "fairscale" },
+    { name = "faster-coco-eval" },
     { name = "imagecorruptions" },
     { name = "imgaug" },
     { name = "scikit-learn" },
@@ -1436,6 +1484,7 @@ tests = [
     { name = "asynctest" },
     { name = "cityscapesscripts" },
     { name = "codecov" },
+    { name = "faster-coco-eval" },
     { name = "imagecorruptions" },
     { name = "imgaug" },
     { name = "instaboostfast" },
@@ -1464,6 +1513,7 @@ requires-dist = [
     { name = "emoji", marker = "extra == 'optional'" },
     { name = "fairscale", marker = "extra == 'multimodal'" },
     { name = "fairscale", marker = "extra == 'optional'" },
+    { name = "faster-coco-eval", marker = "extra == 'optional'" },
     { name = "imagecorruptions", marker = "extra == 'optional'" },
     { name = "imgaug", marker = "extra == 'optional'" },
     { name = "jsonlines", marker = "extra == 'multimodal'" },
@@ -1519,6 +1569,7 @@ tests = [
     { name = "asynctest" },
     { name = "cityscapesscripts" },
     { name = "codecov" },
+    { name = "faster-coco-eval" },
     { name = "imagecorruptions" },
     { name = "imgaug" },
     { name = "instaboostfast" },
@@ -1846,6 +1897,19 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz", hash = "sha256:3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc", size = 21362, upload-time = "2025-05-07T22:47:42.121Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fe/39/979e8e21520d4e47a0bbe349e2713c0aac6f3d853d0e5b34d76206c439aa/platformdirs-4.3.8-py3-none-any.whl", hash = "sha256:ff7059bb7eb1179e2685604f4aaf157cfd9535242bd23742eadc3c13542139b4", size = 18567, upload-time = "2025-05-07T22:47:40.376Z" },
+]
+
+[[package]]
+name = "plotly"
+version = "6.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "narwhals" },
+    { name = "packaging" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a0/64/850de5076f4436410e1ce4f6a69f4313ef6215dfea155f3f6559335cad29/plotly-6.3.0.tar.gz", hash = "sha256:8840a184d18ccae0f9189c2b9a2943923fd5cae7717b723f36eef78f444e5a73", size = 6923926, upload-time = "2025-08-12T20:22:14.127Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/95/a9/12e2dc726ba1ba775a2c6922d5d5b4488ad60bdab0888c337c194c8e6de8/plotly-6.3.0-py3-none-any.whl", hash = "sha256:7ad806edce9d3cdd882eaebaf97c0c9e252043ed1ed3d382c3e3520ec07806d4", size = 9791257, upload-time = "2025-08-12T20:22:09.205Z" },
 ]
 
 [[package]]
