@@ -19,6 +19,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
+    "imgaug",
     "matplotlib",
     "numpy",
     "pycocotools",
@@ -40,7 +41,6 @@ tests = [
     "codecov",
     "faster-coco-eval",
     "imagecorruptions",
-    "imgaug",
     "instaboostfast",
     "interrogate",
     "kwarray",
@@ -100,7 +100,6 @@ optional = [
     "faster-coco-eval",
     "imagecorruptions",
     "scikit-learn",
-    "imgaug",
 ]
 torch = [ "torch<2.6", "torchvision" ]
 tracking = [

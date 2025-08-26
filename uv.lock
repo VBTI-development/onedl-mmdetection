@@ -1410,6 +1410,7 @@ name = "onedl-mmdetection"
 version = "3.4.0rc0"
 source = { editable = "." }
 dependencies = [
+    { name = "imgaug" },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pycocotools" },
@@ -1441,7 +1442,6 @@ optional = [
     { name = "fairscale" },
     { name = "faster-coco-eval" },
     { name = "imagecorruptions" },
-    { name = "imgaug" },
     { name = "scikit-learn" },
 ]
 torch = [
@@ -1486,7 +1486,6 @@ tests = [
     { name = "codecov" },
     { name = "faster-coco-eval" },
     { name = "imagecorruptions" },
-    { name = "imgaug" },
     { name = "instaboostfast" },
     { name = "interrogate" },
     { name = "kwarray", version = "0.6.16", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '4'" },
@@ -1515,7 +1514,7 @@ requires-dist = [
     { name = "fairscale", marker = "extra == 'optional'" },
     { name = "faster-coco-eval", marker = "extra == 'optional'" },
     { name = "imagecorruptions", marker = "extra == 'optional'" },
-    { name = "imgaug", marker = "extra == 'optional'" },
+    { name = "imgaug" },
     { name = "jsonlines", marker = "extra == 'multimodal'" },
     { name = "lap", marker = "extra == 'tracking'" },
     { name = "matplotlib" },
@@ -1571,7 +1570,6 @@ tests = [
     { name = "codecov" },
     { name = "faster-coco-eval" },
     { name = "imagecorruptions" },
-    { name = "imgaug" },
     { name = "instaboostfast" },
     { name = "interrogate" },
     { name = "kwarray" },
