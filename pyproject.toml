@@ -55,7 +55,7 @@ tests = [
     "protobuf",
     "psutil",
     "pytest",
-    "transformers",
+    "transformers==4.53.3",
     "ubelt",
     "xdoctest>=0.10.0",
 ]
@@ -87,7 +87,7 @@ multimodal = [
     "jsonlines",
     "nltk",
     "pycocoevalcap",
-    "transformers"
+    "transformers==4.53.3"
 ]
 mminstall = [
     "onedl-mmcv>=2.0.0",
