@@ -1,7 +1,7 @@
 
 [project]
 name = "onedl-mmdetection"
-version = "3.4.0-rc.0"
+version = "3.4.0-rc.1"
 description = "OpenMMLab Detection Toolbox and Benchmark"
 readme = "README.md"
 authors = [
@@ -71,7 +71,7 @@ docs = [
 ]
 readthedocs = [
     "onedl-mmcv>=2.0.0",
-    "onedl-mmengine>=0.8.3,<1.0.0",
+    "onedl-mmengine>=0.10.8rc1",
     "scipy",
     "torch",
     "torchvision",
@@ -80,7 +80,7 @@ readthedocs = [
 
 [project.optional-dependencies]
 albu = [
-    "albumentations"
+    "albumentations~=1.4"
 ]
 multimodal = [
     "fairscale",
@@ -101,11 +101,11 @@ optional = [
     "imagecorruptions",
     "scikit-learn",
 ]
-torch = [ "torch<2.6", "torchvision" ]
+torch = [ "torch", "torchvision" ]
 tracking = [
     "onedl-mmpretrain",
     "motmetrics",
-    "numpy<1.24.0",
+    "numpy",
     "scikit-learn",
     "seaborn",
     "lap",

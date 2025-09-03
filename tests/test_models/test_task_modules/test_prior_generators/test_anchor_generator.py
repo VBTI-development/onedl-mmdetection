@@ -107,7 +107,7 @@ def test_standard_points_generator():
 def test_sparse_prior():
     from mmdet.models.task_modules.prior_generators import MlvlPointGenerator
     mlvl_points = MlvlPointGenerator(strides=[4, 10], offset=0)
-    prior_indexs = torch.Tensor([0, 2, 4, 5, 6, 9]).long()
+    prior_indexs = torch.Tensor([0, 2, 4, 5, 6, 9]).long().to('cpu')
 
     featmap_sizes = [(3, 5), (6, 4)]
     grid_anchors = mlvl_points.grid_priors(
@@ -130,7 +130,7 @@ def test_sparse_prior():
     from mmdet.models.task_modules.prior_generators import AnchorGenerator
     mlvl_anchors = AnchorGenerator(
         strides=[16, 32], ratios=[1.], scales=[1.], base_sizes=[4, 8])
-    prior_indexs = torch.Tensor([0, 2, 4, 5, 6, 9]).long()
+    prior_indexs = torch.Tensor([0, 2, 4, 5, 6, 9]).long().to('cpu')
 
     featmap_sizes = [(3, 5), (6, 4)]
     grid_anchors = mlvl_anchors.grid_priors(

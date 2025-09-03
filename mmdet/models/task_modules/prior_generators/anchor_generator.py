@@ -325,7 +325,7 @@ class AnchorGenerator:
 
         height, width = featmap_size
         num_base_anchors = self.num_base_anchors[level_idx]
-        base_anchor_id = prior_idxs % num_base_anchors
+        base_anchor_id = (prior_idxs % num_base_anchors).to('cpu')
         x = (prior_idxs //
              num_base_anchors) % width * self.strides[level_idx][0]
         y = (prior_idxs // width //

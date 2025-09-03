@@ -92,9 +92,9 @@ jobs:
             container: 'nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04'
             cubackend: cu118
           - python-version: '3.10'  # maximum version
-            torch: '2.5.1'
-            container: 'nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04'
-            cubackend: cu124
+            torch: '2.8.0'
+            container: 'nvidia/cuda:12.9.1-cudnn-devel-ubuntu22.04'
+            cubackend: cu129
     container:
       image: ${{ matrix.container }}
     env:
