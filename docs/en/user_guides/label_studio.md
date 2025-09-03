@@ -6,7 +6,7 @@ Annotation data is a time-consuming and laborious task. This article introduces 
 
 - [Label Studio](https://github.com/heartexlabs/label-studio) is an excellent annotation software covering the functionality of dataset annotation in areas such as image classification, object detection, and segmentation.
 
-In this article, we will use [cat](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmyolo/data/cat_dataset.zip) images for semi-automatic annotation.
+In this article, we will use [cat](https://mmassets.onedl.ai/mmyolo/data/cat_dataset.zip) images for semi-automatic annotation.
 
 ## Environment Configuration
 
@@ -60,7 +60,7 @@ Download the rtmdet weights:
 cd path/to/mmetection
 mkdir work_dirs
 cd work_dirs
-wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/rtmdet_m_8xb32-300e_coco/rtmdet_m_8xb32-300e_coco_20220719_112220-229f527c.pth
+wget https://mmassets.onedl.ai/mmdetection/v3.0/rtmdet/rtmdet_m_8xb32-300e_coco/rtmdet_m_8xb32-300e_coco_20220719_112220-229f527c.pth
 ```
 
 ## Start the Service
@@ -104,7 +104,7 @@ Download the example cat images by running the following command and import them
 cd path/to/mmetection
 mkdir data && cd data
 
-wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmyolo/data/cat_dataset.zip && unzip cat_dataset.zip
+wget https://mmassets.onedl.ai/mmyolo/data/cat_dataset.zip && unzip cat_dataset.zip
 ```
 
 ![](https://cdn.vansin.top/picgo20230330133628.png)

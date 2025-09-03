@@ -251,7 +251,7 @@ def main(args):
 
         logger.info(f'Processing: {model_name}')
 
-        http_prefix = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/' \
+        http_prefix = 'https://mmassets.onedl.ai/' \
                       'mmdetection/'
         if args.checkpoint_root is not None:
             root = args.checkpoint_root

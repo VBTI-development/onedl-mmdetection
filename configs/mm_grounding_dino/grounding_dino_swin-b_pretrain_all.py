@@ -1,6 +1,6 @@
 _base_ = 'grounding_dino_swin-t_pretrain_obj365.py'
 
-load_from = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/mm_grounding_dino/grounding_dino_swin-b_pretrain_obj365_goldg_v3det/grounding_dino_swin-b_pretrain_obj365_goldg_v3de-f83eef00.pth'  # noqa
+load_from = 'https://mmassets.onedl.ai/mmdetection/v3.0/mm_grounding_dino/grounding_dino_swin-b_pretrain_obj365_goldg_v3det/grounding_dino_swin-b_pretrain_obj365_goldg_v3de-f83eef00.pth'  # noqa
 
 model = dict(
     use_autocast=True,

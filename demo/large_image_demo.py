@@ -2,7 +2,7 @@
 """Perform MMDET inference on large images (as satellite imagery) as:
 
 ```shell
-wget -P checkpoint https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/faster_rcnn/faster_rcnn_r101_fpn_2x_coco/faster_rcnn_r101_fpn_2x_coco_bbox_mAP-0.398_20200504_210455-1d2dac9c.pth # noqa: E501, E261.
+wget -P checkpoint https://mmassets.onedl.ai/mmdetection/v2.0/faster_rcnn/faster_rcnn_r101_fpn_2x_coco/faster_rcnn_r101_fpn_2x_coco_bbox_mAP-0.398_20200504_210455-1d2dac9c.pth # noqa: E501, E261.
 
 python demo/large_image_demo.py \
     demo/large_image.jpg \

@@ -996,7 +996,7 @@ class LoadTrackAnnotations(LoadAnnotations):
     - gt_instances_ids (np.int32)
     - gt_masks (BitmapMasks | PolygonMasks)
     - gt_seg_map (np.uint8)
-    - gt_ignore_flags (np.bool)
+    - gt_ignore_flags (np.bool_)
     """
 
     def __init__(self, **kwargs) -> None:

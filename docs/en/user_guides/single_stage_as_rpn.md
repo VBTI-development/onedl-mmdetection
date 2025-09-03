@@ -121,7 +121,7 @@ bash tools/dist_test.sh \
 
 ## Train the customized Faster R-CNN with pre-trained FCOS
 
-Pre-training not only speeds up convergence of training, but also improves the performance of the detector. Therefore, here we give an example to illustrate how to do use a pre-trained FCOS as an RPN to accelerate training and improve the accuracy. Suppose we want to use `FCOSHead` as an rpn head in Faster R-CNN and train with the pre-trained [`fcos_r50-caffe_fpn_gn-head_1x_coco`](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/fcos/fcos_r50_caffe_fpn_gn-head_1x_coco/fcos_r50_caffe_fpn_gn-head_1x_coco-821213aa.pth). The content of config file named `configs/faster_rcnn/faster-rcnn_r50-caffe_fpn_fcos-rpn_1x_coco.py` is as the following. Note that `fcos_r50-caffe_fpn_gn-head_1x_coco` uses a caffe version of ResNet50, the pixel mean and std in `data_preprocessor` thus need to be updated.
+Pre-training not only speeds up convergence of training, but also improves the performance of the detector. Therefore, here we give an example to illustrate how to do use a pre-trained FCOS as an RPN to accelerate training and improve the accuracy. Suppose we want to use `FCOSHead` as an rpn head in Faster R-CNN and train with the pre-trained [`fcos_r50-caffe_fpn_gn-head_1x_coco`](https://mmassets.onedl.ai/mmdetection/v2.0/fcos/fcos_r50_caffe_fpn_gn-head_1x_coco/fcos_r50_caffe_fpn_gn-head_1x_coco-821213aa.pth). The content of config file named `configs/faster_rcnn/faster-rcnn_r50-caffe_fpn_fcos-rpn_1x_coco.py` is as the following. Note that `fcos_r50-caffe_fpn_gn-head_1x_coco` uses a caffe version of ResNet50, the pixel mean and std in `data_preprocessor` thus need to be updated.
 
 ```python
 _base_ = [
@@ -163,7 +163,7 @@ model = dict(
     roi_head=dict(  # update featmap_strides due to the strides in neck
         bbox_roi_extractor=dict(featmap_strides=[8, 16, 32, 64, 128])))
 
-load_from = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/fcos/fcos_r50_caffe_fpn_gn-head_1x_coco/fcos_r50_caffe_fpn_gn-head_1x_coco-821213aa.pth'
+load_from = 'https://mmassets.onedl.ai/mmdetection/v2.0/fcos/fcos_r50_caffe_fpn_gn-head_1x_coco/fcos_r50_caffe_fpn_gn-head_1x_coco-821213aa.pth'
 ```
 
 The command for training is as below.

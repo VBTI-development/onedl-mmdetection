@@ -1149,7 +1149,7 @@ In the original implementation, `get_subset_by_classes` is not related to the fl
 - Fix deprecated `Conv2d` from mmcv.ops (#3791)
 - Fix device bug in RepPoints (#3836)
 - Fix SABL validating bug (#3849)
-- Use `https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmcv/dist/index.html` for installing MMCV (#3840)
+- Use `https://mmassets.onedl.ai/mmcv/dist/index.html` for installing MMCV (#3840)
 - Fix nonzero in NMS for PyTorch 1.6.0 (#3867)
 - Fix the API change bug of PAA (#3883)
 - Fix typo in bbox_flip (#3886)

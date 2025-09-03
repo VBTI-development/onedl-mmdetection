@@ -17,7 +17,7 @@ _base_ = [
 # please install mmpretrain
 # import mmpretrain.models to trigger register_module in mmpretrain
 custom_imports = dict(imports=['mmpretrain.models'], allow_failed_imports=False)
-pretrained = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmclassification/v0/mobilenet_v3/convert/mobilenet_v3_small-8427ecf0.pth'
+pretrained = 'https://mmassets.onedl.ai/mmclassification/v0/mobilenet_v3/convert/mobilenet_v3_small-8427ecf0.pth'
 model = dict(
     backbone=dict(
         _delete_=True, # Delete the backbone field in _base_

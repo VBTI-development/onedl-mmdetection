@@ -11,4 +11,4 @@ model = dict(
     neck=dict(in_channels=[384, 768, 1536]),
     bbox_head=dict(early_fuse=True, num_dyhead_blocks=8, use_checkpoint=True))
 
-load_from = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/glip/glip_l_mmdet-abfe026b.pth'  # noqa
+load_from = 'https://mmassets.onedl.ai/mmdetection/v3.0/glip/glip_l_mmdet-abfe026b.pth'  # noqa

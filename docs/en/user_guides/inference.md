@@ -5,7 +5,7 @@ This note will show how to inference, which means using trained models to detect
 
 In MMDetection, a model is defined by a [configuration file](https://onedl-mmdetection.readthedocs.io/en/latest/user_guides/config.html) and existing model parameters are saved in a checkpoint file.
 
-To start with, we recommend [RTMDet](https://github.com/vbti-development/onedl-mmdetection/tree/main/configs/rtmdet) with this [configuration file](https://github.com/vbti-development/onedl-mmdetection/blob/main/configs/rtmdet/rtmdet_l_8xb32-300e_coco.py) and this [checkpoint file](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/rtmdet_l_8xb32-300e_coco/rtmdet_l_8xb32-300e_coco_20220719_112030-5a0be7c4.pth). It is recommended to download the checkpoint file to `checkpoints` directory.
+To start with, we recommend [RTMDet](https://github.com/vbti-development/onedl-mmdetection/tree/main/configs/rtmdet) with this [configuration file](https://github.com/vbti-development/onedl-mmdetection/blob/main/configs/rtmdet/rtmdet_l_8xb32-300e_coco.py) and this [checkpoint file](https://mmassets.onedl.ai/mmdetection/v3.0/rtmdet/rtmdet_l_8xb32-300e_coco/rtmdet_l_8xb32-300e_coco_20220719_112030-5a0be7c4.pth). It is recommended to download the checkpoint file to `checkpoints` directory.
 
 ## High-level APIs for inference - `Inferencer`
 
@@ -71,7 +71,7 @@ Each Inferencer must be initialized with a model. You can also choose the infere
 
   ```python
   # It will raise an error if the config file cannot be found in the weight. Currently, within the MMDetection model repository, only the weights of ddq-detr-4scale_r50 can be loaded in this manner.
-  inferencer = DetInferencer(weights='https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/ddq/ddq-detr-4scale_r50_8xb2-12e_coco/ddq-detr-4scale_r50_8xb2-12e_coco_20230809_170711-42528127.pth')
+  inferencer = DetInferencer(weights='https://mmassets.onedl.ai/mmdetection/v3.0/ddq/ddq-detr-4scale_r50_8xb2-12e_coco/ddq-detr-4scale_r50_8xb2-12e_coco_20230809_170711-42528127.pth')
   ```
 
 - Passing config file to `model` without specifying `weight` will result in a randomly initialized model.
@@ -341,7 +341,7 @@ Examples:
 
 ```shell
 # inferecnce without tta
-wget -P checkpoint https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/faster_rcnn/faster_rcnn_r101_fpn_2x_coco/faster_rcnn_r101_fpn_2x_coco_bbox_mAP-0.398_20200504_210455-1d2dac9c.pth
+wget -P checkpoint https://mmassets.onedl.ai/mmdetection/v2.0/faster_rcnn/faster_rcnn_r101_fpn_2x_coco/faster_rcnn_r101_fpn_2x_coco_bbox_mAP-0.398_20200504_210455-1d2dac9c.pth
 
 python demo/large_image_demo.py \
     demo/large_image.jpg \
@@ -349,7 +349,7 @@ python demo/large_image_demo.py \
     checkpoint/faster_rcnn_r101_fpn_2x_coco_bbox_mAP-0.398_20200504_210455-1d2dac9c.pth
 
 # inference with tta
-wget -P checkpoint https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/retinanet/retinanet_r50_fpn_1x_coco/retinanet_r50_fpn_1x_coco_20200130-c2398f9e.pth
+wget -P checkpoint https://mmassets.onedl.ai/mmdetection/v2.0/retinanet/retinanet_r50_fpn_1x_coco/retinanet_r50_fpn_1x_coco_20200130-c2398f9e.pth
 
 python demo/large_image_demo.py \
     demo/large_image.jpg \
@@ -378,7 +378,7 @@ MMDetection has already implemented GLIP algorithms and provided the weights, yo
 
 ```shell
 cd mmdetection
-wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/glip/glip_tiny_a_mmdet-b3654169.pth
+wget https://mmassets.onedl.ai/mmdetection/v3.0/glip/glip_tiny_a_mmdet-b3654169.pth
 ```
 
 ### Inference

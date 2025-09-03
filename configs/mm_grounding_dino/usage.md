@@ -48,7 +48,7 @@ nltk.download('averaged_perceptron_tagger', download_dir='~/nltk_data')
 For convenience in demonstration, you can download the MM Grounding DINO-T model weights in advance to the current path.
 
 ```shell
-wget load_from = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det_20231204_095047-b448804b.pth' # noqa
+wget load_from = 'https://mmassets.onedl.ai/mmdetection/v3.0/mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det_20231204_095047-b448804b.pth' # noqa
 ```
 
 ## Inference
@@ -295,7 +295,7 @@ In order to facilitate downstream fine-tuning on custom datasets, we have provid
 
 ```shell
 cd mmdetection
-wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmyolo/data/cat_dataset.zip
+wget https://mmassets.onedl.ai/mmyolo/data/cat_dataset.zip
 unzip cat_dataset.zip -d data/cat/
 ```
 

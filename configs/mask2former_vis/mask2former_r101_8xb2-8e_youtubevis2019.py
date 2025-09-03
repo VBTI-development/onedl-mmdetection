@@ -7,7 +7,7 @@ model = dict(
                       checkpoint='torchvision://resnet101')),
     init_cfg=dict(
         type='Pretrained',
-        checkpoint='https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/'
+        checkpoint='https://mmassets.onedl.ai/'
         'mmdetection/v3.0/'
         'mask2former/mask2former_r101_8xb2-lsj-50e_coco/'
         'mask2former_r101_8xb2-lsj-50e_coco_20220426_100250-ecf181e2.pth'))

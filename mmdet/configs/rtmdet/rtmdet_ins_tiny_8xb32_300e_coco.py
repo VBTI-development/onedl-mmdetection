@@ -19,7 +19,7 @@ from mmdet.datasets.transforms.transforms import (CachedMixUp, CachedMosaic,
                                                   Pad, RandomCrop, RandomFlip,
                                                   Resize, YOLOXHSVRandomAug)
 
-checkpoint = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-tiny_imagenet_600e.pth'  # noqa
+checkpoint = 'https://mmassets.onedl.ai/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-tiny_imagenet_600e.pth'  # noqa
 
 model.update(
     dict(

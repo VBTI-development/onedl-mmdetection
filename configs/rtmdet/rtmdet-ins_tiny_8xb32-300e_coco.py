@@ -1,6 +1,6 @@
 _base_ = './rtmdet-ins_s_8xb32-300e_coco.py'
 
-checkpoint = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-tiny_imagenet_600e.pth'  # noqa
+checkpoint = 'https://mmassets.onedl.ai/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-tiny_imagenet_600e.pth'  # noqa
 
 model = dict(
     backbone=dict(

@@ -250,7 +250,7 @@ class OpenVocabInstanceSegTab(OpenVocabObjectDetectionTab):
             'model':
             'projects/XDecoder/configs/xdecoder-tiny_zeroshot_open-vocab-instance_coco.py',  # noqa
             'weights':
-            'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
+            'https://mmassets.onedl.ai/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
         }
     }
 
@@ -271,7 +271,7 @@ class OpenVocabPanopticSegTab(OpenVocabObjectDetectionTab):
             'model':
             'projects/XDecoder/configs/xdecoder-tiny_zeroshot_open-vocab-panoptic_coco.py',  # noqa
             'weights':
-            'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
+            'https://mmassets.onedl.ai/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
         }
     }
 
@@ -356,7 +356,7 @@ class OpenVocabSemSegTab(OpenVocabInstanceSegTab):
             'model':
             'projects/XDecoder/configs/xdecoder-tiny_zeroshot_open-vocab-semseg_coco.py',  # noqa
             'weights':
-            'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
+            'https://mmassets.onedl.ai/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
         }
     }
 
@@ -369,7 +369,7 @@ class ReferSegTab(OpenVocabInstanceSegTab):
             'model':
             'projects/XDecoder/configs/xdecoder-tiny_zeroshot_open-vocab-ref-seg_refcocog.py',  # noqa
             'weights':
-            'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
+            'https://mmassets.onedl.ai/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
         }
     }
 
@@ -382,7 +382,7 @@ class ImageCaptionTab:
             'model':
             'projects/XDecoder/configs/xdecoder-tiny_zeroshot_caption_coco2014.py',  # noqa
             'weights':
-            'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
+            'https://mmassets.onedl.ai/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
         }
     }
 
@@ -447,7 +447,7 @@ class ReferImageCaptionTab(OpenVocabInstanceSegTab):
             'model':
             'projects/XDecoder/configs/xdecoder-tiny_zeroshot_ref-caption.py',  # noqa
             'weights':
-            'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
+            'https://mmassets.onedl.ai/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
         }
     }
 
@@ -521,7 +521,7 @@ class TextToImageRetrievalTab:
             'model':
             'projects/XDecoder/configs/xdecoder-tiny_zeroshot_text-image-retrieval.py',  # noqa
             'weights':
-            'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
+            'https://mmassets.onedl.ai/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt'  # noqa
         }
     }
 

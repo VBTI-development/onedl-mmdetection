@@ -15,7 +15,7 @@ detector.test_cfg.rcnn.update(dict(score_thr=0.01))
 detector['init_cfg'] = dict(
     type='Pretrained',
     checkpoint=  # noqa: E251
-    'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_fpn_1x_coco/mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth'  # noqa: E501
+    'https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_fpn_1x_coco/mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth'  # noqa: E501
 )
 del _base_.model
 

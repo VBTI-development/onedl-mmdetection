@@ -2,7 +2,7 @@ _base_ = [
     './grounding_dino_swin-t_finetune_16xb2_1x_coco.py',
 ]
 
-load_from = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/grounding_dino/groundingdino_swinb_cogcoor_mmdet-55949c9c.pth'  # noqa
+load_from = 'https://mmassets.onedl.ai/mmdetection/v3.0/grounding_dino/groundingdino_swinb_cogcoor_mmdet-55949c9c.pth'  # noqa
 model = dict(
     type='GroundingDINO',
     backbone=dict(

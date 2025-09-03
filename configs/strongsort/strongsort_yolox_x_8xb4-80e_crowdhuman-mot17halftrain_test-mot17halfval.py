@@ -67,7 +67,7 @@ model = dict(
     postprocess_model=dict(
         type='AppearanceFreeLink',
         checkpoint=  # noqa: E251
-        'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmtracking/mot/strongsort/mot_dataset/aflink_motchallenge_20220812_190310-a7578ad3.pth',  # noqa: E501
+        'https://mmassets.onedl.ai/mmtracking/mot/strongsort/mot_dataset/aflink_motchallenge_20220812_190310-a7578ad3.pth',  # noqa: E501
         temporal_threshold=(0, 30),
         spatial_threshold=50,
         confidence_threshold=0.95,

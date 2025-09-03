@@ -13,7 +13,7 @@ batch_augments = [
 dataset_type = 'CocoDataset'
 evalute_type = 'CocoMetric'
 norm_cfg = dict(type='SyncBN', requires_grad=True, eps=1e-3, momentum=0.01)
-checkpoint = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmclassification/v0/efficientnet/efficientnet-b3_3rdparty_8xb32-aa-advprop_in1k_20220119-53b41118.pth'  # noqa
+checkpoint = 'https://mmassets.onedl.ai/mmclassification/v0/efficientnet/efficientnet-b3_3rdparty_8xb32-aa-advprop_in1k_20220119-53b41118.pth'  # noqa
 model = dict(
     type='EfficientDet',
     data_preprocessor=dict(

@@ -150,9 +150,9 @@ class TestPackTrackInputs(unittest.TestCase):
 
         self.results_2 = copy.deepcopy(self.results_1)
         self.gt_ignore_flags = [
-            np.array([0, 1], dtype=np.bool),
-            np.array([1, 0], dtype=np.bool),
-            np.array([0, 0], dtype=np.bool)
+            np.array([0, 1], dtype=np.bool_),
+            np.array([1, 0], dtype=np.bool_),
+            np.array([0, 0], dtype=np.bool_)
         ]
         self.results_2.update(
             dict(gt_ignore_flags=copy.deepcopy(self.gt_ignore_flags)))

@@ -48,7 +48,7 @@ nltk.download('averaged_perceptron_tagger', download_dir='~/nltk_data')
 为了方便演示，您可以提前下载 MM Grounding DINO-T 模型权重到当前路径下
 
 ```shell
-wget load_from = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det_20231204_095047-b448804b.pth' # noqa
+wget load_from = 'https://mmassets.onedl.ai/mmdetection/v3.0/mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det_20231204_095047-b448804b.pth' # noqa
 ```
 
 ## 推理
@@ -295,7 +295,7 @@ tokens_positive 表示当前 phrase 在 caption 中的字符位置。
 
 ```shell
 cd mmdetection
-wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmyolo/data/cat_dataset.zip
+wget https://mmassets.onedl.ai/mmyolo/data/cat_dataset.zip
 unzip cat_dataset.zip -d data/cat/
 ```
 

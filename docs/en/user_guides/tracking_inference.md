@@ -43,13 +43,13 @@ python demo/mot_demo.py \
     demo/demo_mot.mp4 \
     configs/sort/sort_faster-rcnn_r50_fpn_8xb2-4e_mot17halftrain_test-mot17halfval.py \
     --detector \
-    https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmtracking/mot/faster_rcnn/faster-rcnn_r50_fpn_4e_mot17-half-64ee2ed4.pth \
+    https://mmassets.onedl.ai/mmtracking/mot/faster_rcnn/faster-rcnn_r50_fpn_4e_mot17-half-64ee2ed4.pth \
     --out mot.mp4
 
 # Example 2: use --checkpoint
 python demo/mot_demo.py \
     demo/demo_mot.mp4 \
     configs/qdtrack/qdtrack_faster-rcnn_r50_fpn_8xb2-4e_mot17halftrain_test-mot17halfval.py \
-    --checkpoint https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmtracking/mot/qdtrack/mot_dataset/qdtrack_faster-rcnn_r50_fpn_4e_mot17_20220315_145635-76f295ef.pth \
+    --checkpoint https://mmassets.onedl.ai/mmtracking/mot/qdtrack/mot_dataset/qdtrack_faster-rcnn_r50_fpn_4e_mot17_20220315_145635-76f295ef.pth \
     --out mot.mp4
 ```

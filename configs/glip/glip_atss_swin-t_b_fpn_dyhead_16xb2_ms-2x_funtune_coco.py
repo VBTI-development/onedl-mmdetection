@@ -2,7 +2,7 @@ _base_ = './glip_atss_swin-t_a_fpn_dyhead_16xb2_ms-2x_funtune_coco.py'
 
 model = dict(bbox_head=dict(early_fuse=True, use_checkpoint=True))
 
-load_from = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/glip/glip_tiny_b_mmdet-6dfbd102.pth'  # noqa
+load_from = 'https://mmassets.onedl.ai/mmdetection/v3.0/glip/glip_tiny_b_mmdet-6dfbd102.pth'  # noqa
 
 optim_wrapper = dict(
     optimizer=dict(lr=0.00001),

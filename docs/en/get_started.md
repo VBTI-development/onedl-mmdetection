@@ -200,7 +200,7 @@ To install MMCV with pip instead of MIM, please follow [MMCV installation guides
 For example, the following command installs MMCV built for PyTorch 1.12.x and CUDA 11.6.
 
 ```shell
-pip install "mmcv>=2.0.0" -f https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmcv/dist/cu116/torch1.12.0/index.html
+pip install "mmcv>=2.0.0" -f https://mmassets.onedl.ai/mmcv/dist/cu116/torch1.12.0/index.html
 ```
 
 #### Install on CPU-only platforms

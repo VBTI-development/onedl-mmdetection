@@ -27,8 +27,8 @@ mim install mmdet[multimodal]
 For convenience, you can download the weights to the `mmdetection` root dir
 
 ```shell
-wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt
-wget https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/xdecoder/xdecoder_focalt_best_openseg.pt
+wget https://mmassets.onedl.ai/mmdetection/v3.0/xdecoder/xdecoder_focalt_last_novg.pt
+wget https://mmassets.onedl.ai/mmdetection/v3.0/xdecoder/xdecoder_focalt_best_openseg.pt
 ```
 
 The above two weights are directly copied from the official website without any modification. The specific source is https://github.com/microsoft/X-Decoder

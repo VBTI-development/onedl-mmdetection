@@ -47,10 +47,10 @@ More details can be found in [user guides](https://onedl-mmdetection.readthedocs
 
 ## Results and Models
 
-|    Model     | resolution | Params(M) | Flops(G) | Top-1 (%) | Top-5 (%) |                                                                         Download                                                                         |
-| :----------: | :--------: | :-------: | :------: | :-------: | :-------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| CSPNeXt-tiny |  224x224   |   2.73    |   0.34   |   69.44   |   89.45   |    [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-tiny_imagenet_600e-3a2dd350.pth)     |
-|  CSPNeXt-s   |  224x224   |   4.89    |   0.66   |   74.41   |   92.23   |      [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-s_imagenet_600e-ea671761.pth)      |
-|  CSPNeXt-m   |  224x224   |   13.05   |   1.93   |   79.27   |   94.79   | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-m_8xb256-rsb-a1-600e_in1k-ecb3bbd9.pth) |
-|  CSPNeXt-l   |  224x224   |   27.16   |   4.19   |   81.30   |   95.62   | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-l_8xb256-rsb-a1-600e_in1k-6a760974.pth) |
-|  CSPNeXt-x   |  224x224   |   48.85   |   7.76   |   82.10   |   95.69   | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-x_8xb256-rsb-a1-600e_in1k-b3f78edd.pth) |
+|    Model     | resolution | Params(M) | Flops(G) | Top-1 (%) | Top-5 (%) |                                                            Download                                                            |
+| :----------: | :--------: | :-------: | :------: | :-------: | :-------: | :----------------------------------------------------------------------------------------------------------------------------: |
+| CSPNeXt-tiny |  224x224   |   2.73    |   0.34   |   69.44   |   89.45   |    [model](https://mmassets.onedl.ai/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-tiny_imagenet_600e-3a2dd350.pth)     |
+|  CSPNeXt-s   |  224x224   |   4.89    |   0.66   |   74.41   |   92.23   |      [model](https://mmassets.onedl.ai/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-s_imagenet_600e-ea671761.pth)      |
+|  CSPNeXt-m   |  224x224   |   13.05   |   1.93   |   79.27   |   94.79   | [model](https://mmassets.onedl.ai/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-m_8xb256-rsb-a1-600e_in1k-ecb3bbd9.pth) |
+|  CSPNeXt-l   |  224x224   |   27.16   |   4.19   |   81.30   |   95.62   | [model](https://mmassets.onedl.ai/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-l_8xb256-rsb-a1-600e_in1k-6a760974.pth) |
+|  CSPNeXt-x   |  224x224   |   48.85   |   7.76   |   82.10   |   95.69   | [model](https://mmassets.onedl.ai/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-x_8xb256-rsb-a1-600e_in1k-b3f78edd.pth) |

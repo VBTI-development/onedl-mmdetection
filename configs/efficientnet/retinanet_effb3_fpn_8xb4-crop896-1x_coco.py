@@ -7,7 +7,7 @@ _base_ = [
 image_size = (896, 896)
 batch_augments = [dict(type='BatchFixedSizePad', size=image_size)]
 norm_cfg = dict(type='BN', requires_grad=True)
-checkpoint = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmclassification/v0/efficientnet/efficientnet-b3_3rdparty_8xb32-aa_in1k_20220119-5b4887a0.pth'  # noqa
+checkpoint = 'https://mmassets.onedl.ai/mmclassification/v0/efficientnet/efficientnet-b3_3rdparty_8xb32-aa_in1k_20220119-5b4887a0.pth'  # noqa
 model = dict(
     data_preprocessor=dict(
         type='DetDataPreprocessor',

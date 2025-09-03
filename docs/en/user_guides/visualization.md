@@ -80,10 +80,10 @@ The `test.py` procedure is further simplified by providing the  `--show` and `--
 
 ```Shell
 # Show test results
-python tools/test.py configs/rtmdet/rtmdet_tiny_8xb32-300e_coco.py https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/rtmdet_tiny_8xb32-300e_coco/rtmdet_tiny_8xb32-300e_coco_20220902_112414-78e30dcc.pth --show
+python tools/test.py configs/rtmdet/rtmdet_tiny_8xb32-300e_coco.py https://mmassets.onedl.ai/mmdetection/v3.0/rtmdet/rtmdet_tiny_8xb32-300e_coco/rtmdet_tiny_8xb32-300e_coco_20220902_112414-78e30dcc.pth --show
 
 # Specify where to store the prediction results
-python tools/test.py configs/rtmdet/rtmdet_tiny_8xb32-300e_coco.py https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/rtmdet/rtmdet_tiny_8xb32-300e_coco/rtmdet_tiny_8xb32-300e_coco_20220902_112414-78e30dcc.pth --show-dir imgs/
+python tools/test.py configs/rtmdet/rtmdet_tiny_8xb32-300e_coco.py https://mmassets.onedl.ai/mmdetection/v3.0/rtmdet/rtmdet_tiny_8xb32-300e_coco/rtmdet_tiny_8xb32-300e_coco_20220902_112414-78e30dcc.pth --show-dir imgs/
 ```
 
 <div align=center>

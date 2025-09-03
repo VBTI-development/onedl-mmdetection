@@ -25,7 +25,7 @@ If you install mmdeploy prebuilt package, please also clone its repository by 'g
 
 Suppose mmdetection and mmdeploy repositories are in the same directory, and the working directory is the root path of mmdetection.
 
-Take [Faster R-CNN](https://github.com/vbti-development/onedl-mmdetection/blob/main/configs/faster_rcnn/faster-rcnn_r50_fpn_1x_coco.py) model as an example. You can download its checkpoint from [here](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_1x_coco/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth), and then convert it to onnx model as follows:
+Take [Faster R-CNN](https://github.com/vbti-development/onedl-mmdetection/blob/main/configs/faster_rcnn/faster-rcnn_r50_fpn_1x_coco.py) model as an example. You can download its checkpoint from [here](https://mmassets.onedl.ai/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_1x_coco/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth), and then convert it to onnx model as follows:
 
 ```python
 from mmdeploy.apis import torch2onnx

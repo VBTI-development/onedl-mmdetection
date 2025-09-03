@@ -29,7 +29,7 @@ model = dict(
     init_cfg=dict(
         type='Pretrained',
         checkpoint=  # noqa: E251
-        'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/'
+        'https://mmassets.onedl.ai/'
         'mmdetection/v3.0/mask2former/'
         'mask2former_swin-l-p4-w12-384-in21k_16xb1-lsj-100e_coco-panoptic/'
         'mask2former_swin-l-p4-w12-384-in21k_16xb1-lsj-100e_coco-panoptic_'

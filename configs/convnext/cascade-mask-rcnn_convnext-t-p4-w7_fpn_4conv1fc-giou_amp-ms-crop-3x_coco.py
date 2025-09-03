@@ -8,7 +8,7 @@ _base_ = [
 # import mmpretrain.models to trigger register_module in mmpretrain
 custom_imports = dict(
     imports=['mmpretrain.models'], allow_failed_imports=False)
-checkpoint_file = 'https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmclassification/v0/convnext/downstream/convnext-tiny_3rdparty_32xb128-noema_in1k_20220301-795e9634.pth'  # noqa
+checkpoint_file = 'https://mmassets.onedl.ai/mmclassification/v0/convnext/downstream/convnext-tiny_3rdparty_32xb128-noema_in1k_20220301-795e9634.pth'  # noqa
 
 model = dict(
     backbone=dict(

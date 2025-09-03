@@ -14,9 +14,9 @@ We present a new method that views object detection as a direct set prediction p
 
 ## Results and Models
 
-| Backbone | Model | Lr schd | Mem (GB) | Inf time (fps) | box AP |                 Config                 |                                                                                                                                                           Download                                                                                                                                                           |
-| :------: | :---: | :-----: | :------: | :------------: | :----: | :------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|   R-50   | DETR  |  150e   |   7.9    |                |  39.9  | [config](./detr_r50_8xb2-150e_coco.py) | [model](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/detr/detr_r50_8xb2-150e_coco/detr_r50_8xb2-150e_coco_20221023_153551-436d03e8.pth) \| [log](https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmdetection/v3.0/detr/detr_r50_8xb2-150e_coco/detr_r50_8xb2-150e_coco_20221023_153551.log.json) |
+| Backbone | Model | Lr schd | Mem (GB) | Inf time (fps) | box AP |                 Config                 |                                                                                                                                 Download                                                                                                                                 |
+| :------: | :---: | :-----: | :------: | :------------: | :----: | :------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|   R-50   | DETR  |  150e   |   7.9    |                |  39.9  | [config](./detr_r50_8xb2-150e_coco.py) | [model](https://mmassets.onedl.ai/mmdetection/v3.0/detr/detr_r50_8xb2-150e_coco/detr_r50_8xb2-150e_coco_20221023_153551-436d03e8.pth) \| [log](https://mmassets.onedl.ai/mmdetection/v3.0/detr/detr_r50_8xb2-150e_coco/detr_r50_8xb2-150e_coco_20221023_153551.log.json) |
 
 ## Citation
 

@@ -39,7 +39,7 @@ RUN pip install torchserve torch-model-archiver
 ARG PYTORCH
 ARG CUDA
 RUN pip install mmengine
-RUN ["/bin/bash", "-c", "pip install mmcv==${MMCV} -f https://pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev/mmcv/dist/cu${CUDA//./}/torch${PYTORCH}/index.html"]
+RUN ["/bin/bash", "-c", "pip install mmcv==${MMCV} -f https://mmassets.onedl.ai/mmcv/dist/cu${CUDA//./}/torch${PYTORCH}/index.html"]
 RUN pip install mmdet==${MMDET}
 
 RUN useradd -m model-server \
