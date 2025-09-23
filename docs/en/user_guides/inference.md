@@ -9,7 +9,7 @@ To start with, we recommend [RTMDet](https://github.com/vbti-development/onedl-m
 
 ## High-level APIs for inference - `Inferencer`
 
-In OpenMMLab, all the inference operations are unified into a new interface - Inferencer. Inferencer is designed to expose a neat and simple API to users, and shares very similar interface across different OpenMMLab libraries.
+In OneDL Labs, all the inference operations are unified into a new interface - Inferencer. Inferencer is designed to expose a neat and simple API to users, and shares very similar interface across different OneDL Lab libraries.
 A notebook demo can be found in [demo/inference_demo.ipynb](https://github.com/vbti-development/onedl-mmdetection/blob/main/demo/inference_demo.ipynb).
 
 ### Basic Usage
@@ -42,7 +42,7 @@ Each Inferencer must be initialized with a model. You can also choose the infere
 
 #### Model Initialization
 
-- To infer with MMDetection's pre-trained model, passing its name to the argument `model` can work. The weights will be automatically downloaded and loaded from OpenMMLab's model zoo.
+- To infer with MMDetection's pre-trained model, passing its name to the argument `model` can work. The weights will be automatically downloaded and loaded from OneDL Lab's model zoo.
 
   ```python
   inferencer = DetInferencer(model='rtmdet_tiny_8xb32-300e_coco')

@@ -4,7 +4,7 @@ Please check the following conventions if you would like to modify MMDetection a
 
 ## About the order of image shape
 
-In OpenMMLab 2.0, to be consistent with the input argument of OpenCV, the argument about image shape in the data transformation pipeline is always in the `(width, height)` order. On the contrary, for computation convenience, the order of the field going through the data pipeline and the model is `(height, width)`. Specifically, in the results processed by each data transform pipeline, the fields and their value meaning is as below:
+In OneDLLab to be consistent with the input argument of OpenCV, the argument about image shape in the data transformation pipeline is always in the `(width, height)` order. On the contrary, for computation convenience, the order of the field going through the data pipeline and the model is `(height, width)`. Specifically, in the results processed by each data transform pipeline, the fields and their value meaning is as below:
 
 - img_shape: (height, width)
 - ori_shape: (height, width)

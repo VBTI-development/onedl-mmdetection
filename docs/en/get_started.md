@@ -15,8 +15,8 @@ If you are experienced with PyTorch and have already installed it, just skip thi
 **Step 1.** Create a conda environment and activate it.
 
 ```shell
-conda create --name openmmlab python=3.8 -y
-conda activate openmmlab
+conda create --name onedllab python=3.8 -y
+conda activate onedllab
 ```
 
 **Step 2.** Install PyTorch following [official instructions](https://pytorch.org/get-started/locally/), e.g.

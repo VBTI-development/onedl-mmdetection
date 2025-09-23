@@ -1,6 +1,6 @@
 # Model Deployment
 
-The deployment of OpenMMLab codebases, including MMDetection, MMPretrain and so on are supported by [MMDeploy](https://github.com/vbti-development/onedl-mmdeploy).
+The deployment of OneDLLabs codebases, including MMDetection, MMPretrain and so on are supported by [MMDeploy](https://github.com/vbti-development/onedl-mmdeploy).
 The latest deployment guide for MMDetection can be found from [here](https://onedl-mmdeploy.readthedocs.io/en/latest/04-supported-codebases/mmdet.html).
 
 This tutorial is organized as follows:

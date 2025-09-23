@@ -2,10 +2,10 @@
 [project]
 name = "onedl-mmdetection"
 version = "3.4.0-rc.1"
-description = "OpenMMLab Detection Toolbox and Benchmark"
+description = "OneDL Detection Toolbox and Benchmark"
 readme = "README.md"
 authors = [
-    { name = "MMDetection Contributors", email = "oss-team@vbti.nl" }
+    { name = "OneDL MMDetection Contributors", email = "oss-team@vbti.nl" }
 ]
 license = "Apache-2.0"
 requires-python = ">=3.10"

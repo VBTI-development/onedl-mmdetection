@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-  - name: "MMDetection Contributors"
-title: "OpenMMLab Detection Toolbox and Benchmark"
-date-released: 2018-08-22
+  - name: "OneDL MMDetection Contributors"
+title: "OneDL Detection Toolbox and Benchmark"
+date-released: 2025-09-23
 url: "https://github.com/vbti-development/onedl-mmdetection"
 license: Apache-2.0

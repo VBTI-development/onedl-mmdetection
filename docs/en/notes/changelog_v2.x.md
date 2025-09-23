@@ -1172,7 +1172,7 @@ __Highlights__
 - Support new methods [SABL](https://arxiv.org/abs/1912.04260), [YOLOv3](https://arxiv.org/abs/1804.02767), and [PAA Assign](https://arxiv.org/abs/2007.08103)
 - Support Batch Inference
 - Start to publish `mmdet` package to PyPI since v2.3.0
-- Switch model zoo to pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev
+- Switch model zoo to mmassets.onedl.ai
 
 __Backwards Incompatible Changes__
 
@@ -1223,7 +1223,7 @@ __Improvements__
 - Add include_bkg in ClassBalancedDataset (#3577)
 - Using config's loading in inference_detector (#3611)
 - Add ATSS ResNet-101 models in model zoo (#3639)
-- Update urls to pub-ed9ed750ddcc469da251e2d1a2cea382.r2.dev (#3665)
+- Update urls to mmassets.onedl.ai (#3665)
 - Support non-mask training for CocoDataset (#3711)
 
 ### v2.3.0 (5/8/2020)

@@ -1,6 +1,6 @@
 # Learn about Configs
 
-MMDetection and other OpenMMLab repositories use [MMEngine's config system](https://onedl-mmengine.readthedocs.io/en/latest/advanced_tutorials/config.html). It has a modular and inheritance design, which is convenient to conduct various experiments.
+MMDetection and other OneDL Lab repositories use [MMEngine's config system](https://onedl-mmengine.readthedocs.io/en/latest/advanced_tutorials/config.html). It has a modular and inheritance design, which is convenient to conduct various experiments.
 
 ## Config file content
 
