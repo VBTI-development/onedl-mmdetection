@@ -24,29 +24,31 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  mim_cpu:
+  test_mim_cpu:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        python-version: [3.10]
-        torch: [2.5.1]
-    env:
-      PIP_PRE: 1 # TODO: until real release
+        python-version: ['3.10']
+        torch: ['2.5.1']
     steps:
       - uses: actions/checkout@v3
       - name: Install uv and set the python version
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v6
         with:
+          python-version: ${{matrix.python-version}}
           activate-environment: true
-          python-version: '3.10'
       - name: Install PyTorch
         run: |
-          uv pip install torch==${{ matrix.torch }} torchvision
-      - name: Install openmim
-        run: uv pip install git+https://github.com/VBTI-development/onedl-mim.git@lauriebax/upgrade-mim
+          uv pip install --torch-backend=cpu torch==${{ matrix.torch }} torchvision
+          uv pip install importlib-metadata
+      - name: Install mim
+        run: uv pip install "onedl-mim>=0.4.0rc2"
       - name: Build and install
-        run: |
-          mim install .
+        run: mim install .
       - name: test commands of mim
-        run: |
-          mim search onedl-mmdetection
+        env:
+          PAGER: cat
+          LESS: ""
+          MORE: ""
+          MANPAGER: cat
+        run: mim search onedl-mmdetection
