@@ -123,10 +123,15 @@ jobs:
         run: |
           uv pip install -v --torch-backend=${{ matrix.cubackend }} torch==${{ matrix.torch }} torchvision
           uv cache clean
-      - name: Install mmdet dependencies
+      - name: Install mmcv
         run: |
           uv pip install onedl-mim
-          mim install onedl-mmengine onedl-mmcv
+          mim install onedl-mmengine onedl-mmcv -v
+      - name: Verify mmcv._ext
+        run: |
+          python -c "import mmcv; mmcv.ops.get_compiling_cuda_version(); mmcv.ops.get_compiler_version()"
+      - name: Install mmdet dependencies
+        run: |
           uv pip install -r pyproject.toml
       - name: Build and install
         run: uv pip install -e .
