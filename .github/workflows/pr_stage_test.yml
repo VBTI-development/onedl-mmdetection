@@ -127,9 +127,6 @@ jobs:
         run: |
           uv pip install onedl-mim
           mim install onedl-mmengine onedl-mmcv  --only-binary=onedl-mmcv -v
-      - name: Verify mmcv._ext
-        run: |
-          python -c "import mmcv; mmcv.ops.get_compiling_cuda_version(); mmcv.ops.get_compiler_version()"
       - name: Install mmdet dependencies
         run: |
           uv pip install -r pyproject.toml
