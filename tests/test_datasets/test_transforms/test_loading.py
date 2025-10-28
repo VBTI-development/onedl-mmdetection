@@ -165,7 +165,7 @@ class TestFilterAnnotations(unittest.TestCase):
             'gt_bboxes':
             np.array([[10, 10, 20, 20], [20, 20, 40, 40], [40, 40, 80, 80]]),
             'gt_ignore_flags':
-            np.array([0, 0, 1], dtype=np.bool),
+            np.array([0, 0, 1], dtype=np.bool_),
             'gt_masks':
             BitmapMasks(rng.rand(3, 224, 224), height=224, width=224),
         }
