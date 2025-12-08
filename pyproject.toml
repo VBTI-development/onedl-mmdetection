@@ -27,7 +27,7 @@ dependencies = [
     "shapely",
     "six",
     "terminaltables",
-    "tqdm"
+    "tqdm",
 ]
 
 [dependency-groups]
@@ -109,6 +109,7 @@ tracking = [
     "scikit-learn",
     "seaborn",
     "lap",
+    "trackeval",
 ]
 
 [project.urls]
@@ -125,6 +126,10 @@ exclude = ['configs', 'tools', 'demo', 'tests']
 namespaces = false
 
 [tool.uv]
+
+[tool.uv.sources]
+# FIXME: find more official version?
+trackeval = { git = "https://github.com/kovalp/TrackEval.git" }
 
 [build-system]
 requires = ["setuptools"]
