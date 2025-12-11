@@ -240,7 +240,7 @@ class PackLineDetectionInputs(BaseTransform):
             img = results['img']
             if len(img.shape) < 3:
                 img = np.expand_dims(img, -1)
-            # To improve the computational speed by by 3-5 times, apply:
+            # To improve the computational speed by 3-5 times, apply:
             # If image is not contiguous, use
             # `numpy.transpose()` followed by `numpy.ascontiguousarray()`
             # If image is already contiguous, use
