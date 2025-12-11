@@ -190,6 +190,8 @@ class ByteTracker(BaseTracker):
         bboxes = data_sample.pred_instances.bboxes
         labels = data_sample.pred_instances.labels
         scores = data_sample.pred_instances.scores
+        if hasattr(data_sample.pred_instances, 'masks'):
+            masks = data_sample.pred_instances.masks
 
         frame_id = metainfo.get('frame_id', -1)
         if frame_id == 0:
@@ -202,6 +204,8 @@ class ByteTracker(BaseTracker):
             scores = scores[valid_inds]
             bboxes = bboxes[valid_inds]
             labels = labels[valid_inds]
+            if 'masks' in locals():
+                masks = masks[valid_inds]
             num_new_tracks = bboxes.size(0)
             ids = torch.arange(self.num_tracks,
                                self.num_tracks + num_new_tracks).to(labels)
@@ -220,6 +224,8 @@ class ByteTracker(BaseTracker):
             first_det_labels = labels[first_det_inds]
             first_det_scores = scores[first_det_inds]
             first_det_ids = ids[first_det_inds]
+            first_det_masks = masks[first_det_inds] if 'masks' in locals(
+            ) else None
 
             # get the detection bboxes for the second association
             second_det_inds = (~first_det_inds) & (
@@ -228,6 +234,8 @@ class ByteTracker(BaseTracker):
             second_det_labels = labels[second_det_inds]
             second_det_scores = scores[second_det_inds]
             second_det_ids = ids[second_det_inds]
+            second_det_masks = masks[second_det_inds] if 'masks' in locals(
+            ) else None
 
             # 1. use Kalman Filter to predict current location
             for id in self.confirmed_ids:
@@ -253,12 +261,16 @@ class ByteTracker(BaseTracker):
             first_match_det_labels = first_det_labels[valid]
             first_match_det_scores = first_det_scores[valid]
             first_match_det_ids = first_det_ids[valid]
+            first_match_det_masks = first_det_masks[
+                valid] if 'masks' in locals() else None
             assert (first_match_det_ids > -1).all()
 
             first_unmatch_det_bboxes = first_det_bboxes[~valid]
             first_unmatch_det_labels = first_det_labels[~valid]
             first_unmatch_det_scores = first_det_scores[~valid]
             first_unmatch_det_ids = first_det_ids[~valid]
+            first_unmatch_det_masks = first_det_masks[
+                ~valid] if 'masks' in locals() else None
             assert (first_unmatch_det_ids == -1).all()
 
             # 3. use unmatched detection bboxes from the first match to match
@@ -310,6 +322,11 @@ class ByteTracker(BaseTracker):
                             dim=0)
             ids = torch.cat((ids, second_det_ids[valid]), dim=0)
 
+            if 'masks' in locals():
+                masks = torch.cat(
+                    (first_match_det_masks, first_unmatch_det_masks), dim=0)
+                masks = torch.cat((masks, second_det_masks[valid]), dim=0)
+
             # 6. assign new ids
             new_track_inds = ids == -1
             ids[new_track_inds] = torch.arange(
@@ -322,7 +339,8 @@ class ByteTracker(BaseTracker):
             bboxes=bboxes,
             scores=scores,
             labels=labels,
-            frame_ids=frame_id)
+            frame_ids=frame_id,
+            masks=masks if 'masks' in locals() else None)
 
         # update pred_track_instances
         pred_track_instances = InstanceData()
@@ -330,5 +348,7 @@ class ByteTracker(BaseTracker):
         pred_track_instances.labels = labels
         pred_track_instances.scores = scores
         pred_track_instances.instances_id = ids
+        if 'masks' in locals():
+            pred_track_instances.masks = masks
 
         return pred_track_instances
