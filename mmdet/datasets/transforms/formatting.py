@@ -343,8 +343,20 @@ class PackTrackInputs(BaseTransform):
         if 'img' in results:
             imgs = results['img']
             imgs = np.stack(imgs, axis=0)
-            imgs = imgs.transpose(0, 3, 1, 2)
-            packed_results['inputs'] = to_tensor(imgs)
+
+            # To improve the computational speed by by 3-5 times, apply:
+            # If image is not contiguous, use
+            # `numpy.transpose()` followed by `numpy.ascontiguousarray()`
+            # If image is already contiguous, use
+            # `torch.permute()` followed by `torch.contiguous()`
+            # Refer to https://github.com/open-mmlab/mmdetection/pull/9533
+            # for more details
+            if not imgs.flags.c_contiguous:
+                imgs = np.ascontiguousarray(imgs.transpose(0, 3, 1, 2))
+                imgs = to_tensor(imgs)
+            else:
+                imgs = to_tensor(imgs).permute(0, 3, 1, 2).contiguous()
+            packed_results['inputs'] = imgs
 
         # 2. Pack InstanceData
         if 'gt_ignore_flags' in results:
