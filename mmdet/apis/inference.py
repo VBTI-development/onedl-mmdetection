@@ -257,9 +257,13 @@ def build_test_pipeline(cfg: ConfigType) -> ConfigType:
     """
     # remove the "LoadImageFromFile" and "LoadTrackAnnotations" in pipeline
     transform_broadcaster = cfg.test_dataloader.dataset.pipeline[0].copy()
-    for transform in transform_broadcaster['transforms']:
-        if transform['type'] == 'Resize':
-            transform_broadcaster['transforms'] = transform
+    filtered_transforms = []
+    filtered_transforms = [
+        transform for transform in transform_broadcaster['transforms']
+        if not any(x in transform['type']
+                   for x in ['LoadImageFromFile', 'LoadTrackAnnotations'])
+    ]
+    transform_broadcaster['transforms'] = filtered_transforms
     pack_track_inputs = cfg.test_dataloader.dataset.pipeline[-1].copy()
     test_pipeline = Compose([transform_broadcaster, pack_track_inputs])
 
@@ -280,7 +284,7 @@ def inference_mot(model: nn.Module, img: np.ndarray, frame_id: int,
     """
     cfg = model.cfg
     data = dict(
-        img=[img.astype(np.float32)],
+        img=[img],
         frame_id=[frame_id],
         ori_shape=[img.shape[:2]],
         img_id=[frame_id + 1],
