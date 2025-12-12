@@ -192,8 +192,6 @@ class ByteTracker(BaseTracker):
         scores = data_sample.pred_instances.scores
 
         has_masks = hasattr(data_sample.pred_instances, 'masks')
-        if has_masks:
-            masks = data_sample.pred_instances.masks
 
         frame_id = metainfo.get('frame_id', -1)
         if frame_id == 0:
@@ -207,6 +205,7 @@ class ByteTracker(BaseTracker):
             bboxes = bboxes[valid_inds]
             labels = labels[valid_inds]
             if has_masks:
+                masks = data_sample.pred_instances.masks
                 masks = masks[valid_inds]
             num_new_tracks = bboxes.size(0)
             ids = torch.arange(self.num_tracks,
@@ -226,8 +225,6 @@ class ByteTracker(BaseTracker):
             first_det_labels = labels[first_det_inds]
             first_det_scores = scores[first_det_inds]
             first_det_ids = ids[first_det_inds]
-            if has_masks:
-                first_det_masks = masks[first_det_inds]
 
             # get the detection bboxes for the second association
             second_det_inds = (~first_det_inds) & (
@@ -236,8 +233,6 @@ class ByteTracker(BaseTracker):
             second_det_labels = labels[second_det_inds]
             second_det_scores = scores[second_det_inds]
             second_det_ids = ids[second_det_inds]
-            if has_masks:
-                second_det_masks = masks[second_det_inds]
 
             # 1. use Kalman Filter to predict current location
             for id in self.confirmed_ids:
@@ -263,17 +258,21 @@ class ByteTracker(BaseTracker):
             first_match_det_labels = first_det_labels[valid]
             first_match_det_scores = first_det_scores[valid]
             first_match_det_ids = first_det_ids[valid]
-            if has_masks:
-                first_match_det_masks = first_det_masks[valid]
             assert (first_match_det_ids > -1).all()
 
             first_unmatch_det_bboxes = first_det_bboxes[~valid]
             first_unmatch_det_labels = first_det_labels[~valid]
             first_unmatch_det_scores = first_det_scores[~valid]
             first_unmatch_det_ids = first_det_ids[~valid]
-            if has_masks:
-                first_unmatch_det_masks = first_det_masks[~valid]
             assert (first_unmatch_det_ids == -1).all()
+
+            if has_masks:
+
+                masks = data_sample.pred_instances.masks
+                first_det_masks = masks[first_det_inds]
+                second_det_masks = masks[second_det_inds]
+                first_match_det_masks = first_det_masks[valid]
+                first_unmatch_det_masks = first_det_masks[~valid]
 
             # 3. use unmatched detection bboxes from the first match to match
             # the unconfirmed tracks
