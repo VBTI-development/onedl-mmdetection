@@ -60,7 +60,7 @@ tests = [
     "xdoctest>=0.10.0",
 ]
 docs = [
-    "docutils==0.16.0",
+    "docutils==0.18.1",
     "myst-parser",
     "pytorch_sphinx_theme @ git+https://github.com/VBTI-development/onedl_sphinx_theme.git",
     "sphinx",
