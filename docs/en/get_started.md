@@ -15,7 +15,7 @@ If you are experienced with PyTorch and have already installed it, just skip thi
 **Step 1.** Create a conda environment and activate it.
 
 ```shell
-conda create --name onedllab python=3.8 -y
+conda create --name onedllab python=3.10 -y
 conda activate onedllab
 ```
 

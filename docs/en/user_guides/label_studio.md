@@ -15,7 +15,7 @@ To begin with, you need to create a virtual environment and then install PyTorch
 Create a virtual environment:
 
 ```shell
-conda create -n rtmdet python=3.9 -y
+conda create -n rtmdet python=3.10 -y
 conda activate rtmdet
 ```
 
