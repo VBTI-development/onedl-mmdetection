@@ -224,8 +224,8 @@ class TestDinoEmbedDimsConsistency:
                 model.dn_query_generator(batch_data_samples)
 
             assert dn_label_query.shape[-1] == embed_dims, (
-                f"embed_dims={embed_dims}: dn_label_query last dim "
-                f"{dn_label_query.shape[-1]} != detector embed_dims")
+                f'embed_dims={embed_dims}: dn_label_query last dim '
+                f'{dn_label_query.shape[-1]} != detector embed_dims')
 
     # ------------------------------------------------------------------ #
     # 6. Attention mask total size matches num_queries + num_dn_queries   #
@@ -249,6 +249,6 @@ class TestDinoEmbedDimsConsistency:
 
         expected_total = num_dn + num_matching
         assert attn_mask.shape == (expected_total, expected_total), (
-            f"attn_mask shape {attn_mask.shape} != "
-            f"({expected_total}, {expected_total}). "
-            f"num_dn={num_dn}, num_matching={num_matching}")
+            f'attn_mask shape {attn_mask.shape} != '
+            f'({expected_total}, {expected_total}). '
+            f'num_dn={num_dn}, num_matching={num_matching}')

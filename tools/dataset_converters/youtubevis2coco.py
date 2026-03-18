@@ -135,8 +135,8 @@ def convert_vis(ann_dir, save_dir, dataset_version, mode='train'):
     mmengine.dump(
         VIS, osp.join(save_dir, f'youtube_vis_{dataset_version}_{mode}.json'))
     print(f'-----YouTube VIS {dataset_version} {mode}------')
-    print(f'{records["vid_id"]- 1} videos')
-    print(f'{records["img_id"]- 1} images')
+    print(f'{records["vid_id"] - 1} videos')
+    print(f'{records["img_id"] - 1} images')
     if has_annotations:
         print(f'{records["ann_id"] - 1} objects')
         print(f'{records["global_instance_id"] - 1} instances')
