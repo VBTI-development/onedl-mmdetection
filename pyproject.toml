@@ -111,6 +111,7 @@ tracking = [
     "scikit-learn",
     "lap",
     "trackeval",
+    "pandas",
 ]
 
 [project.urls]

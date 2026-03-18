@@ -35,6 +35,9 @@ def cal_train_time(log_dicts, args):
 def plot_curve(log_dicts, args):
     if args.backend is not None:
         plt.switch_backend(args.backend)
+    # Apply matplotlib style if provided so that the --style option takes effect.
+    if getattr(args, 'style', None):
+        plt.style.use(args.style)
     # if legend is None, use {filename}_{key} as legend
     legend = args.legend
     if legend is None:

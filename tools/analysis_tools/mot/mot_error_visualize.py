@@ -27,7 +27,9 @@ def parse_args():
         description='visualize errors for multiple object tracking')
     parser.add_argument('config', help='path of the config file')
     parser.add_argument(
-        '--result-dir', help='directory of the inference result')
+        '--result-dir',
+        required=True,
+        help='directory of the inference result')
     parser.add_argument(
         '--out-dir',
         '--output-dir',
