@@ -155,7 +155,7 @@ class ChannelAttention(BaseModule):
 
     def forward(self, x: Tensor) -> Tensor:
         """Forward function for ChannelAttention."""
-        with torch.cuda.amp.autocast(enabled=False):
+        with torch.autocast('cuda', enabled=False):
             out = self.global_avgpool(x)
         out = self.fc(out)
         out = self.act(out)

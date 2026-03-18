@@ -78,9 +78,12 @@ The VBTI development team is reviving MMLabs code, making it work with
 newer pytorch versions and fixing bugs. We are only a small team, so your help
 is appreciated.
 
-💎 **We have released the pre-trained weights for MM-Grounding-DINO Swin-B and Swin-L, welcome to try and give feedback.**
-
 ### Highlight
+
+**v3.4.x** was released in 2025:
+VBTI updated several dependencies to make it work with newer versions of several important packages as well as making it work with modern python (and installers).
+
+💎 **We have released the pre-trained weights for MM-Grounding-DINO Swin-B and Swin-L, welcome to try and give feedback.**
 
 **v3.3.0** was released in 5/1/2024:
 
