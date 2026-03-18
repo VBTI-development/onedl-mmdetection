@@ -1754,6 +1754,7 @@ tracking = [
     { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "numpy", version = "2.3.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "onedl-mmpretrain" },
+    { name = "pandas" },
     { name = "scikit-learn" },
     { name = "trackeval" },
 ]
@@ -1827,6 +1828,7 @@ requires-dist = [
     { name = "onedl-mmcv", marker = "extra == 'mminstall'", specifier = ">=2.0.0" },
     { name = "onedl-mmengine", marker = "extra == 'mminstall'", specifier = ">=0.8.3,<1.0.0" },
     { name = "onedl-mmpretrain", marker = "extra == 'tracking'" },
+    { name = "pandas", marker = "extra == 'tracking'" },
     { name = "pycocoevalcap", marker = "extra == 'multimodal'" },
     { name = "pycocotools" },
     { name = "scikit-learn", marker = "extra == 'optional'" },
