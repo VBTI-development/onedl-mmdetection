@@ -19,7 +19,7 @@ class DinoTransformerDecoder(DeformableDetrTransformerDecoder):
     def _init_layers(self) -> None:
         """Initialize decoder layers."""
         super()._init_layers()
-        self.ref_point_head = MLP(self.embed_dims * 2, self.embed_dims,
+        self.ref_point_head = MLP(self.embed_dims * 4, self.embed_dims,
                                   self.embed_dims, 2)
         self.norm = nn.LayerNorm(self.embed_dims)
 
@@ -81,7 +81,7 @@ class DinoTransformerDecoder(DeformableDetrTransformerDecoder):
                     reference_points[:, :, None] * valid_ratios[:, None]
 
             query_sine_embed = coordinate_to_encoding(
-                reference_points_input[:, :, 0, :])
+                reference_points_input[:, :, 0, :], num_feats=query.shape[2])
             query_pos = self.ref_point_head(query_sine_embed)
 
             query = layer(
