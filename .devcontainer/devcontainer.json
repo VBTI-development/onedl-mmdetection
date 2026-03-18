@@ -4,7 +4,7 @@
 	"name": "Python 3",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "mcr.microsoft.com/devcontainers/python:1-3.10-bookworm",
-	"image": "nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04",
+	"image": "nvidia/cuda:12.9.1-cudnn-devel-ubuntu22.04",
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {},
 		"ghcr.io/devcontainers/features/git-lfs:1": {},
@@ -21,7 +21,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "apt-get update && apt-get install -y libgl1 libglib2.0-0 && uv sync --all-groups --all-extras && uv pip install pre-commit",
+	"postCreateCommand": "apt-get update && apt-get install -y libgl1 libglib2.0-0 && uv venv --clear --python 3.12 && uv sync --all-groups --all-extras && uv pip install pre-commit",
 	"customizations": {
 		"vscode": {
 			"extensions": [

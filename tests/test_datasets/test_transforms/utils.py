@@ -16,8 +16,8 @@ def create_random_bboxes(num_bboxes, img_w, img_h):
 
 
 def create_full_masks(gt_bboxes, img_w, img_h):
-    xmin, ymin = gt_bboxes[:, 0:1], gt_bboxes[:, 1:2]
-    xmax, ymax = gt_bboxes[:, 2:3], gt_bboxes[:, 3:4]
+    xmin, ymin = gt_bboxes[:, 0], gt_bboxes[:, 1]
+    xmax, ymax = gt_bboxes[:, 2], gt_bboxes[:, 3]
     gt_masks = np.zeros((len(gt_bboxes), img_h, img_w), dtype=np.uint8)
     for i in range(len(gt_bboxes)):
         gt_masks[i, int(ymin[i]):int(ymax[i]), int(xmin[i]):int(xmax[i])] = 1

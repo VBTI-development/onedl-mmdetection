@@ -19,6 +19,10 @@ try:
     import cityscapesscripts.helpers.labels as CSLabels
 
     from mmdet.evaluation.functional import evaluateImgLists
+
+    # Compatibility shim: np.in1d was removed in NumPy 2.0
+    if not hasattr(np, 'in1d'):
+        np.in1d = np.isin
     HAS_CITYSCAPESAPI = True
 except ImportError:
     HAS_CITYSCAPESAPI = False

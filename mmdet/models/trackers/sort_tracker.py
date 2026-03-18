@@ -4,12 +4,7 @@ from typing import List, Optional, Tuple
 import numpy as np
 import torch
 from mmengine.structures import InstanceData
-
-try:
-    import motmetrics
-    from motmetrics.lap import linear_sum_assignment
-except ImportError:
-    motmetrics = None
+from scipy.optimize import linear_sum_assignment as scipy_linear_sum_assignment
 from torch import Tensor
 
 from mmdet.registry import MODELS, TASK_UTILS
@@ -18,6 +13,29 @@ from mmdet.structures.bbox import bbox_overlaps, bbox_xyxy_to_cxcyah
 from mmdet.utils import OptConfigType
 from ..utils import imrenormalize
 from .base_tracker import BaseTracker
+
+
+def linear_sum_assignment(
+        cost_matrix: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
+    """Run Hungarian matching while tolerating non-finite costs.
+
+    ``scipy.optimize.linear_sum_assignment`` rejects NaN/Inf values. Replace
+    non-finite entries with a large finite value and drop such matches after
+    assignment.
+    """
+    finite_mask = np.isfinite(cost_matrix)
+    if not np.any(finite_mask):
+        empty = np.empty((0, ), dtype=np.int64)
+        return empty, empty
+
+    finite_costs = cost_matrix[finite_mask]
+    large_cost = finite_costs.max() + 1e6
+    sanitized_costs = cost_matrix.astype(np.float64, copy=True)
+    sanitized_costs[~finite_mask] = large_cost
+
+    row, col = scipy_linear_sum_assignment(sanitized_costs)
+    valid = finite_mask[row, col]
+    return row[valid], col[valid]
 
 
 @MODELS.register_module()
@@ -54,9 +72,6 @@ class SORTTracker(BaseTracker):
                  match_iou_thr: float = 0.7,
                  num_tentatives: int = 3,
                  **kwargs):
-        if motmetrics is None:
-            raise RuntimeError('motmetrics is not installed,\
-                 please install it by: pip install motmetrics')
         super().__init__(**kwargs)
         if motion is not None:
             self.motion = TASK_UTILS.build(motion)

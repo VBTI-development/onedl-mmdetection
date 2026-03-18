@@ -15,7 +15,7 @@ classifiers = [
     'Operating System :: OS Independent',
     'Programming Language :: Python :: 3',
     "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
@@ -101,13 +101,14 @@ optional = [
     "imagecorruptions",
     "scikit-learn",
 ]
-torch = [ "torch", "torchvision" ]
+torch = [
+    "torch==2.9;        python_version=='3.12'",
+    "torch>=2.4",
+    "torchvision" ]
 tracking = [
     "onedl-mmpretrain",
-    "motmetrics",
     "numpy",
     "scikit-learn",
-    "seaborn",
     "lap",
     "trackeval",
 ]

@@ -3,8 +3,9 @@ import copy
 import os
 import os.path as osp
 import sys
+import types
 import unittest
-from unittest.mock import MagicMock, Mock, patch
+from unittest.mock import Mock, patch
 
 import mmcv
 import numpy as np
@@ -284,11 +285,19 @@ class TestLoadPanopticAnnotations(unittest.TestCase):
             LoadPanopticAnnotations()
 
     def test_transform(self):
-        sys.modules['panopticapi'] = MagicMock()
-        sys.modules['panopticapi.utils'] = MagicMock()
-        from mmdet.datasets.transforms import LoadPanopticAnnotations
         mock_rgb2id = Mock(return_value=self.seg_map)
-        with patch('panopticapi.utils.rgb2id', mock_rgb2id):
+        panopticapi_module = types.ModuleType('panopticapi')
+        panopticapi_utils_module = types.ModuleType('panopticapi.utils')
+        panopticapi_utils_module.rgb2id = mock_rgb2id
+        panopticapi_module.utils = panopticapi_utils_module
+
+        with patch.dict(
+                sys.modules, {
+                    'panopticapi': panopticapi_module,
+                    'panopticapi.utils': panopticapi_utils_module
+                }):
+            from mmdet.datasets.transforms import LoadPanopticAnnotations
+
             # test with all False
             transform = LoadPanopticAnnotations(
                 with_bbox=False,

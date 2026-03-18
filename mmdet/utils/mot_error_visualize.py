@@ -2,11 +2,8 @@
 import os.path as osp
 from typing import Union
 
-try:
-    import seaborn as sns
-except ImportError:
-    sns = None
 import cv2
+import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
 import mmcv
 import numpy as np
@@ -66,8 +63,6 @@ def _cv2_show_wrong_tracks(img: Union[str, np.ndarray],
     Returns:
         ndarray: Visualized image.
     """
-    if sns is None:
-        raise ImportError('please run pip install seaborn')
     assert bboxes.ndim == 2, \
         f' bboxes ndim should be 2, but its ndim is {bboxes.ndim}.'
     assert ids.ndim == 1, \
@@ -79,7 +74,10 @@ def _cv2_show_wrong_tracks(img: Union[str, np.ndarray],
     assert bboxes.shape[1] == 5, \
         f' bboxes.shape[1] should be 5, but its {bboxes.shape[1]}.'
 
-    bbox_colors = sns.color_palette()
+    cmap = plt.get_cmap('tab10')
+    num_colors = cmap.N
+    bbox_colors = [mcolors.to_rgb(cmap(i)) for i in range(num_colors)]
+
     # red, yellow, blue
     bbox_colors = [bbox_colors[3], bbox_colors[1], bbox_colors[0]]
     bbox_colors = [[int(255 * _c) for _c in bbox_color][::-1]
@@ -185,7 +183,9 @@ def _plt_show_wrong_tracks(img: Union[str, np.ndarray],
     assert bboxes.shape[1] == 5, \
         f' bboxes.shape[1] should be 5, but its {bboxes.shape[1]}.'
 
-    bbox_colors = sns.color_palette()
+    cmap = plt.get_cmap('tab10')
+    num_colors = cmap.N
+    bbox_colors = [mcolors.to_rgb(cmap(i)) for i in range(num_colors)]
     # red, yellow, blue
     bbox_colors = [bbox_colors[3], bbox_colors[1], bbox_colors[0]]
 
