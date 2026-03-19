@@ -91,8 +91,8 @@ jobs:
             torch: '2.4.1'
             container: 'nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04'
             cubackend: cu118
-          - python-version: '3.10'  # maximum version
-            torch: '2.8.0'
+          - python-version: '3.12'  # maximum version
+            torch: '2.9.0'
             container: 'nvidia/cuda:12.9.1-cudnn-runtime-ubuntu22.04'
             cubackend: cu129
     container:
