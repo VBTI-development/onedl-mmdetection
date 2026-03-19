@@ -80,7 +80,7 @@ readthedocs = [
 
 [project.optional-dependencies]
 albu = [
-    "albumentations~=1.4"
+    "albumentations>=1.4.11,<2"
 ]
 multimodal = [
     "fairscale",
