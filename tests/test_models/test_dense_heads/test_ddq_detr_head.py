@@ -1,5 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import json
+from pathlib import Path
 from unittest import TestCase
 
 import torch
@@ -145,7 +146,8 @@ class TestDDQDETRHead(TestCase):
 
     def get_batch_data_samples(self):
         """Generate batch data samples including model inputs and gt labels."""
-        data_sample_file_path = 'tests/data/coco_batched_sample.json'
+        data_sample_file_path = Path(
+            __file__).parent.parent.parent / 'data/coco_batched_sample.json'
 
         with open(data_sample_file_path, 'r') as file_stream:
             data_sample_infos = json.load(file_stream)

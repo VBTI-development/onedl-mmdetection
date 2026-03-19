@@ -1,5 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import os.path as osp
+from pathlib import Path
 from tempfile import TemporaryDirectory
 
 import mmengine
@@ -35,7 +36,7 @@ def test_coco_occluded_separated_metric():
     mmengine.dump(ann, ann_path)
 
     metric = CocoOccludedSeparatedMetric(
-        ann_file='tests/data/coco_sample.json',
+        ann_file=Path(__file__).parent.parent.parent / 'data/coco_sample.json',
         occluded_ann=ann_path,
         separated_ann=ann_path,
         metric=[])

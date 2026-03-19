@@ -1,5 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import unittest
+from pathlib import Path
 
 from mmdet.datasets import DSDLDetDataset
 
@@ -14,7 +15,7 @@ class TestDSDLDetDataset(unittest.TestCase):
     def test_dsdldet_init(self):
         if DSDLDataset is not None:
             dataset = DSDLDetDataset(
-                data_root='tests/data/dsdl_det',
+                data_root=Path(__file__).parent.parent / 'data/dsdl_det',
                 ann_file='set-train/train.yaml')
             dataset.full_init()
 

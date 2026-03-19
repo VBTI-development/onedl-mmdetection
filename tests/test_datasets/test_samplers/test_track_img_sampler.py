@@ -1,6 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 from collections.abc import Iterable
 from copy import deepcopy
+from pathlib import Path
 from unittest import TestCase
 
 from mmengine.dataset import ClassBalancedDataset, ConcatDataset
@@ -14,7 +15,8 @@ class TestTrackImgSampler(TestCase):
         # train mode
         dataset = MOTChallengeDataset(
             data_prefix=dict(img_path='imgs'),
-            ann_file='tests/data/mot_sample.json',
+            ann_file=Path(__file__).parent.parent.parent /
+            'data/mot_sample.json',
             metainfo=dict(classes=('pedestrian')),
             filter_cfg=dict(filter_empty_gt=True, min_size=32),
             test_mode=False,
@@ -35,7 +37,8 @@ class TestTrackImgSampler(TestCase):
         # test mode
         dataset = MOTChallengeDataset(
             data_prefix=dict(img_path='imgs'),
-            ann_file='tests/data/mot_sample.json',
+            ann_file=Path(__file__).parent.parent.parent /
+            'data/mot_sample.json',
             metainfo=dict(classes=('pedestrian')),
             filter_cfg=dict(filter_empty_gt=True, min_size=32),
             test_mode=True,
@@ -47,7 +50,8 @@ class TestTrackImgSampler(TestCase):
     def test_iter_concat_dataset(self):
         single_dataset = MOTChallengeDataset(
             data_prefix=dict(img_path='imgs'),
-            ann_file='tests/data/mot_sample.json',
+            ann_file=Path(__file__).parent.parent.parent /
+            'data/mot_sample.json',
             metainfo=dict(classes=('pedestrian')),
             filter_cfg=dict(filter_empty_gt=True, min_size=32),
             test_mode=False,
@@ -70,7 +74,8 @@ class TestTrackImgSampler(TestCase):
     def test_iter_class_balanced_dataset(self):
         single_dataset = MOTChallengeDataset(
             data_prefix=dict(img_path='imgs'),
-            ann_file='tests/data/mot_sample.json',
+            ann_file=Path(__file__).parent.parent.parent /
+            'data/mot_sample.json',
             metainfo=dict(classes=('pedestrian', 'person_on_vehicle')),
             filter_cfg=dict(filter_empty_gt=True, min_size=32),
             visibility_thr=0.1,

@@ -1,5 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import json
+from pathlib import Path
 
 import pytest
 import torch
@@ -307,7 +308,8 @@ def test_eqlv2_loss(loss_class, reduction):
 
 @pytest.mark.parametrize('loss_class', [DDQAuxLoss])
 def test_ddq_aux_loss(loss_class):
-    data_sample_file_path = 'tests/data/coco_batched_sample.json'
+    data_sample_file_path = Path(
+        __file__).parent.parent.parent / 'data/coco_batched_sample.json'
     num_classes = 80
     num_pred = 1350
 

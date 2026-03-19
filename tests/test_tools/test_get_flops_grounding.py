@@ -1,4 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import pathlib
 import sys
 import unittest
 from unittest.mock import MagicMock
@@ -8,7 +9,9 @@ import torch.nn as nn
 from mmengine.config import Config
 
 # Add tools path so we can import the module directly
-sys.path.insert(0, 'tools/analysis_tools')
+sys.path.insert(
+    0,
+    str(pathlib.Path(__file__).parent.parent.parent / 'tools/analysis_tools'))
 _mod = __import__('get_flops_grounding')
 _get_backbone_out_channels = _mod._get_backbone_out_channels
 _get_feature_strides = _mod._get_feature_strides

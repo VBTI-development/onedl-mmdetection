@@ -1,5 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import unittest
+from pathlib import Path
 
 from mmdet.datasets import OpenImagesChallengeDataset, OpenImagesDataset
 
@@ -8,7 +9,7 @@ class TestOpenImagesDataset(unittest.TestCase):
 
     def test_init(self):
         dataset = OpenImagesDataset(
-            data_root='tests/data/OpenImages/',
+            data_root=Path(__file__).parent.parent / 'data/OpenImages/',
             ann_file='annotations/oidv6-train-annotations-bbox.csv',
             data_prefix=dict(img='OpenImages/train/'),
             label_file='annotations/class-descriptions-boxable.csv',
@@ -24,7 +25,7 @@ class TestOpenImagesChallengeDataset(unittest.TestCase):
 
     def test_init(self):
         dataset = OpenImagesChallengeDataset(
-            data_root='tests/data/OpenImages/',
+            data_root=Path(__file__).parent.parent / 'data/OpenImages/',
             ann_file='challenge2019/challenge-2019-train-detection-bbox.txt',
             data_prefix=dict(img='OpenImages/train/'),
             label_file='challenge2019/cls-label-description.csv',

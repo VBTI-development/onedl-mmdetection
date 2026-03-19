@@ -6,6 +6,7 @@ import torch
 import torch.nn as nn
 from mmengine.config import Config
 from mmengine.runner import load_checkpoint
+from mmengine.utils import get_installed_path
 from torch import Tensor
 
 from mmdet.registry import MODELS
@@ -61,6 +62,9 @@ class KnowledgeDistillationSingleStageDetector(SingleStageDetector):
         self.eval_teacher = eval_teacher
         # Build teacher model
         if isinstance(teacher_config, (str, Path)):
+            if not Path(teacher_config).is_file():
+                mmdet_path = get_installed_path('mmdet')
+                teacher_config = Path(mmdet_path).parent / teacher_config
             teacher_config = Config.fromfile(teacher_config)
         self.teacher_model = MODELS.build(teacher_config['model'])
         if teacher_ckpt is not None:

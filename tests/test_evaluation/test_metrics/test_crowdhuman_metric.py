@@ -1,5 +1,6 @@
 import os.path as osp
 import tempfile
+from pathlib import Path
 from unittest import TestCase
 
 import numpy as np
@@ -21,8 +22,9 @@ class TestCrowdHumanMetric(TestCase):
 
     def setUp(self):
         self.tmp_dir = tempfile.TemporaryDirectory()
-        self.ann_file_path = \
-            'tests/data/crowdhuman_dataset/test_annotation_train.odgt',
+        self.ann_file_path = (
+            Path(__file__).parent.parent.parent /
+            'data/crowdhuman_dataset/test_annotation_train.odgt', )
 
     def tearDown(self):
         self.tmp_dir.cleanup()

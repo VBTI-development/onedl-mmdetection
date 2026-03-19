@@ -1,5 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import unittest
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -36,7 +37,7 @@ class TestOpenImagesMetric(unittest.TestCase):
     def test_eval(self):
         register_all_modules()
         dataset = OpenImagesDataset(
-            data_root='tests/data/OpenImages/',
+            data_root=Path(__file__).parent.parent.parent / 'data/OpenImages/',
             ann_file='annotations/oidv6-train-annotations-bbox.csv',
             data_prefix=dict(img='OpenImages/train/'),
             label_file='annotations/class-descriptions-boxable.csv',

@@ -1,6 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import os.path as osp
 import tempfile
+from pathlib import Path
 from unittest import TestCase, mock
 from unittest.mock import Mock, patch
 
@@ -24,7 +25,10 @@ class TestDetInferencer(TestCase):
         # init from metafile
         DetInferencer('rtmdet-t')
         # init from cfg
-        DetInferencer('configs/yolox/yolox_tiny_8xb8-300e_coco.py')
+        DetInferencer(
+            str(
+                Path(__file__).parent.parent.parent /
+                'configs/yolox/yolox_tiny_8xb8-300e_coco.py'))
 
     def assert_predictions_equal(self, preds1, preds2):
         for pred1, pred2 in zip(preds1, preds2):
@@ -45,7 +49,7 @@ class TestDetInferencer(TestCase):
     ])
     def test_call(self, model):
         # single img
-        img_path = 'tests/data/color.jpg'
+        img_path = str(Path(__file__).parent.parent / 'data/color.jpg')
 
         mock_load = Mock(return_value=None)
         with patch('mmengine.infer.infer._load_checkpoint', mock_load):
@@ -69,7 +73,10 @@ class TestDetInferencer(TestCase):
         self.assertIn('visualization', res_ndarray)
 
         # multiple images
-        img_paths = ['tests/data/color.jpg', 'tests/data/gray.jpg']
+        img_paths = [
+            str(Path(__file__).parent.parent / 'data/color.jpg'),
+            str(Path(__file__).parent.parent / 'data/gray.jpg')
+        ]
         res_path = inferencer(img_paths, return_vis=True)
         # list of ndarray
         imgs = [mmcv.imread(p) for p in img_paths]
@@ -80,7 +87,9 @@ class TestDetInferencer(TestCase):
         self.assertIn('visualization', res_ndarray)
 
         # img dir, test different batch sizes
-        img_dir = 'tests/data/VOCdevkit/VOC2007/JPEGImages/'
+        img_dir = str(
+            Path(__file__).parent.parent /
+            'data/VOCdevkit/VOC2007/JPEGImages/')
         res_bs1 = inferencer(img_dir, batch_size=1, return_vis=True)
         res_bs3 = inferencer(img_dir, batch_size=3, return_vis=True)
         self.assert_predictions_equal(res_bs1['predictions'],
@@ -97,7 +106,10 @@ class TestDetInferencer(TestCase):
         'rtmdet-t', 'mask-rcnn_r50_fpn_1x_coco', 'panoptic_fpn_r50_fpn_1x_coco'
     ])
     def test_visualize(self, model):
-        img_paths = ['tests/data/color.jpg', 'tests/data/gray.jpg']
+        img_paths = [
+            str(Path(__file__).parent.parent / 'data/color.jpg'),
+            str(Path(__file__).parent.parent / 'data/gray.jpg')
+        ]
 
         mock_load = Mock(return_value=None)
         with patch('mmengine.infer.infer._load_checkpoint', mock_load):
@@ -121,7 +133,7 @@ class TestDetInferencer(TestCase):
     ])
     def test_postprocess(self, model):
         # return_datasamples
-        img_path = 'tests/data/color.jpg'
+        img_path = str(Path(__file__).parent.parent / 'data/color.jpg')
 
         mock_load = Mock(return_value=None)
         with patch('mmengine.infer.infer._load_checkpoint', mock_load):

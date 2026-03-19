@@ -1,5 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import unittest
+from pathlib import Path
 
 from mmdet.datasets import VOCDataset
 
@@ -8,7 +9,7 @@ class TestVOCDataset(unittest.TestCase):
 
     def test_voc2007_init(self):
         dataset = VOCDataset(
-            data_root='tests/data/VOCdevkit/',
+            data_root=str(Path(__file__).parent.parent / 'data/VOCdevkit/'),
             ann_file='VOC2007/ImageSets/Main/trainval.txt',
             data_prefix=dict(sub_data_root='VOC2007/'),
             filter_cfg=dict(
@@ -24,7 +25,7 @@ class TestVOCDataset(unittest.TestCase):
 
     def test_voc2012_init(self):
         dataset = VOCDataset(
-            data_root='tests/data/VOCdevkit/',
+            data_root=str(Path(__file__).parent.parent / 'data/VOCdevkit/'),
             ann_file='VOC2012/ImageSets/Main/trainval.txt',
             data_prefix=dict(sub_data_root='VOC2012/'),
             filter_cfg=dict(filter_empty_gt=True, min_size=32),

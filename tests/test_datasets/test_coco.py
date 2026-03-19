@@ -1,5 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import unittest
+from pathlib import Path
 
 from mmdet.datasets import CocoDataset
 
@@ -11,7 +12,7 @@ class TestCocoDataset(unittest.TestCase):
         metainfo = dict(classes=('bus', 'car'), task_name='new_task')
         dataset = CocoDataset(
             data_prefix=dict(img='imgs'),
-            ann_file='tests/data/coco_sample.json',
+            ann_file=Path(__file__).parent.parent / 'data/coco_sample.json',
             metainfo=metainfo,
             filter_cfg=dict(filter_empty_gt=True, min_size=32),
             pipeline=[],
@@ -25,14 +26,14 @@ class TestCocoDataset(unittest.TestCase):
         # test CocoDataset without filter_cfg
         dataset = CocoDataset(
             data_prefix=dict(img='imgs'),
-            ann_file='tests/data/coco_sample.json',
+            ann_file=Path(__file__).parent.parent / 'data/coco_sample.json',
             pipeline=[])
         self.assertEqual(len(dataset), 4)
 
         # test with test_mode = True
         dataset = CocoDataset(
             data_prefix=dict(img='imgs'),
-            ann_file='tests/data/coco_sample.json',
+            ann_file=Path(__file__).parent.parent / 'data/coco_sample.json',
             test_mode=True,
             pipeline=[])
         self.assertEqual(len(dataset), 4)
@@ -43,6 +44,7 @@ class TestCocoDataset(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, 'are not unique!'):
             CocoDataset(
                 data_prefix=dict(img='imgs'),
-                ann_file='tests/data/coco_wrong_format_sample.json',
+                ann_file=Path(__file__).parent.parent /
+                'data/coco_wrong_format_sample.json',
                 metainfo=metainfo,
                 pipeline=[])
