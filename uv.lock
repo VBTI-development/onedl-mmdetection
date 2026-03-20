@@ -1688,7 +1688,7 @@ wheels = [
 
 [[package]]
 name = "onedl-mmcv"
-version = "2.3.2.post2"
+version = "2.3.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "addict" },
@@ -1702,7 +1702,7 @@ dependencies = [
     { name = "regex", marker = "sys_platform == 'win32'" },
     { name = "yapf" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/18/27/d8c7e80d4116268b28fdb7a44f71340a9a277bfe438b0d486bba35847633/onedl_mmcv-2.3.2.post2.tar.gz", hash = "sha256:9890ddb6d25266caedd5f740ab5898802ade6dd9b6d7ba971a08dfd7cf5bf134", size = 513932, upload-time = "2025-11-25T11:10:11.734Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/01/42/040e63781d7612f836c803598825be1de7d98c21ae70657c246876d0a703/onedl_mmcv-2.3.3.tar.gz", hash = "sha256:71eb10d1163b257799a58cf324d1396c7b337259bfbfc75291e79d724a27b55d", size = 515560, upload-time = "2026-03-19T18:11:00.318Z" }
 
 [[package]]
 name = "onedl-mmdetection"
@@ -1895,7 +1895,7 @@ tests = [
 
 [[package]]
 name = "onedl-mmengine"
-version = "0.10.9"
+version = "0.10.10"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "addict" },
@@ -1908,11 +1908,11 @@ dependencies = [
     { name = "termcolor" },
     { name = "yapf" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f3/d8/8eb5369377c48b1bb47450876148c725fd0e1057f870f159cdf19d01bb67/onedl_mmengine-0.10.9.tar.gz", hash = "sha256:b4c1d941aafb5be9fbb1ab0ce58419a228f93aab73467e39cf9ec29f367bbaba", size = 377260, upload-time = "2026-01-08T15:47:43.047Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d0/10/fe8ec5c3cfbcba3b41a0cbd294be04f015401e707ef318961da06965baca/onedl_mmengine-0.10.10.tar.gz", hash = "sha256:b569181aa1e6cce4bd1170e48cb6dc68dbb1f4679881121958416794b53b6ac4", size = 376805, upload-time = "2026-03-19T14:49:20.317Z" }
 
 [[package]]
 name = "onedl-mmpretrain"
-version = "1.3.3"
+version = "1.3.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "einops" },
@@ -1924,7 +1924,7 @@ dependencies = [
     { name = "numpy", version = "2.3.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "rich" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ae/33/3ebfa031b9871e27d6ee702479ef04b7f6dff9334545b21bc1639440e9c8/onedl_mmpretrain-1.3.3.tar.gz", hash = "sha256:671d018d401f9696cf12373a144f5026c60a9cf675597af77f32243732a9a417", size = 963195, upload-time = "2026-02-11T15:40:50.383Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/bb/bd/c1357500e69e91ca3693f07cbac009c06d269f44c7781d536ccd9f787774/onedl_mmpretrain-1.3.4.tar.gz", hash = "sha256:e78e44a5dfd8ab8293e59c00f7960964d043200303032e0073f9e5e85f651711", size = 963229, upload-time = "2026-03-20T08:39:56.185Z" }
 
 [[package]]
 name = "onnx"

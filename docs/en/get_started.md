@@ -4,7 +4,7 @@
 
 In this section, we demonstrate how to prepare an environment with PyTorch.
 
-MMDetection works on Linux, Windows, and macOS. It requires Python 3.7+, CUDA 9.2+, and PyTorch 1.8+.
+MMDetection works on Linux, Windows, and macOS. It requires Python 3.10+, CUDA 11.8+, and PyTorch 2.0+.
 
 ```{note}
 If you are experienced with PyTorch and have already installed it, just skip this part and jump to the [next section](#installation). Otherwise, you can follow these steps for the preparation.
@@ -200,10 +200,10 @@ MMCV contains C++ and CUDA extensions, thus depending on PyTorch in a complex wa
 
 To install MMCV with pip instead of MIM, please follow [MMCV installation guides](https://onedl-mmcv.readthedocs.io/en/latest/get_started/installation.html). This requires manually specifying a find-url based on the PyTorch version and its CUDA version.
 
-For example, the following command installs MMCV built for PyTorch 1.12.x and CUDA 11.6.
+For example, the following command installs MMCV built for PyTorch 2.8.x and CUDA 12.8.
 
 ```shell
-pip install onedl-mmcv -f https://mmassets.onedl.ai/mmcv/dist/cu116/torch1.12.0/index.html
+pip install onedl-mmcv -f https://mmwheels.onedl.ai/cu128-torch280/simple/
 ```
 
 #### Install on CPU-only platforms
@@ -273,8 +273,8 @@ Within Jupyter, the exclamation mark `!` is used to call external executables an
 We provide a [Dockerfile](../../docker/Dockerfile) to build an image. Ensure that your [docker version](https://docs.docker.com/engine/install/) >=19.03.
 
 ```shell
-# build an image with PyTorch 1.9, CUDA 11.1
-# If you prefer other versions, just modified the Dockerfile
+# build an image with PyTorch 2.8, CUDA 12.9
+# If you prefer other versions, just modify the Dockerfile
 docker build -t mmdetection docker/
 ```
 

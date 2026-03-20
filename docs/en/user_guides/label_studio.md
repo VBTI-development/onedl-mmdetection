@@ -23,11 +23,11 @@ Install PyTorch:
 
 ```shell
 # Linux and Windows CPU only
-pip install torch==1.10.1+cpu torchvision==0.11.2+cpu torchaudio==0.10.1 -f https://download.pytorch.org/whl/cpu/torch_stable.html
-# Linux and Windows CUDA 11.3
-pip install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+# Linux and Windows CUDA 11.8
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 # OSX
-pip install torch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1
+pip install torch torchvision torchaudio
 ```
 
 Install MMCV:

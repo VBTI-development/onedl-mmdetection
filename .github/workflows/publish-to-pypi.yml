@@ -27,3 +27,26 @@ jobs:
       - name: Publish distribution to PyPI
         run: |
           uv publish
+
+  discord-release:
+    name: Announce Release on Discord
+    needs: build-n-publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Get Release Info
+        id: release
+        run: |
+          curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ github.ref_name }}" \
+            | jq -r '.body // ""' > release_body.txt
+
+      - name: Send Discord Release Message
+        run: |
+          RELEASE_BODY=$(cat release_body.txt)
+          CONTENT="$(printf ':tada: **OneDL-MMDetection Release Announcement!**\nA new version has just been published: **${{ github.ref_name }}**\n%s\n\n:rocket: Happy deep learning!' "$RELEASE_BODY")"
+          curl -f -H "Content-Type: application/json" \
+            -X POST \
+            -d "$(jq -n --arg content "$CONTENT" '{"content": $content}')" \
+            "${{ secrets.DISCORD_WEBHOOK_URL }}"
