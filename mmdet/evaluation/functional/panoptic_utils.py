@@ -11,11 +11,7 @@ import mmcv
 import numpy as np
 from mmengine.fileio import get
 
-# A custom value to distinguish instance ID and category ID; need to
-# be greater than the number of categories.
-# For a pixel in the panoptic result map:
-#   pan_id = ins_id * INSTANCE_OFFSET + cat_id
-INSTANCE_OFFSET = 1000
+from mmdet.structures import INSTANCE_OFFSET  # noqa: F401
 
 try:
     from panopticapi.evaluation import OFFSET, VOID, PQStat
