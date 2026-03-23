@@ -1706,7 +1706,7 @@ sdist = { url = "https://files.pythonhosted.org/packages/01/42/040e63781d7612f83
 
 [[package]]
 name = "onedl-mmdetection"
-version = "3.4.6"
+version = "3.4.7"
 source = { editable = "." }
 dependencies = [
     { name = "imaug" },
