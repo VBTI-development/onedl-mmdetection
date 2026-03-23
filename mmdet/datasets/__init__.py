@@ -31,7 +31,9 @@ except ImportError:
     import logging
 
     from mmengine.logging import print_log
-    print_log('Could not import OneDL', level=logging.DEBUG)
+    print_log(
+        'Could not import OneDL. Skipping OneDL datasets.',
+        level=logging.DEBUG)
     onedl_dataset_types = []
 from .openimages import OpenImagesChallengeDataset, OpenImagesDataset
 from .refcoco import RefCocoDataset

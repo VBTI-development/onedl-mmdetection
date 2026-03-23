@@ -15,7 +15,7 @@ from mmdet.datasets.transforms import (FilterAnnotations, LoadAnnotations,
                                        LoadImageFromNDArray,
                                        LoadMultiChannelImageFromFiles,
                                        LoadProposals, LoadTrackAnnotations)
-from mmdet.evaluation import INSTANCE_OFFSET
+from mmdet.structures import INSTANCE_OFFSET
 from mmdet.structures.mask import BitmapMasks, PolygonMasks
 
 try:

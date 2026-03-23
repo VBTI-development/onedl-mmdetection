@@ -10,10 +10,19 @@ from typing import Any, Dict, List, Sequence
 
 import numpy as np
 import torch
-from faster_coco_eval import COCO, COCOeval_faster
 from mmengine.fileio import load
 from mmengine.logging import MMLogger
 from terminaltables import AsciiTable
+
+try:
+    from faster_coco_eval import COCO, COCOeval_faster
+except ImportError:
+    import warnings
+    warnings.warn(
+        'faster_coco_eval is not installed, metrics will not be computed. '
+        'Please install it by: mim install onedl-mmdetection[optional]')
+    COCO = None
+    COCOeval_faster = None
 
 from mmdet.evaluation.metrics import CocoMetric
 from mmdet.registry import METRICS

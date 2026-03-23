@@ -33,7 +33,9 @@ except ImportError:
     import logging
 
     from mmengine.logging import print_log
-    print_log('Could not import OneDL', level=logging.DEBUG)
+    print_log(
+        'Could not import OneDL. Skipping OneDL datasets.',
+        level=logging.DEBUG)
     onedl_datatypes = []
 
 __all__ = [
