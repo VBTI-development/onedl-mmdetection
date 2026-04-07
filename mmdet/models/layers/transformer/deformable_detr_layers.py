@@ -37,7 +37,7 @@ class DeformableDetrTransformerEncoder(DetrTransformerEncoder):
             for i in range(self.num_cp):
                 self.layers[i] = checkpoint_wrapper(self.layers[i])
 
-        self.embed_dims = self.layers[0].embed_dims
+        self.embed_dims = self.layer_cfg.self_attn_cfg.embed_dims
 
     def forward(self, query: Tensor, query_pos: Tensor,
                 key_padding_mask: Tensor, spatial_shapes: Tensor,
