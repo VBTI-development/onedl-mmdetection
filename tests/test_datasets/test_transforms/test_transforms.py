@@ -511,7 +511,7 @@ class TestPhotoMetricDistortion(unittest.TestCase):
                               '(brightness_delta=32, '
                               'contrast_range=(0.5, 1.5), '
                               'saturation_range=(0.5, 1.5), '
-                              'hue_delta=18)'))
+                              'hue_delta=18, swap_channels=True)'))
 
 
 class TestExpand(unittest.TestCase):

@@ -1108,17 +1108,21 @@ class PhotoMetricDistortion(BaseTransform):
         contrast_range (sequence): range of contrast.
         saturation_range (sequence): range of saturation.
         hue_delta (int): delta of hue.
+        swap_channels (bool): Whether to randomly swap channels.
+            Defaults to True.
     """
 
     def __init__(self,
                  brightness_delta: int = 32,
                  contrast_range: Sequence[Number] = (0.5, 1.5),
                  saturation_range: Sequence[Number] = (0.5, 1.5),
-                 hue_delta: int = 18) -> None:
+                 hue_delta: int = 18,
+                 swap_channels: bool = True) -> None:
         self.brightness_delta = brightness_delta
         self.contrast_lower, self.contrast_upper = contrast_range
         self.saturation_lower, self.saturation_upper = saturation_range
         self.hue_delta = hue_delta
+        self.swap_channels = swap_channels
 
     @cache_randomness
     def _random_flags(self) -> Sequence[Number]:
@@ -1127,7 +1131,9 @@ class PhotoMetricDistortion(BaseTransform):
         contrast_flag = random.randint(2)
         saturation_flag = random.randint(2)
         hue_flag = random.randint(2)
-        swap_flag = random.randint(2)
+        swap_flag = 0
+        if self.swap_channels:
+            swap_flag = random.randint(2)
         delta_value = random.uniform(-self.brightness_delta,
                                      self.brightness_delta)
         alpha_value = random.uniform(self.contrast_lower, self.contrast_upper)
@@ -1206,7 +1212,8 @@ class PhotoMetricDistortion(BaseTransform):
         repr_str += f'{(self.contrast_lower, self.contrast_upper)}, '
         repr_str += 'saturation_range='
         repr_str += f'{(self.saturation_lower, self.saturation_upper)}, '
-        repr_str += f'hue_delta={self.hue_delta})'
+        repr_str += f'hue_delta={self.hue_delta}, '
+        repr_str += f'swap_channels={self.swap_channels})'
         return repr_str
 
 
