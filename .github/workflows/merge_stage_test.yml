@@ -46,7 +46,7 @@ jobs:
         TZ: Etc/UTC
         PIP_PRE: 1 # TODO: until real release
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install uv and set the python version
         uses: astral-sh/setup-uv@v6
         with:
