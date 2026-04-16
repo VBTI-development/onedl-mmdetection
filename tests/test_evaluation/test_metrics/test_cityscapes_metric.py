@@ -51,13 +51,13 @@ class TestCityScapesMetric(unittest.TestCase):
         img_path2 = osp.join(self.seg_prefix, city, img_name2)
         os.makedirs(osp.join(self.seg_prefix, city))
 
-        masks1 = np.zeros((20, 20), dtype=np.int32)
+        masks1 = np.zeros((20, 20), dtype=np.int16)
         masks1[:10, :10] = 24 * 1000
-        Image.fromarray(masks1).save(img_path1)
+        Image.fromarray(masks1, mode='I;16').save(img_path1)
 
-        masks2 = np.zeros((20, 20), dtype=np.int32)
+        masks2 = np.zeros((20, 20), dtype=np.int16)
         masks2[:10, :10] = 24 * 1000 + 1
-        Image.fromarray(masks2).save(img_path2)
+        Image.fromarray(masks2, mode='I;16').save(img_path2)
 
         data_samples = [{
             'img_path': img_path1,

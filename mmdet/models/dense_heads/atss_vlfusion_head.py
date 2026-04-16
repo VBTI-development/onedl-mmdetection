@@ -210,7 +210,7 @@ class DyConv(nn.Module):
                                                   **offset_conv_args))
             if level < len(visual_feats) - 1:
                 temp_feats.append(
-                    F.upsample_bilinear(
+                    F.interpolate(
                         self.dyconvs[0](visual_feats[level + 1],
                                         **offset_conv_args),
                         size=[feature.size(2),

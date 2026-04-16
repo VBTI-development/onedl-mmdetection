@@ -33,8 +33,9 @@ class TestHeuristicFusionHead(unittest.TestCase):
                           [[0.6, 0.1], [0.1, 0.8]]])
         ]
         target_list = [
-            torch.tensor([[0 + 1 * INSTANCE_OFFSET, 2],
-                          [3, 1 + 2 * INSTANCE_OFFSET]])
+            torch.tensor(
+                [[0 + 1 * INSTANCE_OFFSET, 2], [3, 1 + 2 * INSTANCE_OFFSET]],
+                dtype=torch.int32)
         ]
         results_list = head.predict([mask_results], seg_preds_list)
         for target, result in zip(target_list, results_list):
@@ -52,7 +53,7 @@ class TestHeuristicFusionHead(unittest.TestCase):
             torch.tensor([[[0.2, 0.7], [0.3, 0.1]], [[0.2, 0.2], [0.6, 0.1]],
                           [[0.6, 0.1], [0.1, 0.8]]])
         ]
-        target_list = [torch.tensor([[4, 2], [3, 4]])]
+        target_list = [torch.tensor([[4, 2], [3, 4]], dtype=torch.int32)]
 
         results_list = head.predict([mask_results], seg_preds_list)
         for target, result in zip(target_list, results_list):

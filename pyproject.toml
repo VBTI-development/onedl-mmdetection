@@ -102,7 +102,6 @@ optional = [
     "scikit-learn",
 ]
 torch = [
-    "torch==2.9;        python_version=='3.12'",
     "torch>=2.4",
     "torchvision" ]
 tracking = [
@@ -111,7 +110,7 @@ tracking = [
     "scikit-learn",
     "lap",
     "trackeval",
-    "pandas",
+    "pandas<3",
 ]
 
 [project.urls]

@@ -133,7 +133,9 @@ class MOTChallengeMetric(BaseVideoMetric):
         # To avoid tmpdir being cleaned up too early, because in multiple
         # consecutive ValLoops, the value of `self.tmp_dir.name` is unchanged,
         # and calling `tmp_dir.cleanup()` in compute_metrics will cause errors.
-        self.tmp_dir.cleanup()
+        tmp_dir = getattr(self, 'tmp_dir', None)
+        if tmp_dir is not None:
+            tmp_dir.cleanup()
 
     def _get_pred_dir(self, outfile_prefix):
         """Get directory to save the prediction results."""

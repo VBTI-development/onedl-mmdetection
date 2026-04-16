@@ -515,9 +515,9 @@ class PyramidVisionTransformer(BaseModule):
     def init_weights(self):
         logger = MMLogger.get_current_instance()
         if self.init_cfg is None:
-            logger.warn(f'No pre-trained weights for '
-                        f'{self.__class__.__name__}, '
-                        f'training start from scratch')
+            logger.warning(f'No pre-trained weights for '
+                           f'{self.__class__.__name__}, '
+                           f'training start from scratch')
             for m in self.modules():
                 if isinstance(m, nn.Linear):
                     trunc_normal_init(m, std=.02, bias=0.)
@@ -537,8 +537,8 @@ class PyramidVisionTransformer(BaseModule):
                                                   f'{self.__class__.__name__} '
             checkpoint = CheckpointLoader.load_checkpoint(
                 self.init_cfg.checkpoint, logger=logger, map_location='cpu')
-            logger.warn(f'Load pre-trained model for '
-                        f'{self.__class__.__name__} from original repo')
+            logger.warning(f'Load pre-trained model for '
+                           f'{self.__class__.__name__} from original repo')
             if 'state_dict' in checkpoint:
                 state_dict = checkpoint['state_dict']
             elif 'model' in checkpoint:

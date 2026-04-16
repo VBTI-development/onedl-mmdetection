@@ -671,9 +671,9 @@ class SwinTransformer(BaseModule):
     def init_weights(self):
         logger = MMLogger.get_current_instance()
         if self.init_cfg is None:
-            logger.warn(f'No pre-trained weights for '
-                        f'{self.__class__.__name__}, '
-                        f'training start from scratch')
+            logger.warning(f'No pre-trained weights for '
+                           f'{self.__class__.__name__}, '
+                           f'training start from scratch')
             if self.use_abs_pos_embed:
                 trunc_normal_(self.absolute_pos_embed, std=0.02)
             for m in self.modules():

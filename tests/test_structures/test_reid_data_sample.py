@@ -93,13 +93,13 @@ class TestReIDDataSample(TestCase):
         method(torch.tensor(score))
         sample_gt_label = getattr(data_sample, 'gt_label')
         self.assertIn('score', sample_gt_label)
-        torch.testing.assert_allclose(sample_gt_label.score, score)
+        torch.testing.assert_close(sample_gt_label.score, torch.tensor(score))
         self.assertEqual(sample_gt_label.num_classes, 5)
 
         # Test set again
         score = [0.2, 0.1, 0.5, 0.1, 0.1]
         method(torch.tensor(score))
-        torch.testing.assert_allclose(sample_gt_label.score, score)
+        torch.testing.assert_close(sample_gt_label.score, torch.tensor(score))
 
         # Test invalid type
         with self.assertRaisesRegex(AssertionError, 'be a torch.Tensor'):

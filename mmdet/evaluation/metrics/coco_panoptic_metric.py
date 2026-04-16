@@ -129,8 +129,9 @@ class CocoPanopticMetric(BaseMetric):
 
     def __del__(self) -> None:
         """Clean up."""
-        if self.tmp_dir is not None:
-            self.tmp_dir.cleanup()
+        tmp_dir = getattr(self, 'tmp_dir', None)
+        if tmp_dir is not None:
+            tmp_dir.cleanup()
 
     def gt_to_coco_json(self, gt_dicts: Sequence[dict],
                         outfile_prefix: str) -> Tuple[str, str]:
