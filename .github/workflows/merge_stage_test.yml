@@ -35,9 +35,9 @@ jobs:
           - python-version: '3.10' # minimum version
             torch: '2.4.1'
             container: 'nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04'
-          - python-version: '3.10'  # maximum version
-            torch: '2.5.1'
-            container: 'nvidia/cuda:12.8.0-cudnn-runtime-ubuntu22.04'
+          - python-version: '3.12'  # maximum version
+            torch: '2.10.0'
+            container: 'nvidia/cuda:12.9.1-cudnn-runtime-ubuntu22.04'
     container:
       image: ${{ matrix.container }}
     env:

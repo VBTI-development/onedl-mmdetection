@@ -28,15 +28,13 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       pull-requests: write
-    env:
-      PIP_PRE: 1 # TODO: until real release
     strategy:
       matrix:
         include:
           - python-version: '3.10' # minimum version
             torch: '2.4.1'
-          - python-version: '3.10'  # maximum version
-            torch: '2.5.1'
+          - python-version: '3.12'  # maximum version
+            torch: '2.10.0'
     steps:
       - uses: actions/checkout@v6
       - name: Install uv and set the python version
@@ -92,7 +90,7 @@ jobs:
             container: 'nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04'
             cubackend: cu118
           - python-version: '3.12'  # maximum version
-            torch: '2.9.0'
+            torch: '2.10.0'
             container: 'nvidia/cuda:12.9.1-cudnn-runtime-ubuntu22.04'
             cubackend: cu129
     container:
@@ -101,7 +99,6 @@ jobs:
         UV_CACHE_DIR: /__w/_uv_cache # set cache to be on same disk to avoid hardlink copies.
         DEBIAN_FRONTEND: noninteractive
         TZ: Etc/UTC
-        PIP_PRE: 1 # TODO: until real release
     steps:
       - uses: actions/checkout@v6
       - name: Install uv and set the python version

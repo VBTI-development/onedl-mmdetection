@@ -110,7 +110,7 @@ jobs:
           file: ./docker/Dockerfile
           build-args: |
             CU_VERSION=129
-            TORCH_VERSION=280
+            TORCH_VERSION=2100
             ONEDL_MMPRETRAIN_VERSION=latest
           platforms: linux/amd64
           push: true
