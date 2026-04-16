@@ -1,6 +1,17 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import torch
-from mmcv.ops import point_sample
+
+try:
+    from mmcv.ops import point_sample
+except ModuleNotFoundError:
+
+    def point_sample(*args, **kwargs):
+        raise RuntimeError(
+            '`point_sample` requires mmcv to be compiled with '
+            'C++/CUDA extensions (mmcv._ext). Please reinstall '
+            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
+
 from torch import Tensor
 
 

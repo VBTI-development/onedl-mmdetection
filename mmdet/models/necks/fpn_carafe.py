@@ -1,7 +1,20 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import torch.nn as nn
 from mmcv.cnn import ConvModule, build_upsample_layer
-from mmcv.ops.carafe import CARAFEPack
+
+try:
+    from mmcv.ops.carafe import CARAFEPack
+except ModuleNotFoundError:
+
+    class CARAFEPack:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                '`CARAFEPack` requires mmcv to be compiled with '
+                'C++/CUDA extensions (mmcv._ext). Please reinstall '
+                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
+
 from mmengine.model import BaseModule, ModuleList, xavier_init
 
 from mmdet.registry import MODELS

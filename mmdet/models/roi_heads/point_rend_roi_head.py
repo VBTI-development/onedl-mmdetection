@@ -4,7 +4,24 @@ from typing import List, Tuple
 
 import torch
 import torch.nn.functional as F
-from mmcv.ops import point_sample, rel_roi_point_to_rel_img_point
+
+try:
+    from mmcv.ops import point_sample, rel_roi_point_to_rel_img_point
+except ModuleNotFoundError:
+
+    def point_sample(*args, **kwargs):
+        raise RuntimeError(
+            '`point_sample` requires mmcv to be compiled with C++/CUDA '
+            'extensions (mmcv._ext). Please reinstall onedl-mmcv with '
+            'CUDA support.')
+
+    def rel_roi_point_to_rel_img_point(*args, **kwargs):
+        raise RuntimeError(
+            '`rel_roi_point_to_rel_img_point` requires mmcv to be '
+            'compiled with C++/CUDA extensions (mmcv._ext). '
+            'Please reinstall onedl-mmcv with CUDA support.')
+
+
 from torch import Tensor
 
 from mmdet.registry import MODELS

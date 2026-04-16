@@ -6,7 +6,18 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from mmcv.cnn import ConvModule, DepthwiseSeparableConvModule
-from mmcv.ops.nms import batched_nms
+
+try:
+    from mmcv.ops.nms import batched_nms
+except ModuleNotFoundError:
+
+    def batched_nms(*args, **kwargs):
+        raise RuntimeError(
+            '`batched_nms` requires mmcv to be compiled with '
+            'C++/CUDA extensions (mmcv._ext). Please reinstall '
+            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
+
 from mmengine.config import ConfigDict
 from mmengine.model import bias_init_with_prob
 from mmengine.structures import InstanceData

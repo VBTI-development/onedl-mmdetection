@@ -5,7 +5,18 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from mmcv.cnn import ConvModule, Scale
-from mmcv.ops import deform_conv2d
+
+try:
+    from mmcv.ops import deform_conv2d
+except ModuleNotFoundError:
+
+    def deform_conv2d(*args, **kwargs):
+        raise RuntimeError(
+            '`deform_conv2d` requires mmcv to be compiled with '
+            'C++/CUDA extensions (mmcv._ext). Please reinstall '
+            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
+
 from mmengine import MessageHub
 from mmengine.config import ConfigDict
 from mmengine.model import bias_init_with_prob, normal_init

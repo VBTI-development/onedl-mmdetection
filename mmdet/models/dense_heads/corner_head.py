@@ -6,7 +6,26 @@ from typing import List, Optional, Sequence, Tuple
 import torch
 import torch.nn as nn
 from mmcv.cnn import ConvModule
-from mmcv.ops import CornerPool, batched_nms
+
+try:
+    from mmcv.ops import CornerPool, batched_nms
+except ModuleNotFoundError:
+
+    class CornerPool:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                '`CornerPool` requires mmcv to be compiled with '
+                'C++/CUDA extensions (mmcv._ext). Please reinstall '
+                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
+    def batched_nms(*args, **kwargs):
+        raise RuntimeError(
+            '`batched_nms` requires mmcv to be compiled with '
+            'C++/CUDA extensions (mmcv._ext). Please reinstall '
+            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
+
 from mmengine.config import ConfigDict
 from mmengine.model import BaseModule, bias_init_with_prob
 from mmengine.structures import InstanceData

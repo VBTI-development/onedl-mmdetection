@@ -2,7 +2,18 @@
 from typing import Optional, Tuple, Union
 
 import torch
-from mmcv.ops.nms import batched_nms
+
+try:
+    from mmcv.ops.nms import batched_nms
+except ModuleNotFoundError:
+
+    def batched_nms(*args, **kwargs):
+        raise RuntimeError(
+            '`batched_nms` requires mmcv to be compiled with '
+            'C++/CUDA extensions (mmcv._ext). Please reinstall '
+            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
+
 from torch import Tensor
 
 from mmdet.structures.bbox import bbox_overlaps

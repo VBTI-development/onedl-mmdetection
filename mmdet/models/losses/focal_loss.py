@@ -2,7 +2,17 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from mmcv.ops import sigmoid_focal_loss as _sigmoid_focal_loss
+
+try:
+    from mmcv.ops import sigmoid_focal_loss as _sigmoid_focal_loss
+except ModuleNotFoundError:
+
+    def _sigmoid_focal_loss(*args, **kwargs):
+        raise RuntimeError(
+            '`sigmoid_focal_loss` requires mmcv to be compiled with '
+            'C++/CUDA extensions (mmcv._ext). Please reinstall '
+            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
 
 from mmdet.registry import MODELS
 from .accuracy import accuracy

@@ -9,7 +9,17 @@ import numpy as np
 import pycocotools.mask as maskUtils
 import shapely.geometry as geometry
 import torch
-from mmcv.ops.roi_align import roi_align
+
+try:
+    from mmcv.ops.roi_align import roi_align
+except ModuleNotFoundError:
+
+    def roi_align(*args, **kwargs):
+        raise RuntimeError(
+            '`roi_align` requires onedl-mmcv to be compiled with '
+            'C++/CUDA extensions (mmcv._ext). Please reinstall '
+            'onedl-mmcv with CUDA support.')
+
 
 T = TypeVar('T')
 

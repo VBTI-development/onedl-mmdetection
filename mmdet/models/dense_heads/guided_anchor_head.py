@@ -3,7 +3,28 @@ from typing import List, Optional, Tuple
 
 import torch
 import torch.nn as nn
-from mmcv.ops import DeformConv2d, MaskedConv2d
+
+try:
+    from mmcv.ops import DeformConv2d, MaskedConv2d
+except ModuleNotFoundError:
+
+    class DeformConv2d:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                '`DeformConv2d` requires mmcv to be compiled with '
+                'C++/CUDA extensions (mmcv._ext). Please reinstall '
+                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
+    class MaskedConv2d:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                '`MaskedConv2d` requires mmcv to be compiled with '
+                'C++/CUDA extensions (mmcv._ext). Please reinstall '
+                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
+
 from mmengine.model import BaseModule
 from mmengine.structures import InstanceData
 from torch import Tensor

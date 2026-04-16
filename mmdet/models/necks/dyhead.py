@@ -1,8 +1,22 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+
 import torch.nn as nn
 import torch.nn.functional as F
 from mmcv.cnn import build_activation_layer, build_norm_layer
-from mmcv.ops.modulated_deform_conv import ModulatedDeformConv2d
+
+try:
+    from mmcv.ops.modulated_deform_conv import ModulatedDeformConv2d
+except ModuleNotFoundError:
+
+    class ModulatedDeformConv2d:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                '`ModulatedDeformConv2d` requires mmcv to be compiled with '
+                'C++/CUDA extensions (mmcv._ext). Please reinstall '
+                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
+
 from mmengine.model import BaseModule, constant_init, normal_init
 
 from mmdet.registry import MODELS

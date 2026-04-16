@@ -2,7 +2,18 @@
 from typing import Union
 
 import torch
-from mmcv.ops import nms_match
+
+try:
+    from mmcv.ops import nms_match
+except ModuleNotFoundError:
+
+    def nms_match(*args, **kwargs):
+        raise RuntimeError(
+            '`nms_match` requires mmcv to be compiled with '
+            'C++/CUDA extensions (mmcv._ext). Please reinstall '
+            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+
+
 from mmengine.structures import InstanceData
 from numpy import ndarray
 from torch import Tensor

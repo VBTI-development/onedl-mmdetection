@@ -40,36 +40,33 @@ About the common questions about PyTorch 2.0's dynamo, you can refer to [here](h
 
 ## Installation
 
-Compatibility issue between MMCV and MMDetection; "ConvWS is already registered in conv layer"; "AssertionError: MMCV==xxx is used but incompatible. Please install mmcv>=xxx, \<=xxx."
+Compatibility issue between onedl-mmcv and onedl-mmdetection; "ConvWS is already registered in conv layer"; "AssertionError: MMCV==xxx is used but incompatible. Please install mmcv>=xxx, \<=xxx."
 
-Compatible MMDetection, MMEngine, and MMCV versions are shown as below. Please choose the correct version of MMCV to avoid installation issues.
+onedl-mmdetection requires [onedl-mmcv](https://github.com/vbti-development/onedl-mmcv) and [onedl-mmengine](https://github.com/vbti-development/onedl-mmengine). Please follow the [installation instructions](https://onedl-mmdetection.readthedocs.io/en/latest/get_started.html) for the recommended setup.
 
-| MMDetection version |      MMCV version       |     MMEngine version     |
-| :-----------------: | :---------------------: | :----------------------: |
-|        main         |  mmcv>=2.0.0, \<2.2.0   | mmengine>=0.7.1, \<1.0.0 |
-|        3.3.0        |  mmcv>=2.0.0, \<2.2.0   | mmengine>=0.7.1, \<1.0.0 |
-|        3.2.0        |  mmcv>=2.0.0, \<2.2.0   | mmengine>=0.7.1, \<1.0.0 |
-|        3.1.0        |  mmcv>=2.0.0, \<2.1.0   | mmengine>=0.7.1, \<1.0.0 |
-|        3.0.0        |  mmcv>=2.0.0, \<2.1.0   | mmengine>=0.7.1, \<1.0.0 |
-|      3.0.0rc6       | mmcv>=2.0.0rc4, \<2.1.0 | mmengine>=0.6.0, \<1.0.0 |
-|      3.0.0rc5       | mmcv>=2.0.0rc1, \<2.1.0 | mmengine>=0.3.0, \<1.0.0 |
-|      3.0.0rc4       | mmcv>=2.0.0rc1, \<2.1.0 | mmengine>=0.3.0, \<1.0.0 |
-|      3.0.0rc3       | mmcv>=2.0.0rc1, \<2.1.0 | mmengine>=0.3.0, \<1.0.0 |
-|      3.0.0rc2       | mmcv>=2.0.0rc1, \<2.1.0 | mmengine>=0.1.0, \<1.0.0 |
-|      3.0.0rc1       | mmcv>=2.0.0rc1, \<2.1.0 | mmengine>=0.1.0, \<1.0.0 |
-|      3.0.0rc0       | mmcv>=2.0.0rc1, \<2.1.0 | mmengine>=0.1.0, \<1.0.0 |
+**onedl-mmcv comes in two variants:**
 
-**Note:**
+| Variant                  | How to install                                            | CUDA ops included? |
+| ------------------------ | --------------------------------------------------------- | ------------------ |
+| Lite (pure Python)       | `pip install onedl-mmcv` (from PyPI)                      | No                 |
+| Full (with compiled ops) | Install from [mmwheel.onedl.ai](https://mmwheel.onedl.ai) | Yes                |
 
-1. If you want to install mmdet-v2.x, the compatible MMDetection and MMCV versions table can be found at [here](https://onedl-mmdetection.readthedocs.io/en/stable/faq.html#installation). Please choose the correct version of MMCV to avoid installation issues.
-2. In MMCV-v2.x, `mmcv-full` is rename to `mmcv`, if you want to install `mmcv` without CUDA ops, you can install `mmcv-lite`.
+Many models marked with `*` in the model zoo require the **full** variant with compiled CUDA/C++ ops.
+Furthermore almost all models use batched_nms in their output so the full variant is recommended.
 
-- "No module named 'mmcv.ops'"; "No module named 'mmcv.\_ext'".
+- "No module named 'mmcv.ops'"; "No module named 'mmcv.\_ext'"; `RuntimeError: ... requires mmcv to be compiled with C++/CUDA extensions`.
 
-  1. Uninstall existing `mmcv-lite` in the environment using `pip uninstall mmcv-lite`.
-  2. Install `mmcv` following the [installation instruction](https://onedl-mmcv.readthedocs.io/en/2.x/get_started/installation.html).
+  You have the lite variant of onedl-mmcv installed (from PyPI), which does not include compiled ops. To fix this:
 
-- "Microsoft Visual C++ 14.0 or graeter is required" during installation on Windows.
+  1. Uninstall the current version:
+     ```bash
+     pip uninstall onedl-mmcv
+     ```
+  2. Install the full variant (with ops) from [mmwheel.onedl.ai](https://mmwheel.onedl.ai), selecting the wheel that matches your PyTorch and CUDA version.
+
+  See also: [## What should I do if I get `mmcv._ext` or `mmcv.ops` import errors?](#what-should-i-do-if-i-get-mmcv_ext-or-mmcvops-import-errors) below, and the [onedl-mmcv FAQ](https://onedl-mmcv.readthedocs.io/en/latest/faq.html).
+
+- "Microsoft Visual C++ 14.0 or greater is required" during installation on Windows.
 
   This error happens when building the 'pycocotools.\_mask' extension of pycocotools and the environment lacks corresponding C++ compilation dependencies. You need to download it at Microsoft officials [visual-cpp-build-tools](https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/),  select the "Use C ++ Desktop Development" option to install the minimum dependencies, and then reinstall pycocotools.
 
@@ -110,14 +107,33 @@ Compatible MMDetection, MMEngine, and MMCV versions are shown as below. Please c
   PYTHONPATH="$(dirname $0)/..":$PYTHONPATH
   ```
 
+## What should I do if I get `mmcv._ext` or `mmcv.ops` import errors?
+
+All inference models in onedl-mmdetection use the `batched_nms` operation from onedl-mmcv. These errors usually mean that the required custom CUDA/C++ operators from MMCV (or onedl-mmcv) are not available in your environment. This can happen if:
+
+- You installed the lightweight (pure Python) version of MMCV/onedl-mmcv, which does not include the compiled ops (including `batched_nms`).
+- The compiled ops are not compatible with your PyTorch/CUDA version.
+- There was an installation or build error.
+
+**How to fix:**
+
+1. Uninstall the current MMCV/onedl-mmcv:
+
+```bash
+pip uninstall mmcv mmcv-full onedl-mmcv
+```
+
+2. Install the full version of onedl-mmcv (with ops) that matches your CUDA and PyTorch version. See the official instructions:
+   https://onedl-mmcv.readthedocs.io/en/latest/faq.html
+3. If you are using a CPU-only environment, make sure to install the correct CPU-only wheel.
+4. If you built from source, ensure the build completed successfully and matches your environment.
+
+**Reference:**
+
+- [onedl-mmcv FAQ: ImportError: cannot import name 'get_compiler_version' / 'get_cuda_version'](https://onedl-mmcv.readthedocs.io/en/latest/faq.html)
+- [onedl-mmcv Installation Guide](https://onedl-mmcv.readthedocs.io/en/latest/get_started/installation.html)
+
 ## PyTorch/CUDA Environment
-
-- "RTX 30 series card fails when building MMCV or MMDet"
-
-  1. Temporary work-around: do `MMCV_WITH_OPS=1 MMCV_CUDA_ARGS='-gencode=arch=compute_80,code=sm_80' pip install -e .`.
-     The common issue is `nvcc fatal : Unsupported gpu architecture 'compute_86'`. This means that the compiler should optimize for sm_86, i.e., nvidia 30 series card, but such optimizations have not been supported by CUDA toolkit 11.0.
-     This work-around modifies the compile flag by adding `MMCV_CUDA_ARGS='-gencode=arch=compute_80,code=sm_80'`, which tells `nvcc` to optimize for **sm_80**, i.e., Nvidia A100. Although A100 is different from the 30 series card, they use similar ampere architecture. This may hurt the performance but it works.
-  2. PyTorch developers have updated that the default compiler flags should be fixed by [pytorch/pytorch#47585](https://github.com/pytorch/pytorch/pull/47585). So using PyTorch-nightly may also be able to solve the problem, though we have not tested it yet.
 
 - "invalid device function" or "no kernel image is available for execution".
 

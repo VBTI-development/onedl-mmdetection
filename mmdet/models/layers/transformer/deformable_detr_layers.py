@@ -4,7 +4,20 @@ from typing import Optional, Tuple, Union
 import torch
 from mmcv.cnn import build_norm_layer
 from mmcv.cnn.bricks.transformer import FFN, MultiheadAttention
-from mmcv.ops import MultiScaleDeformableAttention
+
+try:
+    from mmcv.ops import MultiScaleDeformableAttention
+except ModuleNotFoundError:
+
+    class MultiScaleDeformableAttention:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                '`MultiScaleDeformableAttention` requires mmcv to be '
+                'compiled with C++/CUDA extensions (mmcv._ext). '
+                'Please reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.model import ModuleList
 from torch import Tensor, nn
 
