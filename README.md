@@ -25,7 +25,7 @@
 [![PyPI](https://img.shields.io/pypi/v/onedl-mmdetection)](https://pypi.org/project/onedl-mmdetection)
 
 [![Build Status](https://github.com/VBTI-development/onedl-mmdetection/actions/workflows/merge_stage_test.yml/badge.svg)](https://github.com/VBTI-development/onedl-mmdetection/actions/workflows/merge_stage_test.yml)
-[![Docker Image](https://github.com/VBTI-development/onedl-mmdetection/actions/workflows/docker.yml/badge.svg)](https://hub.docker.com/r/vbti/onedl-mmdetection-cu129-torch280)
+[![Docker Image](https://github.com/VBTI-development/onedl-mmdetection/actions/workflows/docker.yml/badge.svg)](https://hub.docker.com/r/vbti/onedl-mmdetection-cu129-torch2100)
 [![open issues](https://isitmaintained.com/badge/open/VBTI-development/onedl-mmdetection.svg)](https://github.com/VBTI-development/onedl-mmdetection/issues)
 [![issue resolution](https://isitmaintained.com/badge/resolution/VBTI-development/onedl-mmdetection.svg)](https://github.com/VBTI-development/onedl-mmdetection/issues)
 
