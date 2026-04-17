@@ -5,15 +5,14 @@ from mmcv.cnn import ConvModule
 
 try:
     from mmcv.ops.merge_cells import ConcatCell
-except ModuleNotFoundError:
+except ImportError:
 
     class ConcatCell:
 
         def __init__(self, *args, **kwargs):
             raise RuntimeError(
-                '`ConcatCell` requires mmcv to be compiled with '
-                'C++/CUDA extensions (mmcv._ext). Please reinstall '
-                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+                'ConcatCell requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
 
 
 from mmengine.model import BaseModule, caffe2_xavier_init

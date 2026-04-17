@@ -9,19 +9,17 @@ from mmcv.cnn import ConvModule
 
 try:
     from mmcv.ops import point_sample, rel_roi_point_to_rel_img_point
-except ModuleNotFoundError:
+except ImportError:
 
     def point_sample(*args, **kwargs):
         raise RuntimeError(
-            '`point_sample` requires mmcv to be compiled with C++/CUDA '
-            'extensions (mmcv._ext). Please reinstall onedl-mmcv with '
-            'CUDA support.')
+            'point_sample requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
 
     def rel_roi_point_to_rel_img_point(*args, **kwargs):
         raise RuntimeError(
-            '`rel_roi_point_to_rel_img_point` requires mmcv to be '
-            'compiled with C++/CUDA extensions (mmcv._ext). '
-            'Please reinstallonedl-mmcv with CUDA support.')
+            'rel_roi_point_to_rel_img_point requires mmcv to be compiled '
+            'with ops. Please reinstall onedl-mmcv with CUDA support.')
 
 
 from mmengine.model import BaseModule

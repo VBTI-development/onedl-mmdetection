@@ -10,13 +10,12 @@ from mmcv.cnn import Conv2d
 
 try:
     from mmcv.ops import point_sample
-except ModuleNotFoundError:
+except ImportError:
 
     def point_sample(*args, **kwargs):
         raise RuntimeError(
-            '`point_sample` requires mmcv to be compiled with '
-            'C++/CUDA extensions (mmcv._ext). Please reinstall '
-            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+            'point_sample requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
 
 
 from mmengine.model import ModuleList

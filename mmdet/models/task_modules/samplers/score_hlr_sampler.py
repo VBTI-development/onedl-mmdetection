@@ -5,13 +5,12 @@ import torch
 
 try:
     from mmcv.ops import nms_match
-except ModuleNotFoundError:
+except ImportError:
 
     def nms_match(*args, **kwargs):
         raise RuntimeError(
-            '`nms_match` requires mmcv to be compiled with '
-            'C++/CUDA extensions (mmcv._ext). Please reinstall '
-            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+            'nms_match requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
 
 
 from mmengine.structures import InstanceData

@@ -8,15 +8,14 @@ from mmcv.cnn import ConvModule, Scale
 
 try:
     from mmcv.ops import DeformConv2d
-except ModuleNotFoundError:
+except ImportError:
 
     class DeformConv2d:
 
         def __init__(self, *args, **kwargs):
             raise RuntimeError(
-                '`DeformConv2d` requires mmcv to be compiled with '
-                'C++/CUDA extensions (mmcv._ext). Please reinstall '
-                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+                'DeformConv2d requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
 
 
 from torch import Tensor

@@ -6,15 +6,14 @@ from mmcv.cnn.bricks.transformer import FFN, MultiheadAttention
 
 try:
     from mmcv.ops import MultiScaleDeformableAttention
-except ModuleNotFoundError:
+except ImportError:
 
     class MultiScaleDeformableAttention:
 
         def __init__(self, *args, **kwargs):
             raise RuntimeError(
-                '`MultiScaleDeformableAttention` requires mmcv to be '
-                'compiled with C++/CUDA extensions (mmcv._ext). '
-                'Please reinstall onedl-mmcv with CUDA support.')
+                'MultiScaleDeformableAttention requires mmcv to be compiled '
+                'with ops. Please reinstall onedl-mmcv with CUDA support.')
 
 
 from mmengine.model import ModuleList

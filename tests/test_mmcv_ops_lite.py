@@ -27,7 +27,7 @@ def test_mmdet_import_without_mmcv_ops():
                         '__file__', '__name__', '__package__',
                         '__loader__', '__spec__'}:
                     return super().__getattribute__(name)
-                raise ModuleNotFoundError('No module named "mmcv._ext"')
+                raise ImportError('No module named "mmcv._ext"')
 
         ops_mock = OpsMock('mmcv.ops')
         sys.modules['mmcv.ops'] = ops_mock
@@ -40,7 +40,7 @@ def test_mmdet_import_without_mmcv_ops():
 
         try:
             register_all_modules()
-        except ModuleNotFoundError as e:
+        except ImportError as e:
             tb = traceback.format_tb(e.__traceback__)
             last_entry = tb[-2] if tb else 'No traceback available'
             print(

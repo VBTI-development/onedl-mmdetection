@@ -8,13 +8,12 @@ from mmcv.cnn import ConvModule, Scale
 
 try:
     from mmcv.ops import deform_conv2d
-except ModuleNotFoundError:
+except ImportError:
 
     def deform_conv2d(*args, **kwargs):
         raise RuntimeError(
-            '`deform_conv2d` requires mmcv to be compiled with '
-            'C++/CUDA extensions (mmcv._ext). Please reinstall '
-            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+            'deform_conv2d requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
 
 
 from mmengine import MessageHub

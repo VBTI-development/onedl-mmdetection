@@ -9,15 +9,14 @@ from mmcv.cnn import ConvModule, build_conv_layer, build_upsample_layer
 
 try:
     from mmcv.ops.carafe import CARAFEPack
-except ModuleNotFoundError:
+except ImportError:
 
     class CARAFEPack:
 
         def __init__(self, *args, **kwargs):
             raise RuntimeError(
-                '`CARAFEPack` requires mmcv to be compiled with '
-                'C++/CUDA extensions (mmcv._ext). Please reinstall '
-                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+                'CARAFEPack requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
 
 
 from mmengine.config import ConfigDict

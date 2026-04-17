@@ -6,21 +6,19 @@ import torch
 
 try:
     from mmcv.ops import MultiScaleDeformableAttention, batched_nms
-except ModuleNotFoundError:
+except ImportError:
 
     class MultiScaleDeformableAttention:
 
         def __init__(self, *args, **kwargs):
             raise RuntimeError(
-                '`MultiScaleDeformableAttention` requires mmcv to be '
-                'compiled with C++/CUDA extensions (mmcv._ext). '
-                'Please reinstall onedl-mmcv with CUDA support.')
+                'MultiScaleDeformableAttention requires mmcv to be compiled '
+                'with ops. Please reinstall onedl-mmcv with CUDA support.')
 
     def batched_nms(*args, **kwargs):
         raise RuntimeError(
-            '`batched_nms` requires mmcv to be compiled with '
-            'C++/CUDA extensions (mmcv._ext). Please reinstall '
-            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+            'batched_nms requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
 
 
 from torch import Tensor, nn

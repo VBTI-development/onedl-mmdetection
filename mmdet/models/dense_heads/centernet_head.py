@@ -6,13 +6,12 @@ import torch.nn as nn
 
 try:
     from mmcv.ops import batched_nms
-except ModuleNotFoundError:
+except ImportError:
 
     def batched_nms(*args, **kwargs):
         raise RuntimeError(
-            '`batched_nms` requires mmcv to be compiled with '
-            'C++/CUDA extensions (mmcv._ext). Please reinstall '
-            'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+            'batched_nms requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
 
 
 from mmengine.config import ConfigDict

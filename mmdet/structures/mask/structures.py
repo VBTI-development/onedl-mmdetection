@@ -12,13 +12,12 @@ import torch
 
 try:
     from mmcv.ops.roi_align import roi_align
-except ModuleNotFoundError:
+except ImportError:
 
     def roi_align(*args, **kwargs):
         raise RuntimeError(
-            '`roi_align` requires onedl-mmcv to be compiled with '
-            'C++/CUDA extensions (mmcv._ext). Please reinstall '
-            'onedl-mmcv with CUDA support.')
+            'roi_align requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
 
 
 T = TypeVar('T')

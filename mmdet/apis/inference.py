@@ -10,15 +10,14 @@ import torch.nn as nn
 
 try:
     from mmcv.ops import RoIPool
-except ModuleNotFoundError:
+except ImportError:
 
     class RoIPool:
 
         def __init__(self, *args, **kwargs):
             raise RuntimeError(
-                '`RoIPool` requires mmcv to be compiled with '
-                'C++/CUDA extensions (mmcv._ext). Please reinstall '
-                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+                'RoIPool requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
 
 
 from mmcv.transforms import Compose

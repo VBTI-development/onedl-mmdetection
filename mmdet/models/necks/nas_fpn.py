@@ -6,23 +6,21 @@ from mmcv.cnn import ConvModule
 
 try:
     from mmcv.ops.merge_cells import GlobalPoolingCell, SumCell
-except ModuleNotFoundError:
+except ImportError:
 
     class GlobalPoolingCell:
 
         def __init__(self, *args, **kwargs):
             raise RuntimeError(
-                '`GlobalPoolingCell` requires mmcv to be compiled with '
-                'C++/CUDA extensions (mmcv._ext). Please reinstall '
-                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+                'GlobalPoolingCell requires mmcv to be compiled with ops. '
+                'Please reinstall onedl-mmcv with CUDA support.')
 
     class SumCell:
 
         def __init__(self, *args, **kwargs):
             raise RuntimeError(
-                '`SumCell` requires mmcv to be compiled with '
-                'C++/CUDA extensions (mmcv._ext). Please reinstall '
-                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+                'SumCell requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
 
 
 from mmengine.model import BaseModule, ModuleList

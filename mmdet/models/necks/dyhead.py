@@ -6,15 +6,14 @@ from mmcv.cnn import build_activation_layer, build_norm_layer
 
 try:
     from mmcv.ops.modulated_deform_conv import ModulatedDeformConv2d
-except ModuleNotFoundError:
+except ImportError:
 
     class ModulatedDeformConv2d:
 
         def __init__(self, *args, **kwargs):
             raise RuntimeError(
-                '`ModulatedDeformConv2d` requires mmcv to be compiled with '
-                'C++/CUDA extensions (mmcv._ext). Please reinstall '
-                'onedl-mmcv with CUDA support: FORCE_CUDA=1 pip install -e .')
+                'ModulatedDeformConv2d requires mmcv to be compiled with '
+                'ops. Please reinstall onedl-mmcv with CUDA support.')
 
 
 from mmengine.model import BaseModule, constant_init, normal_init
