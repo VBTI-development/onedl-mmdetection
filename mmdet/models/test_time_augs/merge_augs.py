@@ -5,7 +5,16 @@ from typing import List, Optional, Union
 
 import numpy as np
 import torch
-from mmcv.ops import nms
+
+try:
+    from mmcv.ops import nms
+except ImportError:
+
+    def nms(*args, **kwargs):
+        raise RuntimeError('nms requires mmcv to be compiled with ops. Please '
+                           'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.config import ConfigDict
 from torch import Tensor
 

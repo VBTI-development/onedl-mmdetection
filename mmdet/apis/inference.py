@@ -7,7 +7,19 @@ from typing import Optional, Sequence, Union
 import numpy as np
 import torch
 import torch.nn as nn
-from mmcv.ops import RoIPool
+
+try:
+    from mmcv.ops import RoIPool
+except ImportError:
+
+    class RoIPool:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'RoIPool requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmcv.transforms import Compose
 from mmengine.config import Config
 from mmengine.dataset import default_collate

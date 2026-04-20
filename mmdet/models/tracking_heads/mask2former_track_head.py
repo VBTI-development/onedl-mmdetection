@@ -7,7 +7,17 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from mmcv.cnn import Conv2d
-from mmcv.ops import point_sample
+
+try:
+    from mmcv.ops import point_sample
+except ImportError:
+
+    def point_sample(*args, **kwargs):
+        raise RuntimeError(
+            'point_sample requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.model import ModuleList
 from mmengine.model.weight_init import caffe2_xavier_init
 from mmengine.structures import InstanceData

@@ -6,7 +6,24 @@ from typing import List, Optional, Sequence, Tuple
 import torch
 import torch.nn as nn
 from mmcv.cnn import ConvModule
-from mmcv.ops import CornerPool, batched_nms
+
+try:
+    from mmcv.ops import CornerPool, batched_nms
+except ImportError:
+
+    class CornerPool:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'CornerPool requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
+
+    def batched_nms(*args, **kwargs):
+        raise RuntimeError(
+            'batched_nms requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.config import ConfigDict
 from mmengine.model import BaseModule, bias_init_with_prob
 from mmengine.structures import InstanceData

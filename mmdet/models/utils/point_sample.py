@@ -1,6 +1,16 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import torch
-from mmcv.ops import point_sample
+
+try:
+    from mmcv.ops import point_sample
+except ImportError:
+
+    def point_sample(*args, **kwargs):
+        raise RuntimeError(
+            'point_sample requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
+
+
 from torch import Tensor
 
 

@@ -9,7 +9,16 @@ import numpy as np
 import pycocotools.mask as maskUtils
 import shapely.geometry as geometry
 import torch
-from mmcv.ops.roi_align import roi_align
+
+try:
+    from mmcv.ops.roi_align import roi_align
+except ImportError:
+
+    def roi_align(*args, **kwargs):
+        raise RuntimeError(
+            'roi_align requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
+
 
 T = TypeVar('T')
 

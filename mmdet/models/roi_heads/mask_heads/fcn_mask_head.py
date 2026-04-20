@@ -6,7 +6,19 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from mmcv.cnn import ConvModule, build_conv_layer, build_upsample_layer
-from mmcv.ops.carafe import CARAFEPack
+
+try:
+    from mmcv.ops.carafe import CARAFEPack
+except ImportError:
+
+    class CARAFEPack:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'CARAFEPack requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.config import ConfigDict
 from mmengine.model import BaseModule, ModuleList
 from mmengine.structures import InstanceData

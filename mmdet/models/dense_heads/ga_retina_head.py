@@ -3,7 +3,19 @@ from typing import Tuple
 
 import torch.nn as nn
 from mmcv.cnn import ConvModule
-from mmcv.ops import MaskedConv2d
+
+try:
+    from mmcv.ops import MaskedConv2d
+except ImportError:
+
+    class MaskedConv2d:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'MaskedConv2d requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
+
+
 from torch import Tensor
 
 from mmdet.registry import MODELS

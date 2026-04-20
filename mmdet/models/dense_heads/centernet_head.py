@@ -3,7 +3,17 @@ from typing import List, Optional, Tuple
 
 import torch
 import torch.nn as nn
-from mmcv.ops import batched_nms
+
+try:
+    from mmcv.ops import batched_nms
+except ImportError:
+
+    def batched_nms(*args, **kwargs):
+        raise RuntimeError(
+            'batched_nms requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.config import ConfigDict
 from mmengine.model import bias_init_with_prob, normal_init
 from mmengine.structures import InstanceData

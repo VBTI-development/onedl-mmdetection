@@ -2,7 +2,19 @@
 import torch.nn as nn
 import torch.nn.functional as F
 from mmcv.cnn import ConvModule
-from mmcv.ops.merge_cells import ConcatCell
+
+try:
+    from mmcv.ops.merge_cells import ConcatCell
+except ImportError:
+
+    class ConcatCell:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'ConcatCell requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.model import BaseModule, caffe2_xavier_init
 
 from mmdet.registry import MODELS

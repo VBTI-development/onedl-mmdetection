@@ -7,7 +7,19 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from mmcv.cnn import Scale
-from mmcv.ops.modulated_deform_conv import ModulatedDeformConv2d
+
+try:
+    from mmcv.ops.modulated_deform_conv import ModulatedDeformConv2d
+except ImportError:
+
+    class ModulatedDeformConv2d:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'ModulatedDeformConv2d requires mmcv to be compiled with '
+                'ops. Please reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.config import ConfigDict
 from mmengine.model import BaseModel
 from mmengine.structures import InstanceData

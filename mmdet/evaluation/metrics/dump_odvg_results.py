@@ -1,7 +1,16 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 from typing import Any, Optional, Sequence
 
-from mmcv.ops import batched_nms
+try:
+    from mmcv.ops import batched_nms
+except ImportError:
+
+    def batched_nms(*args, **kwargs):
+        raise RuntimeError(
+            'batched_nms requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.evaluator import BaseMetric
 from mmengine.logging import print_log
 

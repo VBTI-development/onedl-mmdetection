@@ -5,7 +5,19 @@ import numpy as np
 import torch
 import torch.nn as nn
 from mmcv.cnn import ConvModule
-from mmcv.ops import DeformConv2d
+
+try:
+    from mmcv.ops import DeformConv2d
+except ImportError:
+
+    class DeformConv2d:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'DeformConv2d requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.config import ConfigDict
 from mmengine.structures import InstanceData
 from torch import Tensor

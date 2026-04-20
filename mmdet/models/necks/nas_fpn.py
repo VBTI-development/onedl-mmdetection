@@ -3,7 +3,26 @@ from typing import List, Tuple
 
 import torch.nn as nn
 from mmcv.cnn import ConvModule
-from mmcv.ops.merge_cells import GlobalPoolingCell, SumCell
+
+try:
+    from mmcv.ops.merge_cells import GlobalPoolingCell, SumCell
+except ImportError:
+
+    class GlobalPoolingCell:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'GlobalPoolingCell requires mmcv to be compiled with ops. '
+                'Please reinstall onedl-mmcv with CUDA support.')
+
+    class SumCell:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'SumCell requires mmcv to be compiled with ops. Please '
+                'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.model import BaseModule, ModuleList
 from torch import Tensor
 

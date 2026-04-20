@@ -3,7 +3,24 @@ from typing import Dict, Tuple
 
 # Copyright (c) OpenMMLab. All rights reserved.
 import torch
-from mmcv.ops import MultiScaleDeformableAttention, batched_nms
+
+try:
+    from mmcv.ops import MultiScaleDeformableAttention, batched_nms
+except ImportError:
+
+    class MultiScaleDeformableAttention:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'MultiScaleDeformableAttention requires mmcv to be compiled '
+                'with ops. Please reinstall onedl-mmcv with CUDA support.')
+
+    def batched_nms(*args, **kwargs):
+        raise RuntimeError(
+            'batched_nms requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
+
+
 from torch import Tensor, nn
 from torch.nn.init import normal_
 

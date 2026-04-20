@@ -2,7 +2,17 @@
 from typing import Union
 
 import torch
-from mmcv.ops import nms_match
+
+try:
+    from mmcv.ops import nms_match
+except ImportError:
+
+    def nms_match(*args, **kwargs):
+        raise RuntimeError(
+            'nms_match requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.structures import InstanceData
 from numpy import ndarray
 from torch import Tensor

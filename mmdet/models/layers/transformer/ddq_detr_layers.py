@@ -2,7 +2,17 @@
 import copy
 
 import torch
-from mmcv.ops import batched_nms
+
+try:
+    from mmcv.ops import batched_nms
+except ImportError:
+
+    def batched_nms(*args, **kwargs):
+        raise RuntimeError(
+            'batched_nms requires mmcv to be compiled with ops. Please '
+            'reinstall onedl-mmcv with CUDA support.')
+
+
 from torch import Tensor, nn
 
 from mmdet.structures.bbox import bbox_cxcywh_to_xyxy

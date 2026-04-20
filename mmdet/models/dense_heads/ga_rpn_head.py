@@ -5,7 +5,16 @@ from typing import List, Tuple
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from mmcv.ops import nms
+
+try:
+    from mmcv.ops import nms
+except ImportError:
+
+    def nms(*args, **kwargs):
+        raise RuntimeError('nms requires mmcv to be compiled with ops. Please '
+                           'reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.structures import InstanceData
 from torch import Tensor
 

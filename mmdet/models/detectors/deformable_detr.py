@@ -4,7 +4,19 @@ from typing import Dict, Tuple
 
 import torch
 import torch.nn.functional as F
-from mmcv.cnn.bricks.transformer import MultiScaleDeformableAttention
+
+try:
+    from mmcv.cnn.bricks.transformer import MultiScaleDeformableAttention
+except ImportError:
+
+    class MultiScaleDeformableAttention:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'MultiScaleDeformableAttention requires mmcv to be compiled '
+                'with ops. Please reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.model import xavier_init
 from torch import Tensor, nn
 from torch.nn.init import normal_

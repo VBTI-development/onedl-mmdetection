@@ -5,7 +5,19 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from mmcv.cnn import Conv2d, ConvModule
-from mmcv.cnn.bricks.transformer import MultiScaleDeformableAttention
+
+try:
+    from mmcv.cnn.bricks.transformer import MultiScaleDeformableAttention
+except ImportError:
+
+    class MultiScaleDeformableAttention:
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'MultiScaleDeformableAttention requires mmcv to be compiled '
+                'with ops. Please reinstall onedl-mmcv with CUDA support.')
+
+
 from mmengine.model import (BaseModule, ModuleList, caffe2_xavier_init,
                             normal_init, xavier_init)
 from torch import Tensor
