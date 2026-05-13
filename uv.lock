@@ -1972,7 +1972,7 @@ wheels = [
 
 [[package]]
 name = "onedl-mmcv"
-version = "2.3.4"
+version = "2.3.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "addict" },
@@ -1986,11 +1986,11 @@ dependencies = [
     { name = "regex", marker = "sys_platform == 'win32'" },
     { name = "yapf" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6c/e8/f5fa1180f0e5159213b58ca82fe0a389ee8c2b3754d2968e90cab2fe77c0/onedl_mmcv-2.3.4.tar.gz", hash = "sha256:724095480dec4b1b5b5935d2e26f0af9e8b8c4ae28d3a369c5fb614dbc62c1f0", size = 515585, upload-time = "2026-04-15T13:11:46.83Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f3/75/c41230c08781de8bc3206e244e44c3eab8a4bfaad3878891082067042a7d/onedl_mmcv-2.3.6.tar.gz", hash = "sha256:8704978a3d492b15cc058742ac3165bd1bcc2dd20678da9ed39e0da3048e3045", size = 515592, upload-time = "2026-05-13T11:55:23.23Z" }
 
 [[package]]
 name = "onedl-mmdetection"
-version = "3.5.0"
+version = "3.5.1"
 source = { editable = "." }
 dependencies = [
     { name = "imaug" },
@@ -2201,7 +2201,7 @@ sdist = { url = "https://files.pythonhosted.org/packages/d0/10/fe8ec5c3cfbcba3b4
 
 [[package]]
 name = "onedl-mmpretrain"
-version = "1.3.4"
+version = "1.3.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "einops" },
@@ -2213,7 +2213,7 @@ dependencies = [
     { name = "numpy", version = "2.4.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "rich" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/bb/bd/c1357500e69e91ca3693f07cbac009c06d269f44c7781d536ccd9f787774/onedl_mmpretrain-1.3.4.tar.gz", hash = "sha256:e78e44a5dfd8ab8293e59c00f7960964d043200303032e0073f9e5e85f651711", size = 963229, upload-time = "2026-03-20T08:39:56.185Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e1/fe/87f7fc36627fcca651cddb95dce1e95f597ad6d9f3270e5162170a6bbb58/onedl_mmpretrain-1.3.6.tar.gz", hash = "sha256:0a40b43f242f7dcfda92ea2f81ad70a6fe6912eaa615d46b18326708e14e176e", size = 955240, upload-time = "2026-05-13T11:59:02.118Z" }
 
 [[package]]
 name = "onnx"
